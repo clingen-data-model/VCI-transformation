@@ -1,0 +1,1833 @@
+{
+    "interpretation_genes": "",
+    "date_created": "2017-03-22T23:04:40.746956+00:00",
+    "provisional_variant": [
+        {
+            "date_created": "2017-03-22T23:20:10.751560+00:00",
+            "@id": "/provisional-variant/0d2bca48-2ca7-4790-8595-3d7f37f4f8cf/",
+            "last_modified": "2017-03-22T23:20:10.748822+00:00",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "autoClassification": "Pathogenic",
+            "@type": [
+                "provisional_variant",
+                "item"
+            ],
+            "status": "in progress",
+            "alteredClassification_present": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "schema_version": "1",
+            "reason_present": "",
+            "uuid": "0d2bca48-2ca7-4790-8595-3d7f37f4f8cf"
+        }
+    ],
+    "extra_evidence_list": [
+        {
+            "date_created": "2017-03-22T23:11:47.787532+00:00",
+            "@id": "/extra-evidence/5a571e10-51ab-45ae-bd0c-d6ff1a1cb666/",
+            "last_modified": "2017-03-22T23:11:47.787545+00:00",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "articles": [
+                {
+                    "authors": [
+                        "Ho PY",
+                        "Huang MZ",
+                        "Fwu VT",
+                        "Lin SC",
+                        "Hsiao KJ",
+                        "Su TS"
+                    ],
+                    "@id": "/articles/18590700/",
+                    "last_modified": "2017-02-13T16:24:46.631278+00:00",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "title": "Simultaneous assessment of the effects of exonic mutations on RNA splicing and protein functions.",
+                    "abstract": "To simultaneously assess the effects of exonic mutations on RNA splicing and protein functions, we report here an intron-inclusive cDNA (Intinc) expression system. As a test model, twenty-four mutations in exon 9 of the phenylalanine hydroxylase (PAH) gene were examined in an Intinc expression plasmid composed of the PAH cDNA with the exon 9 flanked by its authentic introns. When the PAH enzyme activities from the Intinc plasmid-transfected cells were compared to those of a standard cDNA expression system, five mutations resulted in significant relative differences in PAH activities attributed to altered exon 9-inclusive mRNA levels. Two of the mutations affected exon recognition probably through splice site modifications and the remaining three affected experimentally verified exon splicing enhancer (ESE) motifs. The Intinc expression system allows not only a better link between mutation genotype to disease phenotype but also contributes to further understanding of molecular mechanisms of deleterious effects of mutations.",
+                    "journal": "Biochemical and biophysical research communications",
+                    "pmid": "18590700",
+                    "active": true,
+                    "date": "2008 Sep 05;373(4):515-20.",
+                    "doi": "",
+                    "date_created": "2017-02-13T16:24:46.631267+00:00",
+                    "schema_version": "1",
+                    "submitted_by": {
+                        "first_name": "Amanda",
+                        "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "last_name": "Thomas",
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "title": "Amanda Thomas",
+                        "email": "amanda.thomas@aruplab.com",
+                        "lab": "/labs/curator/",
+                        "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                    },
+                    "pmcid": "",
+                    "uuid": "e7ed3ad8-9b5e-4939-9720-0121f593ef7c"
+                }
+            ],
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "status": "in progress",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "uuid": "5a571e10-51ab-45ae-bd0c-d6ff1a1cb666",
+            "schema_version": "1",
+            "evidenceDescription": "PAH activity analysis. Site directed mutagenesis, transfected COS-1 cells. Enzyme activity measured as conversion of L-[14C]phe to L-[14C]tyr. Use both standard cDNA expression system and a new Intinic plasmid system which incorporates intronic sequences.   Both systems predict <1% enzyme activity for this variant.",
+            "category": "experimental",
+            "subcategory": "experimental-studies"
+        },
+        {
+            "date_created": "2017-03-22T23:14:20.278353+00:00",
+            "@id": "/extra-evidence/208a8b68-5c70-4fd5-8c4d-f7b3a54217a0/",
+            "last_modified": "2017-03-22T23:14:20.278364+00:00",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "articles": [
+                {
+                    "authors": [
+                        "Muntau AC",
+                        "Röschinger W",
+                        "Habich M",
+                        "Demmelmair H",
+                        "Hoffmann B",
+                        "Sommerhoff CP",
+                        "Roscher AA"
+                    ],
+                    "@id": "/articles/12501224/",
+                    "last_modified": "2017-02-13T17:01:47.109285+00:00",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "title": "Tetrahydrobiopterin as an alternative treatment for mild phenylketonuria.",
+                    "abstract": "Hyperphenylalaninemia is a common inherited metabolic disease that is due to phenylalanine hydroxylase deficiency, and at least half the affected patients have mild clinical phenotypes. Treatment with a low-phenylalanine diet represents a substantial psychosocial burden, but alternative treatments have not been effective.",
+                    "journal": "The New England journal of medicine",
+                    "pmid": "12501224",
+                    "active": true,
+                    "date": "2002 Dec 26;347(26):2122-32.",
+                    "doi": "",
+                    "date_created": "2017-02-13T17:01:47.109274+00:00",
+                    "schema_version": "1",
+                    "submitted_by": {
+                        "first_name": "Amanda",
+                        "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "last_name": "Thomas",
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "title": "Amanda Thomas",
+                        "email": "amanda.thomas@aruplab.com",
+                        "lab": "/labs/curator/",
+                        "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                    },
+                    "pmcid": "",
+                    "uuid": "f7d14151-f0bb-492c-b746-4935cad7af39"
+                }
+            ],
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "status": "in progress",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "uuid": "208a8b68-5c70-4fd5-8c4d-f7b3a54217a0",
+            "schema_version": "1",
+            "evidenceDescription": "Patient #7 S310Y/F55L (pathogenic per clinVar) – with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
+            "category": "case-segregation",
+            "subcategory": "allele-data"
+        },
+        {
+            "date_created": "2017-03-22T23:15:24.066836+00:00",
+            "@id": "/extra-evidence/9f2e5998-8fbd-4fbf-8a4b-840a1d0473ca/",
+            "last_modified": "2017-03-22T23:15:24.066848+00:00",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "articles": [
+                {
+                    "authors": [
+                        "Muntau AC",
+                        "Röschinger W",
+                        "Habich M",
+                        "Demmelmair H",
+                        "Hoffmann B",
+                        "Sommerhoff CP",
+                        "Roscher AA"
+                    ],
+                    "@id": "/articles/12501224/",
+                    "last_modified": "2017-02-13T17:01:47.109285+00:00",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "title": "Tetrahydrobiopterin as an alternative treatment for mild phenylketonuria.",
+                    "abstract": "Hyperphenylalaninemia is a common inherited metabolic disease that is due to phenylalanine hydroxylase deficiency, and at least half the affected patients have mild clinical phenotypes. Treatment with a low-phenylalanine diet represents a substantial psychosocial burden, but alternative treatments have not been effective.",
+                    "journal": "The New England journal of medicine",
+                    "pmid": "12501224",
+                    "active": true,
+                    "date": "2002 Dec 26;347(26):2122-32.",
+                    "doi": "",
+                    "date_created": "2017-02-13T17:01:47.109274+00:00",
+                    "schema_version": "1",
+                    "submitted_by": {
+                        "first_name": "Amanda",
+                        "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "last_name": "Thomas",
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "title": "Amanda Thomas",
+                        "email": "amanda.thomas@aruplab.com",
+                        "lab": "/labs/curator/",
+                        "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                    },
+                    "pmcid": "",
+                    "uuid": "f7d14151-f0bb-492c-b746-4935cad7af39"
+                }
+            ],
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "status": "in progress",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "uuid": "9f2e5998-8fbd-4fbf-8a4b-840a1d0473ca",
+            "schema_version": "1",
+            "evidenceDescription": "BH4 defect excluded in all patients with urine pterins and DHPR activity.",
+            "category": "case-segregation",
+            "subcategory": "specificity-of-phenotype"
+        }
+    ],
+    "actions": [
+        {
+            "title": "Edit",
+            "profile": "/profiles/interpretation.json",
+            "name": "edit",
+            "href": "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/#!edit"
+        },
+        {
+            "title": "Edit JSON",
+            "profile": "/profiles/interpretation.json",
+            "name": "edit-json",
+            "href": "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/#!edit-json"
+        }
+    ],
+    "provisional_count": 1,
+    "variant": {
+        "date_created": "2017-03-22T23:03:46.771883+00:00",
+        "clinVarRCVs": [],
+        "hgvsNames": {
+            "GRCh38": "NC_000012.12:g.102846935G>T",
+            "others": [
+                "NG_008690.1:g.75668C>A",
+                "NM_000277.1:c.929C>A",
+                "NP_000268.1:p.Ser310Tyr",
+                "P00439:p.Ser310Tyr"
+            ],
+            "GRCh37": "NC_000012.11:g.103240713G>T"
+        },
+        "last_modified": "2017-03-22T23:03:46.771896+00:00",
+        "clinvarVariantTitle": "NM_000277.1(PAH):c.929C>A (p.Ser310Tyr)",
+        "source": "ClinVar",
+        "clinvarVariantId": "102898",
+        "carId": "",
+        "variationType": "single nucleotide variant",
+        "associatedInterpretations": [
+            {
+                "interpretation_genes": "",
+                "date_created": "2017-03-22T23:04:40.746956+00:00",
+                "last_modified": "2017-03-22T23:20:11.117877+00:00",
+                "interpretation_status": "Provisional",
+                "@type": [
+                    "interpretation",
+                    "item"
+                ],
+                "@id": "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/",
+                "provisional_variant": [
+                    "/provisional-variant/0d2bca48-2ca7-4790-8595-3d7f37f4f8cf/"
+                ],
+                "modeInheritanceAdjective": "",
+                "markAsProvisional": true,
+                "status": "in progress",
+                "interpretation_disease": "ORPHA716",
+                "provisional_count": 1,
+                "evaluations": [
+                    "/evaluations/fafb2dc2-1515-4630-a6fd-966fe5775338/",
+                    "/evaluations/6a640125-f6b5-43db-82ad-aa3e44aefdf2/",
+                    "/evaluations/4e45e6fe-0c76-4b43-8ae4-da50a9d01475/",
+                    "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+                    "/evaluations/65cad596-aec0-4ee3-ab4a-be5018b9b748/",
+                    "/evaluations/d88e327b-ac10-4385-b803-5cc1d7680458/",
+                    "/evaluations/dc7b2089-e727-4fc8-bcda-781dd6237a87/",
+                    "/evaluations/7d330aad-219e-4309-b22a-a748518c3500/",
+                    "/evaluations/da8ea5a4-98cd-4966-8e24-9b26c15cb34e/",
+                    "/evaluations/097d6448-a70b-40d9-82d3-e38d4e6401c9/",
+                    "/evaluations/59408ee6-8d94-4dce-a74a-988701896113/",
+                    "/evaluations/f6f418ef-b01a-4d5d-841d-f46ed80c3f1f/"
+                ],
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "extra_evidence_list": [
+                    "/extra-evidence/5a571e10-51ab-45ae-bd0c-d6ff1a1cb666/",
+                    "/extra-evidence/208a8b68-5c70-4fd5-8c4d-f7b3a54217a0/",
+                    "/extra-evidence/9f2e5998-8fbd-4fbf-8a4b-840a1d0473ca/"
+                ],
+                "schema_version": "2",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "uuid": "98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4",
+                "disease": "/diseases/716/",
+                "evaluation_count": 12
+            }
+        ],
+        "molecularConsequenceList": [
+            {
+                "term": "missense variant",
+                "soId": "SO:0001583",
+                "hgvsName": "NM_000277.1:c.929C>A"
+            }
+        ],
+        "@id": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+        "variant_identifier": "102898",
+        "submitted_by": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+        "otherDescription": "",
+        "@type": [
+            "variant",
+            "item"
+        ],
+        "status": "in progress",
+        "variation_type": "single nucleotide variant",
+        "clinVarSCVs": [],
+        "dbSNPIds": [
+            "62642913"
+        ],
+        "schema_version": "3",
+        "associatedPathogenicities": [],
+        "molecular_consequence": "missense variant",
+        "uuid": "4cfa029b-3865-47d3-95eb-39e9dffa647b"
+    },
+    "disease": {
+        "term": "Phenylketonuria",
+        "active": true,
+        "synonyms": [
+            "PAH deficiency",
+            "PKU",
+            "Phenylalanine hydroxylase deficiency"
+        ],
+        "@type": [
+            "orphaPhenotype",
+            "item"
+        ],
+        "@id": "/diseases/716/",
+        "orphaNumber": "716",
+        "type": "Disease",
+        "omimIds": [
+            "261600"
+        ],
+        "schema_version": "1",
+        "uuid": "183252a9-9df5-4dfb-ba0d-8cbe229b8c04"
+    },
+    "evaluation_count": 12,
+    "@id": "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/",
+    "last_modified": "2017-03-22T23:20:11.117877+00:00",
+    "submitted_by": {
+        "first_name": "Amanda",
+        "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+        "last_name": "Thomas",
+        "@type": [
+            "user",
+            "item"
+        ],
+        "title": "Amanda Thomas",
+        "email": "amanda.thomas@aruplab.com",
+        "lab": "/labs/curator/",
+        "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+    },
+    "audit": {},
+    "@type": [
+        "interpretation",
+        "item"
+    ],
+    "modeInheritanceAdjective": "",
+    "markAsProvisional": true,
+    "interpretation_disease": "ORPHA716",
+    "evaluations": [
+        {
+            "criteriaStatus": "not-evaluated",
+            "date_created": "2017-03-22T23:05:17.961271+00:00",
+            "last_modified": "2017-03-22T23:05:17.958352+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "Not found in any population databases",
+            "status": "in progress",
+            "criteria": "BA1",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "evidence_type": "Population",
+            "modifier": "",
+            "population": {
+                "date_created": "2017-03-22T23:05:17.778628+00:00",
+                "@id": "/populations/21d0b2e3-11b2-4070-86fd-64bca359fac8/",
+                "last_modified": "2017-03-22T23:05:17.778640+00:00",
+                "populationData": {
+                    "desiredCI": 95,
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "exac": {
+                        "_extra": {},
+                        "_tot": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "oth": {
+                            "af": null
+                        },
+                        "eas": {
+                            "af": null
+                        }
+                    },
+                    "mafCutoff": 5,
+                    "tGenomes": {
+                        "_tot": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "amr": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "eur": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "espea": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "afr": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "_extra": {
+                            "ref": "G",
+                            "name": "rs62642913",
+                            "alt": "T",
+                            "var_class": "SNP"
+                        },
+                        "sas": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "espaa": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "eas": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        }
+                    },
+                    "esp": {
+                        "_extra": {},
+                        "ea": {
+                            "gc": {},
+                            "ac": {}
+                        },
+                        "_tot": {
+                            "gc": {},
+                            "ac": {}
+                        },
+                        "aa": {
+                            "gc": {},
+                            "ac": {}
+                        }
+                    }
+                },
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "maf_count": 6,
+                "status": "in progress",
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "evaluation_associated": [
+                    "/evaluations/fafb2dc2-1515-4630-a6fd-966fe5775338/",
+                    "/evaluations/6a640125-f6b5-43db-82ad-aa3e44aefdf2/",
+                    "/evaluations/4e45e6fe-0c76-4b43-8ae4-da50a9d01475/"
+                ],
+                "schema_version": "1",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "uuid": "21d0b2e3-11b2-4070-86fd-64bca359fac8"
+            },
+            "@id": "/evaluations/fafb2dc2-1515-4630-a6fd-966fe5775338/",
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "fafb2dc2-1515-4630-a6fd-966fe5775338"
+        },
+        {
+            "criteriaStatus": "met",
+            "date_created": "2017-03-22T23:05:18.070850+00:00",
+            "last_modified": "2017-03-22T23:05:18.070862+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "Not found in any population databases",
+            "status": "in progress",
+            "criteria": "PM2",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "evidence_type": "Population",
+            "modifier": "",
+            "population": {
+                "date_created": "2017-03-22T23:05:17.778628+00:00",
+                "@id": "/populations/21d0b2e3-11b2-4070-86fd-64bca359fac8/",
+                "last_modified": "2017-03-22T23:05:17.778640+00:00",
+                "populationData": {
+                    "desiredCI": 95,
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "exac": {
+                        "_extra": {},
+                        "_tot": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "oth": {
+                            "af": null
+                        },
+                        "eas": {
+                            "af": null
+                        }
+                    },
+                    "mafCutoff": 5,
+                    "tGenomes": {
+                        "_tot": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "amr": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "eur": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "espea": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "afr": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "_extra": {
+                            "ref": "G",
+                            "name": "rs62642913",
+                            "alt": "T",
+                            "var_class": "SNP"
+                        },
+                        "sas": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "espaa": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "eas": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        }
+                    },
+                    "esp": {
+                        "_extra": {},
+                        "ea": {
+                            "gc": {},
+                            "ac": {}
+                        },
+                        "_tot": {
+                            "gc": {},
+                            "ac": {}
+                        },
+                        "aa": {
+                            "gc": {},
+                            "ac": {}
+                        }
+                    }
+                },
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "maf_count": 6,
+                "status": "in progress",
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "evaluation_associated": [
+                    "/evaluations/fafb2dc2-1515-4630-a6fd-966fe5775338/",
+                    "/evaluations/6a640125-f6b5-43db-82ad-aa3e44aefdf2/",
+                    "/evaluations/4e45e6fe-0c76-4b43-8ae4-da50a9d01475/"
+                ],
+                "schema_version": "1",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "uuid": "21d0b2e3-11b2-4070-86fd-64bca359fac8"
+            },
+            "@id": "/evaluations/6a640125-f6b5-43db-82ad-aa3e44aefdf2/",
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "6a640125-f6b5-43db-82ad-aa3e44aefdf2"
+        },
+        {
+            "criteriaStatus": "not-evaluated",
+            "date_created": "2017-03-22T23:05:18.068633+00:00",
+            "last_modified": "2017-03-22T23:05:18.068651+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "Not found in any population databases",
+            "status": "in progress",
+            "criteria": "BS1",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "evidence_type": "Population",
+            "modifier": "",
+            "population": {
+                "date_created": "2017-03-22T23:05:17.778628+00:00",
+                "@id": "/populations/21d0b2e3-11b2-4070-86fd-64bca359fac8/",
+                "last_modified": "2017-03-22T23:05:17.778640+00:00",
+                "populationData": {
+                    "desiredCI": 95,
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "exac": {
+                        "_extra": {},
+                        "_tot": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "oth": {
+                            "af": null
+                        },
+                        "eas": {
+                            "af": null
+                        }
+                    },
+                    "mafCutoff": 5,
+                    "tGenomes": {
+                        "_tot": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "amr": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "eur": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "espea": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "afr": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "_extra": {
+                            "ref": "G",
+                            "name": "rs62642913",
+                            "alt": "T",
+                            "var_class": "SNP"
+                        },
+                        "sas": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "espaa": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        },
+                        "eas": {
+                            "gf": {},
+                            "gc": {},
+                            "af": {},
+                            "ac": {}
+                        }
+                    },
+                    "esp": {
+                        "_extra": {},
+                        "ea": {
+                            "gc": {},
+                            "ac": {}
+                        },
+                        "_tot": {
+                            "gc": {},
+                            "ac": {}
+                        },
+                        "aa": {
+                            "gc": {},
+                            "ac": {}
+                        }
+                    }
+                },
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "maf_count": 6,
+                "status": "in progress",
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "evaluation_associated": [
+                    "/evaluations/fafb2dc2-1515-4630-a6fd-966fe5775338/",
+                    "/evaluations/6a640125-f6b5-43db-82ad-aa3e44aefdf2/",
+                    "/evaluations/4e45e6fe-0c76-4b43-8ae4-da50a9d01475/"
+                ],
+                "schema_version": "1",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "uuid": "21d0b2e3-11b2-4070-86fd-64bca359fac8"
+            },
+            "@id": "/evaluations/4e45e6fe-0c76-4b43-8ae4-da50a9d01475/",
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "4e45e6fe-0c76-4b43-8ae4-da50a9d01475"
+        },
+        {
+            "criteriaStatus": "met",
+            "date_created": "2017-03-22T23:08:28.438367+00:00",
+            "last_modified": "2017-03-22T23:08:28.438378+00:00",
+            "criteria": "PP3",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "@id": "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+            "status": "in progress",
+            "explanation": "All predictive software agree on damaging effect \nREVEL = 0.991",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "evidence_type": "Computational",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "computational": {
+                "date_created": "2017-03-22T23:08:28.110274+00:00",
+                "@id": "/computational/d9d3e60d-50b1-424b-8bcc-c892bba0da22/",
+                "last_modified": "2017-03-22T23:08:28.110287+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "status": "in progress",
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "uuid": "d9d3e60d-50b1-424b-8bcc-c892bba0da22",
+                "evaluation_associated": [
+                    "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+                    "/evaluations/65cad596-aec0-4ee3-ab4a-be5018b9b748/",
+                    "/evaluations/d88e327b-ac10-4385-b803-5cc1d7680458/",
+                    "/evaluations/dc7b2089-e727-4fc8-bcda-781dd6237a87/"
+                ],
+                "computationalData": {
+                    "conservation": {
+                        "phylop20way": "0.948",
+                        "phylop7way": "9.598",
+                        "phastconsp20way": "0.953",
+                        "siphy": "19.1358",
+                        "gerp": "5.38",
+                        "phastconsp7way": "1"
+                    },
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.991",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "other_predictors": {
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1,
+                                1
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.638212
+                            ],
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "6.363015",
+                            "prediction": null
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.99707
+                            ],
+                            "prediction": "D"
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.9417
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -6.66,
+                                -6.66
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.9939
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -5.83
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                4.08
+                            ],
+                            "prediction": "H"
+                        }
+                    }
+                },
+                "schema_version": "2",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "disease_present": ""
+            },
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "9c16a1ca-01ce-4525-9215-f8887a23c78b"
+        },
+        {
+            "criteriaStatus": "not-evaluated",
+            "date_created": "2017-03-22T23:08:28.499525+00:00",
+            "last_modified": "2017-03-22T23:08:28.497044+00:00",
+            "criteria": "BP4",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "@id": "/evaluations/65cad596-aec0-4ee3-ab4a-be5018b9b748/",
+            "status": "in progress",
+            "explanation": "All predictive software agree on damaging effect \nREVEL = 0.991",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "evidence_type": "Computational",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "computational": {
+                "date_created": "2017-03-22T23:08:28.110274+00:00",
+                "@id": "/computational/d9d3e60d-50b1-424b-8bcc-c892bba0da22/",
+                "last_modified": "2017-03-22T23:08:28.110287+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "status": "in progress",
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "uuid": "d9d3e60d-50b1-424b-8bcc-c892bba0da22",
+                "evaluation_associated": [
+                    "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+                    "/evaluations/65cad596-aec0-4ee3-ab4a-be5018b9b748/",
+                    "/evaluations/d88e327b-ac10-4385-b803-5cc1d7680458/",
+                    "/evaluations/dc7b2089-e727-4fc8-bcda-781dd6237a87/"
+                ],
+                "computationalData": {
+                    "conservation": {
+                        "phylop20way": "0.948",
+                        "phylop7way": "9.598",
+                        "phastconsp20way": "0.953",
+                        "siphy": "19.1358",
+                        "gerp": "5.38",
+                        "phastconsp7way": "1"
+                    },
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.991",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "other_predictors": {
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1,
+                                1
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.638212
+                            ],
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "6.363015",
+                            "prediction": null
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.99707
+                            ],
+                            "prediction": "D"
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.9417
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -6.66,
+                                -6.66
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.9939
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -5.83
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                4.08
+                            ],
+                            "prediction": "H"
+                        }
+                    }
+                },
+                "schema_version": "2",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "disease_present": ""
+            },
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "65cad596-aec0-4ee3-ab4a-be5018b9b748"
+        },
+        {
+            "criteriaStatus": "not-evaluated",
+            "date_created": "2017-03-22T23:08:28.511487+00:00",
+            "last_modified": "2017-03-22T23:08:28.511499+00:00",
+            "criteria": "BP1",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "@id": "/evaluations/d88e327b-ac10-4385-b803-5cc1d7680458/",
+            "status": "in progress",
+            "explanation": "",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "evidence_type": "Computational",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "computational": {
+                "date_created": "2017-03-22T23:08:28.110274+00:00",
+                "@id": "/computational/d9d3e60d-50b1-424b-8bcc-c892bba0da22/",
+                "last_modified": "2017-03-22T23:08:28.110287+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "status": "in progress",
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "uuid": "d9d3e60d-50b1-424b-8bcc-c892bba0da22",
+                "evaluation_associated": [
+                    "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+                    "/evaluations/65cad596-aec0-4ee3-ab4a-be5018b9b748/",
+                    "/evaluations/d88e327b-ac10-4385-b803-5cc1d7680458/",
+                    "/evaluations/dc7b2089-e727-4fc8-bcda-781dd6237a87/"
+                ],
+                "computationalData": {
+                    "conservation": {
+                        "phylop20way": "0.948",
+                        "phylop7way": "9.598",
+                        "phastconsp20way": "0.953",
+                        "siphy": "19.1358",
+                        "gerp": "5.38",
+                        "phastconsp7way": "1"
+                    },
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.991",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "other_predictors": {
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1,
+                                1
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.638212
+                            ],
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "6.363015",
+                            "prediction": null
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.99707
+                            ],
+                            "prediction": "D"
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.9417
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -6.66,
+                                -6.66
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.9939
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -5.83
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                4.08
+                            ],
+                            "prediction": "H"
+                        }
+                    }
+                },
+                "schema_version": "2",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "disease_present": ""
+            },
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "d88e327b-ac10-4385-b803-5cc1d7680458"
+        },
+        {
+            "criteriaStatus": "not-evaluated",
+            "date_created": "2017-03-22T23:08:28.564971+00:00",
+            "last_modified": "2017-03-22T23:08:28.564982+00:00",
+            "criteria": "PP2",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "@id": "/evaluations/dc7b2089-e727-4fc8-bcda-781dd6237a87/",
+            "status": "in progress",
+            "explanation": "",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "evidence_type": "Computational",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "computational": {
+                "date_created": "2017-03-22T23:08:28.110274+00:00",
+                "@id": "/computational/d9d3e60d-50b1-424b-8bcc-c892bba0da22/",
+                "last_modified": "2017-03-22T23:08:28.110287+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "status": "in progress",
+                "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+                "uuid": "d9d3e60d-50b1-424b-8bcc-c892bba0da22",
+                "evaluation_associated": [
+                    "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+                    "/evaluations/65cad596-aec0-4ee3-ab4a-be5018b9b748/",
+                    "/evaluations/d88e327b-ac10-4385-b803-5cc1d7680458/",
+                    "/evaluations/dc7b2089-e727-4fc8-bcda-781dd6237a87/"
+                ],
+                "computationalData": {
+                    "conservation": {
+                        "phylop20way": "0.948",
+                        "phylop7way": "9.598",
+                        "phastconsp20way": "0.953",
+                        "siphy": "19.1358",
+                        "gerp": "5.38",
+                        "phastconsp7way": "1"
+                    },
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.991",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "other_predictors": {
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                1
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                1,
+                                1
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.638212
+                            ],
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "6.363015",
+                            "prediction": null
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.99707
+                            ],
+                            "prediction": "D"
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.9417
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -6.66,
+                                -6.66
+                            ],
+                            "prediction": "D, D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": "D"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.9939
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -5.83
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                4.08
+                            ],
+                            "prediction": "H"
+                        }
+                    }
+                },
+                "schema_version": "2",
+                "submitted_by": {
+                    "first_name": "Amanda",
+                    "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                    "last_name": "Thomas",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "title": "Amanda Thomas",
+                    "email": "amanda.thomas@aruplab.com",
+                    "lab": "/labs/curator/",
+                    "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+                },
+                "disease_present": ""
+            },
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "dc7b2089-e727-4fc8-bcda-781dd6237a87"
+        },
+        {
+            "criteriaStatus": "not-evaluated",
+            "date_created": "2017-03-22T23:12:19.076474+00:00",
+            "last_modified": "2017-03-22T23:12:19.076487+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "Ho, 2008.  Both standard cDNA and intinic systems suggest this variant has <1% enzyme activity.",
+            "status": "in progress",
+            "criteria": "BS3",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "@id": "/evaluations/7d330aad-219e-4309-b22a-a748518c3500/",
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "7d330aad-219e-4309-b22a-a748518c3500"
+        },
+        {
+            "criteriaStatus": "met",
+            "date_created": "2017-03-22T23:12:19.175682+00:00",
+            "last_modified": "2017-03-22T23:12:19.175695+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "Ho, 2008.  Both standard cDNA and intinic systems suggest this variant has <1% enzyme activity.",
+            "status": "in progress",
+            "criteria": "PS3",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "@id": "/evaluations/da8ea5a4-98cd-4966-8e24-9b26c15cb34e/",
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "da8ea5a4-98cd-4966-8e24-9b26c15cb34e"
+        },
+        {
+            "criteriaStatus": "not-evaluated",
+            "date_created": "2017-03-22T23:14:25.724748+00:00",
+            "last_modified": "2017-03-22T23:14:25.724761+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "",
+            "status": "in progress",
+            "criteria": "BP2",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "@id": "/evaluations/097d6448-a70b-40d9-82d3-e38d4e6401c9/",
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "097d6448-a70b-40d9-82d3-e38d4e6401c9"
+        },
+        {
+            "criteriaStatus": "met",
+            "date_created": "2017-03-22T23:14:25.818602+00:00",
+            "last_modified": "2017-03-22T23:14:25.816068+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "Patient #7 S310Y/F55L (pathogenic per clinVar) – with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
+            "status": "in progress",
+            "criteria": "PM3",
+            "criteriaModifier": "",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "modifier": "",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "@id": "/evaluations/59408ee6-8d94-4dce-a74a-988701896113/",
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "59408ee6-8d94-4dce-a74a-988701896113"
+        },
+        {
+            "criteriaStatus": "met",
+            "date_created": "2017-03-22T23:16:37.917961+00:00",
+            "last_modified": "2017-03-22T23:16:37.917973+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "explanation": "PS5 evidence per ClinGen Metabolism workgroup -- BH4 defect excluded in all patients.",
+            "status": "in progress",
+            "criteria": "PP4",
+            "criteriaModifier": "strong",
+            "variant": "/variants/4cfa029b-3865-47d3-95eb-39e9dffa647b/",
+            "modifier": "strong",
+            "interpretation_associated": [
+                "/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/"
+            ],
+            "@id": "/evaluations/f6f418ef-b01a-4d5d-841d-f46ed80c3f1f/",
+            "schema_version": "1",
+            "submitted_by": {
+                "first_name": "Amanda",
+                "@id": "/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "last_name": "Thomas",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "title": "Amanda Thomas",
+                "email": "amanda.thomas@aruplab.com",
+                "lab": "/labs/curator/",
+                "uuid": "1db40a7e-e6dc-46dd-9e17-44efbf53d508"
+            },
+            "uuid": "f6f418ef-b01a-4d5d-841d-f46ed80c3f1f"
+        }
+    ],
+    "schema_version": "2",
+    "interpretation_status": "Provisional",
+    "status": "in progress",
+    "uuid": "98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4"
+}

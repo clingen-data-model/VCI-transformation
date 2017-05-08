@@ -1,0 +1,1123 @@
+{
+    "clinicalSignificance": "Pathogenic",
+    "condition": {
+        "disease": [
+            {
+                "id": "http://www.orpha.net/ORDO/Orphanet_716",
+                "name": "Orphanet:716",
+                "type": "Disease"
+            }
+        ],
+        "id": "_:MendelianCondition_1",
+        "type": "MendelianCondition"
+    },
+    "contribution": {
+        "agent": {
+            "id": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+            "name": "Amanda Thomas",
+            "type": "Agent"
+        },
+        "onDate": "2017-03-22T23:20:10.748822+00:00",
+        "role": "CG-contributory-role:interpreter",
+        "type": "Contribution"
+    },
+    "hasEvidence": [
+        {
+            "strength": "Moderate",
+            "supportingData": [
+                {
+                    "contribution": {
+                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "onDate": "2017-03-22T23:05:18.070862+00:00",
+                        "role": "CG-contributory-role:assessor",
+                        "type": "Contribution"
+                    },
+                    "criterion": {
+                        "defaultStrength": "Moderate",
+                        "description": "Absent from controls (or at extremely low frequency if recessive) (Table 6) in Exome Sequencing Project, 1000 Genomes Project, or Exome Aggregation Consortium",
+                        "id": "PM2",
+                        "shortDescription": "Absent from controls",
+                        "targetInterpretation": "LN:LA6668-3",
+                        "type": "Criterion"
+                    },
+                    "explanation": "Not found in any population databases",
+                    "hasSupportingEvidence": [
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ESP",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "population": "CG-population-type:AfricanAmerican",
+                                    "type": "AlleleFrequency",
+                                    "variant": {
+                                        "@context": "http://reg.genome.network/schema/allele.jsonld",
+                                        "@id": "http://reg.genome.network/allele/CA229854",
+                                        "externalRecords": {
+                                            "ClinVarAlleles": [
+                                                {
+                                                    "@id": "http://www.ncbi.nlm.nih.gov/clinvar/?term=108634[alleleid]",
+                                                    "alleleId": 108634,
+                                                    "preferredName": "NM_000277.1(PAH):c.929C>A (p.Ser310Tyr)"
+                                                }
+                                            ],
+                                            "ClinVarVariations": [
+                                                {
+                                                    "@id": "http://www.ncbi.nlm.nih.gov/clinvar/variation/102898",
+                                                    "RCV": [
+                                                        "RCV000089161"
+                                                    ],
+                                                    "variationId": 102898
+                                                }
+                                            ],
+                                            "dbSNP": [
+                                                {
+                                                    "@id": "http://www.ncbi.nlm.nih.gov/snp/62642913",
+                                                    "rs": 62642913
+                                                }
+                                            ]
+                                        },
+                                        "genomicAlleles": [
+                                            {
+                                                "chromosome": "12",
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "T",
+                                                        "end": 102846935,
+                                                        "referenceAllele": "G",
+                                                        "start": 102846934
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "NC_000012.12:g.102846935G>T",
+                                                    "CM000674.2:g.102846935G>T"
+                                                ],
+                                                "referenceGenome": "GRCh38",
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS000060"
+                                            },
+                                            {
+                                                "chromosome": "12",
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "T",
+                                                        "end": 103240713,
+                                                        "referenceAllele": "G",
+                                                        "start": 103240712
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "NC_000012.11:g.103240713G>T",
+                                                    "CM000674.1:g.103240713G>T"
+                                                ],
+                                                "referenceGenome": "GRCh37",
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS000036"
+                                            },
+                                            {
+                                                "chromosome": "12",
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "T",
+                                                        "end": 101764843,
+                                                        "referenceAllele": "G",
+                                                        "start": 101764842
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "NC_000012.10:g.101764843G>T"
+                                                ],
+                                                "referenceGenome": "NCBI36",
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS000012"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 75668,
+                                                        "referenceAllele": "C",
+                                                        "start": 75667
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "NG_008690.1:g.75668C>A"
+                                                ],
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS001168"
+                                            }
+                                        ],
+                                        "transcriptAlleles": [
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 1401,
+                                                        "referenceAllele": "C",
+                                                        "start": 1400
+                                                    }
+                                                ],
+                                                "gene": "http://reg.genome.network/gene/GN008582",
+                                                "hgvs": [
+                                                    "NM_000277.1:c.929C>A"
+                                                ],
+                                                "proteinVariation": "p.Ser310Tyr",
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS006339"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 1027,
+                                                        "endIntronDirection": 45,
+                                                        "endIntronOffset": 2503,
+                                                        "referenceAllele": "C",
+                                                        "start": 1027,
+                                                        "startIntronDirection": 45,
+                                                        "startIntronOffset": 2504
+                                                    }
+                                                ],
+                                                "gene": "http://reg.genome.network/gene/GN008582",
+                                                "hgvs": [
+                                                    "XM_011538422.1:c.913-2504C>A"
+                                                ],
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS105378"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 1185,
+                                                        "referenceAllele": "C",
+                                                        "start": 1184
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "ENST00000307000.7:c.914C>A"
+                                                ],
+                                                "proteinVariation": "p.Ser305Tyr",
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS255819"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 688,
+                                                        "referenceAllele": "C",
+                                                        "start": 687
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "ENST00000549247.6:n.688C>A"
+                                                ],
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS367346"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 591,
+                                                        "referenceAllele": "C",
+                                                        "start": 590
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "ENST00000551114.2:n.591C>A"
+                                                ],
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS368468"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 1402,
+                                                        "referenceAllele": "C",
+                                                        "start": 1401
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "ENST00000553106.5:c.929C>A"
+                                                ],
+                                                "proteinVariation": "p.Ser310Tyr",
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS369636"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 73,
+                                                        "endIntronDirection": 45,
+                                                        "endIntronOffset": 2503,
+                                                        "referenceAllele": "C",
+                                                        "start": 73,
+                                                        "startIntronDirection": 45,
+                                                        "startIntronOffset": 2504
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "ENST00000635477.1:n.74-2504C>A"
+                                                ],
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS408144"
+                                            },
+                                            {
+                                                "coordinates": [
+                                                    {
+                                                        "allele": "A",
+                                                        "end": 444,
+                                                        "referenceAllele": "C",
+                                                        "start": 443
+                                                    }
+                                                ],
+                                                "hgvs": [
+                                                    "ENST00000635528.1:n.444C>A"
+                                                ],
+                                                "referenceSequence": "http://reg.genome.network/refseq/RS408159"
+                                            }
+                                        ],
+                                        "type": "nucleotide"
+                                    }
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ESP",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "population": "CG-population-type:combined",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ESP",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "population": "CG-population-type:EuropeanAmerican",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:Other",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:NonFinnishEuropean",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:combined",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:SouthAsian",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:EastAsian",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:Latino",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:Finnish",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ExAC",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:African",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomesESP6500",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:AfricanAmerican",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomes",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:combined",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomes",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:SouthAsian",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomes",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:European",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomes",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:EastAsian",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomes",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:Latino",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomes",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:African",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "alleleCount": 0,
+                                    "alleleNumber": 0,
+                                    "ascertainment": "ThousandGenomesESP6500",
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:05:17.778640+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "homozygousAlleleIndiviualCount": 0,
+                                    "population": "CG-population-type:EuropeanAmerican",
+                                    "type": "AlleleFrequency",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
+                    "id": "/evaluations/6a640125-f6b5-43db-82ad-aa3e44aefdf2/",
+                    "outcome": "CG-criterion-outcome:met",
+                    "type": "CriterionAssessment",
+                    "variant": "http://reg.genome.network/allele/CA229854"
+                }
+            ],
+            "type": "EvidenceLine"
+        },
+        {
+            "strength": "Supporting",
+            "supportingData": [
+                {
+                    "contribution": {
+                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "onDate": "2017-03-22T23:08:28.438378+00:00",
+                        "role": "CG-contributory-role:assessor",
+                        "type": "Contribution"
+                    },
+                    "criterion": {
+                        "defaultStrength": "Supporting",
+                        "description": "Multiple lines of computational evidence support a deleterious effect on the gene or gene product (conservation, evolutionary, splicing impact, etc.)",
+                        "id": "PP3",
+                        "shortDescription": "computational evidence supports deleterious effect",
+                        "targetInterpretation": "LN:LA6668-3",
+                        "type": "Criterion"
+                    },
+                    "explanation": "All predictive software agree on damaging effect \nREVEL = 0.991",
+                    "hasSupportingEvidence": [
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "method": "siphy",
+                                    "score": 19.1358,
+                                    "type": "Conservation",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "method": "phylop7way",
+                                    "score": 9.598,
+                                    "type": "Conservation",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "method": "phylop20way",
+                                    "score": 0.948,
+                                    "type": "Conservation",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "method": "gerp",
+                                    "score": 5.38,
+                                    "type": "Conservation",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "method": "phastconsp20way",
+                                    "score": 0.953,
+                                    "type": "Conservation",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "method": "phastconsp7way",
+                                    "score": 1.0,
+                                    "type": "Conservation",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "revel",
+                                    "type": "InSilicoPrediction",
+                                    "value": "0.991",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "fathmm",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (-6.66), D (-6.66)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "polyphen2_hdiv",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (1)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "fathmm_mkl",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (0.99707)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "polyphen2_hvar",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (1)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "mutationassessor",
+                                    "type": "InSilicoPrediction",
+                                    "value": "H (4.08)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "sift",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "metalr",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (0.9939)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "mutationtaster",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (1), D (1)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "cadd",
+                                    "type": "InSilicoPrediction",
+                                    "value": "6,.,3,6,3,0,1,5",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "lrt",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "metasvm",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (0.9417)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "fitcons",
+                                    "type": "InSilicoPrediction",
+                                    "value": "0.638212",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        },
+                        {
+                            "supportingData": [
+                                {
+                                    "contribution": {
+                                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                        "onDate": "2017-03-22T23:08:28.110287+00:00",
+                                        "role": "CG-contributory-role:curator",
+                                        "type": "Contribution"
+                                    },
+                                    "prediction_type": "CG:me",
+                                    "tool": "provean",
+                                    "type": "InSilicoPrediction",
+                                    "value": "D (-5.83)",
+                                    "variant": "http://reg.genome.network/allele/CA229854"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
+                    "id": "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+                    "outcome": "CG-criterion-outcome:met",
+                    "type": "CriterionAssessment",
+                    "variant": "http://reg.genome.network/allele/CA229854"
+                }
+            ],
+            "type": "EvidenceLine"
+        },
+        {
+            "strength": "Strong",
+            "supportingData": [
+                {
+                    "contribution": {
+                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "onDate": "2017-03-22T23:12:19.175695+00:00",
+                        "role": "CG-contributory-role:assessor",
+                        "type": "Contribution"
+                    },
+                    "criterion": {
+                        "defaultStrength": "Strong",
+                        "description": "Well-established in vitro or in vivo functional studies supportive of a damaging effect on the gene or gene product",
+                        "id": "PS3",
+                        "shortDescription": "well-established damaging effect functional studies",
+                        "targetInterpretation": "LN:LA6668-3",
+                        "type": "Criterion"
+                    },
+                    "explanation": "Ho, 2008.  Both standard cDNA and intinic systems suggest this variant has <1% enzyme activity.",
+                    "hasSupportingEvidence": [],
+                    "id": "/evaluations/da8ea5a4-98cd-4966-8e24-9b26c15cb34e/",
+                    "outcome": "CG-criterion-outcome:met",
+                    "type": "CriterionAssessment",
+                    "variant": "http://reg.genome.network/allele/CA229854"
+                }
+            ],
+            "type": "EvidenceLine"
+        },
+        {
+            "strength": "Moderate",
+            "supportingData": [
+                {
+                    "contribution": {
+                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "onDate": "2017-03-22T23:14:25.816068+00:00",
+                        "role": "CG-contributory-role:assessor",
+                        "type": "Contribution"
+                    },
+                    "criterion": {
+                        "defaultStrength": "Moderate",
+                        "description": "For recessive disorders, detected in trans with a pathogenic variant",
+                        "id": "PM3",
+                        "shortDescription": "Recessive in trans w/ Path",
+                        "targetInterpretation": "LN:LA6668-3",
+                        "type": "Criterion"
+                    },
+                    "explanation": "Patient #7 S310Y/F55L (pathogenic per clinVar) \u2013 with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
+                    "hasSupportingEvidence": [],
+                    "id": "/evaluations/59408ee6-8d94-4dce-a74a-988701896113/",
+                    "outcome": "CG-criterion-outcome:met",
+                    "type": "CriterionAssessment",
+                    "variant": "http://reg.genome.network/allele/CA229854"
+                }
+            ],
+            "type": "EvidenceLine"
+        },
+        {
+            "strength": "Supportins",
+            "supportingData": [
+                {
+                    "contribution": {
+                        "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                        "onDate": "2017-03-22T23:16:37.917973+00:00",
+                        "role": "CG-contributory-role:assessor",
+                        "type": "Contribution"
+                    },
+                    "criterion": {
+                        "defaultStrength": "Supporting",
+                        "description": "Patient\u2019s phenotype or family history is highly specific for a disease with a single genetic etiology",
+                        "id": "PP4",
+                        "shortDescription": "disease specific phenotype and family history",
+                        "targetInterpretation": "LN:LA6668-3",
+                        "type": "Criterion"
+                    },
+                    "explanation": "PS5 evidence per ClinGen Metabolism workgroup -- BH4 defect excluded in all patients.",
+                    "hasSupportingEvidence": [],
+                    "id": "/evaluations/f6f418ef-b01a-4d5d-841d-f46ed80c3f1f/",
+                    "outcome": "CG-criterion-outcome:met",
+                    "type": "CriterionAssessment",
+                    "variant": "http://reg.genome.network/allele/CA229854"
+                }
+            ],
+            "type": "EvidenceLine"
+        }
+    ],
+    "id": "https://vci.clinicalgenome.org/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/",
+    "type": "VariantInterpretation",
+    "variant": "http://reg.genome.network/allele/CA229854"
+}
