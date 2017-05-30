@@ -1,7 +1,7 @@
 import json
 from shutil import copy
 from collections import defaultdict
-import os, requests
+import os, requests, sys
 
 NAME='name'
 FQNAME = 'fullyQualifiedName'
@@ -171,4 +171,7 @@ def go(libdir = '/home/bizon/Projects/ClinGen/NewDataModel/interpretation/data/f
     write_library(types,attributes,'interpretation_generated.py', 'coding_generated.py', 'interpretation_constants.py')
 
 if __name__ == '__main__':
-    go()
+    if len(sys.argv) == 2:
+        go(sys.argv[1])
+    else:
+        go()
