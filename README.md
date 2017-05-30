@@ -10,6 +10,10 @@ This project consists of
 5) Unit tests
 
 
+To convert a VCI json file (input.json) into a DMWG JSON file (output.json) use the script VCI2DMG.py:
+```python VCI2DMWG.py input.json output.json```
+
+A sample input and output files are found in the `test_data` directory.
 
 To generate the classes, run
 ```python generate_interpretation_library.py <flattened>```
@@ -17,4 +21,13 @@ where <flattened> is the directory containing the flattened data model.
 
 This will create several files:
   * interpretation_generated.py: Python classes with getters and setters for properties
-  * coding_generated.py: 
+  * coding_generated.py: Python classes generated for Coding and CodeableConcept
+  * interpretation_constants.py: property and other names
+  * ValueSets/*: JSON files containing the defined value sets
+
+In addition there are several static files:
+  * node.py: base class for the generated python classes
+  * interpretation_extras.py: Some utility functions for creating DMWG style interpretations and serializing them
+  * CodingFactory: decorators to handle codings and codeable concepts.
+
+
