@@ -1,8 +1,11 @@
+import sys
 from collections import defaultdict
 import requests
 import hashlib
 import csv
-from interpretation import *
+from interpretation_generated import *
+from interpretation_extras import *
+from interpretation_constants import *
 
 IRI_BASE='https://vci.clinicalgenome.org'
 VCI_ID_KEY = '@id'
@@ -75,6 +78,21 @@ VCI_1000_GENOMES_ESP_EA_POP = 'espea'
 VCI_SCORE_KEY = 'score'
 VCI_PREDICTION_KEY = 'prediction'
 
+VCI_MISSENSE_EFFECT_PREDICTOR = 'missense_predictor'
+VCI_SPLICE_EFFECT_PREDICTOR = 'splice'
+
+#TEMP FIX UNTIL ALLELE_FREQ.ascertainment is made a CodeableConcept
+DMWG_ESP='ESP'
+DMWG_1KGESP='1KG_ESP'
+DMWG_1KG='1KG'
+DMWG_EXAC='ExAC'
+
+term_map = { VCI_MET: 'http://clinicalgenome.org/datamodel/criterion-assertion-outcome/met', \
+             VCI_NOT_MET: 'http://clinicalgenome.org/datamodel/criterion-assertion-outcome/not-met', \
+             VCI_MISSENSE_EFFECT_PREDICTOR: 'http://clinicalgenome.org/datamodel/prediction-type/me', \
+             VCI_SPLICE_EFFECT_PREDICTOR: 'http://clinicalgenome.org/datamodel/prediction-type/sp' \
+             }
+
 def get_chromosome_name(chromosome, version):
     v37chromosomes={'1':'NC_000001.10',\
                     '2':'NC_000002.11',\
@@ -107,32 +125,14 @@ def get_chromosome_name(chromosome, version):
         raise Exception
     
 def get_canonical_id(hgvs):
-    #return {'@id':'test fix get_canonical_id'}
     # send a GET request with parameter
     url = 'http://reg.genome.network/allele?hgvs='
     # convert symbol > to special code %3E
     url += requests.utils.quote(hgvs)
     res = requests.get(url)
-    cardata = json.loads(res.text)
+    txt = res.text
+    cardata = json.loads(txt)
     return cardata
-    #return cardata['@id']
-
-#Step through the JSON structure. If you have a node, call back with *args
-#def walk(source,callback,*args):
-#    if isinstance(source,list):
-#        for e in source:
-#            walk(e,callback,*args)
-#    elif isinstance(source,dict):
-#        callback(source,*args)
-#        for k,v in source.items():
-#            walk(v,callback,*args)
-#    else:
-#        pass
-#
-#def collect_entities(source):
-#    emap = EntityMap()
-#    walk(source,emap.register)
-#    return emap
 
 #We don't need to entity map everything, just some of the data nodes.
 # For instance, not the interpretation.  When it occurs multiple times, it causes problems because the evaluations at each level
@@ -166,7 +166,7 @@ class EntityMap:
                             raise Exception('Incoherent Nodes')
                     else:
                         entity[key] = node[key]
-                print atid,entity
+                #print atid,entity
     def get_entity(self,eid):
         return self.entities[eid]
     def get_transformed(self,eid):
@@ -206,7 +206,7 @@ def get_id(source):
 def add_contribution( user_input, target, ondate, entities, role ):
     userid = get_id(user_input)
     user = entities.get_entity(userid)
-    print 'User:',user
+    #print 'User:',user
     agent = entities.get_transformed(userid)
     if agent is None:
         agent = Agent(userid)
@@ -216,7 +216,8 @@ def add_contribution( user_input, target, ondate, entities, role ):
             #sometimes we might not have the name.. oh well.
             pass
         entities.add_transformed(userid, agent)
-    contribution = Contribution(agent, ondate, role)
+    #contribution = Contribution(agent, ondate, role)
+    contribution = create_contribution(agent, ondate, role)
     target.add_contribution(contribution)
 
 def add_contributions( source, target, entities, ondate, role ):
@@ -245,7 +246,7 @@ def add_contributions( source, target, entities, ondate, role ):
 # modeInheritanceAdjective: for things like "with maternal imprinting"
 # extra_evidence_list
 def transform_root(vci):
-    return Interpretation( fully_qualify(vci[VCI_ID_KEY]) )
+    return VariantInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
     #Is there a place where explanation should come from?
     #dmwg['explanation'] = 
 
@@ -267,8 +268,7 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
             exit()
         vci_pv = vci_pv[0]
     add_contributions( vci_pv[VCI_CONTRIBUTION_KEY], interpretation, entities, vci_pv[VCI_LAST_MODIFIED_KEY], DMWG_INTERPRETER_ROLE ,)
-    interpretation.add_clinical_significance( convert_significance(vci_pv) )
-    #dmwg[DMWG_CLINICAL_SIGNIFICANCE_KEY] = convert_significance(vci_pv)
+    interpretation.set_clinicalSignificance( convert_significance(vci_pv) )
 
 def convert_significance(vci_provisional_variant):
     value = vci_provisional_variant[VCI_AUTOCLASSIFICATION_KEY]
@@ -284,21 +284,6 @@ def transform_variant(variant,entities):
         dmwg_variant = Variant(ar_variant)
         entities.add_transformed(vci_variant_id, dmwg_variant)
     return dmwg_variant
-
-def read_criteria():
-    inf = file('Criterion.tsv','r')
-    rows = csv.DictReader(inf,dialect='excel-tab')
-    criteria = {}
-    for row in rows:
-        criterion = {}
-        criterion[DMWG_ID_KEY] = row['id']
-        criterion[DMWG_TYPE_KEY] = DMWG_CRITERION_TYPE
-        criterion[DMWG_CRITERION_DESCRIPTION_KEY] = row['description']
-        criterion[DMWG_CRITERION_SHORT_DESCRIPTION_KEY] = row['shortDescription']
-        criterion[DMWG_CRITERION_DEFAULT_STRENGTH_KEY] = row['defaultOutcomeText']
-        criterion[DMWG_CRITERION_TARGET_INTERPRETATION_KEY] = row['targetInterpretation']
-        criteria[row['id']] = criterion
-    return criteria
 
 #Evaluation keys:
 ## Ones we won't use
@@ -327,11 +312,13 @@ def read_criteria():
 def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
     dmwg_assessment = CriterionAssessment( vci_evaluation[VCI_ID_KEY] )
     criterion = criteria[ vci_evaluation[ VCI_CRITERIA_KEY] ]
-    dmwg_assessment.add_criterion( criterion )
-    dmwg_assessment.add_outcome( transform_outcome( vci_evaluation[ VCI_CRITERIA_STATUS_KEY ] ) )
-    dmwg_assessment.add_explanation( vci_evaluation[ VCI_EVALUATION_EXPLANATION_KEY] )
-    dmwg_assessment.add_variant( transform_variant( vci_evaluation[VCI_EVALUATION_VARIANT_KEY ] , entities) )
+    dmwg_assessment.set_criterion( criterion )
+    dmwg_assessment.set_outcome( term_map[ vci_evaluation[ VCI_CRITERIA_STATUS_KEY ] ] )
+    dmwg_assessment.set_explanation( vci_evaluation[ VCI_EVALUATION_EXPLANATION_KEY] )
+    dmwg_assessment.set_variant( transform_variant( vci_evaluation[VCI_EVALUATION_VARIANT_KEY ] , entities) )
     #Have to do a little work to figure out the strength
+    #VCI has both a modifier and a criteria modifier.  If these both exist they should be the
+    #same, but if one or the other does not exist, then we should use the other one.
     crit_mod = ''
     mod = ''
     if VCI_CRITERIA_MODIFIER_KEY in vci_evaluation:
@@ -340,18 +327,18 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
         mod = vci_evaluation[VCI_MODIFIER_KEY]
     if crit_mod != mod:
         raise Exception
-    defaultStrength = criterion[ DMWG_CRITERION_DEFAULT_STRENGTH_KEY ]
+    defaultStrength = criterion.get_defaultStrength()
     strength = transform_strength( crit_mod, defaultStrength )
     ##TODO: Also add contribution to the evidence line if crit_mod != ''.  A little tricky since I hid the evidence line, but it's gettable 
     add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation['last_modified'], DMWG_ASSESSOR_ROLE)
     #Now the evidence
     if VCI_FREQUENCY_KEY in vci_evaluation:
         frequencies = transform_frequency( vci_evaluation[VCI_FREQUENCY_KEY],  entities)
-        dmwg_assessment.add_information_nodes( frequencies )
-    interpretation.add_criterion_assessment(dmwg_assessment, strength)
+        add_informations( dmwg_assessment, frequencies )
     if VCI_COMPUTATIONAL_KEY in vci_evaluation:
         predictions = transform_computational( vci_evaluation[VCI_COMPUTATIONAL_KEY], entities )
-        dmwg_assessment.add_information_nodes( predictions )
+        add_informations( dmwg_assessment, predictions )
+    add_criterion_assessment(interpretation, dmwg_assessment, strength)
 
 def transform_computational(source, entities):
     predictions = []
@@ -372,38 +359,44 @@ def transform_clingen_comp_data( source,variant):
     predictions = []
     for pred in source:
         score = source[pred][VCI_SCORE_KEY]
+        #Have to sort out the scores....
         if score is not None:
             dmwg_prediction = InSilicoPrediction()
-            dmwg_prediction.set_variant(variant)
-            dmwg_prediction.set_prediction_method(pred)
-            dmwg_prediction.set_prediction_value(score)
-            dmwg_prediction.set_prediction_type( DMWG_MISSENSE_EFFECT_PREDICTOR )
+            #We really also want to set the transcript, but the VCI is not returning that informaiton
+            #dmwg_prediction.set_transcript()
+            dmwg_prediction.set_canonicalAllele(variant)
+            dmwg_prediction.set_algorithm(pred)
+            dmwg_prediction.set_quantitativePrediction(score)
+            dmwg_prediction.set_predictionType( term_map[VCI_MISSENSE_EFFECT_PREDICTOR] )
             predictions.append(dmwg_prediction)
     return predictions
 
 def transform_other_comp_data( source, variant ):
     predictions = []
     for pred in source:
-        dmwg_prediction = InSilicoPrediction()
-        dmwg_prediction.set_prediction_type( DMWG_MISSENSE_EFFECT_PREDICTOR )
-        dmwg_prediction.set_variant( variant )
-        dmwg_prediction.set_prediction_method( pred )
-        preddata = source[pred]
-        pred = preddata[ VCI_PREDICTION_KEY ]
-        scores = preddata[ VCI_SCORE_KEY ]
-        if (scores is None) and (pred is not None):
-            dmwg_prediction.set_prediction_value(pred)
-        elif (scores is not None) and (pred is None):
-            scorestring = ','.join( [str(s) for s in scores ] )
-            dmwg_prediction.set_prediction_value(scorestring)
-        elif (scores is None) and (pred is None):
-            continue #not interested
+        scores = source[pred][ VCI_SCORE_KEY ]
+        predsv  = source[pred][ VCI_PREDICTION_KEY ]
+        if (scores is not None) and (not isinstance(scores, list)):
+            scores = [ scores ]
+        if scores is not None and predsv is not None:
+            preds  = predsv.split(',')
+        elif scores is None and predsv is not None:
+            preds = predsv.split(',')
+            scores = [ None for p in preds ]
+        elif scores is not None and predsv is None:
+            preds = [None for s in scores]
         else:
-            preds = pred.split(',')
-            if len(preds) != len(scores):
-                raise Exception
-            value = ','.join( ["%s (%g)" % (p,s) for p,s in zip(preds, scores) ] )
-            dmwg_prediction.set_prediction_value(value)
+            #both none, ignore
+            continue
+        for (s,p) in zip(scores,preds):
+            dmwg_prediction = InSilicoPrediction()
+            dmwg_prediction.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
+            dmwg_prediction.set_canonicalAllele( variant )
+            dmwg_prediction.set_algorithm( pred )
+            if s is not None:
+                dmwg_prediction.set_quantitativePrediction(s)
+            if p is not None:
+                dmwg_prediction.set_categoricalPrediction(p)
         predictions.append(dmwg_prediction)
     return predictions
 
@@ -413,9 +406,9 @@ def transform_conservation_data( source, variant ):
     results = []
     for constool in source:
         dmwg_conservation = Conservation()
-        dmwg_conservation.set_variant(variant)
-        dmwg_conservation.set_conservation_method(constool)
-        dmwg_conservation.set_conservation_score(source[constool])
+        dmwg_conservation.set_allele(variant)
+        dmwg_conservation.set_algorithm(constool)
+        dmwg_conservation.set_score(source[constool])
         results.append(dmwg_conservation)
     return results
 
@@ -448,57 +441,54 @@ def add_contributions_to_data( data_source, data_targets, entities):
 
 #Clean up the VCI keys and decide if they are per experiment or not.
 def convert_esp_pop(pop):
-    popmap = { VCI_COMBINED_POP: DMWG_COMBINED_POP, VCI_EUROPEAN_AMERICAN_POP: DMWG_EUROPEAN_AMERICAN_POP, VCI_AFRICAN_AMERICAN_POP: DMWG_AFRICAN_AMERICAN_POP }
-    return popmap[pop]
+    if pop == VCI_COMBINED_POP:
+        return 'combined'
+    return 'http://evs.gs.washington.edu/EVS/%s' % pop
 
 def convert_exac_pop(pop):
-    popmap = { VCI_EXAC_AFRICAN: DMWG_AFRICAN_POP, VCI_EXAC_LATINO_POP: DMWG_LATINO_POP,\
-            VCI_EXAC_EAST_ASIAN_POP: DMWG_EAST_ASIAN_POP, VCI_EXAC_FINNISH_POP: DMWG_FINNISH_POP,\
-            VCI_EXAC_NON_FINNISH_EURO_POP: DMWG_NON_FINNISH_EURO_POP , VCI_EXAC_SOUTH_ASIAN_POP: DMWG_SOUTH_ASIAN_POP,\
-            VCI_EXAC_OTHER_POP: DMWG_OTHER_POP , VCI_COMBINED_POP: DMWG_COMBINED_POP}
-    return popmap[pop]
+    if pop == VCI_COMBINED_POP: return 'combined'
+    if pop == VCI_EXAC_OTHER_POP: return 'other'
+    return 'http://broadinstitute.org/populations/%s' % pop
 
 def convert_1000_genomes_pop(pop):
-    popmap = { VCI_1000_GENOMES_AFRICAN_POP: DMWG_AFRICAN_POP, VCI_1000_GENOMES_LATINO_POP: DMWG_LATINO_POP,\
-            VCI_1000_GENOMES_EAST_ASIAN_POP: DMWG_EAST_ASIAN_POP, VCI_1000_GENOMES_EURO_POP: DMWG_EUROPEAN_POP , \
-            VCI_1000_GENOMES_SOUTH_ASIAN_POP: DMWG_SOUTH_ASIAN_POP,  VCI_COMBINED_POP: DMWG_COMBINED_POP,
-            VCI_1000_GENOMES_ESP_AA_POP: DMWG_AFRICAN_AMERICAN_POP, VCI_1000_GENOMES_ESP_EA_POP: DMWG_EUROPEAN_AMERICAN_POP}
-    return popmap[pop]
-
-
+    if pop == VCI_COMBINED_POP: return 'combined'
+    if pop in [ VCI_1000_GENOMES_ESP_AA_POP, VCI_1000_GENOMES_ESP_EA_POP ]:
+        return 'http://evs.gs.washington.edu/EVS/%s' % pop[-2:].upper()
+    return 'http://www.internationalgenome.org/category/population/%s' % pop
 
 def transform_1000_genomes_data( source, dmwg_variant ):
     alt_allele = dmwg_variant.get_allele('GRCh37') #right?
     frequencies = []
     for pop in source:
-        print pop
         if pop != VCI_FREQUENCY_ALLELE_KEY:
             if pop in [VCI_1000_GENOMES_ESP_EA_POP, VCI_1000_GENOMES_ESP_AA_POP]:
-                dmwg_af = AlleleFrequency(DMWG_1000_GENOMES_ESP)
+                dmwg_af = AlleleFrequency()
+                dmwg_af.set_ascertainment(DMWG_1KGESP)
             else:
-                dmwg_af = AlleleFrequency(DMWG_1000_GENOMES)
+                dmwg_af = AlleleFrequency()
+                dmwg_af.set_ascertainment(DMWG_1KG)
             frequencies.append(dmwg_af)
-            dmwg_af.set_variant( dmwg_variant )
+            dmwg_af.set_allele( dmwg_variant )
             dmwg_af.set_population(  convert_1000_genomes_pop(pop) )
             if len( source[pop][VCI_ALLELE_COUNT_KEY] ) == 0:
-                dmwg_af.set_allele_number( 0 )
+                dmwg_af.set_alleleNumber( 0 )
             else:
-                dmwg_af.set_allele_number( sum( source[pop][VCI_ALLELE_COUNT_KEY].values() ) )
+                dmwg_af.set_alleleNumber( sum( source[pop][VCI_ALLELE_COUNT_KEY].values() ) )
             #TODO: Should the element be not here, or should it be 0 or should it be null?
-            if dmwg_af.get_allele_number() > 0:
+            if dmwg_af.get_alleleNumber() > 0:
                 if alt_allele in source[pop][VCI_ALLELE_FREQUENCY_KEY]:
-                    dmwg_af.set_allele_frequency( source[pop][VCI_ALLELE_FREQUENCY_KEY][alt_allele] )
+                    dmwg_af.set_alleleFrequency( source[pop][VCI_ALLELE_FREQUENCY_KEY][alt_allele] )
                 else:
-                    dmwg_af.set_allele_frequency( 0.  )
+                    dmwg_af.set_alleleFrequency( 0.  )
             if alt_allele in source[pop][VCI_ALLELE_COUNT_KEY]:
-                dmwg_af.set_allele_count( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
+                dmwg_af.set_alleleCount( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
             else:
-                dmwg_af.set_allele_count( 0 )
+                dmwg_af.set_alleleCount( 0 )
             hkey = '%s|%s' % (alt_allele,alt_allele)
             if hkey in source[pop][VCI_GENOTYPE_COUNT_KEY]:
-                dmwg_af.set_homozygous_count(  source[pop][VCI_GENOTYPE_COUNT_KEY][hkey] )
+                dmwg_af.set_homozygousAlleleIndividualCount(  source[pop][VCI_GENOTYPE_COUNT_KEY][hkey] )
             else:
-                dmwg_af.set_homozygous_count( 0 )
+                dmwg_af.set_homozygousAlleleIndividualCount( 0 )
     return frequencies
 
 
@@ -506,24 +496,25 @@ def transform_exac_data( source, dmwg_variant ):
     frequencies = []
     for pop in source:
         if pop != VCI_FREQUENCY_ALLELE_KEY:
-            dmwg_af = AlleleFrequency(DMWG_EXAC)
+            dmwg_af = AlleleFrequency()
+            dmwg_af.set_ascertainment(DMWG_EXAC)
             frequencies.append(dmwg_af)
             dmwg_af.set_population( convert_exac_pop(pop) )
-            dmwg_af.set_variant( dmwg_variant )
+            dmwg_af.set_allele( dmwg_variant )
             if VCI_ALLELE_COUNT_KEY in source[pop]:
-                dmwg_af.set_allele_count(  source[pop][VCI_ALLELE_COUNT_KEY] )
+                dmwg_af.set_alleleCount(  source[pop][VCI_ALLELE_COUNT_KEY] )
             else:
-                dmwg_af.set_allele_count( 0 )
+                dmwg_af.set_alleleCount( 0 )
             if VCI_ALLELE_NUMBER_KEY in source[pop]:
-                dmwg_af.set_allele_number(source[pop][VCI_ALLELE_NUMBER_KEY])
+                dmwg_af.set_alleleNumber(source[pop][VCI_ALLELE_NUMBER_KEY])
             else:
-                dmwg_af.set_allele_number(0)
-            if dmwg_af.get_allele_number() > 0:
-                dmwg_af.set_allele_frequency(source[pop][VCI_ALLELE_FREQUENCY_KEY])
+                dmwg_af.set_alleleNumber(0)
+            if dmwg_af.get_alleleNumber() > 0:
+                dmwg_af.set_alleleFrequency(source[pop][VCI_ALLELE_FREQUENCY_KEY])
             if VCI_HOMOZYGOUS_GENOTYPE_COUNT_KEY in source[pop]:
-                dmwg_af.set_homozygous_count( source[pop][VCI_HOMOZYGOUS_GENOTYPE_COUNT_KEY] )
+                dmwg_af.set_homozygousAlleleIndividualCount( source[pop][VCI_HOMOZYGOUS_GENOTYPE_COUNT_KEY] )
             else:
-                dmwg_af.set_homozygous_count( 0 )
+                dmwg_af.set_homozygousAlleleIndividualCount( 0 )
     return frequencies
             
 
@@ -533,28 +524,31 @@ def transform_esp_data(source,dmwg_variant):
     frequencies = []
     for pop in source:
         if pop != VCI_FREQUENCY_ALLELE_KEY:
-            dmwg_af = AlleleFrequency( DMWG_ESP )
+            dmwg_af = AlleleFrequency( )
+            print DMWG_ESP
+            dmwg_af.set_ascertainment(DMWG_ESP)
             frequencies.append(dmwg_af)
             dmwg_af.set_population( convert_esp_pop(pop) )
-            dmwg_af.set_variant( dmwg_variant )
+            dmwg_af.set_allele( dmwg_variant )
             #Assumes ESP uses v37
             if (len(source[pop][VCI_ALLELE_COUNT_KEY]) > 0) and (alt_allele in source[pop][VCI_ALLELE_COUNT_KEY]):
-                dmwg_af.set_allele_count( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
+                dmwg_af.set_alleleCount( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
             else:
-                dmwg_af.set_allele_count( 0 )
-            dmwg_af.set_allele_number( sum(source[pop][VCI_ALLELE_COUNT_KEY].values()) )
-            if dmwg_af.get_allele_number() > 0:
-                f = 1.*dmwg_af.get_allele_count() / dmwg_af.get_allele_number()
-                dmwg_af.set_allele_frequency(f)
+                dmwg_af.set_alleleCount( 0 )
+            dmwg_af.set_alleleNumber( sum(source[pop][VCI_ALLELE_COUNT_KEY].values()) )
+            if dmwg_af.get_alleleNumber() > 0:
+                f = 1.*dmwg_af.get_alleleCount() / dmwg_af.get_alleleNumber()
+                dmwg_af.set_alleleFrequency(f)
             if len(source[pop][VCI_GENOTYPE_COUNT_KEY]) > 0:
                 homkey = '%s%s' % (alt_allele,alt_allele)
-                dmwg_af.set_homozygous_count(source[pop][VCI_GENOTYPE_COUNT_KEY][homkey])
+                dmwg_af.set_homozygousAlleleIndividualCount(source[pop][VCI_GENOTYPE_COUNT_KEY][homkey])
                 hetkey1 = '%s%s' % (ref_allele,alt_allele)
                 hetkey2 = '%s%s' % (alt_allele,ref_allele)
                 if hetkey1 in  source[pop][VCI_GENOTYPE_COUNT_KEY]:
-                    dmwg_af.set_heterozygous_count(source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey1])
+                    dmwg_af.set_heterozygousAlleleIndividualCount(source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey1])
                 elif hetkey2 in  source[pop][VCI_GENOTYPE_COUNT_KEY]:
-                    dmwg_af.set_heterozygous_count( source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey2] )
+                    dmwg_af.set_heterozygousAlleleIndividualCount( source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey2] )
+    f = frequencies[0]
     return frequencies
 
 
@@ -569,16 +563,8 @@ def transform_strength(modifier, defaultStrength):
         mod = 'p'
     elif modifier == 'moderate':
         mod = 'm'
-    strength = defaultStrength[:-1] + mod
+    strength = defaultStrength.get_coding()[0].get_id()[:-1] + mod
     return strength
-
-def transform_outcome(vci_value):
-    if vci_value == VCI_MET:
-        return DMWG_MET
-    elif vci_value == VCI_NOT_MET:
-        return DMWG_NOT_MET
-    else:
-        raise Exception
 
 def transform_evaluations(evaluation_list,interpretation,entities):
     criteria = read_criteria()
@@ -599,50 +585,36 @@ def transform_condition(vci_local_disease,interpretation,entities):
     vci_disease = entities.get_entity(vci_disease_id)
     dmwg_disease = entities.get_transformed(vci_disease_id)
     if dmwg_disease is None:
-        orpha = vci_disease[VCI_ORPHA_KEY]
-        orphaIRI = 'http://www.orpha.net/ORDO/Orphanet_%s' % orpha
-        orphaName = 'Orphanet:%s' % orpha
-        dmwg_disease = Disease(orphaIRI, orphaName)
+        orpha_code = vci_disease[VCI_ORPHA_KEY]
+        orpha_name = vci_disease[VCI_TERM_KEY]
+        dmwg_disease = create_orphanet_disease(orpha_code, orpha_name)
         entities.add_transformed(vci_disease_id, dmwg_disease)
     dmwg_condition = MendelianCondition()
     dmwg_condition.add_disease(dmwg_disease)
     interpretation.add_condition(dmwg_condition)
-    #contribution = Contribution(agent, ondate, role)
-    #target.add_contribution(contribution)
  
-
-#    if isinstance(vcirep, dict):
-#        dmwg_rep={}
-#        dmwg_rep[DMWG_ID_KEY] = entities.generate_blank_node_key(source,DMWG_CONDITION_TYPE)
-#        dmwg_rep[DMWG_TYPE_KEY] = DMWG_CONDITION_TYPE
-#        dmwg_rep[DMWG_CONDITION_EXPLANATION_KEY] = vcirep[VCI_TERM_KEY]
-#        orpha = vcirep[VCI_ORPHA_KEY]
-#        orphaIRI = 'http://www.orpha.net/ORDO/Orphanet_%s' % orpha
-#        dmwg_rep[DMWG_CONDITION_DISEASE_KEY] = [{DMWG_ID_KEY: orphaIRI, 'Name':'Orphanet:%s' % orpha}]
-#    else:
-#        dmwg_rep = vcirep
-#    target[DMWG_CONDITION_KEY] = dmwg_rep
-
 def transform(jsonf):
     vci = json.load(jsonf)
-    print '\n',vci.keys(),'\n'
-    #entities = collect_entities(vci)
     entities = EntityMap(vci)
     interpretation = transform_root(vci)
     transform_provisional_variant(vci['provisional_variant'],interpretation,entities)
     variant = transform_variant(vci[VCI_VARIANT_KEY],entities)
-    interpretation.add_variant(variant)
+    interpretation.set_variant(variant)
     transform_condition(vci[VCI_CONDITION_KEY], interpretation, entities)
     transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
     return interpretation
 
-def test():
-    inf = file('test_interp_1.vci.json','r')
+def transform_json_file(infilename,outfilename):
+    inf = file(infilename,'r')
     interp = transform(inf)
     inf.close()
-    outf = file('test_interp_1.dmwg.json','w')
+    outf = file(outfilename,'w')
     json.dump(interp,outf,sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder)
     outf.close()
 
+def test():
+    transform_json_file('test_interp_1.vci.json', 'test_interp_1.dmwg.json')
+
+#TODO: add some decent parameter processing.
 if __name__ == '__main__':
-    test()
+    transform_json_file(sys.argv[1],sys.argv[2])

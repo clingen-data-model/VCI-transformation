@@ -1,11 +1,126 @@
 #To run these tests, run "pytest" from the command line
 from VCI2DMWG import *
-from interpretation import *
+from interpretation_generated import *
 import json
 
 class MockNode(Node):
     def add_contribution(self,c):
         self.contribution = c
+
+class CodingUsingNode(Node):
+    def __init__(self,iri=None):
+        self.data = None
+    @get_factory_coding('VS003')
+    def add_value(self,x):
+        self.data = x
+
+class ConceptUsingNode(Node):
+    def __init__(self,iri=None):
+        self.data = None
+    @get_factory_concept('VS003')
+    def add_value(self,x):
+        self.data = x
+
+#Add a coding, it should pass directly through
+def test_add_coding_directly():
+    node=CodingUsingNode()
+    c = Coding()
+    node.add_value(c)
+    assert node.data == c
+
+#Add a string, it should find the right coding
+def test_add_coding_by_code():
+    node=CodingUsingNode()
+    node.add_value('LA6668-3')
+    coding = node.data
+    assert isinstance(coding, Coding)
+    assert coding.get_id() == 'http://loinc.org/LA6668-3'
+    assert coding.get_code() == 'LA6668-3'
+    assert coding.get_system() == 'http://loinc.org/'
+    assert coding.get_display() == 'Pathogenic'
+
+def test_add_coding_by_id():
+    node=CodingUsingNode()
+    node.add_value('http://loinc.org/LA6668-3')
+    coding = node.data
+    assert isinstance(coding, Coding)
+    assert coding.get_id() == 'http://loinc.org/LA6668-3'
+    assert coding.get_code() == 'LA6668-3'
+    assert coding.get_system() == 'http://loinc.org/'
+    assert coding.get_display() == 'Pathogenic'
+
+def test_add_coding_by_display():
+    node=CodingUsingNode()
+    node.add_value('Pathogenic')
+    coding = node.data
+    assert isinstance(coding, Coding)
+    assert coding.get_id() == 'http://loinc.org/LA6668-3'
+    assert coding.get_code() == 'LA6668-3'
+    assert coding.get_system() == 'http://loinc.org/'
+    assert coding.get_display() == 'Pathogenic'
+
+def test_add_coding_not_found():
+    node=CodingUsingNode()
+    caught=False
+    try:
+        node.add_value('derp')
+    except:
+        caught = True
+    assert caught
+
+def test_add_concept_directly():
+    node=ConceptUsingNode()
+    cc = CodeableConcept()
+    node.add_value(cc)
+    concept = node.data
+    assert concept == cc
+
+def test_add_concept_by_code():
+    node=ConceptUsingNode()
+    node.add_value('LA6668-3')
+    concept = node.data
+    coding = concept.get_coding()[0]
+    assert isinstance(coding, Coding)
+    assert coding.get_id() == 'http://loinc.org/LA6668-3'
+    assert coding.get_code() == 'LA6668-3'
+    assert coding.get_system() == 'http://loinc.org/'
+    assert coding.get_display() == 'Pathogenic'
+
+def test_add_concept_by_id():
+    node=ConceptUsingNode()
+    node.add_value('http://loinc.org/LA6668-3')
+    concept = node.data
+    coding = concept.get_coding()[0]
+    assert isinstance(coding, Coding)
+    assert coding.get_id() == 'http://loinc.org/LA6668-3'
+    assert coding.get_code() == 'LA6668-3'
+    assert coding.get_system() == 'http://loinc.org/'
+    assert coding.get_display() == 'Pathogenic'
+
+
+def test_add_concept_by_display():
+    node=ConceptUsingNode()
+    node.add_value('Pathogenic')
+    concept = node.data
+    coding = concept.get_coding()[0]
+    assert isinstance(coding, Coding)
+    assert coding.get_id() == 'http://loinc.org/LA6668-3'
+    assert coding.get_code() == 'LA6668-3'
+    assert coding.get_system() == 'http://loinc.org/'
+    assert coding.get_display() == 'Pathogenic'
+
+def test_add_concept_not_found():
+    node=ConceptUsingNode()
+    textval = 'Unknown Text'
+    node.add_value(textval)
+    concept = node.data
+    caught = False
+    try:
+        coding = concept.get_coding()[0]
+    except:
+        caught = True
+    assert caught
+    assert concept.get_text() == textval
 
 def test_add_contrib():
     ondate = 'DATESTRING'
@@ -34,8 +149,9 @@ def test_add_contrib():
     agent = contribution.get_agent()
     assert agent.get_name() == 'Amanda Thomas'
     assert agent.get_id() == IRI_BASE + '/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/'
-    assert contribution.get_ondate() == ondate
-    assert contribution.get_role() == role
+    assert contribution.get_onDate() == ondate
+    print contribution.get_role()
+    assert contribution.get_role().get_text() == role
 
 def test_add_contrib_IRI():
     tlist = []
@@ -61,8 +177,8 @@ def test_add_contrib_IRI():
     agent = contribution.get_agent()
     assert agent.get_id() == IRI_BASE + '/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/'
     assert agent.get_name() == 'Jed Clampett'
-    assert contribution.get_ondate() == ondate
-    assert contribution.get_role() == role   
+    assert contribution.get_onDate() == ondate
+    assert contribution.get_role().get_text() == role   
 
 def test_add_contrib_IRI_only():
     tlist = []
@@ -83,8 +199,8 @@ def test_add_contrib_IRI_only():
     agent = contribution.get_agent()
     assert agent.get_id() == IRI_BASE + '/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/'
     assert DMWG_AGENT_NAME_KEY not in agent.data
-    assert contribution.get_ondate() == ondate
-    assert contribution.get_role() == role   
+    assert contribution.get_onDate() == ondate
+    assert contribution.get_role().get_text() == role   
 
 
 def test_canonical_have_car():
@@ -207,15 +323,21 @@ def test_freq_esp():
     assert len(frequencies) == 1
     freqnode = frequencies[0]
     #Add getters instead?
-    assert freqnode.data[DMWG_TYPE_KEY] == DMWG_ALLELE_FREQUENCY_TYPE
-    assert freqnode.data[DMWG_ASCERTAINMENT_KEY] == DMWG_ESP
-    assert freqnode.data[DMWG_POPULATION_KEY] == DMWG_COMBINED_POP
-    assert freqnode.data[DMWG_VARIANT_KEY].get_id() == canonical_id
-    assert freqnode.data[DMWG_ALLELE_COUNT_KEY] == 24
-    assert freqnode.data[DMWG_ALLELE_NUMBER_KEY] == 24 + 12974
-    assert abs(freqnode.data[DMWG_ALLELE_FREQUENCY_KEY] - 24./(24+12974)) < 0.0001
-    assert freqnode.data[DMWG_HOMOZYGOUS_INDIVIDUAL_COUNT_KEY] == 0
-    assert freqnode.data[DMWG_HETEROZYGOUS_INDIVIDUAL_COUNT_KEY] == 24
+    assert isinstance(freqnode, AlleleFrequency)
+    assert freqnode.get_ascertainment().get_coding()[0].get_display() == DMWG_ESP
+    fpop = freqnode.get_population()
+    assert isinstance(fpop, CodeableConcept)
+    codings = fpop.get_coding()
+    assert len(codings) == 1
+    popcode = codings[0]
+    assert isinstance(popcode, Coding)
+    assert popcode.get_id() == 'http://clinicalgenome.org/datamodel/population-type/combined'
+    assert freqnode.get_allele().get_id() == canonical_id
+    assert freqnode.get_alleleCount() == 24
+    assert freqnode.get_alleleNumber() == 24 + 12974
+    assert abs(freqnode.get_alleleFrequency() - 24./(24+12974)) < 0.0001
+    assert freqnode.get_homozygousAlleleIndividualCount() == 0
+    assert freqnode.get_heterozygousAlleleIndividualCount() == 24
 
 
 def test_freq_esp_empty():
@@ -239,9 +361,9 @@ def test_freq_esp_empty():
     assert len(freqs) == 1
     freq = freqs[0]
     assert isinstance(freq, AlleleFrequency)
-    assert freq.data[DMWG_VARIANT_KEY].get_id() == canonical_id
-    assert freq.data[DMWG_ALLELE_COUNT_KEY] == 0 
-    assert freq.data[DMWG_ALLELE_NUMBER_KEY] == 0
+    assert freq.get_allele().get_id() == canonical_id
+    assert freq.get_alleleCount() == 0 
+    assert freq.get_alleleNumber() == 0
 
 def test_freq_exac():
     sourcetxt=''' {
@@ -290,19 +412,20 @@ def test_freq_exac():
     canonical_id = rep['@id']
     freqs = transform_frequency( source['population'], ents )
     assert len(freqs) == 4
-    chex = { DMWG_LATINO_POP: (11574, 0.000172, 2, 0),\
-             DMWG_EAST_ASIAN_POP: (8642, 0., 0, 0), \
-             DMWG_AFRICAN_POP: (10404, 0.000096, 1, 0), \
-             DMWG_COMBINED_POP: (121374, 0.001104, 134, 1) }
+    prefix = 'http://broadinstitute.org/populations/%s'
+    chex = { prefix % 'amr': (11574, 0.000172, 2, 0),\
+             prefix % 'eas': (8642, 0., 0, 0), \
+             prefix % 'afr':  (10404, 0.000096, 1, 0), \
+             'http://clinicalgenome.org/datamodel/population-type/combined': (121374, 0.001104, 134, 1) }
     for freq in freqs:
-        assert freq.data[DMWG_TYPE_KEY] == DMWG_ALLELE_FREQUENCY_TYPE
-        assert freq.data[DMWG_ASCERTAINMENT_KEY] == DMWG_EXAC
-        values = chex[freq.data[DMWG_POPULATION_KEY]]
-        assert freq.data[DMWG_VARIANT_KEY].get_id() == canonical_id
-        assert freq.data[DMWG_ALLELE_COUNT_KEY] == values[2]
-        assert freq.data[DMWG_ALLELE_NUMBER_KEY] == values[0]
-        assert abs(freq.data[DMWG_ALLELE_FREQUENCY_KEY] - values[1]) < 0.0001
-        assert freq.data[DMWG_HOMOZYGOUS_INDIVIDUAL_COUNT_KEY] == values[3]
+        assert isinstance(freq, AlleleFrequency)
+        assert freq.get_ascertainment().get_coding()[0].get_id() == 'http://clinicalgenome.org/datamodel/ascertainment-type/ExAC'
+        values = chex[freq.get_population().get_coding()[0].get_id()]
+        assert freq.get_allele().get_id() == canonical_id
+        assert freq.get_alleleCount() == values[2]
+        assert freq.get_alleleNumber() == values[0]
+        assert abs(freq.get_alleleFrequency()- values[1]) < 0.0001
+        assert freq.get_homozygousAlleleIndividualCount() == values[3]
 
 def test_thousandGenomes():
     src='''
@@ -333,23 +456,27 @@ def test_thousandGenomes():
     canonical_id = rep['@id']
     freqs = transform_frequency( source['population'],  ents)
     assert len(freqs) == 8
-    ex = { DMWG_LATINO_POP: (DMWG_1000_GENOMES,694, 0., 0, 0),\
-           DMWG_EAST_ASIAN_POP: (DMWG_1000_GENOMES,1008, 0., 0, 0), \
-           DMWG_AFRICAN_POP: (DMWG_1000_GENOMES,1322, 0., 0, 0), \
-           DMWG_AFRICAN_AMERICAN_POP: (DMWG_1000_GENOMES_ESP,4406, 0., 0, 0), \
-           DMWG_EUROPEAN_POP: (DMWG_1000_GENOMES,1006, 0.000994, 1, 0), \
-           DMWG_EUROPEAN_AMERICAN_POP: (DMWG_1000_GENOMES_ESP,8600, 0.000697, 6, 0), \
-           DMWG_COMBINED_POP: (DMWG_1000_GENOMES,5008, 0.0001996, 1, 0), 
-           DMWG_SOUTH_ASIAN_POP: (DMWG_1000_GENOMES,978, 0., 0, 0) }
+    p1 = 'http://www.internationalgenome.org/category/population/%s'
+    p2 = 'http://evs.gs.washington.edu/EVS/%s'
+    comb = 'http://clinicalgenome.org/datamodel/population-type/combined'
+    DMWG_1000_GENOMES = 'http://clinicalgenome.org/datamodel/ascertainment-type/1KG' 
+    DMWG_1000_GENOMES_ESP =  'http://clinicalgenome.org/datamodel/ascertainment-type/1KG_ESP'
+    ex = { p1 % 'amr': (DMWG_1000_GENOMES,694, 0., 0, 0),\
+           p1 % 'eas': (DMWG_1000_GENOMES,1008, 0., 0, 0), \
+           p1 % 'afr': (DMWG_1000_GENOMES,1322, 0., 0, 0), \
+           p2 % 'AA': (DMWG_1000_GENOMES_ESP,4406, 0., 0, 0), \
+           p1 % 'eur': (DMWG_1000_GENOMES,1006, 0.000994, 1, 0), \
+           p2 % 'EA': (DMWG_1000_GENOMES_ESP,8600, 0.000697, 6, 0), \
+           comb: (DMWG_1000_GENOMES,5008, 0.0001996, 1, 0), 
+           p1 % 'sas': (DMWG_1000_GENOMES,978, 0., 0, 0) }
     for freq in freqs:
-        assert freq.data[DMWG_VARIANT_KEY].get_id() == canonical_id
-        values = ex[freq.data[DMWG_POPULATION_KEY]]
-        assert freq.data[DMWG_ASCERTAINMENT_KEY] == values[0]
-        assert freq.data[DMWG_TYPE_KEY] == DMWG_ALLELE_FREQUENCY_TYPE
-        assert freq.data[DMWG_ALLELE_NUMBER_KEY] == values[1]
-        assert abs(freq.data[DMWG_ALLELE_FREQUENCY_KEY] - values[2]) < 0.0001
-        assert freq.data[DMWG_ALLELE_COUNT_KEY] == values[3]
-        assert freq.data[DMWG_HOMOZYGOUS_INDIVIDUAL_COUNT_KEY] == values[4]
+        assert freq.get_allele().get_id() == canonical_id
+        values = ex[freq.get_population().get_coding()[0].get_id()]
+        assert freq.get_ascertainment().get_coding()[0].get_id() == values[0]
+        assert freq.get_alleleNumber() == values[1]
+        assert abs(freq.get_alleleFrequency()- values[2]) < 0.0001
+        assert freq.get_alleleCount() == values[3]
+        assert freq.get_homozygousAlleleIndividualCount() == values[4]
 
 def test_conservation():
     sourcetext='''
@@ -390,16 +517,16 @@ def test_conservation():
     canonical_id = rep['@id']
     comps = transform_computational( source['computational'],  ents)
     assert len(comps) == 6
-    chex={"phylop20way": 0.948, \
-          "phylop7way": 9.598, \
-          "phastconsp20way": 0.953, \
-          "siphy": 19.1358, \
-          "gerp": 5.38, \
-          "phastconsp7way": 1 }
+    chex={"phylop20way": '0.948', \
+          "phylop7way": '9.598', \
+          "phastconsp20way": '0.953', \
+          "siphy": '19.1358', \
+          "gerp": '5.38', \
+          "phastconsp7way": '1' }
     for comp in comps:
-        assert comp.data[DMWG_VARIANT_KEY].get_id() == canonical_id
-        score = chex[comp.data[DMWG_CONSERVATION_METHOD_KEY]]
-        assert comp.data[DMWG_CONSERVATION_SCORE_KEY] == score
+        assert comp.get_allele().get_id() == canonical_id
+        score = chex[ comp.get_algorithm() ]
+        assert comp.get_score()== score
 
 
     

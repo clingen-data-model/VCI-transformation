@@ -253,6 +253,23 @@ class InSilicoPrediction(Node):
     def set_prediction_type(self, ptype):
         self.data[DMWG_INSILICO_PREDICTION_CLASS_KEY] = ptype
 
+class CodableConcept(Node):
+    def __init__(self,ccid):
+        self.data = {}
+        self.data[DMWG_TYPE_KEY] = DMWG_CODABLE_CONCEPT_TYPE
+        self.data[DMWG_ID_KEY] = ccid
+    def add_coding(self,coding):
+        self.data[DMWG_CODING] = coding
+
+def Coding(Node):
+    def __init__(self,codingid,system,code,display):
+        self.data = {}
+        self.data[DMWG_TYPE_KEY] = DMWG_CODING_TYPE
+        self.data[DMWG_ID_KEY] = codingid
+        self.data[DMWG_SYSTEM_KEY] = system
+        self.data[DMWG_CODE_KEY] = code
+        self.data[DMWG_DISPLAY_KEY] = display
+
 
 #This declutters a bit by only printing the full node the first time we encounter it.  
 #But that's not necessarily in the highest node, because of the ordering of the keys.
