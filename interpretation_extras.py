@@ -64,23 +64,23 @@ def read_criteria():
 #serializer can know whether to rewrite it or not.  We could and perhaps
 #should add all the methods to build the variant correctly, but not right now.  
 #TODO Pull out strings.
-class Variant(Node):
-    def __init__(self, ar_rep):
-        self.data={}
-        for k,v in ar_rep.items():
-            self.data[k] = v
-    def get_allele( self, reference ):
-        allele_list = self.data['genomicAlleles']
-        for allele in allele_list:
-            if allele['referenceGenome'] == reference:
-                return allele['coordinates'][0]['allele'] #why is coords a list?
-        raise Exception
-    def get_ref_allele( self, reference ):
-        allele_list = self.data['genomicAlleles']
-        for allele in allele_list:
-            if allele['referenceGenome'] == reference:
-                return allele['coordinates'][0]['referenceAllele'] #why a list?
-        raise Exception
+#class Variant(Node):
+#    def __init__(self, ar_rep):
+#        self.data={}
+#        for k,v in ar_rep.items():
+#            self.data[k] = v
+#    def get_allele( self, reference ):
+#        allele_list = self.data['genomicAlleles']
+#        for allele in allele_list:
+#            if allele['referenceGenome'] == reference:
+#                return allele['coordinates'][0]['allele'] #why is coords a list?
+#        raise Exception
+#    def get_ref_allele( self, reference ):
+#        allele_list = self.data['genomicAlleles']
+#        for allele in allele_list:
+#            if allele['referenceGenome'] == reference:
+#                return allele['coordinates'][0]['referenceAllele'] #why a list?
+#        raise Exception
 
 
 

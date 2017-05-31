@@ -31,3 +31,5 @@ In addition there are several static files:
   * CodingFactory: decorators to handle codings and codeable concepts.
 
 
+
+The tests are to be run using `pytest`.

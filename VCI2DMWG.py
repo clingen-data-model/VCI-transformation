@@ -6,6 +6,7 @@ import csv
 from interpretation_generated import *
 from interpretation_extras import *
 from interpretation_constants import *
+from Allele import Variant
 
 IRI_BASE='https://vci.clinicalgenome.org'
 VCI_ID_KEY = '@id'
@@ -426,7 +427,6 @@ def transform_frequency( source, entities):
         frequencies += exac_frequencies
     if VCI_1000_GENOMES_KEY in popdata:
         tg_frequencies = transform_1000_genomes_data(popdata[VCI_1000_GENOMES_KEY], dmwg_variant)
-        print "HI",len(tg_frequencies)
         frequencies += tg_frequencies
     #Add contributors to data nodes
     add_contributions_to_data( source , frequencies, entities )
@@ -525,7 +525,6 @@ def transform_esp_data(source,dmwg_variant):
     for pop in source:
         if pop != VCI_FREQUENCY_ALLELE_KEY:
             dmwg_af = AlleleFrequency( )
-            print DMWG_ESP
             dmwg_af.set_ascertainment(DMWG_ESP)
             frequencies.append(dmwg_af)
             dmwg_af.set_population( convert_esp_pop(pop) )
@@ -613,7 +612,7 @@ def transform_json_file(infilename,outfilename):
     outf.close()
 
 def test():
-    transform_json_file('test_interp_1.vci.json', 'test_interp_1.dmwg.json')
+    transform_json_file('test_data/test_interp_1.vci.json', 'test_data/test_interp_1.dmwg.json')
 
 #TODO: add some decent parameter processing.
 if __name__ == '__main__':

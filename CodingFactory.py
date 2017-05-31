@@ -9,7 +9,6 @@ class CodingFactory:
         files = os.listdir(vsdir)
         for f in files:
             if f.startswith('VS'):
-                print f
                 inf = file('%s/%s'% (vsdir,f),'r')
                 valueset = json.load(inf)
                 vsid = valueset['id']
@@ -39,7 +38,6 @@ class CodingFactory:
             concept.add_coding(coding)
         except:
             # value didn't translate to a coding
-            print lookup, type(lookup)
             concept.set_text(lookup)
         return concept
 

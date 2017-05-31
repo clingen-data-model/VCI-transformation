@@ -94,226 +94,133 @@
                             "information": [
                                 {
                                     "allele": {
-                                        "@context": "http://reg.genome.network/schema/allele.jsonld",
-                                        "@id": "http://reg.genome.network/allele/CA229854",
-                                        "externalRecords": {
-                                            "ClinVarAlleles": [
-                                                {
-                                                    "@id": "http://www.ncbi.nlm.nih.gov/clinvar/?term=108634[alleleid]",
-                                                    "alleleId": 108634,
-                                                    "preferredName": "NM_000277.1(PAH):c.929C>A (p.Ser310Tyr)"
-                                                }
-                                            ],
-                                            "ClinVarVariations": [
-                                                {
-                                                    "@id": "http://www.ncbi.nlm.nih.gov/clinvar/variation/102898",
-                                                    "RCV": [
-                                                        "RCV000089161"
-                                                    ],
-                                                    "variationId": 102898
-                                                }
-                                            ],
-                                            "dbSNP": [
-                                                {
-                                                    "@id": "http://www.ncbi.nlm.nih.gov/snp/62642913",
-                                                    "rs": 62642913
-                                                }
-                                            ]
-                                        },
-                                        "genomicAlleles": [
+                                        "CanonicalAlleleType": "nucleotide",
+                                        "complexity": "simple",
+                                        "id": "http://reg.genome.network/allele/CA229854",
+                                        "relatedContextualAllele": [
                                             {
-                                                "chromosome": "12",
-                                                "coordinates": [
+                                                "CanonicalAllele": "http://reg.genome.network/allele/CA229854",
+                                                "allele": "T",
+                                                "alleleName": [
                                                     {
-                                                        "allele": "T",
-                                                        "end": 102846935,
-                                                        "referenceAllele": "G",
-                                                        "start": 102846934
+                                                        "name": "NC_000012.12:g.102846935G>T",
+                                                        "nameType": "hgvs"
+                                                    },
+                                                    {
+                                                        "name": "CM000674.2:g.102846935G>T",
+                                                        "nameType": "hgvs"
                                                     }
                                                 ],
-                                                "hgvs": [
-                                                    "NC_000012.12:g.102846935G>T",
-                                                    "CM000674.2:g.102846935G>T"
-                                                ],
-                                                "referenceGenome": "GRCh38",
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS000060"
+                                                "contextualAlleleType": "genomic",
+                                                "preferred": true,
+                                                "referenceCoordinate": {
+                                                    "end": {
+                                                        "index": 102846935
+                                                    },
+                                                    "refAllele": "G",
+                                                    "referenceSequence": {
+                                                        "display": "NC_000012.12",
+                                                        "reference": "http://reg.genome.network/refseq/RS000060"
+                                                    },
+                                                    "start": {
+                                                        "index": 102846934
+                                                    }
+                                                },
+                                                "type": "ContextualAllele"
                                             },
                                             {
-                                                "chromosome": "12",
-                                                "coordinates": [
+                                                "CanonicalAllele": "http://reg.genome.network/allele/CA229854",
+                                                "allele": "T",
+                                                "alleleName": [
                                                     {
-                                                        "allele": "T",
-                                                        "end": 103240713,
-                                                        "referenceAllele": "G",
-                                                        "start": 103240712
+                                                        "name": "NC_000012.11:g.103240713G>T",
+                                                        "nameType": "hgvs"
+                                                    },
+                                                    {
+                                                        "name": "CM000674.1:g.103240713G>T",
+                                                        "nameType": "hgvs"
                                                     }
                                                 ],
-                                                "hgvs": [
-                                                    "NC_000012.11:g.103240713G>T",
-                                                    "CM000674.1:g.103240713G>T"
-                                                ],
-                                                "referenceGenome": "GRCh37",
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS000036"
+                                                "contextualAlleleType": "genomic",
+                                                "referenceCoordinate": {
+                                                    "end": {
+                                                        "index": 103240713
+                                                    },
+                                                    "refAllele": "G",
+                                                    "referenceSequence": {
+                                                        "display": "NC_000012.11",
+                                                        "reference": "http://reg.genome.network/refseq/RS000036"
+                                                    },
+                                                    "start": {
+                                                        "index": 103240712
+                                                    }
+                                                },
+                                                "type": "ContextualAllele"
                                             },
                                             {
-                                                "chromosome": "12",
-                                                "coordinates": [
+                                                "CanonicalAllele": "http://reg.genome.network/allele/CA229854",
+                                                "allele": "T",
+                                                "alleleName": [
                                                     {
-                                                        "allele": "T",
-                                                        "end": 101764843,
-                                                        "referenceAllele": "G",
-                                                        "start": 101764842
+                                                        "name": "NC_000012.10:g.101764843G>T",
+                                                        "nameType": "hgvs"
                                                     }
                                                 ],
-                                                "hgvs": [
-                                                    "NC_000012.10:g.101764843G>T"
-                                                ],
-                                                "referenceGenome": "NCBI36",
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS000012"
+                                                "contextualAlleleType": "genomic",
+                                                "referenceCoordinate": {
+                                                    "end": {
+                                                        "index": 101764843
+                                                    },
+                                                    "refAllele": "G",
+                                                    "referenceSequence": {
+                                                        "display": "NC_000012.10",
+                                                        "reference": "http://reg.genome.network/refseq/RS000012"
+                                                    },
+                                                    "start": {
+                                                        "index": 101764842
+                                                    }
+                                                },
+                                                "type": "ContextualAllele"
                                             },
                                             {
-                                                "coordinates": [
+                                                "CanonicalAllele": "http://reg.genome.network/allele/CA229854",
+                                                "allele": "A",
+                                                "alleleName": [
                                                     {
-                                                        "allele": "A",
-                                                        "end": 75668,
-                                                        "referenceAllele": "C",
-                                                        "start": 75667
+                                                        "name": "NG_008690.1:g.75668C>A",
+                                                        "nameType": "hgvs"
                                                     }
                                                 ],
-                                                "hgvs": [
-                                                    "NG_008690.1:g.75668C>A"
-                                                ],
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS001168"
+                                                "contextualAlleleType": "genomic",
+                                                "referenceCoordinate": {
+                                                    "end": {
+                                                        "index": 75668
+                                                    },
+                                                    "refAllele": "C",
+                                                    "referenceSequence": {
+                                                        "display": "",
+                                                        "reference": "http://reg.genome.network/refseq/RS001168"
+                                                    },
+                                                    "start": {
+                                                        "index": 75667
+                                                    }
+                                                },
+                                                "type": "ContextualAllele"
                                             }
                                         ],
-                                        "transcriptAlleles": [
+                                        "relatedIdentifier": [
                                             {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 1401,
-                                                        "referenceAllele": "C",
-                                                        "start": 1400
-                                                    }
-                                                ],
-                                                "gene": "http://reg.genome.network/gene/GN008582",
-                                                "hgvs": [
-                                                    "NM_000277.1:c.929C>A"
-                                                ],
-                                                "proteinVariation": "p.Ser310Tyr",
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS006339"
+                                                "code": 108634,
+                                                "system": "http://wwww.ncibi.nlm.nih.gov/clinvar/",
+                                                "type": "Coding"
                                             },
                                             {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 1027,
-                                                        "endIntronDirection": 45,
-                                                        "endIntronOffset": 2503,
-                                                        "referenceAllele": "C",
-                                                        "start": 1027,
-                                                        "startIntronDirection": 45,
-                                                        "startIntronOffset": 2504
-                                                    }
-                                                ],
-                                                "gene": "http://reg.genome.network/gene/GN008582",
-                                                "hgvs": [
-                                                    "XM_011538422.1:c.913-2504C>A"
-                                                ],
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS105378"
-                                            },
-                                            {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 1185,
-                                                        "referenceAllele": "C",
-                                                        "start": 1184
-                                                    }
-                                                ],
-                                                "hgvs": [
-                                                    "ENST00000307000.7:c.914C>A"
-                                                ],
-                                                "proteinVariation": "p.Ser305Tyr",
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS255819"
-                                            },
-                                            {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 688,
-                                                        "referenceAllele": "C",
-                                                        "start": 687
-                                                    }
-                                                ],
-                                                "hgvs": [
-                                                    "ENST00000549247.6:n.688C>A"
-                                                ],
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS367346"
-                                            },
-                                            {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 591,
-                                                        "referenceAllele": "C",
-                                                        "start": 590
-                                                    }
-                                                ],
-                                                "hgvs": [
-                                                    "ENST00000551114.2:n.591C>A"
-                                                ],
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS368468"
-                                            },
-                                            {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 1402,
-                                                        "referenceAllele": "C",
-                                                        "start": 1401
-                                                    }
-                                                ],
-                                                "hgvs": [
-                                                    "ENST00000553106.5:c.929C>A"
-                                                ],
-                                                "proteinVariation": "p.Ser310Tyr",
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS369636"
-                                            },
-                                            {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 73,
-                                                        "endIntronDirection": 45,
-                                                        "endIntronOffset": 2503,
-                                                        "referenceAllele": "C",
-                                                        "start": 73,
-                                                        "startIntronDirection": 45,
-                                                        "startIntronOffset": 2504
-                                                    }
-                                                ],
-                                                "hgvs": [
-                                                    "ENST00000635477.1:n.74-2504C>A"
-                                                ],
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS408144"
-                                            },
-                                            {
-                                                "coordinates": [
-                                                    {
-                                                        "allele": "A",
-                                                        "end": 444,
-                                                        "referenceAllele": "C",
-                                                        "start": 443
-                                                    }
-                                                ],
-                                                "hgvs": [
-                                                    "ENST00000635528.1:n.444C>A"
-                                                ],
-                                                "referenceSequence": "http://reg.genome.network/refseq/RS408159"
+                                                "code": 62642913,
+                                                "system": "http://www.ncbi.nlm.nih.gov/snp/",
+                                                "type": "Coding"
                                             }
                                         ],
-                                        "type": "nucleotide"
+                                        "type": "CanonicalAllele"
                                     },
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
