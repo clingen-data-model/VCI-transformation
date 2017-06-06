@@ -2138,6 +2138,42 @@
                         "shortDescription": "Well-established functional studies showing damaging effect",
                         "type": "Criterion"
                     },
+                    "evidence": [
+                        {
+                            "information": [
+                                {
+                                    "contribution": [
+                                        {
+                                            "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                            "onDate": "2017-03-22T23:11:47.787545+00:00",
+                                            "role": {
+                                                "coding": [
+                                                    {
+                                                        "code": "curator",
+                                                        "display": "curator",
+                                                        "id": "http://clinicalgenome.org/datamodel/contributory-role/curator",
+                                                        "system": "http://clinicalgenome.org/datamodel/contributory-role/",
+                                                        "type": "Coding"
+                                                    }
+                                                ],
+                                                "type": "CodeableConcept"
+                                            },
+                                            "type": "Contribution"
+                                        }
+                                    ],
+                                    "explanation": "PAH activity analysis. Site directed mutagenesis, transfected COS-1 cells. Enzyme activity measured as conversion of L-[14C]phe to L-[14C]tyr. Use both standard cDNA expression system and a new Intinic plasmid system which incorporates intronic sequences.   Both systems predict <1% enzyme activity for this variant.",
+                                    "source": [
+                                        {
+                                            "id": "https://www.ncbi.nlm.nih.gov/pubmed/18590700",
+                                            "type": "InformationSource"
+                                        }
+                                    ],
+                                    "type": "Information"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
                     "explanation": "Ho, 2008.  Both standard cDNA and intinic systems suggest this variant has <1% enzyme activity.",
                     "id": "/evaluations/da8ea5a4-98cd-4966-8e24-9b26c15cb34e/",
                     "outcome": {
@@ -2199,6 +2235,42 @@
                         "shortDescription": "Recessive in trans with pathogenic variant",
                         "type": "Criterion"
                     },
+                    "evidence": [
+                        {
+                            "information": [
+                                {
+                                    "contribution": [
+                                        {
+                                            "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                            "onDate": "2017-03-22T23:14:20.278364+00:00",
+                                            "role": {
+                                                "coding": [
+                                                    {
+                                                        "code": "curator",
+                                                        "display": "curator",
+                                                        "id": "http://clinicalgenome.org/datamodel/contributory-role/curator",
+                                                        "system": "http://clinicalgenome.org/datamodel/contributory-role/",
+                                                        "type": "Coding"
+                                                    }
+                                                ],
+                                                "type": "CodeableConcept"
+                                            },
+                                            "type": "Contribution"
+                                        }
+                                    ],
+                                    "explanation": "Patient #7 S310Y/F55L (pathogenic per clinVar) \u2013 with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
+                                    "source": [
+                                        {
+                                            "id": "https://www.ncbi.nlm.nih.gov/pubmed/12501224",
+                                            "type": "InformationSource"
+                                        }
+                                    ],
+                                    "type": "Information"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
                     "explanation": "Patient #7 S310Y/F55L (pathogenic per clinVar) \u2013 with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
                     "id": "/evaluations/59408ee6-8d94-4dce-a74a-988701896113/",
                     "outcome": {
@@ -2266,6 +2338,42 @@
                         "shortDescription": "Disease specific phenotype and family history",
                         "type": "Criterion"
                     },
+                    "evidence": [
+                        {
+                            "information": [
+                                {
+                                    "contribution": [
+                                        {
+                                            "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                                            "onDate": "2017-03-22T23:15:24.066848+00:00",
+                                            "role": {
+                                                "coding": [
+                                                    {
+                                                        "code": "curator",
+                                                        "display": "curator",
+                                                        "id": "http://clinicalgenome.org/datamodel/contributory-role/curator",
+                                                        "system": "http://clinicalgenome.org/datamodel/contributory-role/",
+                                                        "type": "Coding"
+                                                    }
+                                                ],
+                                                "type": "CodeableConcept"
+                                            },
+                                            "type": "Contribution"
+                                        }
+                                    ],
+                                    "explanation": "BH4 defect excluded in all patients with urine pterins and DHPR activity.",
+                                    "source": [
+                                        {
+                                            "id": "https://www.ncbi.nlm.nih.gov/pubmed/12501224",
+                                            "type": "InformationSource"
+                                        }
+                                    ],
+                                    "type": "Information"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
                     "explanation": "PS5 evidence per ClinGen Metabolism workgroup -- BH4 defect excluded in all patients.",
                     "id": "/evaluations/f6f418ef-b01a-4d5d-841d-f46ed80c3f1f/",
                     "outcome": {
