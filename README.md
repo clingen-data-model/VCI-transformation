@@ -9,11 +9,15 @@ This project consists of
 4) A script for converting VCI JSON files into DMWG JSON files using the  classes above.
 5) Unit tests
 
+In order to use VCI2DMWG you must first install the python library "requests". This can be done with
+```pip install requests```
+or 
+```pip install -r requirements.txt```
 
 To convert a VCI json file (input.json) into a DMWG JSON file (output.json) use the script VCI2DMG.py:
 ```python VCI2DMWG.py input.json output.json```
 
-A sample input and output files are found in the `test_data` directory.
+Sample input and output files are found in the `test_data` directory.
 
 To generate the classes, run
 ```python generate_interpretation_library.py <flattened>```
