@@ -36,25 +36,6 @@ class AssertionMethod(Node):
     def get_url(self):
         return self.data[DMWG_ASSERTIONMETHOD_URL_KEY]
 
-class InformationSource(Node):
-    def __init__(self,iri=None):
-        self.data = {}
-        if iri is not None:
-            self.data[DMWG_ID_KEY] = iri
-        self.data[DMWG_TYPE_KEY] = DMWG_INFORMATIONSOURCE_TYPE 
-    def set_version(self,x):
-        self.data[DMWG_INFORMATIONSOURCE_VERSION_KEY] = x
-    def get_version(self):
-        return self.data[DMWG_INFORMATIONSOURCE_VERSION_KEY]
-    def set_linkedIRI(self,x):
-        self.data[DMWG_INFORMATIONSOURCE_LINKEDIRI_KEY] = x
-    def get_linkedIRI(self):
-        return self.data[DMWG_INFORMATIONSOURCE_LINKEDIRI_KEY]
-    def set_externalIdentifier(self,x):
-        self.data[DMWG_INFORMATIONSOURCE_EXTERNALIDENTIFIER_KEY] = x
-    def get_externalIdentifier(self):
-        return self.data[DMWG_INFORMATIONSOURCE_EXTERNALIDENTIFIER_KEY]
-
 class Contribution(Node):
     def __init__(self,iri=None):
         self.data = {}
@@ -132,13 +113,6 @@ class Individual(Node):
     def get_description(self):
         return self.data[DMWG_INDIVIDUAL_DESCRIPTION_KEY]
 
-class ValueSetCoding(Node):
-    def __init__(self,iri=None):
-        self.data = {}
-        if iri is not None:
-            self.data[DMWG_ID_KEY] = iri
-        self.data[DMWG_TYPE_KEY] = DMWG_VALUESETCODING_TYPE 
-
 class ValueSet(Node):
     def __init__(self,iri=None):
         self.data = {}
@@ -159,6 +133,13 @@ class ValueSet(Node):
         self.data[DMWG_VALUESET_INCLUDESCODING_KEY].append( x ) 
     def get_includesCoding(self):
         return self.data[DMWG_VALUESET_INCLUDESCODING_KEY]
+
+class ValueSetCoding(Node):
+    def __init__(self,iri=None):
+        self.data = {}
+        if iri is not None:
+            self.data[DMWG_ID_KEY] = iri
+        self.data[DMWG_TYPE_KEY] = DMWG_VALUESETCODING_TYPE 
 
 class EvidenceLine(Node):
     def __init__(self,iri=None):
@@ -380,6 +361,26 @@ class VariantInterpretation(Information):
     def get_assertionMethod(self):
         return self.data[DMWG_VARIANTINTERPRETATION_ASSERTIONMETHOD_KEY]
 
+class BenignMissenseVariationRate(Information):
+    def __init__(self,iri=None):
+        self.data = {}
+        if iri is not None:
+            self.data[DMWG_ID_KEY] = iri
+        self.data[DMWG_TYPE_KEY] = DMWG_BENIGNMISSENSEVARIATIONRATE_TYPE 
+    def set_region(self,x):
+        self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_REGION_KEY] = x
+    def get_region(self):
+        return self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_REGION_KEY]
+    def set_gene(self,x):
+        self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_GENE_KEY] = x
+    def get_gene(self):
+        return self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_GENE_KEY]
+    @get_factory_coding('VS014')
+    def set_value(self,x):
+        self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_VALUE_KEY] = x
+    def get_value(self):
+        return self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_VALUE_KEY]
+
 class MendelianCondition(Information):
     def __init__(self,iri=None):
         self.data = {}
@@ -434,25 +435,6 @@ class IndividualCondition(Information):
         self.data[DMWG_INDIVIDUALCONDITION_CONDITION_KEY].append( x ) 
     def get_condition(self):
         return self.data[DMWG_INDIVIDUALCONDITION_CONDITION_KEY]
-
-class ConditionEtiology(Information):
-    def __init__(self,iri=None):
-        self.data = {}
-        if iri is not None:
-            self.data[DMWG_ID_KEY] = iri
-        self.data[DMWG_TYPE_KEY] = DMWG_CONDITIONETIOLOGY_TYPE 
-    def set_specificity(self,x):
-        self.data[DMWG_CONDITIONETIOLOGY_SPECIFICITY_KEY] = x
-    def get_specificity(self):
-        return self.data[DMWG_CONDITIONETIOLOGY_SPECIFICITY_KEY]
-    def set_condition(self,x):
-        self.data[DMWG_CONDITIONETIOLOGY_CONDITION_KEY] = x
-    def get_condition(self):
-        return self.data[DMWG_CONDITIONETIOLOGY_CONDITION_KEY]
-    def set_gene(self,x):
-        self.data[DMWG_CONDITIONETIOLOGY_GENE_KEY] = x
-    def get_gene(self):
-        return self.data[DMWG_CONDITIONETIOLOGY_GENE_KEY]
 
 class AggregateSegregationData(Information):
     def __init__(self,iri=None):
@@ -662,25 +644,24 @@ class ConditionPrevelance(Information):
     def get_prevelance(self):
         return self.data[DMWG_CONDITIONPREVELANCE_PREVELANCE_KEY]
 
-class BenignMissenseVariationRate(Information):
+class ConditionEtiology(Information):
     def __init__(self,iri=None):
         self.data = {}
         if iri is not None:
             self.data[DMWG_ID_KEY] = iri
-        self.data[DMWG_TYPE_KEY] = DMWG_BENIGNMISSENSEVARIATIONRATE_TYPE 
-    def set_region(self,x):
-        self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_REGION_KEY] = x
-    def get_region(self):
-        return self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_REGION_KEY]
+        self.data[DMWG_TYPE_KEY] = DMWG_CONDITIONETIOLOGY_TYPE 
+    def set_specificity(self,x):
+        self.data[DMWG_CONDITIONETIOLOGY_SPECIFICITY_KEY] = x
+    def get_specificity(self):
+        return self.data[DMWG_CONDITIONETIOLOGY_SPECIFICITY_KEY]
+    def set_condition(self,x):
+        self.data[DMWG_CONDITIONETIOLOGY_CONDITION_KEY] = x
+    def get_condition(self):
+        return self.data[DMWG_CONDITIONETIOLOGY_CONDITION_KEY]
     def set_gene(self,x):
-        self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_GENE_KEY] = x
+        self.data[DMWG_CONDITIONETIOLOGY_GENE_KEY] = x
     def get_gene(self):
-        return self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_GENE_KEY]
-    @get_factory_coding('VS014')
-    def set_value(self,x):
-        self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_VALUE_KEY] = x
-    def get_value(self):
-        return self.data[DMWG_BENIGNMISSENSEVARIATIONRATE_VALUE_KEY]
+        return self.data[DMWG_CONDITIONETIOLOGY_GENE_KEY]
 
 class FamilySegregationData(Information):
     def __init__(self,iri=None):

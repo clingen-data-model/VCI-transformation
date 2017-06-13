@@ -609,8 +609,8 @@ def transform_articles( article_list, interpretation, entities ):
     for article in article_list:
         pmid = article[ VCI_PMID_KEY ]
         atid = 'https://www.ncbi.nlm.nih.gov/pubmed/%s' % pmid
-        isource = InformationSource(atid)
-        sourcelist.append(isource)
+        #isource = InformationSource(atid)
+        sourcelist.append(atid)
     return sourcelist
 
 # The evidence in the VCI is not a child node of the evaluation.  It is linked to the relevant 

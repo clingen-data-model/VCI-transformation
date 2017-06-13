@@ -2163,10 +2163,7 @@
                                     ],
                                     "explanation": "PAH activity analysis. Site directed mutagenesis, transfected COS-1 cells. Enzyme activity measured as conversion of L-[14C]phe to L-[14C]tyr. Use both standard cDNA expression system and a new Intinic plasmid system which incorporates intronic sequences.   Both systems predict <1% enzyme activity for this variant.",
                                     "source": [
-                                        {
-                                            "id": "https://www.ncbi.nlm.nih.gov/pubmed/18590700",
-                                            "type": "InformationSource"
-                                        }
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/18590700"
                                     ],
                                     "type": "Information"
                                 }
@@ -2260,10 +2257,7 @@
                                     ],
                                     "explanation": "Patient #7 S310Y/F55L (pathogenic per clinVar) \u2013 with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
                                     "source": [
-                                        {
-                                            "id": "https://www.ncbi.nlm.nih.gov/pubmed/12501224",
-                                            "type": "InformationSource"
-                                        }
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/12501224"
                                     ],
                                     "type": "Information"
                                 }
@@ -2363,10 +2357,7 @@
                                     ],
                                     "explanation": "BH4 defect excluded in all patients with urine pterins and DHPR activity.",
                                     "source": [
-                                        {
-                                            "id": "https://www.ncbi.nlm.nih.gov/pubmed/12501224",
-                                            "type": "InformationSource"
-                                        }
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/12501224"
                                     ],
                                     "type": "Information"
                                 }
