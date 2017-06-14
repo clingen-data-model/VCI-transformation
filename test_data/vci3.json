@@ -1,0 +1,2511 @@
+{
+    "disease": {
+        "synonyms": [
+            "Hypertrophic subaortic stenosis",
+            "Obstructive hypertrophic cardiomyopathy"
+        ],
+        "@type": [
+            "orphaPhenotype",
+            "item"
+        ],
+        "uuid": "f614119f-694e-467f-92f9-97a196c85c45",
+        "orphaNumber": "217569",
+        "schema_version": "1",
+        "type": "Group of phenomes",
+        "omimIds": [],
+        "@id": "/diseases/217569/",
+        "active": true,
+        "term": "Hypertrophic cardiomyopathy"
+    },
+    "interpretation_status": "Provisional",
+    "submitted_by": {
+        "@type": [
+            "user",
+            "item"
+        ],
+        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+        "lab": "/labs/curator/",
+        "email": "bcushman@partners.org",
+        "title": "Brandon Cushman",
+        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+        "last_name": "Cushman",
+        "first_name": "Brandon"
+    },
+    "provisional_variant": [
+        {
+            "uuid": "a8205550-bee6-4498-8151-b77fb800efbe",
+            "reason_present": "",
+            "last_modified": "2017-01-24T17:10:07.757826+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "schema_version": "1",
+            "autoClassification": "Pathogenic",
+            "date_created": "2017-01-24T17:10:07.760506+00:00",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "@type": [
+                "provisional_variant",
+                "item"
+            ],
+            "status": "in progress",
+            "@id": "/provisional-variant/a8205550-bee6-4498-8151-b77fb800efbe/",
+            "alteredClassification_present": ""
+        }
+    ],
+    "date_created": "2017-01-24T16:23:34.153205+00:00",
+    "interpretation_disease": "ORPHA217569",
+    "@type": [
+        "interpretation",
+        "item"
+    ],
+    "status": "in progress",
+    "modeInheritanceAdjective": "",
+    "uuid": "87fd0b18-d55d-4ae3-8e10-f71d547821d4",
+    "last_modified": "2017-01-24T17:10:07.896276+00:00",
+    "schema_version": "2",
+    "evaluations": [
+        {
+            "uuid": "52ead401-2e08-45c8-a8ee-7dc91597d347",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:24:23.732183+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "population": {
+                "uuid": "966ce041-7901-4288-99cd-a226c1165a9e",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "last_modified": "2017-01-24T16:24:23.585469+00:00",
+                "schema_version": "1",
+                "populationData": {
+                    "tGenomes": {
+                        "espaa": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "eur": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "_extra": {
+                            "ref": "A",
+                            "alt": "G",
+                            "name": "rs397516269",
+                            "var_class": "SNP"
+                        },
+                        "espea": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "afr": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "amr": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "eas": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "sas": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        }
+                    },
+                    "esp": {
+                        "ea": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "aa": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_extra": {}
+                    },
+                    "desiredCI": 95,
+                    "exac": {
+                        "oth": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "eas": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "_tot": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "_extra": {},
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        }
+                    },
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "mafCutoff": 5
+                },
+                "date_created": "2017-01-24T16:24:23.585459+00:00",
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "evaluation_associated": [
+                    "/evaluations/52ead401-2e08-45c8-a8ee-7dc91597d347/",
+                    "/evaluations/96a2b862-5f95-43da-8779-28f01f1a1c80/",
+                    "/evaluations/5a82ea71-72b7-4961-a98a-17611d13bce2/"
+                ],
+                "maf_count": 6,
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/populations/966ce041-7901-4288-99cd-a226c1165a9e/"
+            },
+            "date_created": "2017-01-24T16:24:23.735353+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BA1",
+            "evidence_type": "Population",
+            "@id": "/evaluations/52ead401-2e08-45c8-a8ee-7dc91597d347/",
+            "modifier": ""
+        },
+        {
+            "uuid": "5a82ea71-72b7-4961-a98a-17611d13bce2",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:24:23.732225+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "population": {
+                "uuid": "966ce041-7901-4288-99cd-a226c1165a9e",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "last_modified": "2017-01-24T16:24:23.585469+00:00",
+                "schema_version": "1",
+                "populationData": {
+                    "tGenomes": {
+                        "espaa": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "eur": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "_extra": {
+                            "ref": "A",
+                            "alt": "G",
+                            "name": "rs397516269",
+                            "var_class": "SNP"
+                        },
+                        "espea": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "afr": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "amr": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "eas": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "sas": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        }
+                    },
+                    "esp": {
+                        "ea": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "aa": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_extra": {}
+                    },
+                    "desiredCI": 95,
+                    "exac": {
+                        "oth": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "eas": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "_tot": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "_extra": {},
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        }
+                    },
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "mafCutoff": 5
+                },
+                "date_created": "2017-01-24T16:24:23.585459+00:00",
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "evaluation_associated": [
+                    "/evaluations/52ead401-2e08-45c8-a8ee-7dc91597d347/",
+                    "/evaluations/96a2b862-5f95-43da-8779-28f01f1a1c80/",
+                    "/evaluations/5a82ea71-72b7-4961-a98a-17611d13bce2/"
+                ],
+                "maf_count": 6,
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/populations/966ce041-7901-4288-99cd-a226c1165a9e/"
+            },
+            "date_created": "2017-01-24T16:24:23.732215+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PM2",
+            "evidence_type": "Population",
+            "@id": "/evaluations/5a82ea71-72b7-4961-a98a-17611d13bce2/",
+            "modifier": ""
+        },
+        {
+            "uuid": "96a2b862-5f95-43da-8779-28f01f1a1c80",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:24:23.856048+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "population": {
+                "uuid": "966ce041-7901-4288-99cd-a226c1165a9e",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "last_modified": "2017-01-24T16:24:23.585469+00:00",
+                "schema_version": "1",
+                "populationData": {
+                    "tGenomes": {
+                        "espaa": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "eur": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "_extra": {
+                            "ref": "A",
+                            "alt": "G",
+                            "name": "rs397516269",
+                            "var_class": "SNP"
+                        },
+                        "espea": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "afr": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "amr": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "eas": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        },
+                        "sas": {
+                            "ac": {},
+                            "gf": {},
+                            "af": {},
+                            "gc": {}
+                        }
+                    },
+                    "esp": {
+                        "ea": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "aa": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_extra": {}
+                    },
+                    "desiredCI": 95,
+                    "exac": {
+                        "oth": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "eas": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "_tot": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "_extra": {},
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        }
+                    },
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "mafCutoff": 5
+                },
+                "date_created": "2017-01-24T16:24:23.585459+00:00",
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "evaluation_associated": [
+                    "/evaluations/52ead401-2e08-45c8-a8ee-7dc91597d347/",
+                    "/evaluations/96a2b862-5f95-43da-8779-28f01f1a1c80/",
+                    "/evaluations/5a82ea71-72b7-4961-a98a-17611d13bce2/"
+                ],
+                "maf_count": 6,
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/populations/966ce041-7901-4288-99cd-a226c1165a9e/"
+            },
+            "date_created": "2017-01-24T16:24:23.856038+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BS1",
+            "evidence_type": "Population",
+            "@id": "/evaluations/96a2b862-5f95-43da-8779-28f01f1a1c80/",
+            "modifier": ""
+        },
+        {
+            "uuid": "3fda0f6f-2eed-4578-8ea7-60bcce58c863",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:24:59.776402+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:24:59.776393+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "met",
+            "computational": {
+                "uuid": "8956f97c-e7c0-47b6-b1dd-d42b334a169a",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "last_modified": "2017-01-24T16:24:59.613740+00:00",
+                "schema_version": "2",
+                "computationalData": {
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.933",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "conservation": {
+                        "phastconsp20way": "1",
+                        "gerp": "3.47",
+                        "siphy": "12.4136",
+                        "phylop20way": "1.032",
+                        "phylop7way": "9.119",
+                        "phastconsp7way": "1"
+                    },
+                    "other_predictors": {
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "prediction": null,
+                            "score": "5.271709"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.99509
+                            ]
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "prediction": "D",
+                            "score": [
+                                -2.83
+                            ]
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "prediction": "M",
+                            "score": [
+                                2.93
+                            ]
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": [
+                                0.497415
+                            ]
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "prediction": "P",
+                            "score": [
+                                0.788
+                            ]
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "prediction": "B",
+                            "score": [
+                                0.187
+                            ]
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "prediction": "D",
+                            "score": [
+                                1.0016
+                            ]
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                1
+                            ]
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": null
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "prediction": "D",
+                            "score": [
+                                -4.09
+                            ]
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.007
+                            ]
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                0.9013
+                            ]
+                        }
+                    }
+                },
+                "evaluation_associated": [
+                    "/evaluations/7eaf38ce-c3f9-497d-af83-2e28b921497a/",
+                    "/evaluations/3fda0f6f-2eed-4578-8ea7-60bcce58c863/",
+                    "/evaluations/d53cb81f-a34b-4546-89d3-51dc3b0d0d7a/",
+                    "/evaluations/82e43205-9f7a-4e38-a69a-936c768ce7f5/"
+                ],
+                "date_created": "2017-01-24T16:24:59.616955+00:00",
+                "disease_present": "",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/computational/8956f97c-e7c0-47b6-b1dd-d42b334a169a/"
+            },
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PP3",
+            "evidence_type": "Computational",
+            "@id": "/evaluations/3fda0f6f-2eed-4578-8ea7-60bcce58c863/",
+            "modifier": ""
+        },
+        {
+            "uuid": "82e43205-9f7a-4e38-a69a-936c768ce7f5",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:24:59.773537+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:24:59.773526+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "computational": {
+                "uuid": "8956f97c-e7c0-47b6-b1dd-d42b334a169a",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "last_modified": "2017-01-24T16:24:59.613740+00:00",
+                "schema_version": "2",
+                "computationalData": {
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.933",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "conservation": {
+                        "phastconsp20way": "1",
+                        "gerp": "3.47",
+                        "siphy": "12.4136",
+                        "phylop20way": "1.032",
+                        "phylop7way": "9.119",
+                        "phastconsp7way": "1"
+                    },
+                    "other_predictors": {
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "prediction": null,
+                            "score": "5.271709"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.99509
+                            ]
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "prediction": "D",
+                            "score": [
+                                -2.83
+                            ]
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "prediction": "M",
+                            "score": [
+                                2.93
+                            ]
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": [
+                                0.497415
+                            ]
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "prediction": "P",
+                            "score": [
+                                0.788
+                            ]
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "prediction": "B",
+                            "score": [
+                                0.187
+                            ]
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "prediction": "D",
+                            "score": [
+                                1.0016
+                            ]
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                1
+                            ]
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": null
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "prediction": "D",
+                            "score": [
+                                -4.09
+                            ]
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.007
+                            ]
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                0.9013
+                            ]
+                        }
+                    }
+                },
+                "evaluation_associated": [
+                    "/evaluations/7eaf38ce-c3f9-497d-af83-2e28b921497a/",
+                    "/evaluations/3fda0f6f-2eed-4578-8ea7-60bcce58c863/",
+                    "/evaluations/d53cb81f-a34b-4546-89d3-51dc3b0d0d7a/",
+                    "/evaluations/82e43205-9f7a-4e38-a69a-936c768ce7f5/"
+                ],
+                "date_created": "2017-01-24T16:24:59.616955+00:00",
+                "disease_present": "",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/computational/8956f97c-e7c0-47b6-b1dd-d42b334a169a/"
+            },
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BP4",
+            "evidence_type": "Computational",
+            "@id": "/evaluations/82e43205-9f7a-4e38-a69a-936c768ce7f5/",
+            "modifier": ""
+        },
+        {
+            "uuid": "7eaf38ce-c3f9-497d-af83-2e28b921497a",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:24:59.895565+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:24:59.898285+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-evaluated",
+            "computational": {
+                "uuid": "8956f97c-e7c0-47b6-b1dd-d42b334a169a",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "last_modified": "2017-01-24T16:24:59.613740+00:00",
+                "schema_version": "2",
+                "computationalData": {
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.933",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "conservation": {
+                        "phastconsp20way": "1",
+                        "gerp": "3.47",
+                        "siphy": "12.4136",
+                        "phylop20way": "1.032",
+                        "phylop7way": "9.119",
+                        "phastconsp7way": "1"
+                    },
+                    "other_predictors": {
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "prediction": null,
+                            "score": "5.271709"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.99509
+                            ]
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "prediction": "D",
+                            "score": [
+                                -2.83
+                            ]
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "prediction": "M",
+                            "score": [
+                                2.93
+                            ]
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": [
+                                0.497415
+                            ]
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "prediction": "P",
+                            "score": [
+                                0.788
+                            ]
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "prediction": "B",
+                            "score": [
+                                0.187
+                            ]
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "prediction": "D",
+                            "score": [
+                                1.0016
+                            ]
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                1
+                            ]
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": null
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "prediction": "D",
+                            "score": [
+                                -4.09
+                            ]
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.007
+                            ]
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                0.9013
+                            ]
+                        }
+                    }
+                },
+                "evaluation_associated": [
+                    "/evaluations/7eaf38ce-c3f9-497d-af83-2e28b921497a/",
+                    "/evaluations/3fda0f6f-2eed-4578-8ea7-60bcce58c863/",
+                    "/evaluations/d53cb81f-a34b-4546-89d3-51dc3b0d0d7a/",
+                    "/evaluations/82e43205-9f7a-4e38-a69a-936c768ce7f5/"
+                ],
+                "date_created": "2017-01-24T16:24:59.616955+00:00",
+                "disease_present": "",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/computational/8956f97c-e7c0-47b6-b1dd-d42b334a169a/"
+            },
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BP1",
+            "evidence_type": "Computational",
+            "@id": "/evaluations/7eaf38ce-c3f9-497d-af83-2e28b921497a/",
+            "modifier": ""
+        },
+        {
+            "uuid": "d53cb81f-a34b-4546-89d3-51dc3b0d0d7a",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:24:59.899073+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:24:59.899063+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "met",
+            "computational": {
+                "uuid": "8956f97c-e7c0-47b6-b1dd-d42b334a169a",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "last_modified": "2017-01-24T16:24:59.613740+00:00",
+                "schema_version": "2",
+                "computationalData": {
+                    "clingen": {
+                        "revel": {
+                            "score_range": "0 to 1",
+                            "visible": true,
+                            "score": "0.933",
+                            "prediction": "higher score = higher pathogenicity"
+                        },
+                        "cftr": {
+                            "score_range": "--",
+                            "visible": false,
+                            "score": null,
+                            "prediction": "--"
+                        }
+                    },
+                    "conservation": {
+                        "phastconsp20way": "1",
+                        "gerp": "3.47",
+                        "siphy": "12.4136",
+                        "phylop20way": "1.032",
+                        "phylop7way": "9.119",
+                        "phastconsp7way": "1"
+                    },
+                    "other_predictors": {
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "prediction": null,
+                            "score": "5.271709"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.99509
+                            ]
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "prediction": "D",
+                            "score": [
+                                -2.83
+                            ]
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "prediction": "M",
+                            "score": [
+                                2.93
+                            ]
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": [
+                                0.497415
+                            ]
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "prediction": "P",
+                            "score": [
+                                0.788
+                            ]
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "prediction": "B",
+                            "score": [
+                                0.187
+                            ]
+                        },
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "prediction": "D",
+                            "score": [
+                                1.0016
+                            ]
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                1
+                            ]
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "prediction": null,
+                            "score": null
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "prediction": "D",
+                            "score": [
+                                -4.09
+                            ]
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "prediction": "D",
+                            "score": [
+                                0.007
+                            ]
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "prediction": "D",
+                            "score": [
+                                0.9013
+                            ]
+                        }
+                    }
+                },
+                "evaluation_associated": [
+                    "/evaluations/7eaf38ce-c3f9-497d-af83-2e28b921497a/",
+                    "/evaluations/3fda0f6f-2eed-4578-8ea7-60bcce58c863/",
+                    "/evaluations/d53cb81f-a34b-4546-89d3-51dc3b0d0d7a/",
+                    "/evaluations/82e43205-9f7a-4e38-a69a-936c768ce7f5/"
+                ],
+                "date_created": "2017-01-24T16:24:59.616955+00:00",
+                "disease_present": "",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/computational/8956f97c-e7c0-47b6-b1dd-d42b334a169a/"
+            },
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PP2",
+            "evidence_type": "Computational",
+            "@id": "/evaluations/d53cb81f-a34b-4546-89d3-51dc3b0d0d7a/",
+            "modifier": ""
+        },
+        {
+            "uuid": "3efa735c-b018-40f5-a07c-6cf10470610a",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:32:14.176859+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:32:14.176845+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PM5",
+            "@id": "/evaluations/3efa735c-b018-40f5-a07c-6cf10470610a/",
+            "modifier": ""
+        },
+        {
+            "uuid": "aadc9d36-f9cc-44f0-baf7-e1cf09ec0270",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:32:14.301009+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:32:14.304050+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PS1",
+            "@id": "/evaluations/aadc9d36-f9cc-44f0-baf7-e1cf09ec0270/",
+            "modifier": ""
+        },
+        {
+            "uuid": "7b7ccf47-fffe-413a-abd0-7bf71d51e921",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:32:35.078767+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:32:35.081412+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BP7",
+            "@id": "/evaluations/7b7ccf47-fffe-413a-abd0-7bf71d51e921/",
+            "modifier": ""
+        },
+        {
+            "uuid": "d36b6094-6ec0-4f05-9b75-d8d73dcb03e6",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:32:52.321232+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:32:52.321221+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-evaluated",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BP3",
+            "@id": "/evaluations/d36b6094-6ec0-4f05-9b75-d8d73dcb03e6/",
+            "modifier": ""
+        },
+        {
+            "uuid": "f3e430b5-505e-48b8-a9c6-cb00240f9dbf",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:32:52.443127+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:32:52.445788+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PM4",
+            "@id": "/evaluations/f3e430b5-505e-48b8-a9c6-cb00240f9dbf/",
+            "modifier": ""
+        },
+        {
+            "uuid": "bf960388-67c9-4072-9e22-eac99c99b8bf",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:33:17.362192+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:33:17.364820+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BS3",
+            "@id": "/evaluations/bf960388-67c9-4072-9e22-eac99c99b8bf/",
+            "modifier": ""
+        },
+        {
+            "uuid": "d0919d48-7949-46a3-883f-72a9f86295a8",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:33:17.488424+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T16:33:17.488412+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PS3",
+            "@id": "/evaluations/d0919d48-7949-46a3-883f-72a9f86295a8/",
+            "modifier": ""
+        },
+        {
+            "uuid": "23098d06-6339-4d97-88da-53f78aa07cc0",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-05-22T16:52:08.332460+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-05-22T16:52:08.330641+00:00",
+            "explanation": "20 total probands\n7 literature\n13 unpublished cases (9 Share, 3 LMM, 1 Brompton)",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PS4",
+            "@id": "/evaluations/23098d06-6339-4d97-88da-53f78aa07cc0/",
+            "modifier": ""
+        },
+        {
+            "uuid": "a0f233b6-631d-4e21-9e1a-324c3bef2242",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:05:09.061166+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:05:09.061155+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BS4",
+            "@id": "/evaluations/a0f233b6-631d-4e21-9e1a-324c3bef2242/",
+            "modifier": ""
+        },
+        {
+            "uuid": "8565a28b-0fdf-4f1e-a58a-247b805d9607",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:05:09.185445+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "strong",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:05:09.187481+00:00",
+            "explanation": "10 total segregations\n10 published segregations\n0 unpublished segregations",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PP1",
+            "@id": "/evaluations/8565a28b-0fdf-4f1e-a58a-247b805d9607/",
+            "modifier": "strong"
+        },
+        {
+            "uuid": "b3ac7655-ca89-48ec-9bd9-10d48195b9af",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:06:46.424883+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:06:46.427497+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PM6",
+            "@id": "/evaluations/b3ac7655-ca89-48ec-9bd9-10d48195b9af/",
+            "modifier": ""
+        },
+        {
+            "uuid": "6d6ca923-e5bf-4364-a1ec-650deb753eef",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:06:46.528815+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:06:46.528803+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PS2",
+            "@id": "/evaluations/6d6ca923-e5bf-4364-a1ec-650deb753eef/",
+            "modifier": ""
+        },
+        {
+            "uuid": "81081086-cc32-496d-acf7-deeba732dc2a",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:07:01.516867+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:07:01.516855+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BP2",
+            "@id": "/evaluations/81081086-cc32-496d-acf7-deeba732dc2a/",
+            "modifier": ""
+        },
+        {
+            "uuid": "53b2179b-c426-4d0b-b701-dc05933d8965",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:07:01.624232+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:07:01.626671+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-evaluated",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PM3",
+            "@id": "/evaluations/53b2179b-c426-4d0b-b701-dc05933d8965/",
+            "modifier": ""
+        },
+        {
+            "uuid": "8f992810-58f9-4732-b28f-20fd83c2d9f0",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:07:07.367311+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:07:07.369972+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BP5",
+            "@id": "/evaluations/8f992810-58f9-4732-b28f-20fd83c2d9f0/",
+            "modifier": ""
+        },
+        {
+            "uuid": "76f7adcf-2a1e-4cb5-a1d0-25defc0a9495",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:07:22.545225+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:07:22.545211+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-met",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "BP6",
+            "@id": "/evaluations/76f7adcf-2a1e-4cb5-a1d0-25defc0a9495/",
+            "modifier": ""
+        },
+        {
+            "uuid": "90826f96-c765-41c5-8295-13630e9f6080",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:07:22.649392+00:00",
+            "interpretation_associated": [
+                "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/"
+            ],
+            "criteriaModifier": "",
+            "schema_version": "1",
+            "date_created": "2017-01-24T17:07:22.651892+00:00",
+            "explanation": "",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "criteriaStatus": "not-evaluated",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "criteria": "PP5",
+            "@id": "/evaluations/90826f96-c765-41c5-8295-13630e9f6080/",
+            "modifier": ""
+        }
+    ],
+    "actions": [
+        {
+            "profile": "/profiles/interpretation.json",
+            "href": "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/#!edit",
+            "title": "Edit",
+            "name": "edit"
+        },
+        {
+            "profile": "/profiles/interpretation.json",
+            "href": "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/#!edit-json",
+            "title": "Edit JSON",
+            "name": "edit-json"
+        }
+    ],
+    "modeInheritance": "Autosomal dominant inheritance (HP:0000006)",
+    "provisional_count": 1,
+    "evaluation_count": 24,
+    "interpretation_genes": "",
+    "variant": {
+        "dbSNPIds": [
+            "397516269"
+        ],
+        "molecular_consequence": "missense variant",
+        "date_created": "2017-01-24T16:23:24.272593+00:00",
+        "submitted_by": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+        "@type": [
+            "variant",
+            "item"
+        ],
+        "variationType": "single nucleotide variant",
+        "status": "in progress",
+        "clinvarVariantTitle": "NM_000257.3(MYH7):c.788T>C (p.Ile263Thr)",
+        "carId": "",
+        "uuid": "d02085c5-2167-40be-8b53-574a2300c3f2",
+        "variation_type": "single nucleotide variant",
+        "last_modified": "2017-01-24T16:23:24.269927+00:00",
+        "schema_version": "3",
+        "clinVarRCVs": [],
+        "clinVarSCVs": [],
+        "variant_identifier": "43106",
+        "source": "ClinVar",
+        "associatedPathogenicities": [],
+        "hgvsNames": {
+            "others": [
+                "NG_007884.1:g.9236T>C",
+                "NM_000257.3:c.788T>C",
+                "NP_000248.2:p.Ile263Thr",
+                "NM_000257.2:c.788T>C",
+                "P12883:p.Ile263Thr",
+                "LRG_384p1:p.Ile263Thr",
+                "LRG_384:g.9236T>C",
+                "LRG_384t1:c.788T>C"
+            ],
+            "GRCh38": "NC_000014.9:g.23431426A>G",
+            "GRCh37": "NC_000014.8:g.23900635A>G"
+        },
+        "otherDescription": "",
+        "molecularConsequenceList": [
+            {
+                "hgvsName": "NM_000257.3:c.788T>C",
+                "term": "missense variant",
+                "soId": "SO:0001583"
+            }
+        ],
+        "associatedInterpretations": [
+            {
+                "disease": "/diseases/217569/",
+                "uuid": "87fd0b18-d55d-4ae3-8e10-f71d547821d4",
+                "submitted_by": {
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "lab": "/labs/curator/",
+                    "email": "bcushman@partners.org",
+                    "title": "Brandon Cushman",
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "last_name": "Cushman",
+                    "first_name": "Brandon"
+                },
+                "modeInheritance": "Autosomal dominant inheritance (HP:0000006)",
+                "provisional_variant": [
+                    "/provisional-variant/a8205550-bee6-4498-8151-b77fb800efbe/"
+                ],
+                "evaluations": [
+                    "/evaluations/52ead401-2e08-45c8-a8ee-7dc91597d347/",
+                    "/evaluations/5a82ea71-72b7-4961-a98a-17611d13bce2/",
+                    "/evaluations/96a2b862-5f95-43da-8779-28f01f1a1c80/",
+                    "/evaluations/3fda0f6f-2eed-4578-8ea7-60bcce58c863/",
+                    "/evaluations/82e43205-9f7a-4e38-a69a-936c768ce7f5/",
+                    "/evaluations/7eaf38ce-c3f9-497d-af83-2e28b921497a/",
+                    "/evaluations/d53cb81f-a34b-4546-89d3-51dc3b0d0d7a/",
+                    "/evaluations/3efa735c-b018-40f5-a07c-6cf10470610a/",
+                    "/evaluations/aadc9d36-f9cc-44f0-baf7-e1cf09ec0270/",
+                    "/evaluations/7b7ccf47-fffe-413a-abd0-7bf71d51e921/",
+                    "/evaluations/d36b6094-6ec0-4f05-9b75-d8d73dcb03e6/",
+                    "/evaluations/f3e430b5-505e-48b8-a9c6-cb00240f9dbf/",
+                    "/evaluations/bf960388-67c9-4072-9e22-eac99c99b8bf/",
+                    "/evaluations/d0919d48-7949-46a3-883f-72a9f86295a8/",
+                    "/evaluations/23098d06-6339-4d97-88da-53f78aa07cc0/",
+                    "/evaluations/a0f233b6-631d-4e21-9e1a-324c3bef2242/",
+                    "/evaluations/8565a28b-0fdf-4f1e-a58a-247b805d9607/",
+                    "/evaluations/b3ac7655-ca89-48ec-9bd9-10d48195b9af/",
+                    "/evaluations/6d6ca923-e5bf-4364-a1ec-650deb753eef/",
+                    "/evaluations/81081086-cc32-496d-acf7-deeba732dc2a/",
+                    "/evaluations/53b2179b-c426-4d0b-b701-dc05933d8965/",
+                    "/evaluations/8f992810-58f9-4732-b28f-20fd83c2d9f0/",
+                    "/evaluations/76f7adcf-2a1e-4cb5-a1d0-25defc0a9495/",
+                    "/evaluations/90826f96-c765-41c5-8295-13630e9f6080/"
+                ],
+                "schema_version": "2",
+                "modeInheritanceAdjective": "",
+                "date_created": "2017-01-24T16:23:34.153205+00:00",
+                "interpretation_disease": "ORPHA217569",
+                "provisional_count": 1,
+                "evaluation_count": 24,
+                "interpretation_status": "Provisional",
+                "last_modified": "2017-01-24T17:10:07.896276+00:00",
+                "interpretation_genes": "",
+                "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+                "status": "in progress",
+                "@id": "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/",
+                "@type": [
+                    "interpretation",
+                    "item"
+                ],
+                "extra_evidence_list": [
+                    "/extra-evidence/de3004bc-858c-4d97-9653-41c6f06abe0a/",
+                    "/extra-evidence/592bd6b6-fdaa-4c2c-b3d8-773a0470e48b/",
+                    "/extra-evidence/72fab8dc-963c-4d3c-8679-3d18fd869c24/",
+                    "/extra-evidence/d7daf84c-f10c-4363-bcd8-ddcab1f2e21a/",
+                    "/extra-evidence/1f181bd0-5c6c-48b0-9ed9-804d8a883bbd/",
+                    "/extra-evidence/10f3dfe6-b278-4dd6-aaa0-8ac39ef7ba1f/"
+                ]
+            }
+        ],
+        "clinvarVariantId": "43106",
+        "@id": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/"
+    },
+    "audit": {},
+    "@id": "/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/",
+    "extra_evidence_list": [
+        {
+            "uuid": "de3004bc-858c-4d97-9653-41c6f06abe0a",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:39:26.108043+00:00",
+            "schema_version": "1",
+            "category": "case-segregation",
+            "date_created": "2017-01-24T16:39:26.108032+00:00",
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "evidenceDescription": "38 individuals from 2 unrelated Portugese families with HCM. 1 proband from each family was positive for I263T and the variant was absent from 200 control chromosomes (ethnicity unspecified). In family A, the variant segregated was seen with disease in 9 affected relatives (including 1 inferred carrier, I-2). 8 segregations - mak 3.10.16  In family B, 6 individuals were positive for the variant and 2 of these individuals were affected (including the proband and 1 homozygous sibling). Note that the pedigree also marks 2 deceased individuals (II-2, II-3) as both \"clinically and genetically affected\", however, the paper did NOT specify that these individuals carry the variant, only that they were clinically diagnosed with HCM upon autopsy. Being conservative and only counting 1 segregation for Family B - mak 3.10.16   The disease is fully penetrant in family A but results in a very mild form of disease, whereas in family B there is only 50% penetrance but a very severe form of disease including two cases of SCD. See pedigrees to the right.",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "subcategory": "case-control",
+            "articles": [
+                {
+                    "uuid": "7e0c50a4-cf29-4c15-8088-d6aa10a8c1c2",
+                    "abstract": "The gene encoding the beta-myosin heavy chain is one of the most frequently implicated in familial hypertrophic cardiomyopathy. Several mutations have been identified and some genotype-phenotype relationships have been assumed, particularly with regard to prognosis. Nevertheless, phenotypic expression is variable even in affected members of the same family carrying the same mutation. We identified the Ile263Thr mutation in several members of two unrelated Portuguese families. Penetrance, clinical behavior and prognosis were quite different between the two families, particularly concerning the occurrence of sudden death. Additional factors probably exist which account for the differences found. The complexity of hypertrophic cardiomyopathy makes it difficult to accurately determine genotype-phenotype relationships, and the screening and comparison of large affected families carrying the same mutation is warranted.",
+                    "last_modified": "2017-01-24T16:39:09.175094+00:00",
+                    "schema_version": "1",
+                    "active": true,
+                    "pmcid": "",
+                    "doi": "",
+                    "date_created": "2017-01-24T16:39:09.177747+00:00",
+                    "submitted_by": {
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                        "lab": "/labs/curator/",
+                        "email": "bcushman@partners.org",
+                        "title": "Brandon Cushman",
+                        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                        "last_name": "Cushman",
+                        "first_name": "Brandon"
+                    },
+                    "date": "2003 Dec;22(12):1445-61.",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "authors": [
+                        "Brito D",
+                        "Richard P",
+                        "Isnard R",
+                        "Pipa J",
+                        "Komajda M",
+                        "Madeira H"
+                    ],
+                    "title": "Familial hypertrophic cardiomyopathy: the same mutation, different prognosis. Comparison of two families with a long follow-up.",
+                    "@id": "/articles/15008060/",
+                    "journal": "Revista portuguesa de cardiologia : orgao oficial da Sociedade Portuguesa de Cardiologia = Portuguese journal of cardiology : an official journal of the Portuguese Society of Cardiology",
+                    "pmid": "15008060"
+                }
+            ],
+            "@id": "/extra-evidence/de3004bc-858c-4d97-9653-41c6f06abe0a/"
+        },
+        {
+            "uuid": "592bd6b6-fdaa-4c2c-b3d8-773a0470e48b",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:40:02.929807+00:00",
+            "schema_version": "1",
+            "category": "case-segregation",
+            "date_created": "2017-01-24T16:40:02.929796+00:00",
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "evidenceDescription": "18 families with HCM screened. I263T was identified in 1 proband and also found in 2 relatives, 1 affected and 1 unaffected. The variant was absent from at least 200 control chromosomes. Ethnicity of probands and controls not specified.",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "subcategory": "case-control",
+            "articles": [
+                {
+                    "uuid": "c47e6fc4-26b0-4ff0-8c10-412c307c0798",
+                    "abstract": "Familial hypertrophic cardiomyopathy is a genetically heterogeneous disease in which one of the most frequently implicated gene is the gene encoding the beta-myosin heavy chain. To date, more than 40 distinct mutations have been found within this gene. In order to progress on the determination of genotype-phenotype relationship, we have screened the beta-myosin heavy chain gene for mutations in 18 probands from unrelated families. We identified the mutation implicated in the disease in four families. Two of them, the Glu930 codon deletion and the Ile263Thr mutation, are reported here for the first time. The two other mutations are the Arg723Cys mutation, that was previously described in a proband as a de novo mutation, and the Arg719Trp mutation. A poor prognosis was associated with the Glu930codon deletion (mean maximal wall thickness (MWT) = 19.5 mm +/- 5) and the Arg719Trp mutation (mean MWT = 15.3 mm +/- 7), whereas a good prognosis was associated with the Arg723Cys mutation (mean MWT = 20.1 mm +/- 7). The combination of clinical and genetic characteristics of each family member suggests that prognosis is related neither to the degree of left ventricular wall thickness nor to a change in the net electrical charge of the protein. Additional family studies are needed to confirm these findings and to contribute to stratify the prognosis according to the mutation involved.",
+                    "last_modified": "2017-01-24T16:39:51.667750+00:00",
+                    "schema_version": "1",
+                    "active": true,
+                    "pmcid": "",
+                    "doi": "",
+                    "date_created": "2017-01-24T16:39:51.667736+00:00",
+                    "submitted_by": {
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                        "lab": "/labs/curator/",
+                        "email": "bcushman@partners.org",
+                        "title": "Brandon Cushman",
+                        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                        "last_name": "Cushman",
+                        "first_name": "Brandon"
+                    },
+                    "date": "1998;12(6):385-92.",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "authors": [
+                        "Tesson F",
+                        "Richard P",
+                        "Charron P",
+                        "Mathieu B",
+                        "Cruaud C",
+                        "Carrier L",
+                        "Dubourg O",
+                        "Lautié N",
+                        "Desnos M",
+                        "Millaire A",
+                        "Isnard R",
+                        "Hagege AA",
+                        "Bouhour JB",
+                        "Bennaceur M",
+                        "Hainque B",
+                        "Guicheney P",
+                        "Schwartz K",
+                        "Komajda M"
+                    ],
+                    "title": "Genotype-phenotype analysis in four families with mutations in beta-myosin heavy chain gene responsible for familial hypertrophic cardiomyopathy.",
+                    "@id": "/articles/9829907/",
+                    "journal": "Human mutation",
+                    "pmid": "9829907"
+                }
+            ],
+            "@id": "/extra-evidence/592bd6b6-fdaa-4c2c-b3d8-773a0470e48b/"
+        },
+        {
+            "uuid": "72fab8dc-963c-4d3c-8679-3d18fd869c24",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:40:32.591451+00:00",
+            "schema_version": "1",
+            "category": "case-segregation",
+            "date_created": "2017-01-24T16:40:32.591437+00:00",
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "evidenceDescription": "197 probands with HCM were screened. I263T was identified in 1 index patient and classified as a \"mutation\", meaning it was absent from 200 healthy control chromosomes.",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "subcategory": "case-control",
+            "articles": [
+                {
+                    "uuid": "ec3e5130-799a-49fd-beb8-93249e074571",
+                    "abstract": "Hypertrophic cardiomyopathy is an autosomal-dominant disorder in which 10 genes and numerous mutations have been reported. The aim of the present study was to perform a systematic screening of these genes in a large population, to evaluate the distribution of the disease genes, and to determine the best molecular strategy in clinical practice.",
+                    "last_modified": "2017-01-24T16:04:54.227817+00:00",
+                    "schema_version": "1",
+                    "active": true,
+                    "pmcid": "",
+                    "doi": "",
+                    "date_created": "2017-01-24T16:04:54.227805+00:00",
+                    "submitted_by": {
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                        "lab": "/labs/curator/",
+                        "email": "bcushman@partners.org",
+                        "title": "Brandon Cushman",
+                        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                        "last_name": "Cushman",
+                        "first_name": "Brandon"
+                    },
+                    "date": "2003 May 06;107(17):2227-32.",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "authors": [
+                        "Richard P",
+                        "Charron P",
+                        "Carrier L",
+                        "Ledeuil C",
+                        "Cheav T",
+                        "Pichereau C",
+                        "Benaiche A",
+                        "Isnard R",
+                        "Dubourg O",
+                        "Burban M",
+                        "Gueffet JP",
+                        "Millaire A",
+                        "Desnos M",
+                        "Schwartz K",
+                        "Hainque B",
+                        "Komajda M",
+                        "EUROGENE Heart Failure Project"
+                    ],
+                    "title": "Hypertrophic cardiomyopathy: distribution of disease genes, spectrum of mutations, and implications for a molecular diagnosis strategy.",
+                    "@id": "/articles/12707239/",
+                    "journal": "Circulation",
+                    "pmid": "12707239"
+                }
+            ],
+            "@id": "/extra-evidence/72fab8dc-963c-4d3c-8679-3d18fd869c24/"
+        },
+        {
+            "uuid": "d7daf84c-f10c-4363-bcd8-ddcab1f2e21a",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T16:41:24.406520+00:00",
+            "schema_version": "1",
+            "category": "case-segregation",
+            "date_created": "2017-01-24T16:41:24.410787+00:00",
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "evidenceDescription": "80 Portugese probands with HCM were screened for variants in 28 HCM associated genes. I263T was identified in 3 probands (2 with family history, 1 sporadic) and was considered a \"mutation\" meaning that it :co-segregates with the disease in the family, affects an amino acid conserved among species and isoforms; and it failed to be detected in at least 200 chromosomes of healthy adult controls. \nSeveral of the same authors as on the Brito 2003 paper, so being conservative and only counting the sporatic case.",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "subcategory": "case-control",
+            "articles": [
+                {
+                    "uuid": "81874daf-fde9-42da-93ec-370e98451985",
+                    "abstract": "Hypertrophic Cardiomyopathy (HCM) is a complex myocardial disorder with a recognized genetic heterogeneity. The elevated number of genes and mutations involved in HCM limits a gene-based diagnosis that should be considered of most importance for basic research and clinical medicine.",
+                    "last_modified": "2017-01-24T16:40:59.537510+00:00",
+                    "schema_version": "1",
+                    "active": true,
+                    "pmcid": "",
+                    "doi": "",
+                    "date_created": "2017-01-24T16:40:59.537498+00:00",
+                    "submitted_by": {
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                        "lab": "/labs/curator/",
+                        "email": "bcushman@partners.org",
+                        "title": "Brandon Cushman",
+                        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                        "last_name": "Cushman",
+                        "first_name": "Brandon"
+                    },
+                    "date": "2012 Mar 19;13:17.",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "authors": [
+                        "Santos S",
+                        "Marques V",
+                        "Pires M",
+                        "Silveira L",
+                        "Oliveira H",
+                        "Lança V",
+                        "Brito D",
+                        "Madeira H",
+                        "Esteves JF",
+                        "Freitas A",
+                        "Carreira IM",
+                        "Gaspar IM",
+                        "Monteiro C",
+                        "Fernandes AR"
+                    ],
+                    "title": "High resolution melting: improvements in the genetic diagnosis of hypertrophic cardiomyopathy in a Portuguese cohort.",
+                    "@id": "/articles/22429680/",
+                    "journal": "BMC medical genetics",
+                    "pmid": "22429680"
+                }
+            ],
+            "@id": "/extra-evidence/d7daf84c-f10c-4363-bcd8-ddcab1f2e21a/"
+        },
+        {
+            "uuid": "1f181bd0-5c6c-48b0-9ed9-804d8a883bbd",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:03:32.942182+00:00",
+            "schema_version": "1",
+            "category": "case-segregation",
+            "date_created": "2017-01-24T17:03:32.945182+00:00",
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "evidenceDescription": "38 individuals from 2 unrelated Portugese families with HCM. 1 proband from each family was positive for I263T and the variant was absent from 200 control chromosomes (ethnicity unspecified). In family A, the variant segregated was seen with disease in 9 affected relatives (including 1 inferred carrier, I-2). 8 segregations - mak 3.10.16  In family B, 6 individuals were positive for the variant and 2 of these individuals were affected (including the proband and 1 homozygous sibling). Note that the pedigree also marks 2 deceased individuals (II-2, II-3) as both \"clinically and genetically affected\", however, the paper did NOT specify that these individuals carry the variant, only that they were clinically diagnosed with HCM upon autopsy. Being conservative and only counting 1 segregation for Family B - mak 3.10.16   The disease is fully penetrant in family A but results in a very mild form of disease, whereas in family B there is only 50% penetrance but a very severe form of disease including two cases of SCD. See pedigrees to the right.",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "subcategory": "segreagtion-data",
+            "articles": [
+                {
+                    "uuid": "7e0c50a4-cf29-4c15-8088-d6aa10a8c1c2",
+                    "abstract": "The gene encoding the beta-myosin heavy chain is one of the most frequently implicated in familial hypertrophic cardiomyopathy. Several mutations have been identified and some genotype-phenotype relationships have been assumed, particularly with regard to prognosis. Nevertheless, phenotypic expression is variable even in affected members of the same family carrying the same mutation. We identified the Ile263Thr mutation in several members of two unrelated Portuguese families. Penetrance, clinical behavior and prognosis were quite different between the two families, particularly concerning the occurrence of sudden death. Additional factors probably exist which account for the differences found. The complexity of hypertrophic cardiomyopathy makes it difficult to accurately determine genotype-phenotype relationships, and the screening and comparison of large affected families carrying the same mutation is warranted.",
+                    "last_modified": "2017-01-24T16:39:09.175094+00:00",
+                    "schema_version": "1",
+                    "active": true,
+                    "pmcid": "",
+                    "doi": "",
+                    "date_created": "2017-01-24T16:39:09.177747+00:00",
+                    "submitted_by": {
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                        "lab": "/labs/curator/",
+                        "email": "bcushman@partners.org",
+                        "title": "Brandon Cushman",
+                        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                        "last_name": "Cushman",
+                        "first_name": "Brandon"
+                    },
+                    "date": "2003 Dec;22(12):1445-61.",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "authors": [
+                        "Brito D",
+                        "Richard P",
+                        "Isnard R",
+                        "Pipa J",
+                        "Komajda M",
+                        "Madeira H"
+                    ],
+                    "title": "Familial hypertrophic cardiomyopathy: the same mutation, different prognosis. Comparison of two families with a long follow-up.",
+                    "@id": "/articles/15008060/",
+                    "journal": "Revista portuguesa de cardiologia : orgao oficial da Sociedade Portuguesa de Cardiologia = Portuguese journal of cardiology : an official journal of the Portuguese Society of Cardiology",
+                    "pmid": "15008060"
+                }
+            ],
+            "@id": "/extra-evidence/1f181bd0-5c6c-48b0-9ed9-804d8a883bbd/"
+        },
+        {
+            "uuid": "10f3dfe6-b278-4dd6-aaa0-8ac39ef7ba1f",
+            "submitted_by": {
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "lab": "/labs/curator/",
+                "email": "bcushman@partners.org",
+                "title": "Brandon Cushman",
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "last_name": "Cushman",
+                "first_name": "Brandon"
+            },
+            "last_modified": "2017-01-24T17:04:17.080302+00:00",
+            "schema_version": "1",
+            "category": "case-segregation",
+            "date_created": "2017-01-24T17:04:17.080292+00:00",
+            "@type": [
+                "extra_evidence",
+                "item"
+            ],
+            "evidenceDescription": "18 families with HCM screened. I263T was identified in 1 proband and also found in 2 relatives, 1 affected and 1 unaffected. The variant was absent from at least 200 control chromosomes. Ethnicity of probands and controls not specified.",
+            "variant": "/variants/d02085c5-2167-40be-8b53-574a2300c3f2/",
+            "status": "in progress",
+            "subcategory": "segreagtion-data",
+            "articles": [
+                {
+                    "uuid": "c47e6fc4-26b0-4ff0-8c10-412c307c0798",
+                    "abstract": "Familial hypertrophic cardiomyopathy is a genetically heterogeneous disease in which one of the most frequently implicated gene is the gene encoding the beta-myosin heavy chain. To date, more than 40 distinct mutations have been found within this gene. In order to progress on the determination of genotype-phenotype relationship, we have screened the beta-myosin heavy chain gene for mutations in 18 probands from unrelated families. We identified the mutation implicated in the disease in four families. Two of them, the Glu930 codon deletion and the Ile263Thr mutation, are reported here for the first time. The two other mutations are the Arg723Cys mutation, that was previously described in a proband as a de novo mutation, and the Arg719Trp mutation. A poor prognosis was associated with the Glu930codon deletion (mean maximal wall thickness (MWT) = 19.5 mm +/- 5) and the Arg719Trp mutation (mean MWT = 15.3 mm +/- 7), whereas a good prognosis was associated with the Arg723Cys mutation (mean MWT = 20.1 mm +/- 7). The combination of clinical and genetic characteristics of each family member suggests that prognosis is related neither to the degree of left ventricular wall thickness nor to a change in the net electrical charge of the protein. Additional family studies are needed to confirm these findings and to contribute to stratify the prognosis according to the mutation involved.",
+                    "last_modified": "2017-01-24T16:39:51.667750+00:00",
+                    "schema_version": "1",
+                    "active": true,
+                    "pmcid": "",
+                    "doi": "",
+                    "date_created": "2017-01-24T16:39:51.667736+00:00",
+                    "submitted_by": {
+                        "@type": [
+                            "user",
+                            "item"
+                        ],
+                        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                        "lab": "/labs/curator/",
+                        "email": "bcushman@partners.org",
+                        "title": "Brandon Cushman",
+                        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                        "last_name": "Cushman",
+                        "first_name": "Brandon"
+                    },
+                    "date": "1998;12(6):385-92.",
+                    "@type": [
+                        "article",
+                        "item"
+                    ],
+                    "authors": [
+                        "Tesson F",
+                        "Richard P",
+                        "Charron P",
+                        "Mathieu B",
+                        "Cruaud C",
+                        "Carrier L",
+                        "Dubourg O",
+                        "Lautié N",
+                        "Desnos M",
+                        "Millaire A",
+                        "Isnard R",
+                        "Hagege AA",
+                        "Bouhour JB",
+                        "Bennaceur M",
+                        "Hainque B",
+                        "Guicheney P",
+                        "Schwartz K",
+                        "Komajda M"
+                    ],
+                    "title": "Genotype-phenotype analysis in four families with mutations in beta-myosin heavy chain gene responsible for familial hypertrophic cardiomyopathy.",
+                    "@id": "/articles/9829907/",
+                    "journal": "Human mutation",
+                    "pmid": "9829907"
+                }
+            ],
+            "@id": "/extra-evidence/10f3dfe6-b278-4dd6-aaa0-8ac39ef7ba1f/"
+        }
+    ]
+}

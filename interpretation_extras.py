@@ -45,6 +45,7 @@ def create_coding(system,display,code):
     coding.set_display(display)
     coding.set_code(code)
     coding.set_system(system)
+    return coding
 
 def read_criteria():
     inf = file('ValueSets/Criterion.json','r')
@@ -68,7 +69,6 @@ class InterpretationEncoder(json.JSONEncoder):
     def __init__(self, *args, **kwargs):
         if 'out_style' in kwargs:
             self.ostyle = kwargs['out_style']
-            print self.ostyle
             del kwargs['out_style']
         else:
             self.ostyle='first'

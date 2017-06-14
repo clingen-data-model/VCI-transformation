@@ -1,0 +1,2028 @@
+{
+    "interpretation_status": "In Progress",
+    "variant": {
+        "clinvarVariantTitle": "NM_000257.3(MYH7):c.2156G>A (p.Arg719Gln)",
+        "last_modified": "2017-01-24T17:34:12.931608+00:00",
+        "associatedInterpretations": [
+            {
+                "interpretation_status": "In Progress",
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "disease": "/diseases/217569/",
+                "last_modified": "2017-01-24T18:01:49.668173+00:00",
+                "evaluation_count": 24,
+                "@type": [
+                    "interpretation",
+                    "item"
+                ],
+                "provisional_count": 0,
+                "schema_version": "2",
+                "evaluations": [
+                    "/evaluations/f6ad3744-b9e5-407e-8d8d-ee706a4c1ddb/",
+                    "/evaluations/ddcde623-8f3e-46a8-8cd7-0764e5ba1240/",
+                    "/evaluations/c4e14def-6223-40f5-957d-6ac83546c2a3/",
+                    "/evaluations/2103ab5a-9e54-4fc3-b305-e7ddc52adbb9/",
+                    "/evaluations/65ae55ed-984b-465f-9b49-b7cfd9e4980e/",
+                    "/evaluations/884c2f86-c19c-46c8-9ac9-3ec5f5c8196b/",
+                    "/evaluations/dcbe241f-5372-45a0-b974-9b30f749a2d7/",
+                    "/evaluations/ec4ea814-395c-4a41-ac9d-5500c76c8026/",
+                    "/evaluations/a8b3b107-292d-4251-aeaf-ce73fb8a9787/",
+                    "/evaluations/2d85672d-d06c-4645-a15c-e90c2a410c2b/",
+                    "/evaluations/225a77c1-2d0e-43bb-9c31-bf6f886bbb85/",
+                    "/evaluations/826f69ee-f398-4821-96bd-26246a35557b/",
+                    "/evaluations/ee4d1fc2-7f00-4075-be23-94ee9c0d12e0/",
+                    "/evaluations/70f95911-451f-445a-9312-676fb6ea2442/",
+                    "/evaluations/bd8114c0-e2f3-44b8-a6a7-f55b0dc117a9/",
+                    "/evaluations/bec755fb-a3b5-4099-adf5-2b944e96e8f5/",
+                    "/evaluations/2153c340-8f78-4801-bd68-d11401274a6d/",
+                    "/evaluations/2d2ebddb-4a8a-49e1-b44b-e2815c534069/",
+                    "/evaluations/739f01d2-7948-4b95-b208-8622e7612d9c/",
+                    "/evaluations/e230fe75-dc9f-4b46-9565-c180d63c1f62/",
+                    "/evaluations/289a378a-743b-425d-b6f0-f279c42266ec/",
+                    "/evaluations/debee0fb-08af-4a0f-8268-2851e506460a/",
+                    "/evaluations/dacde68f-1688-427b-a667-973d47fb43dc/",
+                    "/evaluations/8bbe5a5d-c96f-4d47-8af7-1fa35e4bf011/"
+                ],
+                "uuid": "cd85d870-89db-43ab-bb97-1d28fc81b77f",
+                "modeInheritance": "Autosomal dominant inheritance (HP:0000006)",
+                "interpretation_disease": "ORPHA217569",
+                "@id": "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/",
+                "modeInheritanceAdjective": "",
+                "date_created": "2017-01-24T17:34:56.859024+00:00",
+                "status": "in progress",
+                "interpretation_genes": "",
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                }
+            },
+            {
+                "interpretation_status": "In Progress",
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-02-20T14:33:28.670007+00:00",
+                "evaluation_count": 0,
+                "@type": [
+                    "interpretation",
+                    "item"
+                ],
+                "provisional_count": 0,
+                "schema_version": "2",
+                "uuid": "4aefbc73-f128-4c0a-ac0a-2185e274a92f",
+                "@id": "/interpretations/4aefbc73-f128-4c0a-ac0a-2185e274a92f/",
+                "modeInheritanceAdjective": "",
+                "interpretation_disease": "",
+                "date_created": "2017-02-20T14:33:28.669995+00:00",
+                "status": "in progress",
+                "interpretation_genes": "",
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/9d477bfb-f0e1-4bed-8339-9074d243cac4/",
+                    "first_name": "Steven",
+                    "uuid": "9d477bfb-f0e1-4bed-8339-9074d243cac4",
+                    "email": "sharrison6@partners.org",
+                    "last_name": "Harrison",
+                    "title": "Steven Harrison"
+                }
+            }
+        ],
+        "source": "ClinVar",
+        "variation_type": "single nucleotide variant",
+        "uuid": "1c42deda-32d7-451a-a210-ef75cd5cb854",
+        "clinvarVariantId": "14107",
+        "@id": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+        "molecular_consequence": "missense variant",
+        "date_created": "2017-01-24T17:34:12.931597+00:00",
+        "clinVarRCVs": [],
+        "variationType": "single nucleotide variant",
+        "submitted_by": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+        "otherDescription": "",
+        "associatedPathogenicities": [],
+        "molecularConsequenceList": [
+            {
+                "term": "missense variant",
+                "hgvsName": "NM_000257.3:c.2156G>A",
+                "soId": "SO:0001583"
+            }
+        ],
+        "@type": [
+            "variant",
+            "item"
+        ],
+        "carId": "",
+        "schema_version": "3",
+        "variant_identifier": "14107",
+        "status": "in progress",
+        "clinVarSCVs": [],
+        "dbSNPIds": [
+            "121913641"
+        ],
+        "hgvsNames": {
+            "GRCh37": "NC_000014.8:g.23895179C>T",
+            "others": [
+                "NG_007884.1:g.14692G>A",
+                "NM_000257.3:c.2156G>A",
+                "NP_000248.2:p.Arg719Gln",
+                "NM_000257.2:c.2156G>A",
+                "P12883:p.Arg719Gln",
+                "LRG_384p1:p.Arg719Gln",
+                "LRG_384:g.14692G>A",
+                "LRG_384t1:c.2156G>A"
+            ],
+            "GRCh38": "NC_000014.9:g.23425970C>T"
+        }
+    },
+    "disease": {
+        "term": "Hypertrophic cardiomyopathy",
+        "@type": [
+            "orphaPhenotype",
+            "item"
+        ],
+        "schema_version": "1",
+        "@id": "/diseases/217569/",
+        "type": "Group of phenomes",
+        "active": true,
+        "uuid": "f614119f-694e-467f-92f9-97a196c85c45",
+        "synonyms": [
+            "Hypertrophic subaortic stenosis",
+            "Obstructive hypertrophic cardiomyopathy"
+        ],
+        "omimIds": [],
+        "orphaNumber": "217569"
+    },
+    "last_modified": "2017-01-24T18:01:49.668173+00:00",
+    "evaluation_count": 24,
+    "@type": [
+        "interpretation",
+        "item"
+    ],
+    "provisional_count": 0,
+    "schema_version": "2",
+    "evaluations": [
+        {
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:35:17.930468+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "evidence_type": "Population",
+            "modifier": "",
+            "uuid": "f6ad3744-b9e5-407e-8d8d-ee706a4c1ddb",
+            "@id": "/evaluations/f6ad3744-b9e5-407e-8d8d-ee706a4c1ddb/",
+            "criteria": "BA1",
+            "criteriaModifier": "",
+            "date_created": "2017-01-24T17:35:17.930458+00:00",
+            "status": "in progress",
+            "population": {
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-01-24T17:35:17.785252+00:00",
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "schema_version": "1",
+                "evaluation_associated": [
+                    "/evaluations/ddcde623-8f3e-46a8-8cd7-0764e5ba1240/",
+                    "/evaluations/f6ad3744-b9e5-407e-8d8d-ee706a4c1ddb/",
+                    "/evaluations/c4e14def-6223-40f5-957d-6ac83546c2a3/"
+                ],
+                "uuid": "1cacb7e6-70b4-417c-aa72-786ba7475f15",
+                "status": "in progress",
+                "date_created": "2017-01-24T17:35:17.785240+00:00",
+                "populationData": {
+                    "mafCutoff": 5,
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "exac": {
+                        "eas": {
+                            "af": null
+                        },
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "oth": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "_tot": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "_extra": {}
+                    },
+                    "tGenomes": {
+                        "eas": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "sas": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "amr": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "espea": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "afr": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "espaa": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "_extra": {
+                            "name": "rs121913641",
+                            "alt": "T",
+                            "var_class": "SNP",
+                            "ref": "C"
+                        },
+                        "eur": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        }
+                    },
+                    "esp": {
+                        "ea": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_extra": {},
+                        "aa": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gc": {}
+                        }
+                    },
+                    "desiredCI": 95
+                },
+                "maf_count": 6,
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                },
+                "@id": "/populations/1cacb7e6-70b4-417c-aa72-786ba7475f15/"
+            },
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            }
+        },
+        {
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "explanation": "",
+            "criteriaStatus": "met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:35:17.921300+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "evidence_type": "Population",
+            "modifier": "",
+            "uuid": "ddcde623-8f3e-46a8-8cd7-0764e5ba1240",
+            "@id": "/evaluations/ddcde623-8f3e-46a8-8cd7-0764e5ba1240/",
+            "criteria": "PM2",
+            "criteriaModifier": "",
+            "date_created": "2017-01-24T17:35:17.923942+00:00",
+            "status": "in progress",
+            "population": {
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-01-24T17:35:17.785252+00:00",
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "schema_version": "1",
+                "evaluation_associated": [
+                    "/evaluations/ddcde623-8f3e-46a8-8cd7-0764e5ba1240/",
+                    "/evaluations/f6ad3744-b9e5-407e-8d8d-ee706a4c1ddb/",
+                    "/evaluations/c4e14def-6223-40f5-957d-6ac83546c2a3/"
+                ],
+                "uuid": "1cacb7e6-70b4-417c-aa72-786ba7475f15",
+                "status": "in progress",
+                "date_created": "2017-01-24T17:35:17.785240+00:00",
+                "populationData": {
+                    "mafCutoff": 5,
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "exac": {
+                        "eas": {
+                            "af": null
+                        },
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "oth": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "_tot": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "_extra": {}
+                    },
+                    "tGenomes": {
+                        "eas": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "sas": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "amr": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "espea": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "afr": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "espaa": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "_extra": {
+                            "name": "rs121913641",
+                            "alt": "T",
+                            "var_class": "SNP",
+                            "ref": "C"
+                        },
+                        "eur": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        }
+                    },
+                    "esp": {
+                        "ea": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_extra": {},
+                        "aa": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gc": {}
+                        }
+                    },
+                    "desiredCI": 95
+                },
+                "maf_count": 6,
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                },
+                "@id": "/populations/1cacb7e6-70b4-417c-aa72-786ba7475f15/"
+            },
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            }
+        },
+        {
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:35:18.036851+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "evidence_type": "Population",
+            "modifier": "",
+            "uuid": "c4e14def-6223-40f5-957d-6ac83546c2a3",
+            "@id": "/evaluations/c4e14def-6223-40f5-957d-6ac83546c2a3/",
+            "criteria": "BS1",
+            "criteriaModifier": "",
+            "date_created": "2017-01-24T17:35:18.036841+00:00",
+            "status": "in progress",
+            "population": {
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-01-24T17:35:17.785252+00:00",
+                "@type": [
+                    "population",
+                    "item"
+                ],
+                "schema_version": "1",
+                "evaluation_associated": [
+                    "/evaluations/ddcde623-8f3e-46a8-8cd7-0764e5ba1240/",
+                    "/evaluations/f6ad3744-b9e5-407e-8d8d-ee706a4c1ddb/",
+                    "/evaluations/c4e14def-6223-40f5-957d-6ac83546c2a3/"
+                ],
+                "uuid": "1cacb7e6-70b4-417c-aa72-786ba7475f15",
+                "status": "in progress",
+                "date_created": "2017-01-24T17:35:17.785240+00:00",
+                "populationData": {
+                    "mafCutoff": 5,
+                    "highestMAF": {
+                        "af": 0
+                    },
+                    "exac": {
+                        "eas": {
+                            "af": null
+                        },
+                        "nfe": {
+                            "af": null
+                        },
+                        "sas": {
+                            "af": null
+                        },
+                        "amr": {
+                            "af": null
+                        },
+                        "oth": {
+                            "af": null
+                        },
+                        "afr": {
+                            "af": null
+                        },
+                        "_tot": {
+                            "af": null
+                        },
+                        "fin": {
+                            "af": null
+                        },
+                        "_extra": {}
+                    },
+                    "tGenomes": {
+                        "eas": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "sas": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "amr": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "espea": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "afr": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "espaa": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        },
+                        "_extra": {
+                            "name": "rs121913641",
+                            "alt": "T",
+                            "var_class": "SNP",
+                            "ref": "C"
+                        },
+                        "eur": {
+                            "ac": {},
+                            "gf": {},
+                            "gc": {},
+                            "af": {}
+                        }
+                    },
+                    "esp": {
+                        "ea": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_extra": {},
+                        "aa": {
+                            "ac": {},
+                            "gc": {}
+                        },
+                        "_tot": {
+                            "ac": {},
+                            "gc": {}
+                        }
+                    },
+                    "desiredCI": 95
+                },
+                "maf_count": 6,
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                },
+                "@id": "/populations/1cacb7e6-70b4-417c-aa72-786ba7475f15/"
+            },
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            }
+        },
+        {
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "explanation": "",
+            "criteriaStatus": "met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:35:56.435268+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "evidence_type": "Computational",
+            "uuid": "2103ab5a-9e54-4fc3-b305-e7ddc52adbb9",
+            "modifier": "",
+            "computational": {
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-01-24T17:35:56.296252+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "schema_version": "2",
+                "evaluation_associated": [
+                    "/evaluations/2103ab5a-9e54-4fc3-b305-e7ddc52adbb9/",
+                    "/evaluations/65ae55ed-984b-465f-9b49-b7cfd9e4980e/",
+                    "/evaluations/884c2f86-c19c-46c8-9ac9-3ec5f5c8196b/",
+                    "/evaluations/dcbe241f-5372-45a0-b974-9b30f749a2d7/"
+                ],
+                "computationalData": {
+                    "other_predictors": {
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.7962
+                            ],
+                            "prediction": "D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": [
+                                0.001
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -1.78
+                            ],
+                            "prediction": "N"
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.294
+                            ],
+                            "prediction": "B"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.487112
+                            ],
+                            "prediction": null
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                0.566
+                            ],
+                            "prediction": "P"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.45542
+                            ],
+                            "prediction": "N"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.7944
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -3.68
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.935965
+                            ],
+                            "prediction": "A"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "7.456653",
+                            "prediction": null
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                1.665
+                            ],
+                            "prediction": "L"
+                        }
+                    },
+                    "conservation": {
+                        "phylop20way": "0.932",
+                        "phastconsp7way": "0.389",
+                        "siphy": "13.9031",
+                        "phylop7way": "0.861",
+                        "phastconsp20way": "0.999",
+                        "gerp": "5.03"
+                    },
+                    "clingen": {
+                        "cftr": {
+                            "visible": false,
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "--"
+                        },
+                        "revel": {
+                            "visible": true,
+                            "score_range": "0 to 1",
+                            "score": "0.694",
+                            "prediction": "higher score = higher pathogenicity"
+                        }
+                    }
+                },
+                "uuid": "32cbdef9-d4f6-4ac8-8a64-235a678ad0d4",
+                "status": "in progress",
+                "disease_present": "",
+                "date_created": "2017-01-24T17:35:56.296240+00:00",
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                },
+                "@id": "/computational/32cbdef9-d4f6-4ac8-8a64-235a678ad0d4/"
+            },
+            "@id": "/evaluations/2103ab5a-9e54-4fc3-b305-e7ddc52adbb9/",
+            "criteria": "PP3",
+            "criteriaModifier": "",
+            "date_created": "2017-01-24T17:35:56.437981+00:00",
+            "status": "in progress",
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            }
+        },
+        {
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:35:56.446436+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "evidence_type": "Computational",
+            "uuid": "65ae55ed-984b-465f-9b49-b7cfd9e4980e",
+            "modifier": "",
+            "computational": {
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-01-24T17:35:56.296252+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "schema_version": "2",
+                "evaluation_associated": [
+                    "/evaluations/2103ab5a-9e54-4fc3-b305-e7ddc52adbb9/",
+                    "/evaluations/65ae55ed-984b-465f-9b49-b7cfd9e4980e/",
+                    "/evaluations/884c2f86-c19c-46c8-9ac9-3ec5f5c8196b/",
+                    "/evaluations/dcbe241f-5372-45a0-b974-9b30f749a2d7/"
+                ],
+                "computationalData": {
+                    "other_predictors": {
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.7962
+                            ],
+                            "prediction": "D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": [
+                                0.001
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -1.78
+                            ],
+                            "prediction": "N"
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.294
+                            ],
+                            "prediction": "B"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.487112
+                            ],
+                            "prediction": null
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                0.566
+                            ],
+                            "prediction": "P"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.45542
+                            ],
+                            "prediction": "N"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.7944
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -3.68
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.935965
+                            ],
+                            "prediction": "A"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "7.456653",
+                            "prediction": null
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                1.665
+                            ],
+                            "prediction": "L"
+                        }
+                    },
+                    "conservation": {
+                        "phylop20way": "0.932",
+                        "phastconsp7way": "0.389",
+                        "siphy": "13.9031",
+                        "phylop7way": "0.861",
+                        "phastconsp20way": "0.999",
+                        "gerp": "5.03"
+                    },
+                    "clingen": {
+                        "cftr": {
+                            "visible": false,
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "--"
+                        },
+                        "revel": {
+                            "visible": true,
+                            "score_range": "0 to 1",
+                            "score": "0.694",
+                            "prediction": "higher score = higher pathogenicity"
+                        }
+                    }
+                },
+                "uuid": "32cbdef9-d4f6-4ac8-8a64-235a678ad0d4",
+                "status": "in progress",
+                "disease_present": "",
+                "date_created": "2017-01-24T17:35:56.296240+00:00",
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                },
+                "@id": "/computational/32cbdef9-d4f6-4ac8-8a64-235a678ad0d4/"
+            },
+            "@id": "/evaluations/65ae55ed-984b-465f-9b49-b7cfd9e4980e/",
+            "criteria": "BP4",
+            "criteriaModifier": "",
+            "date_created": "2017-01-24T17:35:56.446426+00:00",
+            "status": "in progress",
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            }
+        },
+        {
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "explanation": "",
+            "criteriaStatus": "not-evaluated",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:35:56.549230+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "evidence_type": "Computational",
+            "uuid": "884c2f86-c19c-46c8-9ac9-3ec5f5c8196b",
+            "modifier": "",
+            "computational": {
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-01-24T17:35:56.296252+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "schema_version": "2",
+                "evaluation_associated": [
+                    "/evaluations/2103ab5a-9e54-4fc3-b305-e7ddc52adbb9/",
+                    "/evaluations/65ae55ed-984b-465f-9b49-b7cfd9e4980e/",
+                    "/evaluations/884c2f86-c19c-46c8-9ac9-3ec5f5c8196b/",
+                    "/evaluations/dcbe241f-5372-45a0-b974-9b30f749a2d7/"
+                ],
+                "computationalData": {
+                    "other_predictors": {
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.7962
+                            ],
+                            "prediction": "D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": [
+                                0.001
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -1.78
+                            ],
+                            "prediction": "N"
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.294
+                            ],
+                            "prediction": "B"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.487112
+                            ],
+                            "prediction": null
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                0.566
+                            ],
+                            "prediction": "P"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.45542
+                            ],
+                            "prediction": "N"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.7944
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -3.68
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.935965
+                            ],
+                            "prediction": "A"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "7.456653",
+                            "prediction": null
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                1.665
+                            ],
+                            "prediction": "L"
+                        }
+                    },
+                    "conservation": {
+                        "phylop20way": "0.932",
+                        "phastconsp7way": "0.389",
+                        "siphy": "13.9031",
+                        "phylop7way": "0.861",
+                        "phastconsp20way": "0.999",
+                        "gerp": "5.03"
+                    },
+                    "clingen": {
+                        "cftr": {
+                            "visible": false,
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "--"
+                        },
+                        "revel": {
+                            "visible": true,
+                            "score_range": "0 to 1",
+                            "score": "0.694",
+                            "prediction": "higher score = higher pathogenicity"
+                        }
+                    }
+                },
+                "uuid": "32cbdef9-d4f6-4ac8-8a64-235a678ad0d4",
+                "status": "in progress",
+                "disease_present": "",
+                "date_created": "2017-01-24T17:35:56.296240+00:00",
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                },
+                "@id": "/computational/32cbdef9-d4f6-4ac8-8a64-235a678ad0d4/"
+            },
+            "@id": "/evaluations/884c2f86-c19c-46c8-9ac9-3ec5f5c8196b/",
+            "criteria": "BP1",
+            "criteriaModifier": "",
+            "date_created": "2017-01-24T17:35:56.549220+00:00",
+            "status": "in progress",
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            }
+        },
+        {
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "explanation": "",
+            "criteriaStatus": "met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:35:56.572669+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "evidence_type": "Computational",
+            "uuid": "dcbe241f-5372-45a0-b974-9b30f749a2d7",
+            "modifier": "",
+            "computational": {
+                "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+                "last_modified": "2017-01-24T17:35:56.296252+00:00",
+                "@type": [
+                    "computational",
+                    "item"
+                ],
+                "schema_version": "2",
+                "evaluation_associated": [
+                    "/evaluations/2103ab5a-9e54-4fc3-b305-e7ddc52adbb9/",
+                    "/evaluations/65ae55ed-984b-465f-9b49-b7cfd9e4980e/",
+                    "/evaluations/884c2f86-c19c-46c8-9ac9-3ec5f5c8196b/",
+                    "/evaluations/dcbe241f-5372-45a0-b974-9b30f749a2d7/"
+                ],
+                "computationalData": {
+                    "other_predictors": {
+                        "metasvm": {
+                            "score_range": "-2 to +3",
+                            "score": [
+                                0.7962
+                            ],
+                            "prediction": "D"
+                        },
+                        "lrt": {
+                            "score_range": "0 to 1",
+                            "score": null,
+                            "prediction": null
+                        },
+                        "sift": {
+                            "score_range": "--",
+                            "score": [
+                                0.001
+                            ],
+                            "prediction": "D"
+                        },
+                        "provean": {
+                            "score_range": "-14 to +14",
+                            "score": [
+                                -1.78
+                            ],
+                            "prediction": "N"
+                        },
+                        "polyphen2_hvar": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.294
+                            ],
+                            "prediction": "B"
+                        },
+                        "fitcons": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.487112
+                            ],
+                            "prediction": null
+                        },
+                        "polyphen2_hdiv": {
+                            "score_range": "--",
+                            "score": [
+                                0.566
+                            ],
+                            "prediction": "P"
+                        },
+                        "fathmm_mkl": {
+                            "score_range": "--",
+                            "score": [
+                                0.45542
+                            ],
+                            "prediction": "N"
+                        },
+                        "metalr": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.7944
+                            ],
+                            "prediction": "D"
+                        },
+                        "fathmm": {
+                            "score_range": "-16.13 to 10.64",
+                            "score": [
+                                -3.68
+                            ],
+                            "prediction": "D"
+                        },
+                        "mutationtaster": {
+                            "score_range": "0 to 1",
+                            "score": [
+                                0.935965
+                            ],
+                            "prediction": "A"
+                        },
+                        "cadd": {
+                            "score_range": "-7.535 to 35.789",
+                            "score": "7.456653",
+                            "prediction": null
+                        },
+                        "mutationassessor": {
+                            "score_range": "-0.5135 to 6.49",
+                            "score": [
+                                1.665
+                            ],
+                            "prediction": "L"
+                        }
+                    },
+                    "conservation": {
+                        "phylop20way": "0.932",
+                        "phastconsp7way": "0.389",
+                        "siphy": "13.9031",
+                        "phylop7way": "0.861",
+                        "phastconsp20way": "0.999",
+                        "gerp": "5.03"
+                    },
+                    "clingen": {
+                        "cftr": {
+                            "visible": false,
+                            "score_range": "--",
+                            "score": null,
+                            "prediction": "--"
+                        },
+                        "revel": {
+                            "visible": true,
+                            "score_range": "0 to 1",
+                            "score": "0.694",
+                            "prediction": "higher score = higher pathogenicity"
+                        }
+                    }
+                },
+                "uuid": "32cbdef9-d4f6-4ac8-8a64-235a678ad0d4",
+                "status": "in progress",
+                "disease_present": "",
+                "date_created": "2017-01-24T17:35:56.296240+00:00",
+                "submitted_by": {
+                    "lab": "/labs/curator/",
+                    "@type": [
+                        "user",
+                        "item"
+                    ],
+                    "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                    "first_name": "Brandon",
+                    "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                    "email": "bcushman@partners.org",
+                    "last_name": "Cushman",
+                    "title": "Brandon Cushman"
+                },
+                "@id": "/computational/32cbdef9-d4f6-4ac8-8a64-235a678ad0d4/"
+            },
+            "@id": "/evaluations/dcbe241f-5372-45a0-b974-9b30f749a2d7/",
+            "criteria": "PP2",
+            "criteriaModifier": "",
+            "date_created": "2017-01-24T17:35:56.575097+00:00",
+            "status": "in progress",
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            }
+        },
+        {
+            "explanation": "ClinVar ID's: 14104",
+            "criteriaStatus": "met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:37:17.700129+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "ec4ea814-395c-4a41-ac9d-5500c76c8026",
+            "status": "in progress",
+            "criteria": "PM5",
+            "date_created": "2017-01-24T17:37:17.700118+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/ec4ea814-395c-4a41-ac9d-5500c76c8026/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:37:17.812155+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "a8b3b107-292d-4251-aeaf-ce73fb8a9787",
+            "status": "in progress",
+            "criteria": "PS1",
+            "date_created": "2017-01-24T17:37:17.814755+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/a8b3b107-292d-4251-aeaf-ce73fb8a9787/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:37:36.756570+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "2d85672d-d06c-4645-a15c-e90c2a410c2b",
+            "status": "in progress",
+            "criteria": "BP7",
+            "date_created": "2017-01-24T17:37:36.759191+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/2d85672d-d06c-4645-a15c-e90c2a410c2b/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-evaluated",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:37:59.666938+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "225a77c1-2d0e-43bb-9c31-bf6f886bbb85",
+            "status": "in progress",
+            "criteria": "BP3",
+            "date_created": "2017-01-24T17:37:59.666927+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/225a77c1-2d0e-43bb-9c31-bf6f886bbb85/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:37:59.778190+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "826f69ee-f398-4821-96bd-26246a35557b",
+            "status": "in progress",
+            "criteria": "PM4",
+            "date_created": "2017-01-24T17:37:59.781197+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/826f69ee-f398-4821-96bd-26246a35557b/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:38:19.767330+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "ee4d1fc2-7f00-4075-be23-94ee9c0d12e0",
+            "status": "in progress",
+            "criteria": "BS3",
+            "date_created": "2017-01-24T17:38:19.767316+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/ee4d1fc2-7f00-4075-be23-94ee9c0d12e0/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:38:19.885331+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "70f95911-451f-445a-9312-676fb6ea2442",
+            "status": "in progress",
+            "criteria": "PS3",
+            "date_created": "2017-01-24T17:38:19.885320+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/70f95911-451f-445a-9312-676fb6ea2442/"
+        },
+        {
+            "explanation": "PS6\n14 published probands\n8 unpublished probands",
+            "criteriaStatus": "met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:56:26.679724+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "bd8114c0-e2f3-44b8-a6a7-f55b0dc117a9",
+            "status": "in progress",
+            "criteria": "PS4",
+            "date_created": "2017-01-24T17:56:26.679712+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/bd8114c0-e2f3-44b8-a6a7-f55b0dc117a9/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T18:01:14.682451+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "bec755fb-a3b5-4099-adf5-2b944e96e8f5",
+            "status": "in progress",
+            "criteria": "BS4",
+            "date_created": "2017-01-24T18:01:14.682438+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/bec755fb-a3b5-4099-adf5-2b944e96e8f5/"
+        },
+        {
+            "explanation": "7 total segregations\n3 published segregations\n4 unpublished segregation (3 LMM, 1 Share)",
+            "criteriaStatus": "met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T18:01:14.802238+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "2153c340-8f78-4801-bd68-d11401274a6d",
+            "status": "in progress",
+            "criteria": "PP1",
+            "date_created": "2017-01-24T18:01:14.802226+00:00",
+            "criteriaModifier": "strong",
+            "modifier": "strong",
+            "@id": "/evaluations/2153c340-8f78-4801-bd68-d11401274a6d/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:40:12.096659+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "2d2ebddb-4a8a-49e1-b44b-e2815c534069",
+            "status": "in progress",
+            "criteria": "PM6",
+            "date_created": "2017-01-24T17:40:12.096646+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/2d2ebddb-4a8a-49e1-b44b-e2815c534069/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:40:12.210978+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "739f01d2-7948-4b95-b208-8622e7612d9c",
+            "status": "in progress",
+            "criteria": "PS2",
+            "date_created": "2017-01-24T17:40:12.213415+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/739f01d2-7948-4b95-b208-8622e7612d9c/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:41:40.117297+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "e230fe75-dc9f-4b46-9565-c180d63c1f62",
+            "status": "in progress",
+            "criteria": "BP2",
+            "date_created": "2017-01-24T17:41:40.117284+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/e230fe75-dc9f-4b46-9565-c180d63c1f62/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-evaluated",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:41:40.236176+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "289a378a-743b-425d-b6f0-f279c42266ec",
+            "status": "in progress",
+            "criteria": "PM3",
+            "date_created": "2017-01-24T17:41:40.236166+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/289a378a-743b-425d-b6f0-f279c42266ec/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:41:51.525725+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "debee0fb-08af-4a0f-8268-2851e506460a",
+            "status": "in progress",
+            "criteria": "BP5",
+            "date_created": "2017-01-24T17:41:51.525714+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/debee0fb-08af-4a0f-8268-2851e506460a/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-met",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:42:08.029965+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "dacde68f-1688-427b-a667-973d47fb43dc",
+            "status": "in progress",
+            "criteria": "BP6",
+            "date_created": "2017-01-24T17:42:08.029952+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/dacde68f-1688-427b-a667-973d47fb43dc/"
+        },
+        {
+            "explanation": "",
+            "criteriaStatus": "not-evaluated",
+            "variant": "/variants/1c42deda-32d7-451a-a210-ef75cd5cb854/",
+            "last_modified": "2017-01-24T17:42:08.149216+00:00",
+            "@type": [
+                "evaluation",
+                "item"
+            ],
+            "schema_version": "1",
+            "interpretation_associated": [
+                "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/"
+            ],
+            "submitted_by": {
+                "lab": "/labs/curator/",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+                "first_name": "Brandon",
+                "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+                "email": "bcushman@partners.org",
+                "last_name": "Cushman",
+                "title": "Brandon Cushman"
+            },
+            "uuid": "8bbe5a5d-c96f-4d47-8af7-1fa35e4bf011",
+            "status": "in progress",
+            "criteria": "PP5",
+            "date_created": "2017-01-24T17:42:08.149206+00:00",
+            "criteriaModifier": "",
+            "modifier": "",
+            "@id": "/evaluations/8bbe5a5d-c96f-4d47-8af7-1fa35e4bf011/"
+        }
+    ],
+    "uuid": "cd85d870-89db-43ab-bb97-1d28fc81b77f",
+    "modeInheritance": "Autosomal dominant inheritance (HP:0000006)",
+    "interpretation_disease": "ORPHA217569",
+    "@id": "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/",
+    "modeInheritanceAdjective": "",
+    "audit": {},
+    "date_created": "2017-01-24T17:34:56.859024+00:00",
+    "status": "in progress",
+    "interpretation_genes": "",
+    "submitted_by": {
+        "lab": "/labs/curator/",
+        "@type": [
+            "user",
+            "item"
+        ],
+        "@id": "/users/7620a154-1bed-4184-89c1-298ade1cd536/",
+        "first_name": "Brandon",
+        "uuid": "7620a154-1bed-4184-89c1-298ade1cd536",
+        "email": "bcushman@partners.org",
+        "last_name": "Cushman",
+        "title": "Brandon Cushman"
+    },
+    "actions": [
+        {
+            "name": "edit",
+            "href": "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/#!edit",
+            "title": "Edit",
+            "profile": "/profiles/interpretation.json"
+        },
+        {
+            "name": "edit-json",
+            "href": "/interpretations/cd85d870-89db-43ab-bb97-1d28fc81b77f/#!edit-json",
+            "title": "Edit JSON",
+            "profile": "/profiles/interpretation.json"
+        }
+    ]
+}

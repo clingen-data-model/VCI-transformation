@@ -47,11 +47,6 @@ class Variant(Node):
             if cxa.ref_genome == ref_genome:
                 return cxa.data['referenceCoordinate']['refAllele']
         return None
-#    def get_preferred_contextual_allele(self):
-#        for cxa in self.data['relatedContextualAllele']:
-#            if cxa.data['preferred']:
-#                return cxa
-#        return None
 
 class ContextualAllele(Node):
     def __init__(self,ar_rep,canonical_allele_id, atype):

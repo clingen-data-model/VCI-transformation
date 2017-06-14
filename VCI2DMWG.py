@@ -112,6 +112,8 @@ extra_evidence_map = { ('population','population'): ['BA1','PM2','BS1'],\
                        ('case-segregation','observed-in-healthy'): ['BS2'], \
                        ('case-segregation','case-control'): ['PS4'], \
                        ('case-segregation','segregation-data'): ['BS4','PP1'], \
+                       #The following is a typo that occurs in the VCI data:
+                       ('case-segregation','segreagtion-data'): ['BS4','PP1'], \
                        ('case-segregation','de-novo'): ['PM6','PS2'], \
                        ('case-segregation','allele-data'): ['BP2','PM3'], \
                        ('case-segregation','alternate-mechanism'): ['BP5'], \
