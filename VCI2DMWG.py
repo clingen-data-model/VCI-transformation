@@ -7,6 +7,7 @@ from interpretation_generated import *
 from interpretation_extras import *
 from interpretation_constants import *
 from Allele import Variant
+import argparse
 
 IRI_BASE='https://vci.clinicalgenome.org'
 VCI_ID_KEY = '@id'
@@ -269,7 +270,6 @@ def add_contributions( source, target, entities, ondate, role ):
 # provisional_count: should be 1:1
 #Still need to handle:
 # modeInheritanceAdjective: for things like "with maternal imprinting"
-# extra_evidence_list
 def transform_root(vci):
     return VariantInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
     #Is there a place where explanation should come from?
@@ -299,7 +299,6 @@ def convert_significance(vci_provisional_variant):
     value = vci_provisional_variant[VCI_AUTOCLASSIFICATION_KEY]
     return value
 
-#TODO: how do we want to format variants?
 def transform_variant(variant,entities):
     vci_variant_id = get_id(variant)
     dmwg_variant = entities.get_transformed(vci_variant_id)
@@ -328,12 +327,9 @@ def transform_variant(variant,entities):
 # criteria X
 # criteriaStatus X
 # explanation X
-# criteriaModifier  THIS IS STILL IN PROGRESS UNTIL THE JSON GETS CLEARED UP
 # modifier: related to criteriaModifier for the UI
 # variant X
 # population: this is actually allele frequency data (in populations, not a population itself)
-#TODO: don't we need to handle condition in the evaluations too?
-#TODO: CRITERION IS PROBABLY NOT GOING TO HAVE ALL THIS DETAIL
 def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
     dmwg_assessment = CriterionAssessment( vci_evaluation[VCI_ID_KEY] )
     criterion = criteria[ vci_evaluation[ VCI_CRITERIA_KEY] ]
@@ -662,19 +658,32 @@ def transform(jsonf):
     transform_condition(vci[VCI_CONDITION_KEY], interpretation, entities)
     eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
     transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
-    return interpretation
+    return interpretation,entities
 
-def transform_json_file(infilename,outfilename):
+def transform_json_file(infilename,outfilename,out_style):
     inf = file(infilename,'r')
-    interp = transform(inf)
+    interp,ents = transform(inf)
     inf.close()
     outf = file(outfilename,'w')
-    json.dump(interp,outf,sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder)
+    #The idea of flatten would be that the root node would contain fully specified descriptions of all the entities, and then
+    # the interpretation, which would be written using only IDs.
+    # To implement this, just create a new dict, put the interpretation into it, and write the entites into it from the EntityMap
+    # Then dump that envelope, and modify the interpretaion encoder to have a mode that keeps track of depth and writes full nodes
+    # for the top level.
+    # The other option is not to include this at all, and rely on JSON-LD libraries to do any appropriate flattening.
+    # TODO: Decide and implement (if required) or remove option (if not)
+    if out_style == 'flat':
+        raise Exception('flatten not implemented yet')
+    json.dump(interp,outf,sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder, out_style=out_style)
     outf.close()
 
 def test():
     transform_json_file('test_data/test_interp_1.vci.json', 'test_data/test_interp_1.dmwg.json')
 
-#TODO: add some decent parameter processing.
 if __name__ == '__main__':
-    transform_json_file(sys.argv[1],sys.argv[2])
+    parser = argparse.ArgumentParser()
+    parser.add_argument('input',  help='Path to an input JSON file created by the VCI')
+    parser.add_argument('output', help='Output path for DMWG JSON file to be created')
+    parser.add_argument("-s", "--output-style", type=str, choices=['full', 'first', 'flat'], help="full: expand all nodes, first: expand first node, flat: define entities outside the interpretation", default = 'first')
+    args = parser.parse_args()
+    transform_json_file(args.input, args.output, args.output_style)

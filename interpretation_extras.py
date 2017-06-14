@@ -60,53 +60,33 @@ def read_criteria():
         criteria[rulenum] = criterion
     return criteria
 
-#What's the point here?  We want variant to be a subclass of Node so that our
-#serializer can know whether to rewrite it or not.  We could and perhaps
-#should add all the methods to build the variant correctly, but not right now.  
-#TODO Pull out strings.
-#class Variant(Node):
-#    def __init__(self, ar_rep):
-#        self.data={}
-#        for k,v in ar_rep.items():
-#            self.data[k] = v
-#    def get_allele( self, reference ):
-#        allele_list = self.data['genomicAlleles']
-#        for allele in allele_list:
-#            if allele['referenceGenome'] == reference:
-#                return allele['coordinates'][0]['allele'] #why is coords a list?
-#        raise Exception
-#    def get_ref_allele( self, reference ):
-#        allele_list = self.data['genomicAlleles']
-#        for allele in allele_list:
-#            if allele['referenceGenome'] == reference:
-#                return allele['coordinates'][0]['referenceAllele'] #why a list?
-#        raise Exception
-
-
 
 #This declutters a bit by only printing the full node the first time we
 #encounter it.  But that's not necessarily in the highest node, because of the
 #ordering of the keys.  Should probably be smarter, but it works for the moment
 class InterpretationEncoder(json.JSONEncoder):
     def __init__(self, *args, **kwargs):
+        if 'out_style' in kwargs:
+            self.ostyle = kwargs['out_style']
+            print self.ostyle
+            del kwargs['out_style']
+        else:
+            self.ostyle='first'
         super(InterpretationEncoder, self).__init__(*args, **kwargs)
         self.written_nodes = set()
     def default(self,obj):
         if isinstance(obj,Node):
+            if self.ostyle == 'full':
+                return obj.data
             if obj not in self.written_nodes:
                 self.written_nodes.add(obj)
                 return obj.data
-            else:
-                try:
-                    #try to write it just by id
-                    return obj.get_id()
-                except:
-                    #but if it doesn't have an id (like a codeable concept, just put all the data)
-                    return obj.data
-                #try:
-                #    return obj.data[DMWG_ID_KEY]
-                #except:
-                #    return obj.data[ALLELE_REGISTRY_ID_KEY]
+            try:
+                #try to write it just by id
+                return obj.get_id()
+            except:
+                #but if it doesn't have an id (like a codeable concept), just put all the data
+                return obj.data
         else:
             return json.JSONEncoder.default(self,obj)
 
