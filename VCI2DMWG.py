@@ -476,7 +476,7 @@ def add_contributions_to_data( data_source, data_targets, entities):
 def convert_esp_pop(pop):
     if pop == VCI_COMBINED_POP:
         return 'combined'
-    return 'http://evs.gs.washington.edu/EVS/%s' % pop
+    return 'http://evs.gs.washington.edu/EVS/%s' % pop.upper()
 
 def convert_exac_pop(pop):
     if pop == VCI_COMBINED_POP: return 'combined'
