@@ -652,9 +652,7 @@ def transform_condition(vci_local_disease,interpretation,entities):
     dmwg_disease = entities.get_transformed(vci_disease_id)
     if dmwg_disease is None:
         disease_ontology = vci_disease[VCI_DISEASE_ONTOLOGY_KEY]
-        print >>sys.stderr, disease_ontology
         disease_ontology = systems.get(disease_ontology, disease_ontology)
-        print >>sys.stderr, disease_ontology
         disease_code = vci_disease[VCI_DISEASE_ID_KEY]
         disease_name = vci_disease[VCI_DISEASE_TERM_KEY]
         dmwg_disease = create_dmwg_disease(disease_ontology, disease_code, disease_name)
