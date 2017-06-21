@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 from collections import defaultdict
 import requests
@@ -662,11 +664,8 @@ def transform(jsonf):
     transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
     return interpretation,entities
 
-def transform_json_file(infilename,outfilename,out_style):
-    inf = file(infilename,'r')
+def transform_json_file(inf, outf, out_style):
     interp,ents = transform(inf)
-    inf.close()
-    outf = file(outfilename,'w')
     #The idea of flatten would be that the root node would contain fully specified descriptions of all the entities, and then
     # the interpretation, which would be written using only IDs.
     # To implement this, just create a new dict, put the interpretation into it, and write the entites into it from the EntityMap
@@ -677,15 +676,16 @@ def transform_json_file(infilename,outfilename,out_style):
     if out_style == 'flat':
         raise Exception('flatten not implemented yet')
     json.dump(interp,outf,sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder, out_style=out_style)
-    outf.close()
 
 def test():
-    transform_json_file('test_data/test_interp_1.vci.json', 'test_data/test_interp_1.dmwg.json')
+    transform_json_file(open('test_data/test_interp_1.vci.json'), open('test_data/test_interp_1.dmwg.json'), 'first')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('input',  help='Path to an input JSON file created by the VCI')
-    parser.add_argument('output', help='Output path for DMWG JSON file to be created')
+    parser.add_argument('input',  nargs='?', type=argparse.FileType('r'), default=sys.stdin,
+            help='Path to an input JSON file created by the VCI (defaults to stdin)')
+    parser.add_argument('output', nargs='?', type=argparse.FileType('w'), default=sys.stdout,
+            help='Output path for DMWG JSON file to be created (defaults to stdout)')
     parser.add_argument("-s", "--output-style", type=str, choices=['full', 'first', 'flat'], help="full: expand all nodes, first: expand first node, flat: define entities outside the interpretation", default = 'first')
     args = parser.parse_args()
     transform_json_file(args.input, args.output, args.output_style)
