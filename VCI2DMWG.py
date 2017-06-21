@@ -20,14 +20,15 @@ VCI_AGENT_NAME_KEY = 'title'
 VCI_AUTOCLASSIFICATION_KEY = 'autoClassification'
 VCI_VARIANT_KEY = 'variant'
 VCI_VARIANT_TYPE = 'variant'
-VCI_ORPHA_TYPE = 'orphaPhenotype'
+VCI_DISEASE_TYPE = 'disease'
 VCI_AGENT_TYPE = 'user'
 VCI_CANONICAL_ID_KEY = 'carId'
 VCI_HGVS_NAMES_KEY = 'hgvsNames'
 VCI_GENOMIC_HGVS_38_KEY = 'GRCh38'
 VCI_CONDITION_KEY = 'disease'
-VCI_TERM_KEY = 'term'
-VCI_ORPHA_KEY = 'orphaNumber'
+VCI_DISEASE_ONTOLOGY_KEY = 'ontology'
+VCI_DISEASE_TERM_KEY = 'term'
+VCI_DISEASE_ID_KEY = 'diseaseId'
 VCI_EVALUATION_KEY = 'evaluations'
 VCI_EVALUATION_VARIANT_KEY = 'variant'
 VCI_CRITERIA_KEY = 'criteria'
@@ -97,6 +98,13 @@ DMWG_1KGESP='1KG_ESP'
 DMWG_1KG='1KG'
 DMWG_EXAC='ExAC'
 
+# should probably be in a separate file...
+systems = {
+    'DOID': 'http://www.disease-ontology.org/term/', # FIXME- the VCI puts something like DOID_1321, but the url should be like DOID:1321 (but html escaped...)
+    'OMIM': 'http://omim.org/entry/',
+    'Orphanet': ' http://www.orpha.net' # FIXME: is there a stable IRI per term?
+}
+
 term_map = { VCI_MET: 'http://clinicalgenome.org/datamodel/criterion-assertion-outcome/met', \
              VCI_NOT_MET: 'http://clinicalgenome.org/datamodel/criterion-assertion-outcome/not-met', \
              VCI_MISSENSE_EFFECT_PREDICTOR: 'http://clinicalgenome.org/datamodel/prediction-type/me', \
@@ -164,11 +172,11 @@ def get_canonical_id(hgvs):
     return cardata
 
 #We don't need to entity map everything, just some of the data nodes.
-# For instance, not the interpretation.  When it occurs multiple times, 
+# For instance, not the interpretation.  When it occurs multiple times,
 # it causes problems because the evaluations at each level
 # are represented differently.
 class EntityMap:
-    EMtypes = set([VCI_VARIANT_TYPE, VCI_AGENT_TYPE, VCI_ORPHA_TYPE])
+    EMtypes = set([VCI_VARIANT_TYPE, VCI_AGENT_TYPE, VCI_DISEASE_TYPE])
     def __init__(self, source, idtag='@id'):
         self.entities = defaultdict(dict)
         self.transformed={}
@@ -205,7 +213,7 @@ class EntityMap:
         return None
     def add_transformed(self,eid,entity):
         self.transformed[eid] = entity
-        
+
 def canonicalizeVariant(rep):
     orig_carid = rep[VCI_CANONICAL_ID_KEY]
     #We want to get the id/representation from the Baylor Allele Registry.
@@ -217,7 +225,7 @@ def canonicalizeVariant(rep):
         print orig_carid
         print baylor_carid
         raise Exception
-    return baylor_car_rep 
+    return baylor_car_rep
 
 def fully_qualify(iri):
     fqiri = iri
@@ -277,7 +285,7 @@ def add_contributions( source, target, entities, ondate, role ):
 def transform_root(vci):
     return VariantInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
     #Is there a place where explanation should come from?
-    #dmwg['explanation'] = 
+    #dmwg['explanation'] =
 
 #Ignore:
 # status: not tracking status
@@ -354,7 +362,7 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
         raise Exception
     defaultStrength = criterion.get_defaultStrength()
     strength = transform_strength( crit_mod, defaultStrength )
-    ##TODO: Also add contribution to the evidence line if crit_mod != ''.  A little tricky since I hid the evidence line, but it's gettable 
+    ##TODO: Also add contribution to the evidence line if crit_mod != ''.  A little tricky since I hid the evidence line, but it's gettable
     add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation['last_modified'], DMWG_ASSESSOR_ROLE)
     #Now the evidence
     if VCI_FREQUENCY_KEY in vci_evaluation:
@@ -370,7 +378,7 @@ def transform_computational(source, entities):
     predictions = []
     vci_variant = source[VCI_VARIANT_KEY]
     #the form of this call suggests that the transform* functions should be member functions of entitymap
-    dmwg_variant = transform_variant(vci_variant,entities) 
+    dmwg_variant = transform_variant(vci_variant,entities)
     compdata = source[VCI_COMPUTATIONAL_DATA_KEY]
     if VCI_CONSERVATION_KEY in compdata:
         predictions += transform_conservation_data( compdata[VCI_CONSERVATION_KEY] , dmwg_variant )
@@ -379,7 +387,7 @@ def transform_computational(source, entities):
     if VCI_OTHER_COMPUTATION_KEY in compdata:
         predictions += transform_other_comp_data( compdata[VCI_OTHER_COMPUTATION_KEY], dmwg_variant )
     add_contributions_to_data( source , predictions, entities )
-    return predictions 
+    return predictions
 
 def transform_clingen_comp_data( source,variant):
     predictions = []
@@ -442,7 +450,7 @@ def transform_frequency( source, entities):
     popdata    = source[VCI_POPULATION_DATA_KEY]
     vci_variant = source[VCI_VARIANT_KEY]
     #the form of this call suggests that the transform* functions should be member functions of entitymap
-    dmwg_variant = transform_variant(vci_variant,entities) 
+    dmwg_variant = transform_variant(vci_variant,entities)
     frequencies = []
     if VCI_ESP_KEY in popdata:
         esp_frequencies = transform_esp_data( popdata[VCI_ESP_KEY],  dmwg_variant )
@@ -517,7 +525,7 @@ def transform_1000_genomes_data( source, dmwg_variant ):
     return frequencies
 
 
-def transform_exac_data( source, dmwg_variant ): 
+def transform_exac_data( source, dmwg_variant ):
     frequencies = []
     for pop in source:
         if pop != VCI_FREQUENCY_ALLELE_KEY:
@@ -541,7 +549,7 @@ def transform_exac_data( source, dmwg_variant ):
             else:
                 dmwg_af.set_homozygousAlleleIndividualCount( 0 )
     return frequencies
-            
+
 
 def transform_esp_data(source,dmwg_variant):
     ref_allele = dmwg_variant.get_ref_allele('GRCh37')
@@ -590,7 +598,7 @@ def transform_strength(modifier, defaultStrength):
     strength = defaultStrength.get_coding()[0].get_id()[:-1] + mod
     return strength
 
-#Returns a dictionary that maps from criterion id (e.g. "PS2") to 
+#Returns a dictionary that maps from criterion id (e.g. "PS2") to
 # a dmwg assessment entity
 def transform_evaluations(evaluation_list,interpretation,entities):
     evaluation_map = {}
@@ -613,7 +621,7 @@ def transform_articles( article_list, interpretation, entities ):
         sourcelist.append(atid)
     return sourcelist
 
-# The evidence in the VCI is not a child node of the evaluation.  It is linked to the relevant 
+# The evidence in the VCI is not a child node of the evaluation.  It is linked to the relevant
 # rules via the category and subcategory proerties
 def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
     for ee_node in extra_evidence_list:
@@ -635,8 +643,7 @@ def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
             print  "Did not find any evaluated criteria for this data: %s "% ee_node['uuid']
 
 
-#VCI brings in ORPHANET only conditions.  If this is not the case, this will require rework
-#Note that we don't necessarily have the full VCI disease node when we get into this function.  
+#Note that we don't necessarily have the full VCI disease node when we get into this function.
 # It could be anything from a bare IRI to a full node or anything in between.  The first two lines
 # standardize the "local" information to the "global" information node.
 def transform_condition(vci_local_disease,interpretation,entities):
@@ -644,14 +651,18 @@ def transform_condition(vci_local_disease,interpretation,entities):
     vci_disease = entities.get_entity(vci_disease_id)
     dmwg_disease = entities.get_transformed(vci_disease_id)
     if dmwg_disease is None:
-        orpha_code = vci_disease[VCI_ORPHA_KEY]
-        orpha_name = vci_disease[VCI_TERM_KEY]
-        dmwg_disease = create_orphanet_disease(orpha_code, orpha_name)
+        disease_ontology = vci_disease[VCI_DISEASE_ONTOLOGY_KEY]
+        print >>sys.stderr, disease_ontology
+        disease_ontology = systems.get(disease_ontology, disease_ontology)
+        print >>sys.stderr, disease_ontology
+        disease_code = vci_disease[VCI_DISEASE_ID_KEY]
+        disease_name = vci_disease[VCI_DISEASE_TERM_KEY]
+        dmwg_disease = create_dmwg_disease(disease_ontology, disease_code, disease_name)
         entities.add_transformed(vci_disease_id, dmwg_disease)
     dmwg_condition = MendelianCondition()
     dmwg_condition.add_disease(dmwg_disease)
     interpretation.add_condition(dmwg_condition)
- 
+
 def transform(jsonf):
     vci = json.load(jsonf)
     entities = EntityMap(vci)

@@ -32,9 +32,9 @@ def create_contribution(agent, ondate, role):
     return contribution
 
 #Utility method for creating diseases
-def create_orphanet_disease(code, name):
+def create_dmwg_disease(system, code, name):
     cc = CodeableConcept()
-    coding = create_coding('http://www.orpha.net/', name, code )
+    coding = create_coding(system, name, code )
     cc.add_coding(coding)
     return cc
 
@@ -89,4 +89,3 @@ class InterpretationEncoder(json.JSONEncoder):
                 return obj.data
         else:
             return json.JSONEncoder.default(self,obj)
-
