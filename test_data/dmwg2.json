@@ -12,10 +12,10 @@
                 {
                     "coding": [
                         {
-                            "code": "217569",
-                            "display": "Hypertrophic cardiomyopathy",
-                            "id": "http://www.orpha.net/217569",
-                            "system": "http://www.orpha.net/",
+                            "code": "DOID_11984",
+                            "display": "hypertrophic cardiomyopathy",
+                            "id": "http://www.disease-ontology.org/term/DOID_11984",
+                            "system": "http://www.disease-ontology.org/term/",
                             "type": "Coding"
                         }
                     ],
@@ -266,7 +266,15 @@
                                         }
                                     ],
                                     "population": {
-                                        "text": "http://evs.gs.washington.edu/EVS/aa",
+                                        "coding": [
+                                            {
+                                                "code": "AA",
+                                                "display": "African-American",
+                                                "id": "http://evs.gs.washington.edu/EVS/AA",
+                                                "system": "http://evs.gs.washington.edu/EVS/",
+                                                "type": "Coding"
+                                            }
+                                        ],
                                         "type": "CodeableConcept"
                                     },
                                     "type": "AlleleFrequency"
@@ -366,7 +374,15 @@
                                         }
                                     ],
                                     "population": {
-                                        "text": "http://evs.gs.washington.edu/EVS/ea",
+                                        "coding": [
+                                            {
+                                                "code": "EA",
+                                                "display": "European-American",
+                                                "id": "http://evs.gs.washington.edu/EVS/EA",
+                                                "system": "http://evs.gs.washington.edu/EVS/",
+                                                "type": "Coding"
+                                            }
+                                        ],
                                         "type": "CodeableConcept"
                                     },
                                     "type": "AlleleFrequency"
@@ -1347,7 +1363,15 @@
                                         }
                                     ],
                                     "population": {
-                                        "text": "http://evs.gs.washington.edu/EVS/aa",
+                                        "coding": [
+                                            {
+                                                "code": "AA",
+                                                "display": "African-American",
+                                                "id": "http://evs.gs.washington.edu/EVS/AA",
+                                                "system": "http://evs.gs.washington.edu/EVS/",
+                                                "type": "Coding"
+                                            }
+                                        ],
                                         "type": "CodeableConcept"
                                     },
                                     "type": "AlleleFrequency"
@@ -1447,7 +1471,15 @@
                                         }
                                     ],
                                     "population": {
-                                        "text": "http://evs.gs.washington.edu/EVS/ea",
+                                        "coding": [
+                                            {
+                                                "code": "EA",
+                                                "display": "European-American",
+                                                "id": "http://evs.gs.washington.edu/EVS/EA",
+                                                "system": "http://evs.gs.washington.edu/EVS/",
+                                                "type": "Coding"
+                                            }
+                                        ],
                                         "type": "CodeableConcept"
                                     },
                                     "type": "AlleleFrequency"
@@ -2428,7 +2460,15 @@
                                         }
                                     ],
                                     "population": {
-                                        "text": "http://evs.gs.washington.edu/EVS/aa",
+                                        "coding": [
+                                            {
+                                                "code": "AA",
+                                                "display": "African-American",
+                                                "id": "http://evs.gs.washington.edu/EVS/AA",
+                                                "system": "http://evs.gs.washington.edu/EVS/",
+                                                "type": "Coding"
+                                            }
+                                        ],
                                         "type": "CodeableConcept"
                                     },
                                     "type": "AlleleFrequency"
@@ -2528,7 +2568,15 @@
                                         }
                                     ],
                                     "population": {
-                                        "text": "http://evs.gs.washington.edu/EVS/ea",
+                                        "coding": [
+                                            {
+                                                "code": "EA",
+                                                "display": "European-American",
+                                                "id": "http://evs.gs.washington.edu/EVS/EA",
+                                                "system": "http://evs.gs.washington.edu/EVS/",
+                                                "type": "Coding"
+                                            }
+                                        ],
                                         "type": "CodeableConcept"
                                     },
                                     "type": "AlleleFrequency"
