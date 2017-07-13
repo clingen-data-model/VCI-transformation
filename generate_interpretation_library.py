@@ -101,7 +101,7 @@ def write_library(types,attributes,libname,codename, enumname):
     t_const, a_const = write_constants( types, attributes, enumname )
     lib = file(libname,'w')
     lib.write('from interpretation_constants import *\n')
-    lib.write('from CodingFactory import get_factory_coding, get_factory_concept\n')
+    lib.write('from coding_factory import get_factory_coding, get_factory_concept\n')
     lib.write('from node import Node\n\n')
     codef = file(codename,'w')
     codef.write('from interpretation_constants import *\n')

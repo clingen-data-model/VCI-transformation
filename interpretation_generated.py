@@ -1,5 +1,5 @@
 from interpretation_constants import *
-from CodingFactory import get_factory_coding, get_factory_concept
+from coding_factory import get_factory_coding, get_factory_concept
 from node import Node
 
 class ScoringAlgorithm(Node):

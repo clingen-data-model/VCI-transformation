@@ -1,7 +1,7 @@
 from interpretation_generated import *
 from coding_generated import *
 import json
-from CodingFactory import the_factory
+from coding_factory import the_factory
 
 #UtilityMethods for wrapping things in Evidence Lines
 def add_criterion_assessment(interpretation, assessment, strength):
