@@ -5,10 +5,10 @@ from collections import defaultdict
 import requests
 import hashlib
 import csv
-from interpretation_generated import *
-from interpretation_extras import *
-from interpretation_constants import *
-from Allele import Variant
+from clingen_interpretation.interpretation_generated import *
+from clingen_interpretation.interpretation_extras import *
+from clingen_interpretation.interpretation_constants import *
+from clingen_interpretation.Allele import Variant
 import argparse
 
 IRI_BASE='https://vci.clinicalgenome.org'
