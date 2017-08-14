@@ -22,6 +22,13 @@
                     "type": "CodeableConcept"
                 }
             ],
+            "modeOfInheritance": {
+                "code": "0000006",
+                "display": "Autosomal Dominant",
+                "id": "http://human-phenotype-ontology.github.io/0000006",
+                "system": "http://human-phenotype-ontology.github.io/",
+                "type": "Coding"
+            },
             "type": "MendelianCondition"
         }
     ],
@@ -139,6 +146,31 @@
                                                 "allele": "A",
                                                 "alleleName": [
                                                     {
+                                                        "name": "NC_000014.7:g.22968328G>A",
+                                                        "nameType": "hgvs"
+                                                    }
+                                                ],
+                                                "contextualAlleleType": "genomic",
+                                                "referenceCoordinate": {
+                                                    "end": {
+                                                        "index": 22968328
+                                                    },
+                                                    "refAllele": "G",
+                                                    "referenceSequence": {
+                                                        "display": "NC_000014.7",
+                                                        "reference": "http://reg.genome.network/refseq/RS000014"
+                                                    },
+                                                    "start": {
+                                                        "index": 22968327
+                                                    }
+                                                },
+                                                "type": "ContextualAllele"
+                                            },
+                                            {
+                                                "CanonicalAllele": "http://reg.genome.network/allele/CA010360",
+                                                "allele": "A",
+                                                "alleleName": [
+                                                    {
                                                         "name": "NC_000014.8:g.23898488G>A",
                                                         "nameType": "hgvs"
                                                     },
@@ -159,31 +191,6 @@
                                                     },
                                                     "start": {
                                                         "index": 23898487
-                                                    }
-                                                },
-                                                "type": "ContextualAllele"
-                                            },
-                                            {
-                                                "CanonicalAllele": "http://reg.genome.network/allele/CA010360",
-                                                "allele": "A",
-                                                "alleleName": [
-                                                    {
-                                                        "name": "NC_000014.7:g.22968328G>A",
-                                                        "nameType": "hgvs"
-                                                    }
-                                                ],
-                                                "contextualAlleleType": "genomic",
-                                                "referenceCoordinate": {
-                                                    "end": {
-                                                        "index": 22968328
-                                                    },
-                                                    "refAllele": "G",
-                                                    "referenceSequence": {
-                                                        "display": "NC_000014.7",
-                                                        "reference": "http://reg.genome.network/refseq/RS000014"
-                                                    },
-                                                    "start": {
-                                                        "index": 22968327
                                                     }
                                                 },
                                                 "type": "ContextualAllele"
@@ -220,8 +227,9 @@
                                         ],
                                         "relatedIdentifier": [
                                             {
-                                                "code": 29141,
-                                                "system": "http://wwww.ncibi.nlm.nih.gov/clinvar/",
+                                                "code": 14102,
+                                                "display": "NM_000257.3(MYH7):c.1207C>T (p.Arg403Trp)",
+                                                "system": "http://www.ncbi.nlm.nih.gov/clinvar/variation/",
                                                 "type": "Coding"
                                             },
                                             {

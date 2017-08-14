@@ -88,6 +88,8 @@ VCI_ARTICLES_KEY = 'articles'
 VCI_PMID_KEY = 'pmid'
 VCI_CATEGORY_KEY = 'category'
 VCI_SUBCATEGORY_KEY = 'subcategory'
+VCI_MODEINHERITANCE_KEY = 'modeInheritance'
+VCI_MODEINHERITANCE_ADJECTIVE_KEY = 'modeInheritanceAdjective'
 
 VCI_MISSENSE_EFFECT_PREDICTOR = 'missense_predictor'
 VCI_SPLICE_EFFECT_PREDICTOR = 'splice'
@@ -281,11 +283,22 @@ def add_contributions( source, target, entities, ondate, role ):
 # date created: Not tracking user behavior
 # provisional_count: should be 1:1
 #Still need to handle:
+# modeInheritance: 
 # modeInheritanceAdjective: for things like "with maternal imprinting"
 def transform_root(vci):
-    return VariantInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
-    #Is there a place where explanation should come from?
-    #dmwg['explanation'] =
+    vi = VariantInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
+    modestring = vci[VCI_MODEINHERITANCE_KEY]
+    modeadjstring = vci[VCI_MODEINHERITANCE_ADJECTIVE_KEY]
+    if modeadjstring != '':
+        raise Exception('Mode Inheritance Adjective not handled')
+    if '(HP:' in modestring:
+        p = modestring.split()
+        for pi in p:
+            if pi.startswith('(HP:'):
+                mode = pi[1:-1]
+    else:
+        mode = modestring
+    return vi, mode
 
 #Ignore:
 # status: not tracking status
@@ -646,7 +659,7 @@ def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
 #Note that we don't necessarily have the full VCI disease node when we get into this function.
 # It could be anything from a bare IRI to a full node or anything in between.  The first two lines
 # standardize the "local" information to the "global" information node.
-def transform_condition(vci_local_disease,interpretation,entities):
+def transform_condition(vci_local_disease,interpretation,entities,mode):
     vci_disease_id = get_id(vci_local_disease)
     vci_disease = entities.get_entity(vci_disease_id)
     dmwg_disease = entities.get_transformed(vci_disease_id)
@@ -659,16 +672,17 @@ def transform_condition(vci_local_disease,interpretation,entities):
         entities.add_transformed(vci_disease_id, dmwg_disease)
     dmwg_condition = MendelianCondition()
     dmwg_condition.add_disease(dmwg_disease)
+    if mode!= '': dmwg_condition.set_modeOfInheritance( mode )
     interpretation.add_condition(dmwg_condition)
 
 def transform(jsonf):
     vci = json.load(jsonf)
     entities = EntityMap(vci)
-    interpretation = transform_root(vci)
+    interpretation, inheritance = transform_root(vci)
     transform_provisional_variant(vci['provisional_variant'],interpretation,entities)
     variant = transform_variant(vci[VCI_VARIANT_KEY],entities)
     interpretation.set_variant(variant)
-    transform_condition(vci[VCI_CONDITION_KEY], interpretation, entities)
+    transform_condition(vci[VCI_CONDITION_KEY], interpretation, entities, inheritance)
     eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
     transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
     return interpretation,entities
