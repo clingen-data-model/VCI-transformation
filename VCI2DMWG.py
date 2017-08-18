@@ -10,6 +10,7 @@ from clingen_interpretation.interpretation_extras import *
 from clingen_interpretation.interpretation_constants import *
 from clingen_interpretation.Allele import Variant
 import argparse
+import logging
 
 IRI_BASE='https://vci.clinicalgenome.org'
 VCI_ID_KEY = '@id'
@@ -90,6 +91,7 @@ VCI_CATEGORY_KEY = 'category'
 VCI_SUBCATEGORY_KEY = 'subcategory'
 VCI_MODEINHERITANCE_KEY = 'modeInheritance'
 VCI_MODEINHERITANCE_ADJECTIVE_KEY = 'modeInheritanceAdjective'
+VCI_PROVISIONAL_VARIANT_KEY = 'provisional_variant'
 
 VCI_MISSENSE_EFFECT_PREDICTOR = 'missense_predictor'
 VCI_SPLICE_EFFECT_PREDICTOR = 'splice'
@@ -679,12 +681,27 @@ def transform(jsonf):
     vci = json.load(jsonf)
     entities = EntityMap(vci)
     interpretation, inheritance = transform_root(vci)
-    transform_provisional_variant(vci['provisional_variant'],interpretation,entities)
-    variant = transform_variant(vci[VCI_VARIANT_KEY],entities)
-    interpretation.set_variant(variant)
-    transform_condition(vci[VCI_CONDITION_KEY], interpretation, entities, inheritance)
-    eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
-    transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
+    if VCI_PROVISIONAL_VARIANT_KEY in vci:
+        transform_provisional_variant(vci[VCI_PROVISIONAL_VARIANT_KEY],interpretation,entities)
+    else:
+        logging.warning('No provisional_variant element in the input.  Proceeding, but clinical significance will not be set.')
+    try:
+        variant = transform_variant(vci[VCI_VARIANT_KEY],entities)
+        interpretation.set_variant(variant)
+    except:
+        logging.warning('No variant found. Proceeding.')
+    try:
+        transform_condition(vci[VCI_CONDITION_KEY], interpretation, entities, inheritance)
+    except KeyError:
+        logging.warning('No condition found. Proceeding')
+    try:
+        eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
+    except KeyError:
+        logging.warning('No criteria evaluations found.  Proceeding')
+    try:
+        transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
+    except KeyError:
+        logging.warning('No evidence found.  Proceeding')
     return interpretation,entities
 
 def transform_json_file(inf, outf, out_style):
