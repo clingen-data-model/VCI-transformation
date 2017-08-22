@@ -9,10 +9,9 @@ This project consists of
 4) A script for converting VCI JSON files into DMWG JSON files using the  classes above.
 5) Unit tests
 
-In order to use VCI2DMWG you must first install the python library "requests". This can be done with
-```pip install requests```
-or 
-```pip install -r requirements.txt```
+VCI2DMWG has a dependency on the clingen_interpretation library, which is used to serialize DMWG-style
+JSON files.  The github repository can be found [here](https://github.com/clingen-data-model/interpretation_json).
+Follow the instructions on that page to install the library.
 
 To convert a VCI json file (input.json) into a DMWG JSON file (output.json) use the script VCI2DMG.py:
 ```python VCI2DMWG.py input.json output.json```
