@@ -29,9 +29,10 @@
                 "system": "http://human-phenotype-ontology.github.io/",
                 "type": "Coding"
             },
-            "type": "MendelianCondition"
+            "type": "GeneticCondition"
         }
     ],
+    "context": "http://datamodel.clinicalgenome.org/interpretation/json/context",
     "contribution": [
         {
             "agent": {
@@ -55,21 +56,9 @@
             "type": "Contribution"
         }
     ],
-    "evidence": [
+    "evidenceLine": [
         {
-            "evidenceStrength": {
-                "coding": [
-                    {
-                        "code": "ba",
-                        "display": "Benign Stand Alone",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ba",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
-                ],
-                "type": "CodeableConcept"
-            },
-            "information": [
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -93,7 +82,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ba"
+                                {
+                                    "code": "ba",
+                                    "display": "Benign Stand Alone",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ba",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -102,9 +97,9 @@
                         "shortDescription": "Present in population databases at greater than 5%",
                         "type": "Criterion"
                     },
-                    "evidence": [
+                    "evidenceLine": [
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": {
                                         "CanonicalAlleleType": "nucleotide",
@@ -291,7 +286,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -345,7 +340,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -399,7 +394,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -446,7 +441,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -501,7 +496,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -556,7 +551,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -611,7 +606,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -666,7 +661,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -721,7 +716,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -776,7 +771,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -831,7 +826,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -886,7 +881,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -941,7 +936,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -996,7 +991,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1051,7 +1046,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1106,7 +1101,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1161,7 +1156,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1216,7 +1211,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1284,22 +1279,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "pm",
-                        "display": "Pathogenic Moderate",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ba"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -1323,7 +1312,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
+                                {
+                                    "code": "pm",
+                                    "display": "Pathogenic Moderate",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -1332,9 +1327,9 @@
                         "shortDescription": "Absent from controls",
                         "type": "Criterion"
                     },
-                    "evidence": [
+                    "evidenceLine": [
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1388,7 +1383,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1442,7 +1437,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1496,7 +1491,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1543,7 +1538,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1598,7 +1593,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1653,7 +1648,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1708,7 +1703,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1763,7 +1758,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1818,7 +1813,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1873,7 +1868,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1928,7 +1923,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -1983,7 +1978,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2038,7 +2033,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2093,7 +2088,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2148,7 +2143,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2203,7 +2198,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2258,7 +2253,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2313,7 +2308,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2381,22 +2376,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bs",
-                        "display": "Benign Strong",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -2420,7 +2409,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs"
+                                {
+                                    "code": "bs",
+                                    "display": "Benign Strong",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -2429,9 +2424,9 @@
                         "shortDescription": "MAF too high for disorder",
                         "type": "Criterion"
                     },
-                    "evidence": [
+                    "evidenceLine": [
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2485,7 +2480,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2539,7 +2534,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2593,7 +2588,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2640,7 +2635,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2695,7 +2690,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2750,7 +2745,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2805,7 +2800,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2860,7 +2855,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2915,7 +2910,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -2970,7 +2965,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3025,7 +3020,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3080,7 +3075,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3135,7 +3130,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3190,7 +3185,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3245,7 +3240,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3300,7 +3295,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3355,7 +3350,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3410,7 +3405,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "allele": "http://reg.genome.network/allele/CA012832",
                                     "alleleCount": 0,
@@ -3478,22 +3473,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "pp",
-                        "display": "Pathogenic Supporting",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -3517,7 +3506,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp"
+                                {
+                                    "code": "pp",
+                                    "display": "Pathogenic Supporting",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -3526,9 +3521,9 @@
                         "shortDescription": "Computational evidence supports deleterious impact",
                         "type": "Criterion"
                     },
-                    "evidence": [
+                    "evidenceLine": [
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "siphy",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -3552,13 +3547,13 @@
                                         }
                                     ],
                                     "score": "15.8615",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phylop7way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -3582,13 +3577,13 @@
                                         }
                                     ],
                                     "score": "7.778",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phylop20way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -3612,13 +3607,13 @@
                                         }
                                     ],
                                     "score": "1.04",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "gerp",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -3642,13 +3637,13 @@
                                         }
                                     ],
                                     "score": "5.55",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp7way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -3672,13 +3667,13 @@
                                         }
                                     ],
                                     "score": "1",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp20way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -3702,13 +3697,13 @@
                                         }
                                     ],
                                     "score": "0.996",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "revel",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -3750,7 +3745,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fathmm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -3793,7 +3788,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hdiv",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -3836,7 +3831,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fathmm_mkl",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -3879,7 +3874,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hvar",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -3922,7 +3917,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "mutationassessor",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -3965,7 +3960,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "mutationtaster",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4008,7 +4003,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "metalr",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4051,7 +4046,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "sift",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4094,7 +4089,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "cadd",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4136,7 +4131,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "metasvm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4179,7 +4174,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fitcons",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4221,7 +4216,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "provean",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4277,22 +4272,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bp",
-                        "display": "Benign Supporting",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -4316,7 +4305,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
+                                {
+                                    "code": "bp",
+                                    "display": "Benign Supporting",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -4325,9 +4320,9 @@
                         "shortDescription": "Computational evidence supports benign impact",
                         "type": "Criterion"
                     },
-                    "evidence": [
+                    "evidenceLine": [
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "siphy",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -4351,13 +4346,13 @@
                                         }
                                     ],
                                     "score": "15.8615",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phylop7way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -4381,13 +4376,13 @@
                                         }
                                     ],
                                     "score": "7.778",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phylop20way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -4411,13 +4406,13 @@
                                         }
                                     ],
                                     "score": "1.04",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "gerp",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -4441,13 +4436,13 @@
                                         }
                                     ],
                                     "score": "5.55",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp7way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -4471,13 +4466,13 @@
                                         }
                                     ],
                                     "score": "1",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp20way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -4501,13 +4496,13 @@
                                         }
                                     ],
                                     "score": "0.996",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "revel",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4549,7 +4544,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fathmm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4592,7 +4587,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hdiv",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4635,7 +4630,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fathmm_mkl",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4678,7 +4673,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hvar",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4721,7 +4716,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "mutationassessor",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4764,7 +4759,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "mutationtaster",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4807,7 +4802,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "metalr",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4850,7 +4845,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "sift",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4893,7 +4888,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "cadd",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4935,7 +4930,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "metasvm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -4978,7 +4973,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fitcons",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5020,7 +5015,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "provean",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5076,22 +5071,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "pp",
-                        "display": "Pathogenic Supporting",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -5115,7 +5104,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp"
+                                {
+                                    "code": "pp",
+                                    "display": "Pathogenic Supporting",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -5124,9 +5119,9 @@
                         "shortDescription": "Missense in condition where pathogenic missense common",
                         "type": "Criterion"
                     },
-                    "evidence": [
+                    "evidenceLine": [
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "siphy",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -5150,13 +5145,13 @@
                                         }
                                     ],
                                     "score": "15.8615",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phylop7way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -5180,13 +5175,13 @@
                                         }
                                     ],
                                     "score": "7.778",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phylop20way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -5210,13 +5205,13 @@
                                         }
                                     ],
                                     "score": "1.04",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "gerp",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -5240,13 +5235,13 @@
                                         }
                                     ],
                                     "score": "5.55",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp7way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -5270,13 +5265,13 @@
                                         }
                                     ],
                                     "score": "1",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp20way",
                                     "allele": "http://reg.genome.network/allele/CA012832",
@@ -5300,13 +5295,13 @@
                                         }
                                     ],
                                     "score": "0.996",
-                                    "type": "Conservation"
+                                    "type": "AlleleConservation"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "revel",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5348,7 +5343,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fathmm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5391,7 +5386,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hdiv",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5434,7 +5429,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fathmm_mkl",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5477,7 +5472,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hvar",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5520,7 +5515,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "mutationassessor",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5563,7 +5558,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "mutationtaster",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5606,7 +5601,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "metalr",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5649,7 +5644,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "sift",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5692,7 +5687,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "cadd",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5734,7 +5729,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "metasvm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5777,7 +5772,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "fitcons",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5819,7 +5814,7 @@
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "algorithm": "provean",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA012832",
@@ -5875,22 +5870,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "pm",
-                        "display": "Pathogenic Moderate",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pp"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -5914,7 +5903,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
+                                {
+                                    "code": "pm",
+                                    "display": "Pathogenic Moderate",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -5936,22 +5931,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "ps",
-                        "display": "Pathogenic Strong",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -5975,7 +5964,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
+                                {
+                                    "code": "ps",
+                                    "display": "Pathogenic Strong",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -5997,22 +5992,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bp",
-                        "display": "Benign Supporting",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6036,7 +6025,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
+                                {
+                                    "code": "bp",
+                                    "display": "Benign Supporting",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6058,22 +6053,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "pm",
-                        "display": "Pathogenic Moderate",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6097,7 +6086,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
+                                {
+                                    "code": "pm",
+                                    "display": "Pathogenic Moderate",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6119,22 +6114,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bs",
-                        "display": "Benign Strong",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6158,7 +6147,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs"
+                                {
+                                    "code": "bs",
+                                    "display": "Benign Strong",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6180,22 +6175,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "ps",
-                        "display": "Pathogenic Strong",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6219,7 +6208,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
+                                {
+                                    "code": "ps",
+                                    "display": "Pathogenic Strong",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6241,22 +6236,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bs",
-                        "display": "Benign Strong",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6280,7 +6269,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs"
+                                {
+                                    "code": "bs",
+                                    "display": "Benign Strong",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6302,22 +6297,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "pm",
-                        "display": "Pathogenic Moderate",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bs"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6369,9 +6358,6 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
                     {
@@ -6384,7 +6370,10 @@
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6408,7 +6397,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
+                                {
+                                    "code": "pm",
+                                    "display": "Pathogenic Moderate",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6430,22 +6425,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "ps",
-                        "display": "Pathogenic Strong",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/pm"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6469,7 +6458,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
+                                {
+                                    "code": "ps",
+                                    "display": "Pathogenic Strong",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6491,22 +6486,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bp",
-                        "display": "Benign Supporting",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6530,7 +6519,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
+                                {
+                                    "code": "bp",
+                                    "display": "Benign Supporting",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6552,22 +6547,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bp",
-                        "display": "Benign Supporting",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6591,7 +6580,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
+                                {
+                                    "code": "bp",
+                                    "display": "Benign Supporting",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6613,22 +6608,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "bp",
-                        "display": "Benign Supporting",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6652,7 +6641,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
+                                {
+                                    "code": "bp",
+                                    "display": "Benign Supporting",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6674,22 +6669,16 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
-            "type": "EvidenceLine"
-        },
-        {
             "evidenceStrength": {
                 "coding": [
-                    {
-                        "code": "ps",
-                        "display": "Pathogenic Strong",
-                        "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
-                        "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
-                        "type": "Coding"
-                    }
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/bp"
                 ],
                 "type": "CodeableConcept"
             },
-            "information": [
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
                 {
                     "contribution": [
                         {
@@ -6713,7 +6702,13 @@
                     "criterion": {
                         "defaultStrength": {
                             "coding": [
-                                "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
+                                {
+                                    "code": "ps",
+                                    "display": "Pathogenic Strong",
+                                    "id": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps",
+                                    "system": "http://clinicalgenome.org/datamodel/criterion-evidence-strength/",
+                                    "type": "Coding"
+                                }
                             ],
                             "type": "CodeableConcept"
                         },
@@ -6722,9 +6717,9 @@
                         "shortDescription": "Prevelance increase in affected vs. control",
                         "type": "Criterion"
                     },
-                    "evidence": [
+                    "evidenceLine": [
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "contribution": [
                                         {
@@ -6749,13 +6744,13 @@
                                     "source": [
                                         "https://www.ncbi.nlm.nih.gov/pubmed/15358028"
                                     ],
-                                    "type": "Information"
+                                    "type": "Statement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "contribution": [
                                         {
@@ -6780,13 +6775,13 @@
                                     "source": [
                                         "https://www.ncbi.nlm.nih.gov/pubmed/15858117"
                                     ],
-                                    "type": "Information"
+                                    "type": "Statement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "contribution": [
                                         {
@@ -6811,13 +6806,13 @@
                                     "source": [
                                         "https://www.ncbi.nlm.nih.gov/pubmed/21511876"
                                     ],
-                                    "type": "Information"
+                                    "type": "Statement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "contribution": [
                                         {
@@ -6842,13 +6837,13 @@
                                     "source": [
                                         "https://www.ncbi.nlm.nih.gov/pubmed/23396983"
                                     ],
-                                    "type": "Information"
+                                    "type": "Statement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         },
                         {
-                            "information": [
+                            "evidenceItem": [
                                 {
                                     "contribution": [
                                         {
@@ -6873,7 +6868,7 @@
                                     "source": [
                                         "https://www.ncbi.nlm.nih.gov/pubmed/24510615"
                                     ],
-                                    "type": "Information"
+                                    "type": "Statement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -6892,6 +6887,12 @@
                     "variant": "http://reg.genome.network/allele/CA012832"
                 }
             ],
+            "evidenceStrength": {
+                "coding": [
+                    "http://clinicalgenome.org/datamodel/criterion-evidence-strength/ps"
+                ],
+                "type": "CodeableConcept"
+            },
             "type": "EvidenceLine"
         }
     ],
