@@ -382,10 +382,10 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
     #Now the evidence
     if VCI_FREQUENCY_KEY in vci_evaluation:
         frequencies = transform_frequency( vci_evaluation[VCI_FREQUENCY_KEY],  entities)
-        add_informations( dmwg_assessment, frequencies )
+        add_evidenceItems( dmwg_assessment, frequencies )
     if VCI_COMPUTATIONAL_KEY in vci_evaluation:
         predictions = transform_computational( vci_evaluation[VCI_COMPUTATIONAL_KEY], entities )
-        add_informations( dmwg_assessment, predictions )
+        add_evidenceItems( dmwg_assessment, predictions )
     add_criterion_assessment(interpretation, dmwg_assessment, strength)
     return vci_evaluation[VCI_CRITERIA_KEY], dmwg_assessment
 
@@ -454,7 +454,7 @@ def transform_other_comp_data( source, variant ):
 def transform_conservation_data( source, variant ):
     results = []
     for constool in source:
-        dmwg_conservation = Conservation()
+        dmwg_conservation = AlleleConservation()
         dmwg_conservation.set_allele(variant)
         dmwg_conservation.set_algorithm(constool)
         dmwg_conservation.set_score(source[constool])
@@ -640,7 +640,7 @@ def transform_articles( article_list, interpretation, entities ):
 # rules via the category and subcategory proerties
 def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
     for ee_node in extra_evidence_list:
-        info = Information()
+        info = Statement()
         add_contributions_to_data( ee_node, [info], entities )
         info.set_explanation( ee_node[ VCI_EVIDENCE_DESCRIPTION_KEY] )
         sources = transform_articles(ee_node[ VCI_ARTICLES_KEY], interpretation, entities )
@@ -653,7 +653,7 @@ def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
             if rule in evalmap:
                 found = True
                 dmwg_assessment = evalmap[rule]
-                add_informations( dmwg_assessment, [info])
+                add_evidenceItems( dmwg_assessment, [info])
         if not found:
             print  "Did not find any evaluated criteria for this data: %s "% ee_node['uuid']
 
@@ -672,7 +672,7 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
         disease_name = vci_disease[VCI_DISEASE_TERM_KEY]
         dmwg_disease = create_dmwg_disease(disease_ontology, disease_code, disease_name)
         entities.add_transformed(vci_disease_id, dmwg_disease)
-    dmwg_condition = MendelianCondition()
+    dmwg_condition = GeneticCondition()
     dmwg_condition.add_disease(dmwg_disease)
     if mode!= '': dmwg_condition.set_modeOfInheritance( mode )
     interpretation.add_condition(dmwg_condition)
