@@ -1,1 +1,2 @@
 requests~=2.17
+git+https://github.com/clingen-data-model/interpretation_json.git
