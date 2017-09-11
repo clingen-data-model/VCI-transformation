@@ -1,4 +1,5 @@
 {
+    "@context": "http://datamodel.clinicalgenome.org/interpretation/json/context",
     "condition": [
         {
             "disease": [
@@ -25,7 +26,6 @@
             "type": "GeneticCondition"
         }
     ],
-    "context": "http://datamodel.clinicalgenome.org/interpretation/json/context",
     "evidenceLine": [
         {
             "evidenceItem": [
