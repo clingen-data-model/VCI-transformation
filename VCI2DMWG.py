@@ -253,7 +253,7 @@ def add_contribution( user_input, target, ondate, entities, role ):
     if agent is None:
         agent = Agent(userid)
         try:
-            agent.set_name( user[VCI_AGENT_NAME_KEY] )
+            agent.set_label( user[VCI_AGENT_NAME_KEY] )
         except KeyError:
             #sometimes we might not have the name.. oh well.
             pass
@@ -320,7 +320,7 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
             exit()
         vci_pv = vci_pv[0]
     add_contributions( vci_pv[VCI_CONTRIBUTION_KEY], interpretation, entities, vci_pv[VCI_LAST_MODIFIED_KEY], DMWG_INTERPRETER_ROLE ,)
-    interpretation.set_clinicalSignificance( convert_significance(vci_pv) )
+    interpretation.set_outcome( convert_significance(vci_pv) )
 
 def convert_significance(vci_provisional_variant):
     value = vci_provisional_variant[VCI_AUTOCLASSIFICATION_KEY]
@@ -362,7 +362,7 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
     criterion = criteria[ vci_evaluation[ VCI_CRITERIA_KEY] ]
     dmwg_assessment.set_criterion( criterion )
     dmwg_assessment.set_outcome( term_map[ vci_evaluation[ VCI_CRITERIA_STATUS_KEY ] ] )
-    dmwg_assessment.set_explanation( vci_evaluation[ VCI_EVALUATION_EXPLANATION_KEY] )
+    dmwg_assessment.set_description( vci_evaluation[ VCI_EVALUATION_EXPLANATION_KEY] )
     dmwg_assessment.set_variant( transform_variant( vci_evaluation[VCI_EVALUATION_VARIANT_KEY ] , entities) )
     #Have to do a little work to figure out the strength
     #VCI has both a modifier and a criteria modifier.  If these both exist they should be the
@@ -415,7 +415,7 @@ def transform_clingen_comp_data( source,variant):
             #dmwg_prediction.set_transcript()
             dmwg_prediction.set_canonicalAllele(variant)
             dmwg_prediction.set_algorithm(pred)
-            dmwg_prediction.set_quantitativePrediction(score)
+            dmwg_prediction.set_score(score)
             dmwg_prediction.set_predictionType( term_map[VCI_MISSENSE_EFFECT_PREDICTOR] )
             predictions.append(dmwg_prediction)
     return predictions
@@ -443,7 +443,7 @@ def transform_other_comp_data( source, variant ):
             dmwg_prediction.set_canonicalAllele( variant )
             dmwg_prediction.set_algorithm( pred )
             if s is not None:
-                dmwg_prediction.set_quantitativePrediction(s)
+                dmwg_prediction.set_score(s)
             if p is not None:
                 dmwg_prediction.set_categoricalPrediction(p)
         predictions.append(dmwg_prediction)
@@ -599,18 +599,20 @@ def transform_esp_data(source,dmwg_variant):
     return frequencies
 
 
-#shitty code here, depends on some hard coding for strength.
-#should read the codings from an external source
 def transform_strength(modifier, defaultStrength):
+    """defaultStrength is one of our DomainEntities.  If we need to change the stength, 
+    we are going to get the display, and change it, then pass back that string, which will
+    be turned back into an object in the back end"""
     if modifier == '':
         return defaultStrength
+    path = defaultStrength.get_label().split(' ')[0]
     if modifier == 'strong':
-        mod = 's'
+        mod = 'Strong'
     elif modifier == 'supporting':
-        mod = 'p'
+        mod = 'Supporting'
     elif modifier == 'moderate':
-        mod = 'm'
-    strength = defaultStrength.get_coding()[0].get_id()[:-1] + mod
+        mod = 'Moderate'
+    strength = ' '.join( [path, mod] )
     return strength
 
 #Returns a dictionary that maps from criterion id (e.g. "PS2") to
@@ -642,7 +644,7 @@ def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
     for ee_node in extra_evidence_list:
         info = Statement()
         add_contributions_to_data( ee_node, [info], entities )
-        info.set_explanation( ee_node[ VCI_EVIDENCE_DESCRIPTION_KEY] )
+        info.set_description( ee_node[ VCI_EVIDENCE_DESCRIPTION_KEY] )
         sources = transform_articles(ee_node[ VCI_ARTICLES_KEY], interpretation, entities )
         for source in sources:
             info.add_source(source)
