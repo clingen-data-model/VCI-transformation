@@ -5,10 +5,8 @@
             "disease": [
                 {
                     "id": "http://www.disease-ontology.org/term/DOID_11984",
-                    "synonym": [
-                        "hypertrophic cardiomyopathy"
-                    ],
-                    "type": "Disease"
+                    "type": "Disease",
+                    "userLabel": "hypertrophic cardiomyopathy"
                 }
             ],
             "modeOfInheritance": {
@@ -191,7 +189,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -206,7 +204,7 @@
                                     ],
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/AA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -221,7 +219,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -236,7 +234,7 @@
                                     ],
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -251,7 +249,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -266,7 +264,7 @@
                                     ],
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/EA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -281,7 +279,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -297,7 +295,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "other",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -312,7 +310,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -328,7 +326,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/nfe",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -343,7 +341,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -359,7 +357,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -374,7 +372,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -390,7 +388,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/sas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -405,7 +403,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -421,7 +419,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/eas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -436,7 +434,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -452,7 +450,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/amr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -467,7 +465,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -483,7 +481,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/fin",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -498,7 +496,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -514,7 +512,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/afr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -529,7 +527,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -545,7 +543,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/amr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -560,7 +558,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG_ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -576,7 +574,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/AA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -591,7 +589,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -607,7 +605,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -622,7 +620,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -638,7 +636,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/sas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -653,7 +651,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -669,7 +667,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/eas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -684,7 +682,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -700,7 +698,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/eur",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -715,7 +713,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -731,7 +729,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/afr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -746,7 +744,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG_ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -762,7 +760,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/EA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -816,7 +814,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -831,7 +829,7 @@
                                     ],
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/AA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -846,7 +844,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -861,7 +859,7 @@
                                     ],
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -876,7 +874,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -891,7 +889,7 @@
                                     ],
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/EA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -906,7 +904,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -922,7 +920,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "other",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -937,7 +935,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -953,7 +951,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/nfe",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -968,7 +966,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -984,7 +982,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -999,7 +997,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1015,7 +1013,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/sas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1030,7 +1028,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1046,7 +1044,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/eas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1061,7 +1059,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1077,7 +1075,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/amr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1092,7 +1090,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1108,7 +1106,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/fin",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1123,7 +1121,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1139,7 +1137,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/afr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1154,7 +1152,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1170,7 +1168,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/amr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1185,7 +1183,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG_ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1201,7 +1199,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/AA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1216,7 +1214,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1232,7 +1230,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1247,7 +1245,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1263,7 +1261,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/sas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1278,7 +1276,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1294,7 +1292,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/eas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1309,7 +1307,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1325,7 +1323,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/eur",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1340,7 +1338,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1356,7 +1354,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/afr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1371,7 +1369,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG_ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1387,7 +1385,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/EA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1441,7 +1439,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1456,7 +1454,7 @@
                                     ],
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/AA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1471,7 +1469,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1486,7 +1484,7 @@
                                     ],
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1501,7 +1499,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1516,7 +1514,7 @@
                                     ],
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/EA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1531,7 +1529,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1547,7 +1545,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "other",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1562,7 +1560,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1578,7 +1576,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/nfe",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1593,7 +1591,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1609,7 +1607,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1624,7 +1622,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1640,7 +1638,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/sas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1655,7 +1653,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1671,7 +1669,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/eas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1686,7 +1684,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1702,7 +1700,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/amr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1717,7 +1715,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1733,7 +1731,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/fin",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1748,7 +1746,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "ExAC",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1764,7 +1762,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://broadinstitute.org/populations/afr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1779,7 +1777,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1795,7 +1793,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/amr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1810,7 +1808,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG_ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1826,7 +1824,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/AA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1841,7 +1839,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1857,7 +1855,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "combined",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1872,7 +1870,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1888,7 +1886,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/sas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1903,7 +1901,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1919,7 +1917,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/eas",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1934,7 +1932,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1950,7 +1948,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/eur",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1965,7 +1963,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -1981,7 +1979,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://www.internationalgenome.org/category/population/afr",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -1996,7 +1994,7 @@
                                     "alleleNumber": 0,
                                     "ascertainment": {
                                         "label": "1KG_ESP",
-                                        "type": "AscertainmentType"
+                                        "type": "Ascertainment"
                                     },
                                     "contribution": [
                                         {
@@ -2012,7 +2010,7 @@
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
                                         "label": "http://evs.gs.washington.edu/EVS/EA",
-                                        "type": "PopulationType"
+                                        "type": "Population"
                                     },
                                     "type": "AlleleFrequency"
                                 }
@@ -2075,7 +2073,7 @@
                                         }
                                     ],
                                     "score": "13.9031",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2097,7 +2095,7 @@
                                         }
                                     ],
                                     "score": "0.861",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2119,7 +2117,7 @@
                                         }
                                     ],
                                     "score": "0.932",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2141,7 +2139,7 @@
                                         }
                                     ],
                                     "score": "5.03",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2163,7 +2161,7 @@
                                         }
                                     ],
                                     "score": "0.389",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2185,7 +2183,7 @@
                                         }
                                     ],
                                     "score": "0.999",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2206,12 +2204,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": "0.694",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": "0.694",
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2221,7 +2219,6 @@
                                 {
                                     "algorithm": "polyphen2_hvar",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "B",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2233,11 +2230,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "polyphen2_hvar",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.294,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "B",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.294,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2248,7 +2262,6 @@
                                 {
                                     "algorithm": "polyphen2_hdiv",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "P",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2260,11 +2273,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "polyphen2_hdiv",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.566,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "P",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.566,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2275,7 +2305,6 @@
                                 {
                                     "algorithm": "fathmm_mkl",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "N",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2287,11 +2316,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "fathmm_mkl",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.45542,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "N",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.45542,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2302,7 +2348,6 @@
                                 {
                                     "algorithm": "fathmm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2314,11 +2359,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "fathmm",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": -3.68,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": -3.68,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2329,7 +2391,6 @@
                                 {
                                     "algorithm": "mutationassessor",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "L",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2341,11 +2402,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "mutationassessor",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 1.665,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "L",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 1.665,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2356,7 +2434,6 @@
                                 {
                                     "algorithm": "mutationtaster",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "A",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2368,11 +2445,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "mutationtaster",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.935965,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "A",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.935965,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2383,7 +2477,6 @@
                                 {
                                     "algorithm": "metalr",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2395,11 +2488,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "metalr",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.7944,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.7944,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2410,7 +2520,6 @@
                                 {
                                     "algorithm": "sift",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2422,11 +2531,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "sift",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.001,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.001,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2448,12 +2574,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": "7.456653",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": "7.456653",
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2463,7 +2589,6 @@
                                 {
                                     "algorithm": "metasvm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2475,11 +2600,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "metasvm",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.7962,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.7962,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2501,12 +2643,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": 0.487112,
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.487112,
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2516,7 +2658,6 @@
                                 {
                                     "algorithm": "provean",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "N",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2528,11 +2669,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "provean",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": -1.78,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "N",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": -1.78,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2594,7 +2752,7 @@
                                         }
                                     ],
                                     "score": "13.9031",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2616,7 +2774,7 @@
                                         }
                                     ],
                                     "score": "0.861",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2638,7 +2796,7 @@
                                         }
                                     ],
                                     "score": "0.932",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2660,7 +2818,7 @@
                                         }
                                     ],
                                     "score": "5.03",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2682,7 +2840,7 @@
                                         }
                                     ],
                                     "score": "0.389",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2704,7 +2862,7 @@
                                         }
                                     ],
                                     "score": "0.999",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2725,12 +2883,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": "0.694",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": "0.694",
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2740,7 +2898,6 @@
                                 {
                                     "algorithm": "polyphen2_hvar",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "B",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2752,11 +2909,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "polyphen2_hvar",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.294,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "B",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.294,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2767,7 +2941,6 @@
                                 {
                                     "algorithm": "polyphen2_hdiv",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "P",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2779,11 +2952,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "polyphen2_hdiv",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.566,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "P",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.566,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2794,7 +2984,6 @@
                                 {
                                     "algorithm": "fathmm_mkl",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "N",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2806,11 +2995,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "fathmm_mkl",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.45542,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "N",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.45542,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2821,7 +3027,6 @@
                                 {
                                     "algorithm": "fathmm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2833,11 +3038,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "fathmm",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": -3.68,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": -3.68,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2848,7 +3070,6 @@
                                 {
                                     "algorithm": "mutationassessor",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "L",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2860,11 +3081,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "mutationassessor",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 1.665,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "L",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 1.665,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2875,7 +3113,6 @@
                                 {
                                     "algorithm": "mutationtaster",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "A",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2887,11 +3124,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "mutationtaster",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.935965,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "A",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.935965,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2902,7 +3156,6 @@
                                 {
                                     "algorithm": "metalr",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2914,11 +3167,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "metalr",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.7944,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.7944,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2929,7 +3199,6 @@
                                 {
                                     "algorithm": "sift",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2941,11 +3210,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "sift",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.001,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.001,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -2967,12 +3253,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": "7.456653",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": "7.456653",
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2982,7 +3268,6 @@
                                 {
                                     "algorithm": "metasvm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2994,11 +3279,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "metasvm",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.7962,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.7962,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3020,12 +3322,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": 0.487112,
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.487112,
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3035,7 +3337,6 @@
                                 {
                                     "algorithm": "provean",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "N",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3047,11 +3348,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "provean",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": -1.78,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "N",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": -1.78,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3113,7 +3431,7 @@
                                         }
                                     ],
                                     "score": "13.9031",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3135,7 +3453,7 @@
                                         }
                                     ],
                                     "score": "0.861",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3157,7 +3475,7 @@
                                         }
                                     ],
                                     "score": "0.932",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3179,7 +3497,7 @@
                                         }
                                     ],
                                     "score": "5.03",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3201,7 +3519,7 @@
                                         }
                                     ],
                                     "score": "0.389",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3223,7 +3541,7 @@
                                         }
                                     ],
                                     "score": "0.999",
-                                    "type": "AlleleConservation"
+                                    "type": "AlleleConservationScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3244,12 +3562,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": "0.694",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": "0.694",
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3259,7 +3577,6 @@
                                 {
                                     "algorithm": "polyphen2_hvar",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "B",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3271,11 +3588,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "polyphen2_hvar",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.294,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "B",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.294,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3286,7 +3620,6 @@
                                 {
                                     "algorithm": "polyphen2_hdiv",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "P",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3298,11 +3631,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "polyphen2_hdiv",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.566,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "P",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.566,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3313,7 +3663,6 @@
                                 {
                                     "algorithm": "fathmm_mkl",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "N",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3325,11 +3674,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "fathmm_mkl",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.45542,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "N",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.45542,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3340,7 +3706,6 @@
                                 {
                                     "algorithm": "fathmm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3352,11 +3717,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "fathmm",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": -3.68,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": -3.68,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3367,7 +3749,6 @@
                                 {
                                     "algorithm": "mutationassessor",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "L",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3379,11 +3760,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "mutationassessor",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 1.665,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "L",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 1.665,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3394,7 +3792,6 @@
                                 {
                                     "algorithm": "mutationtaster",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "A",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3406,11 +3803,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "mutationtaster",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.935965,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "A",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.935965,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3421,7 +3835,6 @@
                                 {
                                     "algorithm": "metalr",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3433,11 +3846,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "metalr",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.7944,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.7944,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3448,7 +3878,6 @@
                                 {
                                     "algorithm": "sift",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3460,11 +3889,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "sift",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.001,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.001,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3486,12 +3932,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": "7.456653",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": "7.456653",
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3501,7 +3947,6 @@
                                 {
                                     "algorithm": "metasvm",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "D",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3513,11 +3958,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "metasvm",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": 0.7962,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "D",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.7962,
                                     "type": "InSilicoPrediction"
                                 }
                             ],
@@ -3539,12 +4001,12 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "prediction": 0.487112,
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": 0.487112,
-                                    "type": "InSilicoPrediction"
+                                    "type": "InSilicoPredictionScore"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3554,7 +4016,6 @@
                                 {
                                     "algorithm": "provean",
                                     "canonicalAllele": "http://reg.genome.network/allele/CA011785",
-                                    "categoricalPrediction": "N",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3566,11 +4027,28 @@
                                             "type": "Contribution"
                                         }
                                     ],
+                                    "evidenceLine": [
+                                        {
+                                            "evidenceItem": [
+                                                {
+                                                    "algorithm": "provean",
+                                                    "canonicalAllele": "http://reg.genome.network/allele/CA011785",
+                                                    "prediction": -1.78,
+                                                    "predictionType": {
+                                                        "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
+                                                        "type": "Prediction"
+                                                    },
+                                                    "type": "InSilicoPredictionScore"
+                                                }
+                                            ],
+                                            "type": "EvidenceLine"
+                                        }
+                                    ],
+                                    "prediction": "N",
                                     "predictionType": {
                                         "label": "http://clinicalgenome.org/datamodel/prediction-type/me",
-                                        "type": "PredictionType"
+                                        "type": "Prediction"
                                     },
-                                    "score": -1.78,
                                     "type": "InSilicoPrediction"
                                 }
                             ],

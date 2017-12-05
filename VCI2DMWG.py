@@ -226,8 +226,6 @@ def canonicalizeVariant(rep):
     baylor_carid = baylor_car_rep['@id']
     #Make sure it's the same id
     if (orig_carid != '') and (orig_carid != baylor_carid):
-        print orig_carid
-        print baylor_carid
         raise Exception
     return baylor_car_rep
 
@@ -258,7 +256,6 @@ def add_contribution( user_input, target, ondate, entities, role ):
             #sometimes we might not have the name.. oh well.
             pass
         entities.add_transformed(userid, agent)
-    #contribution = Contribution(agent, ondate, role)
     contribution = create_contribution(agent, ondate, role)
     target.add_contribution(contribution)
 
@@ -404,18 +401,26 @@ def transform_computational(source, entities):
     add_contributions_to_data( source , predictions, entities )
     return predictions
 
+#The VCI insilico predictions have a score attribute as well as a prediction.
+# It looks like the prediction is always generic text that "higher score = higher pathogenicity"
+# So we will just keep thte score piece.
+#In the event that this changes, and the prediction becomes a qualitative prediction,
+# we'll make a prediction (with the qualitative score)->evidence line -> ISPScore(score) 
+#See transform_other_comp_data for an example
 def transform_clingen_comp_data( source,variant):
     predictions = []
     for pred in source:
         score = source[pred][VCI_SCORE_KEY]
-        #Have to sort out the scores....
         if score is not None:
-            dmwg_prediction = InSilicoPrediction()
+            if source[pred]['prediction'] != "higher score = higher pathogenicity":
+                print '!',source[pred]['prediction']
+            #Have to sort out the scores....
+            dmwg_prediction = InSilicoPredictionScore()
             #We really also want to set the transcript, but the VCI is not returning that informaiton
             #dmwg_prediction.set_transcript()
             dmwg_prediction.set_canonicalAllele(variant)
             dmwg_prediction.set_algorithm(pred)
-            dmwg_prediction.set_score(score)
+            dmwg_prediction.set_prediction(score)
             dmwg_prediction.set_predictionType( term_map[VCI_MISSENSE_EFFECT_PREDICTOR] )
             predictions.append(dmwg_prediction)
     return predictions
@@ -438,23 +443,37 @@ def transform_other_comp_data( source, variant ):
             #both none, ignore
             continue
         for (s,p) in zip(scores,preds):
-            dmwg_prediction = InSilicoPrediction()
-            dmwg_prediction.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
-            dmwg_prediction.set_canonicalAllele( variant )
-            dmwg_prediction.set_algorithm( pred )
+            dmwg_prediction = dmwg_prediction_score = None
             if s is not None:
-                dmwg_prediction.set_score(s)
+                dmwg_prediction_score = InSilicoPredictionScore()
+                dmwg_prediction_score.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
+                dmwg_prediction_score.set_canonicalAllele( variant )
+                dmwg_prediction_score.set_algorithm( pred )
+                dmwg_prediction_score.set_prediction(s)
             if p is not None:
-                dmwg_prediction.set_categoricalPrediction(p)
-        predictions.append(dmwg_prediction)
+                dmwg_prediction = InSilicoPrediction()
+                dmwg_prediction.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
+                dmwg_prediction.set_canonicalAllele( variant )
+                dmwg_prediction.set_algorithm( pred )
+                dmwg_prediction.set_prediction(p)
+            if dmwg_prediction is None:
+                predictions.append(dmwg_prediction_score)
+            else:
+                if dmwg_prediction_score is not None:
+                    evidence_line = EvidenceLine()
+                    evidence_line.add_evidenceItem( dmwg_prediction_score )
+                    dmwg_prediction.add_evidenceLine( evidence_line )
+                predictions.append(dmwg_prediction)
     return predictions
 
 
 #The values from VCI are not including a true/false on whether the thing is conserved. But we'll want that.
+#When we get that, this will have to change.  What it will become is an AlleleConservation object
+# with an evidence line to an AlleleConservationScore, which will be defined as below
 def transform_conservation_data( source, variant ):
     results = []
     for constool in source:
-        dmwg_conservation = AlleleConservation()
+        dmwg_conservation = AlleleConservationScore()
         dmwg_conservation.set_allele(variant)
         dmwg_conservation.set_algorithm(constool)
         dmwg_conservation.set_score(source[constool])
