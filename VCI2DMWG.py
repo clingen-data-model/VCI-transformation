@@ -104,6 +104,7 @@ DMWG_EXAC='ExAC'
 
 # should probably be in a separate file...
 systems = {
+    'MONDO': 'http://monarchinitiative.org/disease/',  # FIXME - the VCI puts something like MONDO_0009861, but the url should be like MONDO:0009861 (but html escaped...)
     'DOID': 'http://www.disease-ontology.org/term/', # FIXME- the VCI puts something like DOID_1321, but the url should be like DOID:1321 (but html escaped...)
     'OMIM': 'http://omim.org/entry/',
     'Orphanet': ' http://www.orpha.net' # FIXME: is there a stable IRI per term?
@@ -694,7 +695,7 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     vci_disease = entities.get_entity(vci_disease_id)
     dmwg_disease = entities.get_transformed(vci_disease_id)
     if dmwg_disease is None:
-        disease_ontology = vci_disease[VCI_DISEASE_ONTOLOGY_KEY]
+        disease_ontology = 'MONDO'
         disease_ontology = systems.get(disease_ontology, disease_ontology)
         disease_code = vci_disease[VCI_DISEASE_ID_KEY]
         disease_name = vci_disease[VCI_DISEASE_TERM_KEY]
