@@ -225,8 +225,15 @@ def canonicalizeVariant(rep):
     baylor_car_rep = get_canonical_id(hgvs38)
     baylor_carid = baylor_car_rep['@id']
     #Make sure it's the same id
-    if (orig_carid != '') and (orig_carid != baylor_carid):
-        raise Exception
+    if (orig_carid) != '':
+        #If the original is de-curied, then we need to compare to that...
+        if not orig_carid.startswith('http://'):
+            compare_id = baylor_carid.split('/')[-1]
+        else:
+            compare_id = baylor_carid
+        if orig_carid != compare_id:
+            logging.error('Original ID: %s.    Final ID: %s' % (orig_carid, baylor_carid) )
+            raise Exception
     return baylor_car_rep
 
 def fully_qualify(iri):
@@ -709,7 +716,7 @@ def transform(jsonf):
     try:
         variant = transform_variant(vci[VCI_VARIANT_KEY],entities)
         interpretation.set_variant(variant)
-    except:
+    except KeyError:
         logging.warning('No variant found. Proceeding.')
     try:
         transform_condition(vci[VCI_CONDITION_KEY], interpretation, entities, inheritance)
