@@ -8,12 +8,16 @@ This project consists of
 3) Static components for handling serialization
 4) A script for converting VCI JSON files into DMWG JSON files using the  classes above.
 5) Unit tests
+6) A folder of sample input files with an archive of historical real data file sets.
+7) A script for parsing and transforming a single multi-record input json file.
 
+## Setup Python Environment
 VCI2DMWG has a dependency on the clingen_interpretation library, which is used to serialize DMWG-style
 JSON files.  The github repository can be found [here](https://github.com/clingen-data-model/interpretation_json).
 Follow the instructions on that page to install the library, or just install this and all other dependencies using
 `pip -r requirements.txt`.
 
+### alternative option with virtualenv
 Some may prefer to work in a python virtualenv like this:
 
 ```
@@ -24,11 +28,25 @@ pip install -r requirements.txt
 
 (If you do this, you will need to activate the virtualenv in whichever shell you want to use these scripts)
 
+## Execute Script 
+### Standard - Single One-Record Input File
 To convert a VCI json file (input.json) into a DMWG JSON file (output.json) use the script VCI2DMG.py:
 ```python VCI2DMWG.py input.json output.json```
 
 Sample input and output files are found in the `test_data` directory.
 
+### Batch - Single Multi-Record Input File
+When given a single zip file containing a single json file containing multiple VCI json records
+(see test_data/archive/DMWG-PAH-INTERPRETATIONS.json.zip for example), you can automate the
+unzipping, parsing and transformations of each record with a single bash script called 
+parseVCIinput.sh found in the root directory.
+
+To parse and transform a single mulit-record input zip file, run
+```./parseVCIinput.sh <zipfilename>```
+where <zipfilename> is a reference to the zip file containing a single json file with one or
+more VCI records lists. 
+
+## Generating Dependent Classes
 To generate the classes, run
 ```python generate_interpretation_library.py <flattened>```
 where <flattened> is the directory containing the flattened data model.  
@@ -44,6 +62,5 @@ In addition there are several static files:
   * interpretation_extras.py: Some utility functions for creating DMWG style interpretations and serializing them
   * CodingFactory: decorators to handle codings and codeable concepts.
 
-
-
+## Running Unit Tests
 The tests are to be run using `pytest`.
