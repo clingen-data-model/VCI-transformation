@@ -42,9 +42,17 @@ unzipping, parsing and transformations of each record with a single bash script 
 parseVCIinput.sh found in the root directory.
 
 To parse and transform a single mulit-record input zip file, run
-```./parseVCIinput.sh <zipfilename>```
-where ```<zipfilename>``` is a reference to the zip file containing a single json file with one or
-more VCI records lists. 
+```./parseVCIinput.sh <zipfilename> &> <outputlogfilename>```
+where 
+```<zipfilename>``` is a reference to the zip file containing a single json file with one ormore VCI records lists, and
+```<outputlogfilename>``` is a reference to the output (errors included) from process.  
+
+#### saving results to archive folder (for ClinGen use only)
+The output of the VCI transformation run and its logged output should be passed to the clinvar-submitter process.
+
+The resulting dmwg*.json files should be zipped and passed on.
+The input VCI zip file should be stored in the test_data/archive folder and checked into github for future 
+users to reference as needed. 
 
 ## Generating Dependent Classes
 To generate the classes, run
