@@ -43,13 +43,13 @@ parseVCIinput.sh found in the root directory.
 
 To parse and transform a single mulit-record input zip file, run
 ```./parseVCIinput.sh <zipfilename>```
-where <zipfilename> is a reference to the zip file containing a single json file with one or
+where ```<zipfilename>``` is a reference to the zip file containing a single json file with one or
 more VCI records lists. 
 
 ## Generating Dependent Classes
 To generate the classes, run
 ```python generate_interpretation_library.py <flattened>```
-where <flattened> is the directory containing the flattened data model.  
+where ```<flattened>``` is the directory containing the flattened data model.  
 
 This will create several files:
   * interpretation_generated.py: Python classes with getters and setters for properties
