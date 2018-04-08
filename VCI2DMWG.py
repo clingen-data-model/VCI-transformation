@@ -710,6 +710,8 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
 
 def transform(jsonf):
     vci = json.load(jsonf)
+    if VCI_MODEINHERITANCE_KEY not in vci:
+        vci[VCI_MODEINHERITANCE_KEY] = ''
     entities = EntityMap(vci)
     interpretation, inheritance = transform_root(vci)
     if VCI_PROVISIONAL_VARIANT_KEY in vci:
