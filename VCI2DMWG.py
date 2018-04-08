@@ -96,11 +96,10 @@ VCI_PROVISIONAL_VARIANT_KEY = 'provisional_variant'
 VCI_MISSENSE_EFFECT_PREDICTOR = 'missense_predictor'
 VCI_SPLICE_EFFECT_PREDICTOR = 'splice'
 
-#TEMP FIX UNTIL ALLELE_FREQ.ascertainment is made a CodeableConcept
-DMWG_ESP='ESP'
-DMWG_1KGESP='1KG_ESP'
-DMWG_1KG='1KG'
-DMWG_EXAC='ExAC'
+DMWG_ESP='ESP ascertainment method'
+DMWG_1KGESP='1000 Genomes ascertainment method'
+DMWG_1KG='1000 Genomes ascertainment method'
+DMWG_EXAC='ExAC ascertainment method'
 
 # should probably be in a separate file...
 systems = {
@@ -110,10 +109,10 @@ systems = {
     'Orphanet': ' http://www.orpha.net' # FIXME: is there a stable IRI per term?
 }
 
-term_map = { VCI_MET: 'http://clinicalgenome.org/datamodel/criterion-assertion-outcome/met', \
-             VCI_NOT_MET: 'http://clinicalgenome.org/datamodel/criterion-assertion-outcome/not-met', \
-             VCI_MISSENSE_EFFECT_PREDICTOR: 'http://clinicalgenome.org/datamodel/prediction-type/me', \
-             VCI_SPLICE_EFFECT_PREDICTOR: 'http://clinicalgenome.org/datamodel/prediction-type/sp' \
+term_map = { VCI_MET: 'Met', \
+             VCI_NOT_MET: 'Not Met', \
+             VCI_MISSENSE_EFFECT_PREDICTOR: 'missense effect', \
+             VCI_SPLICE_EFFECT_PREDICTOR: 'splicing prediction' \
              }
 
 extra_evidence_map = { ('population','population'): ['BA1','PM2','BS1'],\
@@ -516,20 +515,23 @@ def add_contributions_to_data( data_source, data_targets, entities):
 
 #Clean up the VCI keys and decide if they are per experiment or not.
 def convert_esp_pop(pop):
+    print 'esp %s'%pop
     if pop == VCI_COMBINED_POP:
         return 'combined'
-    return 'http://evs.gs.washington.edu/EVS/%s' % pop.upper()
+    return 'ESP-population-type:%s' % pop.upper()
 
 def convert_exac_pop(pop):
+    print 'exac %s'%pop
     if pop == VCI_COMBINED_POP: return 'combined'
     if pop == VCI_EXAC_OTHER_POP: return 'other'
-    return 'http://broadinstitute.org/populations/%s' % pop
+    return 'BROAD-population-type:%s' % pop
 
 def convert_1000_genomes_pop(pop):
+    print '1000 %s' % pop
     if pop == VCI_COMBINED_POP: return 'combined'
     if pop in [ VCI_1000_GENOMES_ESP_AA_POP, VCI_1000_GENOMES_ESP_EA_POP ]:
-        return 'http://evs.gs.washington.edu/EVS/%s' % pop[-2:].upper()
-    return 'http://www.internationalgenome.org/category/population/%s' % pop
+        return 'ESP-population-type:%s' % pop[-2:].upper()
+    return 'IGSR-population-type:%s' % pop
 
 def transform_1000_genomes_data( source, dmwg_variant ):
     alt_allele = dmwg_variant.get_allele('GRCh37') #right?
