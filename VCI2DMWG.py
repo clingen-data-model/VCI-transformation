@@ -292,7 +292,7 @@ def add_contributions( source, target, entities, ondate, role ):
 # modeInheritance: 
 # modeInheritanceAdjective: for things like "with maternal imprinting"
 def transform_root(vci):
-    vi = VariantInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
+    vi = VariantPathogenicityInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
     modestring = vci[VCI_MODEINHERITANCE_KEY]
     modeadjstring = vci[VCI_MODEINHERITANCE_ADJECTIVE_KEY]
     if modeadjstring != '':
@@ -324,10 +324,14 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
             exit()
         vci_pv = vci_pv[0]
     add_contributions( vci_pv[VCI_CONTRIBUTION_KEY], interpretation, entities, vci_pv[VCI_LAST_MODIFIED_KEY], DMWG_INTERPRETER_ROLE ,)
-    interpretation.set_outcome( convert_significance(vci_pv) )
+    interpretation.set_statementOutcome( convert_significance(vci_pv) )
 
 def convert_significance(vci_provisional_variant):
     value = vci_provisional_variant[VCI_AUTOCLASSIFICATION_KEY]
+    if value == 'Uncertain significance - conflicting evidence':
+        value = 'LN:LA26333-7'
+    if value == 'Uncertain significance - insufficient evidence':
+        value = 'LN:LA26333-7'
     return value
 
 def transform_variant(variant,entities):
@@ -365,7 +369,7 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
     dmwg_assessment = CriterionAssessment( vci_evaluation[VCI_ID_KEY] )
     criterion = criteria[ vci_evaluation[ VCI_CRITERIA_KEY] ]
     dmwg_assessment.set_criterion( criterion )
-    dmwg_assessment.set_outcome( term_map[ vci_evaluation[ VCI_CRITERIA_STATUS_KEY ] ] )
+    dmwg_assessment.set_statementOutcome( term_map[ vci_evaluation[ VCI_CRITERIA_STATUS_KEY ] ] )
     dmwg_assessment.set_description( vci_evaluation[ VCI_EVALUATION_EXPLANATION_KEY] )
     dmwg_assessment.set_variant( transform_variant( vci_evaluation[VCI_EVALUATION_VARIANT_KEY ] , entities) )
     #Have to do a little work to figure out the strength
@@ -422,7 +426,7 @@ def transform_clingen_comp_data( source,variant):
             if source[pred]['prediction'] != "higher score = higher pathogenicity":
                 print '!',source[pred]['prediction']
             #Have to sort out the scores....
-            dmwg_prediction = InSilicoPredictionScore()
+            dmwg_prediction = InSilicoPredictionScoreStatement()
             #We really also want to set the transcript, but the VCI is not returning that informaiton
             #dmwg_prediction.set_transcript()
             dmwg_prediction.set_canonicalAllele(variant)
@@ -452,17 +456,17 @@ def transform_other_comp_data( source, variant ):
         for (s,p) in zip(scores,preds):
             dmwg_prediction = dmwg_prediction_score = None
             if s is not None:
-                dmwg_prediction_score = InSilicoPredictionScore()
+                dmwg_prediction_score = InSilicoPredictionScoreStatement()
                 dmwg_prediction_score.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
                 dmwg_prediction_score.set_canonicalAllele( variant )
                 dmwg_prediction_score.set_algorithm( pred )
                 dmwg_prediction_score.set_prediction(s)
             if p is not None:
-                dmwg_prediction = InSilicoPrediction()
+                dmwg_prediction = InSilicoPredictionStatement()
                 dmwg_prediction.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
                 dmwg_prediction.set_canonicalAllele( variant )
                 dmwg_prediction.set_algorithm( pred )
-                dmwg_prediction.set_prediction(p)
+                dmwg_prediction.set_statementOutcome(p)
             if dmwg_prediction is None:
                 predictions.append(dmwg_prediction_score)
             else:
@@ -480,7 +484,7 @@ def transform_other_comp_data( source, variant ):
 def transform_conservation_data( source, variant ):
     results = []
     for constool in source:
-        dmwg_conservation = AlleleConservationScore()
+        dmwg_conservation = AlleleConservationScoreStatement()
         dmwg_conservation.set_allele(variant)
         dmwg_conservation.set_algorithm(constool)
         dmwg_conservation.set_score(source[constool])
@@ -515,23 +519,20 @@ def add_contributions_to_data( data_source, data_targets, entities):
 
 #Clean up the VCI keys and decide if they are per experiment or not.
 def convert_esp_pop(pop):
-    print 'esp %s'%pop
     if pop == VCI_COMBINED_POP:
         return 'combined'
-    return 'ESP-population-type:%s' % pop.upper()
+    return 'EVS:%s' % pop.upper()
 
 def convert_exac_pop(pop):
-    print 'exac %s'%pop
     if pop == VCI_COMBINED_POP: return 'combined'
     if pop == VCI_EXAC_OTHER_POP: return 'other'
-    return 'BROAD-population-type:%s' % pop
+    return 'GNOMAD:%s' % pop
 
 def convert_1000_genomes_pop(pop):
-    print '1000 %s' % pop
     if pop == VCI_COMBINED_POP: return 'combined'
     if pop in [ VCI_1000_GENOMES_ESP_AA_POP, VCI_1000_GENOMES_ESP_EA_POP ]:
-        return 'ESP-population-type:%s' % pop[-2:].upper()
-    return 'IGSR-population-type:%s' % pop
+        return 'EVS:%s' % pop[-2:].upper()
+    return 'IGSR:%s' % pop
 
 def transform_1000_genomes_data( source, dmwg_variant ):
     alt_allele = dmwg_variant.get_allele('GRCh37') #right?
@@ -539,10 +540,10 @@ def transform_1000_genomes_data( source, dmwg_variant ):
     for pop in source:
         if pop != VCI_FREQUENCY_ALLELE_KEY:
             if pop in [VCI_1000_GENOMES_ESP_EA_POP, VCI_1000_GENOMES_ESP_AA_POP]:
-                dmwg_af = AlleleFrequency()
+                dmwg_af = PopulationAlleleFrequencyStatement()
                 dmwg_af.set_ascertainment(DMWG_1KGESP)
             else:
-                dmwg_af = AlleleFrequency()
+                dmwg_af = PopulationAlleleFrequencyStatement()
                 dmwg_af.set_ascertainment(DMWG_1KG)
             frequencies.append(dmwg_af)
             dmwg_af.set_allele( dmwg_variant )
@@ -573,7 +574,7 @@ def transform_exac_data( source, dmwg_variant ):
     frequencies = []
     for pop in source:
         if pop != VCI_FREQUENCY_ALLELE_KEY:
-            dmwg_af = AlleleFrequency()
+            dmwg_af = PopulationAlleleFrequencyStatement()
             dmwg_af.set_ascertainment(DMWG_EXAC)
             frequencies.append(dmwg_af)
             dmwg_af.set_population( convert_exac_pop(pop) )
@@ -601,7 +602,7 @@ def transform_esp_data(source,dmwg_variant):
     frequencies = []
     for pop in source:
         if pop != VCI_FREQUENCY_ALLELE_KEY:
-            dmwg_af = AlleleFrequency( )
+            dmwg_af = PopulationAlleleFrequencyStatement( )
             dmwg_af.set_ascertainment(DMWG_ESP)
             frequencies.append(dmwg_af)
             dmwg_af.set_population( convert_esp_pop(pop) )
@@ -641,6 +642,11 @@ def transform_strength(modifier, defaultStrength):
         mod = 'Supporting'
     elif modifier == 'moderate':
         mod = 'Moderate'
+    elif modifier == 'very-strong':
+        mod = 'Very Strong'
+    else:
+        print modifier
+        exit()
     strength = ' '.join( [path, mod] )
     return strength
 
@@ -705,7 +711,7 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
         entities.add_transformed(vci_disease_id, dmwg_disease)
     dmwg_condition = GeneticCondition()
     dmwg_condition.add_disease(dmwg_disease)
-    if mode!= '': dmwg_condition.set_modeOfInheritance( mode )
+    if mode!= '': dmwg_condition.set_inheritancePattern( mode )
     interpretation.add_condition(dmwg_condition)
 
 def transform(jsonf):
@@ -731,6 +737,7 @@ def transform(jsonf):
         eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
     except KeyError:
         logging.warning('No criteria evaluations found.  Proceeding')
+        eval_map = {}
     try:
         transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
     except KeyError:
