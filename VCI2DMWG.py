@@ -329,9 +329,9 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
 def convert_significance(vci_provisional_variant):
     value = vci_provisional_variant[VCI_AUTOCLASSIFICATION_KEY]
     if value == 'Uncertain significance - conflicting evidence':
-        value = 'LN:LA26333-7'
+        value = 'LOINC:LA26333-7'
     if value == 'Uncertain significance - insufficient evidence':
-        value = 'LN:LA26333-7'
+        value = 'LOINC:LA26333-7'
     return value
 
 def transform_variant(variant,entities):
