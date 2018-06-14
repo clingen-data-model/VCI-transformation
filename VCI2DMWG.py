@@ -109,6 +109,7 @@ systems = {
     'Orphanet': ' http://www.orpha.net' # FIXME: is there a stable IRI per term?
 }
 
+
 term_map = { VCI_MET: 'Met', \
              VCI_NOT_MET: 'Not Met', \
              VCI_MISSENSE_EFFECT_PREDICTOR: 'missense effect', \
@@ -234,6 +235,8 @@ def canonicalizeVariant(rep):
         if orig_carid != compare_id:
             logging.error('Original ID: %s.    Final ID: %s' % (orig_carid, baylor_carid) )
             raise Exception
+    #compact CAR id:
+    baylor_car_rep['@id'] = 'CAR:{}'.format(baylor_carid.split('/')[-1])
     return baylor_car_rep
 
 def fully_qualify(iri):
@@ -703,9 +706,12 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     vci_disease = entities.get_entity(vci_disease_id)
     dmwg_disease = entities.get_transformed(vci_disease_id)
     if dmwg_disease is None:
-        disease_ontology = 'MONDO'
-        disease_ontology = systems.get(disease_ontology, disease_ontology)
+        disease_ontology = 'MONDO:'
+        #disease_ontology = systems.get(disease_ontology, disease_ontology)
         disease_code = vci_disease[VCI_DISEASE_ID_KEY]
+        if not disease_code.startswith('MONDO'):
+            raise Exception("Expected a MONDO disease identifier")
+        disease_code = disease_code.split('_')[-1]
         disease_name = vci_disease[VCI_DISEASE_TERM_KEY]
         dmwg_disease = create_dmwg_disease(disease_ontology, disease_code, disease_name)
         entities.add_transformed(vci_disease_id, dmwg_disease)
