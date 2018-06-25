@@ -15,7 +15,7 @@ This project consists of
 VCI2DMWG has a dependency on the clingen_interpretation library, which is used to serialize DMWG-style
 JSON files.  The github repository can be found [here](https://github.com/clingen-data-model/interpretation_json).
 Follow the instructions on that page to install the library, or just install this and all other dependencies using
-`pip -r requirements.txt`.
+`pip install -r requirements.txt`.
 
 ### alternative option with virtualenv
 Some may prefer to work in a python virtualenv like this:
