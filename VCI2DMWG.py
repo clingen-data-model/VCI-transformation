@@ -706,11 +706,12 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     vci_disease = entities.get_entity(vci_disease_id)
     dmwg_disease = entities.get_transformed(vci_disease_id)
     if dmwg_disease is None:
-        disease_ontology = 'MONDO:'
+        #disease_ontology = 'MONDO:'
         #disease_ontology = systems.get(disease_ontology, disease_ontology)
+        disease_ontology = vci_disease[VCI_DISEASE_ONTOLOGY_KEY]
         disease_code = vci_disease[VCI_DISEASE_ID_KEY]
-        if not disease_code.startswith('MONDO'):
-            raise Exception("Expected a MONDO disease identifier")
+        #if not disease_code.startswith('MONDO'):
+        #    raise Exception("Expected a MONDO disease identifier")
         disease_code = disease_code.split('_')[-1]
         disease_name = vci_disease[VCI_DISEASE_TERM_KEY]
         dmwg_disease = create_dmwg_disease(disease_ontology, disease_code, disease_name)
