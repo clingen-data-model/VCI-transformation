@@ -1,14 +1,14 @@
 {
-    "@context": "http://datamodel.clinicalgenome.org/interpretation/json/context",
+    "@context": "http://dataexchange.clinicalgenome.org/interpretation/json/context",
     "condition": [
         {
             "disease": [
                 {
-                    "id": "http://monarchinitiative.org/disease/DOID_11984",
+                    "id": "DOID11984",
                     "label": "hypertrophic cardiomyopathy"
                 }
             ],
-            "modeOfInheritance": {
+            "inheritancePattern": {
                 "id": "HP:0000006",
                 "label": "Autosomal Dominant"
             },
@@ -50,9 +50,9 @@
                             "id": "SEPIO:0000325",
                             "label": "Benign Stand Alone"
                         },
-                        "id": "Crit319",
+                        "id": "SEPIO-CG:99038",
                         "label": "BA1",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "evidenceLine": [
@@ -60,13 +60,11 @@
                             "evidenceItem": [
                                 {
                                     "allele": {
-                                        "CanonicalAlleleType": "nucleotide",
+                                        "canonicalAlleleType": "nucleotide",
                                         "complexity": "simple",
-                                        "id": "http://reg.genome.network/allele/CA012832",
+                                        "id": "CAR:CA012832",
                                         "relatedContextualAllele": [
                                             {
-                                                "CanonicalAllele": "http://reg.genome.network/allele/CA012832",
-                                                "allele": "C",
                                                 "alleleName": [
                                                     {
                                                         "name": "NC_000014.9:g.23424148T>C",
@@ -83,20 +81,20 @@
                                                     "end": {
                                                         "index": 23424148
                                                     },
-                                                    "refAllele": "T",
+                                                    "refState": "T",
                                                     "referenceSequence": {
-                                                        "display": "NC_000014.9",
+                                                        "label": "NC_000014.9",
                                                         "reference": "http://reg.genome.network/refseq/RS000062"
                                                     },
                                                     "start": {
                                                         "index": 23424147
                                                     }
                                                 },
+                                                "relatedCanonicalAllele": "CAR:CA012832",
+                                                "state": "C",
                                                 "type": "ContextualAllele"
                                             },
                                             {
-                                                "CanonicalAllele": "http://reg.genome.network/allele/CA012832",
-                                                "allele": "C",
                                                 "alleleName": [
                                                     {
                                                         "name": "NC_000014.7:g.22963197T>C",
@@ -108,20 +106,20 @@
                                                     "end": {
                                                         "index": 22963197
                                                     },
-                                                    "refAllele": "T",
+                                                    "refState": "T",
                                                     "referenceSequence": {
-                                                        "display": "NC_000014.7",
+                                                        "label": "NC_000014.7",
                                                         "reference": "http://reg.genome.network/refseq/RS000014"
                                                     },
                                                     "start": {
                                                         "index": 22963196
                                                     }
                                                 },
+                                                "relatedCanonicalAllele": "CAR:CA012832",
+                                                "state": "C",
                                                 "type": "ContextualAllele"
                                             },
                                             {
-                                                "CanonicalAllele": "http://reg.genome.network/allele/CA012832",
-                                                "allele": "C",
                                                 "alleleName": [
                                                     {
                                                         "name": "NC_000014.8:g.23893357T>C",
@@ -137,20 +135,20 @@
                                                     "end": {
                                                         "index": 23893357
                                                     },
-                                                    "refAllele": "T",
+                                                    "refState": "T",
                                                     "referenceSequence": {
-                                                        "display": "NC_000014.8",
+                                                        "label": "NC_000014.8",
                                                         "reference": "http://reg.genome.network/refseq/RS000038"
                                                     },
                                                     "start": {
                                                         "index": 23893356
                                                     }
                                                 },
+                                                "relatedCanonicalAllele": "CAR:CA012832",
+                                                "state": "C",
                                                 "type": "ContextualAllele"
                                             },
                                             {
-                                                "CanonicalAllele": "http://reg.genome.network/allele/CA012832",
-                                                "allele": "G",
                                                 "alleleName": [
                                                     {
                                                         "name": "NG_007884.1:g.16514A>G",
@@ -166,29 +164,26 @@
                                                     "end": {
                                                         "index": 16514
                                                     },
-                                                    "refAllele": "A",
+                                                    "refState": "A",
                                                     "referenceSequence": {
-                                                        "display": "",
+                                                        "label": "",
                                                         "reference": "http://reg.genome.network/refseq/RS000691"
                                                     },
                                                     "start": {
                                                         "index": 16513
                                                     }
                                                 },
+                                                "relatedCanonicalAllele": "CAR:CA012832",
+                                                "state": "G",
                                                 "type": "ContextualAllele"
                                             }
                                         ],
                                         "relatedIdentifier": [
                                             {
-                                                "code": 42922,
-                                                "display": "NM_000257.3(MYH7):c.2681A>G (p.Glu894Gly)",
-                                                "system": "http://www.ncbi.nlm.nih.gov/clinvar/variation/",
-                                                "type": "Coding"
+                                                "label": "NM_000257.3(MYH7):c.2681A>G (p.Glu894Gly)"
                                             },
                                             {
-                                                "code": 397516161,
-                                                "system": "http://www.ncbi.nlm.nih.gov/snp/",
-                                                "type": "Coding"
+                                                "id": "dbSNP:397516161"
                                             }
                                         ],
                                         "type": "CanonicalAllele"
@@ -211,10 +206,10 @@
                                         }
                                     ],
                                     "population": {
-                                        "id": "ESP-population-type:AA",
+                                        "id": "EVS:AA",
                                         "label": "African-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -222,7 +217,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -244,7 +239,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -252,7 +247,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -271,10 +266,10 @@
                                         }
                                     ],
                                     "population": {
-                                        "id": "ESP-population-type:EA",
+                                        "id": "EVS:EA",
                                         "label": "European-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -282,7 +277,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -302,10 +297,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:oth",
+                                        "id": "GNOMAD:oth",
                                         "label": "Other"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -313,7 +308,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -333,10 +328,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:nfe",
+                                        "id": "GNOMAD:nfe",
                                         "label": "Non-Finnish European"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -344,7 +339,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -367,7 +362,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -375,7 +370,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -395,10 +390,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:sas",
+                                        "id": "GNOMAD:sas",
                                         "label": "South Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -406,7 +401,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -426,10 +421,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:eas",
+                                        "id": "GNOMAD:eas",
                                         "label": "East Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -437,7 +432,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -457,10 +452,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:amr",
+                                        "id": "GNOMAD:amr",
                                         "label": "Latino"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -468,7 +463,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -488,10 +483,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:fin",
+                                        "id": "GNOMAD:fin",
                                         "label": "Finnish"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -499,7 +494,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -519,10 +514,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:afr",
+                                        "id": "GNOMAD:afr",
                                         "label": "African/African American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -530,7 +525,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -550,10 +545,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "ESP-population-type:AA",
+                                        "id": "EVS:AA",
                                         "label": "African-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -561,7 +556,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -584,7 +579,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -592,7 +587,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -612,10 +607,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:sas",
+                                        "id": "IGSR:sas",
                                         "label": "South Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -623,7 +618,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -643,10 +638,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:eur",
+                                        "id": "IGSR:eur",
                                         "label": "European"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -654,7 +649,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -674,10 +669,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:eas",
+                                        "id": "IGSR:eas",
                                         "label": "East Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -685,7 +680,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -705,10 +700,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:amr",
+                                        "id": "IGSR:amr",
                                         "label": "Ad Mixed American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -716,7 +711,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -736,10 +731,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:afr",
+                                        "id": "IGSR:afr",
                                         "label": "African"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -747,7 +742,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -767,22 +762,22 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "ESP-population-type:EA",
+                                        "id": "EVS:EA",
                                         "label": "European-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         }
                     ],
                     "id": "/evaluations/75000a01-d5ca-4d2e-b17e-1c93f933c9b9/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000325",
@@ -807,16 +802,16 @@
                             "id": "SEPIO:0000216",
                             "label": "Pathogenic Moderate"
                         },
-                        "id": "Crit309",
+                        "id": "SEPIO-CG:99028",
                         "label": "PM2",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "evidenceLine": [
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -835,10 +830,10 @@
                                         }
                                     ],
                                     "population": {
-                                        "id": "ESP-population-type:AA",
+                                        "id": "EVS:AA",
                                         "label": "African-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -846,7 +841,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -868,7 +863,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -876,7 +871,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -895,10 +890,10 @@
                                         }
                                     ],
                                     "population": {
-                                        "id": "ESP-population-type:EA",
+                                        "id": "EVS:EA",
                                         "label": "European-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -906,7 +901,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -926,10 +921,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:oth",
+                                        "id": "GNOMAD:oth",
                                         "label": "Other"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -937,7 +932,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -957,10 +952,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:nfe",
+                                        "id": "GNOMAD:nfe",
                                         "label": "Non-Finnish European"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -968,7 +963,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -991,7 +986,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -999,7 +994,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1019,10 +1014,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:sas",
+                                        "id": "GNOMAD:sas",
                                         "label": "South Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1030,7 +1025,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1050,10 +1045,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:eas",
+                                        "id": "GNOMAD:eas",
                                         "label": "East Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1061,7 +1056,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1081,10 +1076,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:amr",
+                                        "id": "GNOMAD:amr",
                                         "label": "Latino"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1092,7 +1087,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1112,10 +1107,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:fin",
+                                        "id": "GNOMAD:fin",
                                         "label": "Finnish"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1123,7 +1118,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1143,10 +1138,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:afr",
+                                        "id": "GNOMAD:afr",
                                         "label": "African/African American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1154,7 +1149,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1174,10 +1169,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "ESP-population-type:AA",
+                                        "id": "EVS:AA",
                                         "label": "African-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1185,7 +1180,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1208,7 +1203,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1216,7 +1211,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1236,10 +1231,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:sas",
+                                        "id": "IGSR:sas",
                                         "label": "South Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1247,7 +1242,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1267,10 +1262,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:eur",
+                                        "id": "IGSR:eur",
                                         "label": "European"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1278,7 +1273,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1298,10 +1293,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:eas",
+                                        "id": "IGSR:eas",
                                         "label": "East Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1309,7 +1304,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1329,10 +1324,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:amr",
+                                        "id": "IGSR:amr",
                                         "label": "Ad Mixed American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1340,7 +1335,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1360,10 +1355,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:afr",
+                                        "id": "IGSR:afr",
                                         "label": "African"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1371,7 +1366,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1391,22 +1386,22 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "ESP-population-type:EA",
+                                        "id": "EVS:EA",
                                         "label": "European-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         }
                     ],
                     "id": "/evaluations/832d23d6-e0dd-4aa6-ab6f-64c699196a37/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
@@ -1431,16 +1426,16 @@
                             "id": "SEPIO:0000328",
                             "label": "Benign Strong"
                         },
-                        "id": "Crit320",
+                        "id": "SEPIO-CG:99039",
                         "label": "BS1",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "evidenceLine": [
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1459,10 +1454,10 @@
                                         }
                                     ],
                                     "population": {
-                                        "id": "ESP-population-type:AA",
+                                        "id": "EVS:AA",
                                         "label": "African-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1470,7 +1465,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1492,7 +1487,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1500,7 +1495,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1519,10 +1514,10 @@
                                         }
                                     ],
                                     "population": {
-                                        "id": "ESP-population-type:EA",
+                                        "id": "EVS:EA",
                                         "label": "European-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1530,7 +1525,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1550,10 +1545,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:oth",
+                                        "id": "GNOMAD:oth",
                                         "label": "Other"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1561,7 +1556,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1581,10 +1576,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:nfe",
+                                        "id": "GNOMAD:nfe",
                                         "label": "Non-Finnish European"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1592,7 +1587,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1615,7 +1610,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1623,7 +1618,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1643,10 +1638,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:sas",
+                                        "id": "GNOMAD:sas",
                                         "label": "South Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1654,7 +1649,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1674,10 +1669,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:eas",
+                                        "id": "GNOMAD:eas",
                                         "label": "East Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1685,7 +1680,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1705,10 +1700,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:amr",
+                                        "id": "GNOMAD:amr",
                                         "label": "Latino"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1716,7 +1711,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1736,10 +1731,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:fin",
+                                        "id": "GNOMAD:fin",
                                         "label": "Finnish"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1747,7 +1742,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1767,10 +1762,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "BROAD-population-type:afr",
+                                        "id": "GNOMAD:afr",
                                         "label": "African/African American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1778,7 +1773,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1798,10 +1793,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "ESP-population-type:AA",
+                                        "id": "EVS:AA",
                                         "label": "African-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1809,7 +1804,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1832,7 +1827,7 @@
                                         "id": "SEPIO-CG:98001",
                                         "label": "Combined"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1840,7 +1835,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1860,10 +1855,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:sas",
+                                        "id": "IGSR:sas",
                                         "label": "South Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1871,7 +1866,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1891,10 +1886,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:eur",
+                                        "id": "IGSR:eur",
                                         "label": "European"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1902,7 +1897,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1922,10 +1917,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:eas",
+                                        "id": "IGSR:eas",
                                         "label": "East Asian"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1933,7 +1928,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1953,10 +1948,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:amr",
+                                        "id": "IGSR:amr",
                                         "label": "Ad Mixed American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1964,7 +1959,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -1984,10 +1979,10 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "IGSR-population-type:afr",
+                                        "id": "IGSR:afr",
                                         "label": "African"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -1995,7 +1990,7 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "alleleCount": 0,
                                     "alleleNumber": 0,
                                     "ascertainment": {
@@ -2015,22 +2010,22 @@
                                     ],
                                     "homozygousAlleleIndividualCount": 0,
                                     "population": {
-                                        "id": "ESP-population-type:EA",
+                                        "id": "EVS:EA",
                                         "label": "European-American"
                                     },
-                                    "type": "AlleleFrequency"
+                                    "type": "PopulationAlleleFrequencyStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         }
                     ],
                     "id": "/evaluations/fcadd1cf-505a-4800-975e-58df329326c7/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000328",
@@ -2055,9 +2050,9 @@
                             "id": "SEPIO:0000329",
                             "label": "Pathogenic Supporting"
                         },
-                        "id": "Crit316",
+                        "id": "SEPIO-CG:99035",
                         "label": "PP3",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "evidenceLine": [
@@ -2065,7 +2060,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "siphy",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2078,7 +2073,7 @@
                                         }
                                     ],
                                     "score": "15.8615",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2087,7 +2082,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phylop7way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2100,7 +2095,7 @@
                                         }
                                     ],
                                     "score": "7.778",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2109,7 +2104,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phylop20way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2122,7 +2117,7 @@
                                         }
                                     ],
                                     "score": "1.04",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2131,7 +2126,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "gerp",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2144,7 +2139,7 @@
                                         }
                                     ],
                                     "score": "5.55",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2153,7 +2148,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp7way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2166,7 +2161,7 @@
                                         }
                                     ],
                                     "score": "1",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2175,7 +2170,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp20way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2188,7 +2183,7 @@
                                         }
                                     ],
                                     "score": "0.996",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2197,7 +2192,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "revel",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2214,7 +2209,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2223,7 +2218,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fathmm",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2240,24 +2235,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "fathmm",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": -3.34,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2266,7 +2261,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hdiv",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2283,24 +2278,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "polyphen2_hdiv",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.992,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2309,7 +2304,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fathmm_mkl",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2326,24 +2321,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "fathmm_mkl",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.99311,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2352,7 +2347,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hvar",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2369,24 +2364,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "polyphen2_hvar",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.864,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "P",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "P",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2395,7 +2390,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "mutationassessor",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2412,24 +2407,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "mutationassessor",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 3.32,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "M",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "M",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2438,7 +2433,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "mutationtaster",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2455,24 +2450,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "mutationtaster",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.999999,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2481,7 +2476,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "metalr",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2498,24 +2493,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "metalr",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.8974,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2524,7 +2519,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "sift",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2541,24 +2536,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "sift",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.022,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2567,7 +2562,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "cadd",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2584,7 +2579,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2593,7 +2588,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "metasvm",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2610,24 +2605,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "metasvm",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.9985,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2636,7 +2631,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fitcons",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2653,7 +2648,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2662,7 +2657,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "provean",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2679,36 +2674,36 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "provean",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": -5.5,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         }
                     ],
                     "id": "/evaluations/5bb89a39-81d2-43b8-86ac-1e8ca0aa7d14/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000329",
@@ -2733,9 +2728,9 @@
                             "id": "SEPIO:0000327",
                             "label": "Benign Supporting"
                         },
-                        "id": "Crit327",
+                        "id": "SEPIO-CG:99046",
                         "label": "BP4",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "evidenceLine": [
@@ -2743,7 +2738,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "siphy",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2756,7 +2751,7 @@
                                         }
                                     ],
                                     "score": "15.8615",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2765,7 +2760,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phylop7way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2778,7 +2773,7 @@
                                         }
                                     ],
                                     "score": "7.778",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2787,7 +2782,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phylop20way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2800,7 +2795,7 @@
                                         }
                                     ],
                                     "score": "1.04",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2809,7 +2804,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "gerp",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2822,7 +2817,7 @@
                                         }
                                     ],
                                     "score": "5.55",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2831,7 +2826,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp7way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2844,7 +2839,7 @@
                                         }
                                     ],
                                     "score": "1",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2853,7 +2848,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp20way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2866,7 +2861,7 @@
                                         }
                                     ],
                                     "score": "0.996",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2875,7 +2870,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "revel",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2892,7 +2887,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2901,7 +2896,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fathmm",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2918,24 +2913,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "fathmm",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": -3.34,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2944,7 +2939,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hdiv",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -2961,24 +2956,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "polyphen2_hdiv",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.992,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -2987,7 +2982,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fathmm_mkl",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3004,24 +2999,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "fathmm_mkl",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.99311,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3030,7 +3025,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hvar",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3047,24 +3042,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "polyphen2_hvar",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.864,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "P",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "P",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3073,7 +3068,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "mutationassessor",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3090,24 +3085,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "mutationassessor",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 3.32,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "M",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "M",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3116,7 +3111,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "mutationtaster",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3133,24 +3128,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "mutationtaster",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.999999,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3159,7 +3154,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "metalr",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3176,24 +3171,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "metalr",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.8974,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3202,7 +3197,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "sift",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3219,24 +3214,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "sift",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.022,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3245,7 +3240,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "cadd",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3262,7 +3257,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3271,7 +3266,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "metasvm",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3288,24 +3283,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "metasvm",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.9985,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3314,7 +3309,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fitcons",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3331,7 +3326,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3340,7 +3335,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "provean",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3357,36 +3352,36 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "provean",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": -5.5,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         }
                     ],
                     "id": "/evaluations/81f2e84a-ff80-4509-ba22-b2312bab81ce/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
@@ -3411,9 +3406,9 @@
                             "id": "SEPIO:0000329",
                             "label": "Pathogenic Supporting"
                         },
-                        "id": "Crit315",
+                        "id": "SEPIO-CG:99034",
                         "label": "PP2",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "evidenceLine": [
@@ -3421,7 +3416,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "siphy",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3434,7 +3429,7 @@
                                         }
                                     ],
                                     "score": "15.8615",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3443,7 +3438,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phylop7way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3456,7 +3451,7 @@
                                         }
                                     ],
                                     "score": "7.778",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3465,7 +3460,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phylop20way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3478,7 +3473,7 @@
                                         }
                                     ],
                                     "score": "1.04",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3487,7 +3482,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "gerp",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3500,7 +3495,7 @@
                                         }
                                     ],
                                     "score": "5.55",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3509,7 +3504,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp7way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3522,7 +3517,7 @@
                                         }
                                     ],
                                     "score": "1",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3531,7 +3526,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "phastconsp20way",
-                                    "allele": "http://reg.genome.network/allele/CA012832",
+                                    "allele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3544,7 +3539,7 @@
                                         }
                                     ],
                                     "score": "0.996",
-                                    "type": "AlleleConservationScore"
+                                    "type": "AlleleConservationScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3553,7 +3548,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "revel",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3570,7 +3565,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3579,7 +3574,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fathmm",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3596,24 +3591,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "fathmm",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": -3.34,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3622,7 +3617,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hdiv",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3639,24 +3634,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "polyphen2_hdiv",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.992,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3665,7 +3660,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fathmm_mkl",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3682,24 +3677,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "fathmm_mkl",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.99311,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3708,7 +3703,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "polyphen2_hvar",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3725,24 +3720,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "polyphen2_hvar",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.864,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "P",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "P",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3751,7 +3746,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "mutationassessor",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3768,24 +3763,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "mutationassessor",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 3.32,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "M",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "M",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3794,7 +3789,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "mutationtaster",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3811,24 +3806,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "mutationtaster",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.999999,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3837,7 +3832,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "metalr",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3854,24 +3849,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "metalr",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.8974,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3880,7 +3875,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "sift",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3897,24 +3892,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "sift",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.022,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3923,7 +3918,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "cadd",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3940,7 +3935,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3949,7 +3944,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "metasvm",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -3966,24 +3961,24 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "metasvm",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": 0.9985,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -3992,7 +3987,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "fitcons",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -4009,7 +4004,7 @@
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPredictionScore"
+                                    "type": "InSilicoPredictionScoreStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
@@ -4018,7 +4013,7 @@
                             "evidenceItem": [
                                 {
                                     "algorithm": "provean",
-                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                    "canonicalAllele": "CAR:CA012832",
                                     "contribution": [
                                         {
                                             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
@@ -4035,36 +4030,36 @@
                                             "evidenceItem": [
                                                 {
                                                     "algorithm": "provean",
-                                                    "canonicalAllele": "http://reg.genome.network/allele/CA012832",
+                                                    "canonicalAllele": "CAR:CA012832",
                                                     "prediction": -5.5,
                                                     "predictionType": {
                                                         "id": "SEPIO:0000322",
                                                         "label": "missense effect"
                                                     },
-                                                    "type": "InSilicoPredictionScore"
+                                                    "type": "InSilicoPredictionScoreStatement"
                                                 }
                                             ],
                                             "type": "EvidenceLine"
                                         }
                                     ],
-                                    "prediction": "D",
                                     "predictionType": {
                                         "id": "SEPIO:0000322",
                                         "label": "missense effect"
                                     },
-                                    "type": "InSilicoPrediction"
+                                    "statementOutcome": "D",
+                                    "type": "InSilicoPredictionStatement"
                                 }
                             ],
                             "type": "EvidenceLine"
                         }
                     ],
                     "id": "/evaluations/035e33ec-f1b7-4d26-a115-0b7b91fcff5e/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000329",
@@ -4089,18 +4084,18 @@
                             "id": "SEPIO:0000216",
                             "label": "Pathogenic Moderate"
                         },
-                        "id": "Crit312",
+                        "id": "SEPIO-CG:99031",
                         "label": "PM5",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/368d51c2-7bab-4c2c-b60a-99872738d6c1/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
@@ -4125,18 +4120,18 @@
                             "id": "SEPIO:0000330",
                             "label": "Pathogenic Strong"
                         },
-                        "id": "Crit304",
+                        "id": "SEPIO-CG:99023",
                         "label": "PS1",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/98c17c94-7569-42b2-ac72-4d03d2547fd2/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
@@ -4161,18 +4156,18 @@
                             "id": "SEPIO:0000327",
                             "label": "Benign Supporting"
                         },
-                        "id": "Crit330",
+                        "id": "SEPIO-CG:99049",
                         "label": "BP7",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/de46a358-d679-4f38-8af2-bdc7379efddb/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
@@ -4197,18 +4192,18 @@
                             "id": "SEPIO:0000216",
                             "label": "Pathogenic Moderate"
                         },
-                        "id": "Crit311",
+                        "id": "SEPIO-CG:99030",
                         "label": "PM4",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/501d339e-e9fa-47d7-adb3-7ef71d46386b/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
@@ -4233,18 +4228,18 @@
                             "id": "SEPIO:0000328",
                             "label": "Benign Strong"
                         },
-                        "id": "Crit322",
+                        "id": "SEPIO-CG:99041",
                         "label": "BS3",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/e38b9cbe-59a9-41c4-800d-d87117a3e224/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000328",
@@ -4269,18 +4264,18 @@
                             "id": "SEPIO:0000330",
                             "label": "Pathogenic Strong"
                         },
-                        "id": "Crit306",
+                        "id": "SEPIO-CG:99025",
                         "label": "PS3",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/16e664be-f8df-401d-a6de-f3cd3d72f837/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
@@ -4305,18 +4300,18 @@
                             "id": "SEPIO:0000328",
                             "label": "Benign Strong"
                         },
-                        "id": "Crit323",
+                        "id": "SEPIO-CG:99042",
                         "label": "BS4",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/c8717ee8-a2c5-48dc-ba8e-24cf6b3caed0/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000328",
@@ -4341,18 +4336,18 @@
                             "id": "SEPIO:0000329",
                             "label": "Pathogenic Supporting"
                         },
-                        "id": "Crit314",
+                        "id": "SEPIO-CG:99033",
                         "label": "PP1",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "6 total segregations\n6 unpublished segregations",
                     "id": "/evaluations/1671e18b-0949-4b30-a60e-2d9e18755d00/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": {
@@ -4380,18 +4375,18 @@
                             "id": "SEPIO:0000216",
                             "label": "Pathogenic Moderate"
                         },
-                        "id": "Crit313",
+                        "id": "SEPIO-CG:99032",
                         "label": "PM6",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/6ea77584-fa1a-4368-a32f-43f9ab6d8167/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
@@ -4416,18 +4411,18 @@
                             "id": "SEPIO:0000330",
                             "label": "Pathogenic Strong"
                         },
-                        "id": "Crit305",
+                        "id": "SEPIO-CG:99024",
                         "label": "PS2",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/a76cbc9f-9efb-40e7-9a93-45d59a608c7f/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
@@ -4452,18 +4447,18 @@
                             "id": "SEPIO:0000327",
                             "label": "Benign Supporting"
                         },
-                        "id": "Crit325",
+                        "id": "SEPIO-CG:99044",
                         "label": "BP2",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/75402832-7c28-4b37-a960-50c4020349e2/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
@@ -4488,18 +4483,18 @@
                             "id": "SEPIO:0000327",
                             "label": "Benign Supporting"
                         },
-                        "id": "Crit328",
+                        "id": "SEPIO-CG:99047",
                         "label": "BP5",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/d473c34d-4860-41e5-8c27-ba8958a03341/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
@@ -4524,18 +4519,18 @@
                             "id": "SEPIO:0000327",
                             "label": "Benign Supporting"
                         },
-                        "id": "Crit329",
+                        "id": "SEPIO-CG:99048",
                         "label": "BP6",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
                     "id": "/evaluations/309ae627-ea3a-4188-b991-64b6b9d4e9e8/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
@@ -4560,9 +4555,9 @@
                             "id": "SEPIO:0000330",
                             "label": "Pathogenic Strong"
                         },
-                        "id": "Crit307",
+                        "id": "SEPIO-CG:99026",
                         "label": "PS4",
-                        "type": "Criterion"
+                        "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "29 total probands\n16 published probands\n13 unpublished probands",
                     "evidenceLine": [
@@ -4683,12 +4678,12 @@
                         }
                     ],
                     "id": "/evaluations/23deef61-7e3b-45d2-a6c9-3f9f77e19f82/",
-                    "outcome": {
+                    "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "http://reg.genome.network/allele/CA012832"
+                    "variant": "CAR:CA012832"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
@@ -4696,10 +4691,10 @@
         }
     ],
     "id": "https://vci.clinicalgenome.org/interpretations/4fc46e87-fad0-4fe7-8776-95cf901243aa/",
-    "outcome": {
-        "id": "LN:LA6668-3",
+    "statementOutcome": {
+        "id": "LOINC:LA6668-3",
         "label": "Pathogenic"
     },
-    "type": "VariantInterpretation",
-    "variant": "http://reg.genome.network/allele/CA012832"
+    "type": "VariantPathogenicityInterpretation",
+    "variant": "CAR:CA012832"
 }
