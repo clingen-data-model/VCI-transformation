@@ -41,6 +41,13 @@ When given a single zip file containing a single json file containing multiple V
 unzipping, parsing and transformations of each record with a single bash script called 
 parseVCIinput.sh found in the root directory.
 
+> ABOUT *gcsplit* !
+>  The parseVCIinput.sh script references a command called 'gcsplit'.
+>  this is the GNU coreutils version of 'csplit' installed on a MacOSx system.
+>  if you are running on a linux box that has GNU coreutils installed, you can change it to 'csplit'
+>  or create a symbolic link 'gcsplit' to refer to it.
+> To install GNU coreutils on MacOSx run 'brew install coreutils' (this will provide gXXX GNU commands available) including gcsplit.
+
 To parse and transform a single mulit-record input zip file, run
 ```./parseVCIinput.sh <zipfilename> &> <outputlogfilename>```
 where 
