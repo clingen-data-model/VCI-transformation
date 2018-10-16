@@ -19,6 +19,13 @@ VCI_CONTRIBUTION_KEY = 'submitted_by'
 VCI_LAST_MODIFIED_KEY = 'last_modified'
 VCI_AGENT_NAME_KEY = 'title'
 VCI_AUTOCLASSIFICATION_KEY = 'autoClassification'
+VCI_ALTEREDCLASSIFICATION_KEY = 'alteredClassification'
+VCI_EVIDENCE_SUMMARY_KEY = 'evidenceSummary'
+VCI_APPROVAL_REVIEW_DATE_KEY = 'approvalReviewDate'
+VCI_CLASSIFICATION_APPROVER_KEY = 'classificationApprover'
+VCI_APPROVAL_DATE_KEY = 'approvalDate'
+VCI_APPROVAL_SUBMITTER_KEY = 'approvalSubmitter'
+VCI_AFFILIATION_KEY = 'affiliation'
 VCI_VARIANT_KEY = 'variant'
 VCI_VARIANT_TYPE = 'variant'
 VCI_DISEASE_TYPE = 'disease'
@@ -257,15 +264,19 @@ def add_contribution( user_input, target, ondate, entities, role ):
     userid = get_id(user_input)
     user = entities.get_entity(userid)
     #print 'User:',user
-    agent = entities.get_transformed(userid)
-    if agent is None:
-        agent = Agent(userid)
-        try:
-            agent.set_label( user[VCI_AGENT_NAME_KEY] )
-        except KeyError:
-            #sometimes we might not have the name.. oh well.
-            pass
-        entities.add_transformed(userid, agent)
+    if user == {}:
+        agent = Agent()
+        agent.set_label( user_input )
+    else:
+        agent = entities.get_transformed(userid)
+        if agent is None:
+            agent = Agent(userid)
+            try:
+                agent.set_label( user[VCI_AGENT_NAME_KEY] )
+            except KeyError:
+                #sometimes we might not have the name.. oh well.
+                pass
+            entities.add_transformed(userid, agent)
     contribution = create_contribution(agent, ondate, role)
     target.add_contribution(contribution)
 
@@ -292,7 +303,7 @@ def add_contributions( source, target, entities, ondate, role ):
 # date created: Not tracking user behavior
 # provisional_count: should be 1:1
 #Still need to handle:
-# modeInheritance: 
+# modeInheritance:
 # modeInheritanceAdjective: for things like "with maternal imprinting"
 def transform_root(vci):
     vi = VariantPathogenicityInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
@@ -326,16 +337,40 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
             print '???'
             exit()
         vci_pv = vci_pv[0]
-    add_contributions( vci_pv[VCI_CONTRIBUTION_KEY], interpretation, entities, vci_pv[VCI_LAST_MODIFIED_KEY], DMWG_INTERPRETER_ROLE ,)
+    interpreter = ''
+    if VCI_PROVISIONAL_VARIANT_KEY in vci_pv:
+        interpreter = vci_pv[VCI_CLASSIFICATION_APPROVER_KEY]
+    elif VCI_APPROVAL_SUBMITTER_KEY in vci_pv:
+        interpreter = vci_pv[VCI_APPROVAL_SUBMITTER_KEY]
+    else:
+        interpreter = vci_pv[VCI_CONTRIBUTION_KEY]
+
+    interpreted_date = ''
+    if VCI_APPROVAL_REVIEW_DATE_KEY in vci_pv:
+        interpreted_date = vci_pv[VCI_APPROVAL_REVIEW_DATE_KEY]
+    elif VCI_APPROVAL_DATE_KEY in vci_pv:
+        interpreted_date = vci_pv[VCI_APPROVAL_DATE_KEY]
+    else:
+        interpreted_date = vci_pv[VCI_LAST_MODIFIED_KEY]
+
+    add_contributions( interpreter, interpretation, entities, interpreted_date, DMWG_INTERPRETER_ROLE)
+
+    if VCI_EVIDENCE_SUMMARY_KEY in vci_pv:
+        interpretation.set_description( vci_pv[VCI_EVIDENCE_SUMMARY_KEY])
+
     interpretation.set_statementOutcome( convert_significance(vci_pv) )
 
 def convert_significance(vci_provisional_variant):
-    value = vci_provisional_variant[VCI_AUTOCLASSIFICATION_KEY]
-    if value == 'Uncertain significance - conflicting evidence':
-        value = 'LOINC:LA26333-7'
-    if value == 'Uncertain significance - insufficient evidence':
-        value = 'LOINC:LA26333-7'
-    return value
+    significance = ''
+    if VCI_ALTEREDCLASSIFICATION_KEY in vci_provisional_variant:
+        significance = vci_provisional_variant[VCI_ALTEREDCLASSIFICATION_KEY]
+    else:
+        significance = vci_provisional_variant[VCI_AUTOCLASSIFICATION_KEY]
+    if significance == 'Uncertain significance - conflicting evidence':
+        significance = 'LOINC:LA26333-7'
+    if significance == 'Uncertain significance - insufficient evidence':
+        significance = 'LOINC:LA26333-7'
+    return significance
 
 def transform_variant(variant,entities):
     vci_variant_id = get_id(variant)
@@ -389,7 +424,7 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
     defaultStrength = criterion.get_defaultStrength()
     strength = transform_strength( crit_mod, defaultStrength )
     ##TODO: Also add contribution to the evidence line if crit_mod != ''.  A little tricky since I hid the evidence line, but it's gettable
-    add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation['last_modified'], DMWG_ASSESSOR_ROLE)
+    add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation[VCI_LAST_MODIFIED_KEY], DMWG_ASSESSOR_ROLE)
     #Now the evidence
     if VCI_FREQUENCY_KEY in vci_evaluation:
         frequencies = transform_frequency( vci_evaluation[VCI_FREQUENCY_KEY],  entities)
@@ -419,7 +454,7 @@ def transform_computational(source, entities):
 # It looks like the prediction is always generic text that "higher score = higher pathogenicity"
 # So we will just keep thte score piece.
 #In the event that this changes, and the prediction becomes a qualitative prediction,
-# we'll make a prediction (with the qualitative score)->evidence line -> ISPScore(score) 
+# we'll make a prediction (with the qualitative score)->evidence line -> ISPScore(score)
 #See transform_other_comp_data for an example
 def transform_clingen_comp_data( source,variant):
     predictions = []
@@ -633,7 +668,7 @@ def transform_esp_data(source,dmwg_variant):
 
 
 def transform_strength(modifier, defaultStrength):
-    """defaultStrength is one of our DomainEntities.  If we need to change the stength, 
+    """defaultStrength is one of our DomainEntities.  If we need to change the stength,
     we are going to get the display, and change it, then pass back that string, which will
     be turned back into an object in the back end"""
     if modifier == '':
@@ -706,12 +741,14 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     vci_disease = entities.get_entity(vci_disease_id)
     dmwg_disease = entities.get_transformed(vci_disease_id)
     if dmwg_disease is None:
-        #disease_ontology = 'MONDO:'
+        disease_ontology = 'MONDO:'
         #disease_ontology = systems.get(disease_ontology, disease_ontology)
-        disease_ontology = vci_disease[VCI_DISEASE_ONTOLOGY_KEY]
+        #print "VCI_DISEASE_ONTOLOGY_KEY="+VCI_DISEASE_ONTOLOGY_KEY
+        #disease_ontology = vci_disease[VCI_DISEASE_ONTOLOGY_KEY]
+        #print disease_ontology
         disease_code = vci_disease[VCI_DISEASE_ID_KEY]
-        #if not disease_code.startswith('MONDO'):
-        #    raise Exception("Expected a MONDO disease identifier")
+        if not disease_code.startswith('MONDO'):
+            raise Exception("Expected a MONDO disease identifier")
         disease_code = disease_code.split('_')[-1]
         disease_name = vci_disease[VCI_DISEASE_TERM_KEY]
         dmwg_disease = create_dmwg_disease(disease_ontology, disease_code, disease_name)
