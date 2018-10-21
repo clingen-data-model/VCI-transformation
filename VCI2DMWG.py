@@ -18,6 +18,7 @@ VCI_TYPE_KEY = '@type'
 VCI_CONTRIBUTION_KEY = 'submitted_by'
 VCI_LAST_MODIFIED_KEY = 'last_modified'
 VCI_AGENT_NAME_KEY = 'title'
+VCI_AGENT_AFFILIATION_KEY = 'affiliation'
 VCI_AUTOCLASSIFICATION_KEY = 'autoClassification'
 VCI_ALTEREDCLASSIFICATION_KEY = 'alteredClassification'
 VCI_EVIDENCE_SUMMARY_KEY = 'evidenceSummary'
@@ -142,6 +143,16 @@ extra_evidence_map = { ('population','population'): ['BA1','PM2','BS1'],\
                        ('case-segregation','specificity-of-phenotype'): ['PP4'], \
                        ('case-segregation','reputable-source'): ['BP6','PP5'] }
 
+
+def read_affiliations():
+    with file('Affiliation_id_name_lookup.js','r') as inf:
+        affs = json.load(inf)
+    return { a['affiliation_id']: a['affiliation_fullname'] for a in affs }
+    
+#Just going to read this thing at global scope.  It's bad practice, but 
+# really this file should be read from a service somewhere anyway
+affiliations_id_to_name = read_affiliations()
+
 def get_chromosome_name(chromosome, version):
     v37chromosomes={'1':'NC_000001.10',\
                     '2':'NC_000002.11',\
@@ -263,6 +274,23 @@ def get_id(source):
 def add_contribution( user_input, target, ondate, entities, role ):
     userid = get_id(user_input)
     user = entities.get_entity(userid)
+    #We're going to make some assumptions: 
+    # 1. if we want an affiliation associated with a particular contribution
+    #    then the affiliation tag will be local. i.e. we are not going to grab
+    #    the affiliation from some other place that the user occurs
+    # 2. The user_input here might be a dict, could be a string
+    # 3. affiliation can sometimes be a list and sometimes be a single value :(
+    # 4. The agent_for is not formally added to the DMWG model, so that there
+    #    is not a set_affiliations method on contributions already.  We
+    #    will probably need to modify this down the road.
+    # 5. That information about the affiliation will be found in a local data 
+    #    file (which needs to be made accessible in another way) 
+    affiliations = None
+    if isinstance(user_input,dict) and VCI_AGENT_AFFILIATION_KEY in user_input:
+        affiliations = user_input[VCI_AGENT_AFFILIATION_KEY]
+        if isinstance(affiliations,str):
+            affiliations = [affiliations]
+        affiliations = [ affiliations_id_to_name[a] for a in affiliations ]
     #print 'User:',user
     if user == {}:
         agent = Agent()
@@ -278,6 +306,8 @@ def add_contribution( user_input, target, ondate, entities, role ):
                 pass
             entities.add_transformed(userid, agent)
     contribution = create_contribution(agent, ondate, role)
+    if affiliations is not None:
+        contribution.data['agent_for'] = affiliations
     target.add_contribution(contribution)
 
 def add_contributions( source, target, entities, ondate, role ):
