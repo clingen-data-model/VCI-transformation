@@ -147,7 +147,8 @@ extra_evidence_map = { ('population','population'): ['BA1','PM2','BS1'],\
 def read_affiliations():
     with file('Affiliation_id_name_lookup.js','r') as inf:
         affs = json.load(inf)
-    return { a['affiliation_id']: a['affiliation_fullname'] for a in affs }
+    prefix = 'http://vci.clingen.org/affiliation/'
+    return { a['affiliation_id']: {'id': prefix+a['affiliation_id'], 'label': a['affiliation_fullname']} for a in affs }
     
 #Just going to read this thing at global scope.  It's bad practice, but 
 # really this file should be read from a service somewhere anyway
