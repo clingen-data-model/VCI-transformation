@@ -148,7 +148,9 @@ def read_affiliations():
     with file('Affiliation_id_name_lookup.js','r') as inf:
         affs = json.load(inf)
     prefix = 'http://vci.clingen.org/affiliation/'
-    return { a['affiliation_id']: {'id': prefix+a['affiliation_id'], 'label': a['affiliation_fullname']} for a in affs }
+    adict = { a['affiliation_id']: {'id': prefix+a['affiliation_id'], 'label': a['affiliation_fullname']} for a in affs }
+    adict[None] = None
+    return adict
     
 #Just going to read this thing at global scope.  It's bad practice, but 
 # really this file should be read from a service somewhere anyway
@@ -272,26 +274,17 @@ def get_id(source):
     return sid
 
 
-def add_contribution( user_input, target, ondate, entities, role ):
+def add_contribution( user_input, target, ondate, entities, role, affiliation_id=None ):
     userid = get_id(user_input)
     user = entities.get_entity(userid)
     #We're going to make some assumptions: 
-    # 1. if we want an affiliation associated with a particular contribution
-    #    then the affiliation tag will be local. i.e. we are not going to grab
-    #    the affiliation from some other place that the user occurs
-    # 2. The user_input here might be a dict, could be a string
-    # 3. affiliation can sometimes be a list and sometimes be a single value :(
-    # 4. The agent_for is not formally added to the DMWG model, so that there
+    # 1. affiliation is either a single value or None 
+    # 2. The agent_for is not formally added to the DMWG model, so that there
     #    is not a set_affiliations method on contributions already.  We
     #    will probably need to modify this down the road.
-    # 5. That information about the affiliation will be found in a local data 
+    # 3. That information about the affiliation will be found in a local data 
     #    file (which needs to be made accessible in another way) 
-    affiliations = None
-    if isinstance(user_input,dict) and VCI_AGENT_AFFILIATION_KEY in user_input:
-        affiliations = user_input[VCI_AGENT_AFFILIATION_KEY]
-        if isinstance(affiliations,str):
-            affiliations = [affiliations]
-        affiliations = [ affiliations_id_to_name[a] for a in affiliations ]
+    affiliation = affiliations_id_to_name[affiliation_id]
     #print 'User:',user
     if user == {}:
         agent = Agent()
@@ -307,16 +300,16 @@ def add_contribution( user_input, target, ondate, entities, role ):
                 pass
             entities.add_transformed(userid, agent)
     contribution = create_contribution(agent, ondate, role)
-    if affiliations is not None:
-        contribution.data['agent_for'] = affiliations
+    if affiliation is not None:
+        contribution.data['agent_for'] = affiliation
     target.add_contribution(contribution)
 
-def add_contributions( source, target, entities, ondate, role ):
+def add_contributions( source, target, entities, ondate, role, affiliation_id=None ):
     if isinstance( source, list ):
         for single_source in source:
-            add_contribution( single_source, target, ondate, entities, role)
+            add_contribution( single_source, target, ondate, entities, role, affiliation_id)
     else:
-        add_contribution( source, target,  ondate, entities, role)
+        add_contribution( source, target,  ondate, entities, role, affiliation_id)
 
 #Ignore these keys:
 # interpretation_genes: unused in the VCI
@@ -384,7 +377,10 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
     else:
         interpreted_date = vci_pv[VCI_LAST_MODIFIED_KEY]
 
-    add_contributions( interpreter, interpretation, entities, interpreted_date, DMWG_INTERPRETER_ROLE)
+    affiliation_id = None
+    if VCI_AFFILIATION_KEY in vci_pv:
+        affiliation_id = vci_pv[VCI_AFFILIATION_KEY]
+    add_contributions( interpreter, interpretation, entities, interpreted_date, DMWG_INTERPRETER_ROLE,affiliation_id)
 
     if VCI_EVIDENCE_SUMMARY_KEY in vci_pv:
         interpretation.set_description( vci_pv[VCI_EVIDENCE_SUMMARY_KEY])
@@ -455,7 +451,10 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
     defaultStrength = criterion.get_defaultStrength()
     strength = transform_strength( crit_mod, defaultStrength )
     ##TODO: Also add contribution to the evidence line if crit_mod != ''.  A little tricky since I hid the evidence line, but it's gettable
-    add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation[VCI_LAST_MODIFIED_KEY], DMWG_ASSESSOR_ROLE)
+    affiliation_id = None
+    if VCI_AFFILIATION_KEY in vci_evaluation:
+        affiliation_id = vci_evaluation[VCI_AFFILIATION_KEY]
+    add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation[VCI_LAST_MODIFIED_KEY], DMWG_ASSESSOR_ROLE,affiliation_id)
     #Now the evidence
     if VCI_FREQUENCY_KEY in vci_evaluation:
         frequencies = transform_frequency( vci_evaluation[VCI_FREQUENCY_KEY],  entities)
