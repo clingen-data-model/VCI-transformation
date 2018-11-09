@@ -145,7 +145,8 @@ extra_evidence_map = { ('population','population'): ['BA1','PM2','BS1'],\
 
 
 def read_affiliations():
-    with file('Affiliation_id_name_lookup.js','r') as inf:
+    affiliation_file = os.path.join(os.path.dirname(__file__),"Affiliation_id_name_lookup.js")
+    with file(affiliation_file,'r') as inf:
         affs = json.load(inf)
     prefix = 'http://vci.clingen.org/affiliation/'
     adict = { a['affiliation_id']: {'id': prefix+a['affiliation_id'], 'label': a['affiliation_fullname']} for a in affs }
