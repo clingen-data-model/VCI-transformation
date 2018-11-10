@@ -15,6 +15,7 @@ import logging
 IRI_BASE='https://vci.clinicalgenome.org'
 VCI_ID_KEY = '@id'
 VCI_TYPE_KEY = '@type'
+VCI_CLINVAR_VARIANT_TITLE = 'clinvarVariantTitle'
 VCI_CONTRIBUTION_KEY = 'submitted_by'
 VCI_LAST_MODIFIED_KEY = 'last_modified'
 VCI_AGENT_NAME_KEY = 'title'
@@ -406,7 +407,10 @@ def transform_variant(variant,entities):
     if dmwg_variant is None:
         vci_variant = entities.get_entity(vci_variant_id)
         ar_variant = canonicalizeVariant( vci_variant )
-        dmwg_variant = Variant(ar_variant)
+        preferred_transcript = None
+        if VCI_CLINVAR_VARIANT_TITLE in vci_variant:
+            preferred_transcript = vci_variant[VCI_CLINVAR_VARIANT_TITLE].split('(')[0]
+        dmwg_variant = Variant(ar_variant,preferred_transcript)
         entities.add_transformed(vci_variant_id, dmwg_variant)
     return dmwg_variant
 
