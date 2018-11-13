@@ -125,24 +125,28 @@ term_map = { VCI_MET: 'Met', \
              VCI_SPLICE_EFFECT_PREDICTOR: 'splicing prediction' \
              }
 
-extra_evidence_map = { ('population','population'): ['BA1','PM2','BS1'],\
-                       ('predictors','functional-conservation-splicing-predictors'): ['PP3','BP4','BP1','PP2'], \
-                       ('predictors','other-variants-in-codon'): ['PM5','PS1'], \
-                       ('predictors','null-variant-analysis'): ['PVS1'], \
-                       ('predictors','molecular-consequence-silent-intron'): ['BP7'], \
-                       ('predictors','molecular-consequence-inframe-indel'): ['BP3','PM4'], \
-                       ('experimental','hotspot-functional-domain'): ['PM1'], \
-                       ('experimental','experimental-studies'): ['BS3','PS3'], \
-                       ('case-segregation','observed-in-healthy'): ['BS2'], \
-                       ('case-segregation','case-control'): ['PS4'], \
-                       ('case-segregation','segregation-data'): ['BS4','PP1'], \
+#This maps categories and sub-categories to rules.
+# The value is a list of tuples.  Each tuple contains a set of criteria only one of which can
+# actually be true.
+extra_evidence_map = { ('population','population'): [('BA1','PM2','BS1')],\
+                       ('predictors','functional-conservation-splicing-predictors'): [('PP3','BP4'),('BP1','PP2')], \
+                       ('predictors','other-variants-in-codon'): [('PM5',),('PS1',)], \
+                       ('predictors','null-variant-analysis'): [('PVS1',)], \
+                       ('predictors','molecular-consequence-silent-intron'): [('BP7',)], \
+                       ('predictors','molecular-consequence-inframe-indel'): [('BP3','PM4')], \
                        #The following is a typo that occurs in the VCI data:
-                       ('case-segregation','segreagtion-data'): ['BS4','PP1'], \
-                       ('case-segregation','de-novo'): ['PM6','PS2'], \
-                       ('case-segregation','allele-data'): ['BP2','PM3'], \
-                       ('case-segregation','alternate-mechanism'): ['BP5'], \
-                       ('case-segregation','specificity-of-phenotype'): ['PP4'], \
-                       ('case-segregation','reputable-source'): ['BP6','PP5'] }
+                       ('experimental','hotspot-functiona-domain'): [('PM1',)], \
+                       ('experimental','experimental-studies'): [('BS3','PS3')], \
+                       ('case-segregation','observed-in-healthy'): [('BS2',)], \
+                       ('case-segregation','case-control'): [('PS4',)], \
+                       ('case-segregation','segregation-data'): [('BS4',),('PP1',)], \
+                       #The following is a typo that occurs in the VCI data:
+                       ('case-segregation','segreagtion-data'): [('BS4',),('PP1',)], \
+                       ('case-segregation','de-novo-occurrence'): [('PM6',),('PS2',)], \
+                       ('case-segregation','allele-data'): [('BP2',),('PM3',)], \
+                       ('case-segregation','alternate-mechanism'): [('BP5',)], \
+                       ('case-segregation','specificity-of-phenotype'): [('PP4',)], \
+                       ('case-segregation','reputable-source'): [('BP6','PP5')] }
 
 
 def read_affiliations():
@@ -757,15 +761,33 @@ def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
         for source in sources:
             info.add_source(source)
         key = ( ee_node[VCI_CATEGORY_KEY], ee_node[ VCI_SUBCATEGORY_KEY] )
+        #possible_rules will be a list of tuples of rules.  Each tuple is a group that can
+        #only have one thing met.  
         possible_rules = extra_evidence_map[key]
+        #This is a map from possible_rule tuples to assessments (met/not met) to a list of rules
+        # So if a given rule tuple has only met rules then it will be [tuple][met]=[met assessments] and [tuple][not met] = []
+        # But if there are also not met rules thn it will be [tuple][not met]=[not met assessments]
+        rule_groups = defaultdict( lambda: defaultdict (list) )
         found = False
-        for rule in possible_rules:
-            if rule in evalmap:
-                found = True
-                dmwg_assessment = evalmap[rule]
-                add_evidenceItems( dmwg_assessment, [info])
+        for rule_set in possible_rules:
+            for rule in rule_set:
+                if rule in evalmap:
+                    found = True
+                    dmwg_assessment = evalmap[rule]
+                    rule_groups[rule_set][dmwg_assessment.get_statementOutcome().get_label()].append(dmwg_assessment)
+                    #add_evidenceItems( dmwg_assessment, [info])
         if not found:
             print  "Did not find any evaluated criteria for this data: %s "% ee_node['uuid']
+        else:
+            for rule_set in rule_groups:
+                if len(rule_groups[rule_set]['Met']) > 0:
+                    #attach evidence to the met rules
+                    for assessment in rule_groups[rule_set]['Met']:
+                        add_evidenceItems( assessment,[info])
+                else:
+                    #But if there are no met rule, attach to the not met rules
+                    for assessment in rule_groups[rule_set]['Not Met']:
+                        add_evidenceItems( assessment,[info])
 
 
 #Note that we don't necessarily have the full VCI disease node when we get into this function.
@@ -814,7 +836,7 @@ def transform(jsonf):
         logging.warning('No condition found. Proceeding')
     try:
         eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
-    except KeyError:
+    except IndexError:
         logging.warning('No criteria evaluations found.  Proceeding')
         eval_map = {}
     try:
