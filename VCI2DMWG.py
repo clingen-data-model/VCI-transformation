@@ -11,6 +11,8 @@ from clingen_interpretation.interpretation_constants import *
 from clingen_interpretation.Allele import Variant
 import argparse
 import logging
+import re
+import datetime
 
 IRI_BASE='https://vci.clinicalgenome.org'
 VCI_ID_KEY = '@id'
@@ -118,7 +120,6 @@ systems = {
     'Orphanet': ' http://www.orpha.net' # FIXME: is there a stable IRI per term?
 }
 
-
 term_map = { VCI_MET: 'Met', \
              VCI_NOT_MET: 'Not Met', \
              VCI_MISSENSE_EFFECT_PREDICTOR: 'missense effect', \
@@ -157,8 +158,8 @@ def read_affiliations():
     adict = { a['affiliation_id']: {'id': prefix+a['affiliation_id'], 'label': a['affiliation_fullname']} for a in affs }
     adict[None] = None
     return adict
-    
-#Just going to read this thing at global scope.  It's bad practice, but 
+
+#Just going to read this thing at global scope.  It's bad practice, but
 # really this file should be read from a service somewhere anyway
 affiliations_id_to_name = read_affiliations()
 
@@ -280,42 +281,70 @@ def get_id(source):
     return sid
 
 
-def add_contribution( user_input, target, ondate, entities, role, affiliation_id=None ):
-    userid = get_id(user_input)
-    user = entities.get_entity(userid)
-    #We're going to make some assumptions: 
-    # 1. affiliation is either a single value or None 
-    # 2. The agent_for is not formally added to the DMWG model, so that there
+def add_contribution( user_input, affiliation_id, target, ondate, entities, role):
+
+    # We're going to make some assumptions:
+    # 1. at least one of user_input or affiliation_id is required
+    # 2. if both exist then the affiliation is the "agent_for" and the "user_input" is the agent.
+    # 3. if only the affiliation_id is available it is the agent, otherwise the "user_input" is the agent.
+    # 4. affiliation is either a single value or None
+    # 5. The agent_for is not formally added to the DMWG model, so that there
     #    is not a set_affiliations method on contributions already.  We
     #    will probably need to modify this down the road.
-    # 3. That information about the affiliation will be found in a local data 
-    #    file (which needs to be made accessible in another way) 
+    # 6. That information about the affiliation will be found in a local data
+    #    file (which needs to be made accessible in another way)
     affiliation = affiliations_id_to_name[affiliation_id]
-    #print 'User:',user
-    if user == {}:
-        agent = Agent()
-        agent.set_label( user_input )
+
+    if user_input is None:
+        if affiliation is None:
+            raise Exception('Required User or Affiliation not provided when adding contribution.')
+        else:
+            agent = affiliation
+            affiliation = None
     else:
-        agent = entities.get_transformed(userid)
-        if agent is None:
-            agent = Agent(userid)
-            try:
-                agent.set_label( user[VCI_AGENT_NAME_KEY] )
-            except KeyError:
-                #sometimes we might not have the name.. oh well.
-                pass
-            entities.add_transformed(userid, agent)
+        userid = get_id(user_input)
+        user = entities.get_entity(userid)
+        if user == {}:
+            agent = Agent()
+            agent.set_label( user_input )
+        else:
+            agent = entities.get_transformed(userid)
+            if agent is None:
+                agent = Agent(userid)
+                try:
+                    agent.set_label( user[VCI_AGENT_NAME_KEY] )
+                except KeyError:
+                    #sometimes we might not have the name.. oh well.
+                    pass
+                entities.add_transformed(userid, agent)
+
     contribution = create_contribution(agent, ondate, role)
+
     if affiliation is not None:
         contribution.data['agent_for'] = affiliation
+
     target.add_contribution(contribution)
 
-def add_contributions( source, target, entities, ondate, role, affiliation_id=None ):
+def add_contributions( source, affiliation_id, target, entities, ondate, role ):
     if isinstance( source, list ):
         for single_source in source:
-            add_contribution( single_source, target, ondate, entities, role, affiliation_id)
+            add_contribution( single_source, affiliation_id, target, ondate, entities, role)
     else:
-        add_contribution( source, target,  ondate, entities, role, affiliation_id)
+        add_contribution( source, affiliation_id, target,  ondate, entities, role)
+
+def convert_moi(moi, moiadj):
+  m = re.search('^([A-Za-z \-]+)\(HP:[0-9]{7}\)$', moi)
+  if m is None:
+    if moi == 'Other':
+      moi_label = moiadj
+    else:
+      moi_label = moi
+  else:
+    if moiadj:
+      moi_label = m.group(1) + '('+moiadj+')'
+    else:
+      moi_label = m.group(1)
+  return moi_label.strip()
 
 #Ignore these keys:
 # interpretation_genes: unused in the VCI
@@ -332,22 +361,11 @@ def add_contributions( source, target, entities, ondate, role, affiliation_id=No
 # interpretation disease: redundant with disease
 # date created: Not tracking user behavior
 # provisional_count: should be 1:1
-#Still need to handle:
-# modeInheritance:
-# modeInheritanceAdjective: for things like "with maternal imprinting"
 def transform_root(vci):
     vi = VariantPathogenicityInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
     modestring = vci[VCI_MODEINHERITANCE_KEY]
     modeadjstring = vci[VCI_MODEINHERITANCE_ADJECTIVE_KEY]
-    if modeadjstring != '':
-        raise Exception('Mode Inheritance Adjective not handled')
-    if '(HP:' in modestring:
-        p = modestring.split()
-        for pi in p:
-            if pi.startswith('(HP:'):
-                mode = pi[1:-1]
-    else:
-        mode = modestring
+    mode = convert_moi(modestring, modeadjstring)
     return vi, mode
 
 #Ignore:
@@ -367,26 +385,43 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
             print '???'
             exit()
         vci_pv = vci_pv[0]
-    interpreter = ''
-    if VCI_PROVISIONAL_VARIANT_KEY in vci_pv:
-        interpreter = vci_pv[VCI_CLASSIFICATION_APPROVER_KEY]
-    elif VCI_APPROVAL_SUBMITTER_KEY in vci_pv:
-        interpreter = vci_pv[VCI_APPROVAL_SUBMITTER_KEY]
-    else:
-        interpreter = vci_pv[VCI_CONTRIBUTION_KEY]
 
-    interpreted_date = ''
+    # approval date (aka last evaluated date)
+    #  1st if approval review date exists in provisional variant section
+    #  2nd if apporval date exists in provisional variant section
+    #  last the last modified date of the provisional variant
+    approval_date = ''
     if VCI_APPROVAL_REVIEW_DATE_KEY in vci_pv:
-        interpreted_date = vci_pv[VCI_APPROVAL_REVIEW_DATE_KEY]
+        approval_date = vci_pv[VCI_APPROVAL_REVIEW_DATE_KEY]
     elif VCI_APPROVAL_DATE_KEY in vci_pv:
-        interpreted_date = vci_pv[VCI_APPROVAL_DATE_KEY]
+        approval_date = vci_pv[VCI_APPROVAL_DATE_KEY]
     else:
-        interpreted_date = vci_pv[VCI_LAST_MODIFIED_KEY]
+        approval_date = vci_pv[VCI_LAST_MODIFIED_KEY]
 
-    affiliation_id = None
+    # approver can be either the affiliation or the user
+    # if the affiliation exists then only use it for the approver
+    # otherwise use the user associated by the following rules
+    #  1st if an 'affiliation' in the provisional variant section
+    #  2nd if there is a 'classificationApprover' in the provisional variant section
+    #  3rd if there is a 'approvalSubmitter' in the provisional variant section
+    #  4th defaults to the 'submitted_by" in the provisional variant section
+    #
+    approving_user = None
+    affiliation = None
     if VCI_AFFILIATION_KEY in vci_pv:
-        affiliation_id = vci_pv[VCI_AFFILIATION_KEY]
-    add_contributions( interpreter, interpretation, entities, interpreted_date, DMWG_INTERPRETER_ROLE,affiliation_id)
+        affiliation = vci_pv[VCI_AFFILIATION_KEY]
+    elif VCI_PROVISIONAL_VARIANT_KEY in vci_pv:
+        approving_user = vci_pv[VCI_CLASSIFICATION_APPROVER_KEY]
+    elif VCI_APPROVAL_SUBMITTER_KEY in vci_pv:
+        approving_user = vci_pv[VCI_APPROVAL_SUBMITTER_KEY]
+    else:
+        approving_user = vci_pv[VCI_CONTRIBUTION_KEY]
+
+    add_contributions( approving_user, affiliation, interpretation, entities, approval_date, DMWG_APPROVER_ROLE)
+
+    # publisher is same as approver but for current datetime.
+    now = datetime.datetime.now()
+    add_contributions( approving_user, affiliation, interpretation, entities, now.isoformat(), DMWG_PUBLISHER_ROLE)
 
     if VCI_EVIDENCE_SUMMARY_KEY in vci_pv:
         interpretation.set_description( vci_pv[VCI_EVIDENCE_SUMMARY_KEY])
@@ -459,251 +494,254 @@ def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
         raise Exception
     defaultStrength = criterion.get_defaultStrength()
     strength = transform_strength( crit_mod, defaultStrength )
+
+    ##REMOVING contributions from all but the top level interpretation. Only supporting Approver and Publisher contributions at the top-level for now
     ##TODO: Also add contribution to the evidence line if crit_mod != ''.  A little tricky since I hid the evidence line, but it's gettable
-    affiliation_id = None
-    if VCI_AFFILIATION_KEY in vci_evaluation:
-        affiliation_id = vci_evaluation[VCI_AFFILIATION_KEY]
-    add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation[VCI_LAST_MODIFIED_KEY], DMWG_ASSESSOR_ROLE,affiliation_id)
-    #Now the evidence
-    if VCI_FREQUENCY_KEY in vci_evaluation:
-        frequencies = transform_frequency( vci_evaluation[VCI_FREQUENCY_KEY],  entities)
-        add_evidenceItems( dmwg_assessment, frequencies )
-    if VCI_COMPUTATIONAL_KEY in vci_evaluation:
-        predictions = transform_computational( vci_evaluation[VCI_COMPUTATIONAL_KEY], entities )
-        add_evidenceItems( dmwg_assessment, predictions )
+    ##affiliation_id = None
+    ##if VCI_AFFILIATION_KEY in vci_evaluation:
+    ##    affiliation_id = vci_evaluation[VCI_AFFILIATION_KEY]
+    ##add_contributions( vci_evaluation[VCI_CONTRIBUTION_KEY], dmwg_assessment, entities,vci_evaluation[VCI_LAST_MODIFIED_KEY], DMWG_ASSESSOR_ROLE,affiliation_id)
+
+   # #Now the evidence
+   #  if VCI_FREQUENCY_KEY in vci_evaluation:
+   #      frequencies = transform_frequency( vci_evaluation[VCI_FREQUENCY_KEY],  entities)
+   #      add_evidenceItems( dmwg_assessment, frequencies )
+   #  if VCI_COMPUTATIONAL_KEY in vci_evaluation:
+   #      predictions = transform_computational( vci_evaluation[VCI_COMPUTATIONAL_KEY], entities )
+   #      add_evidenceItems( dmwg_assessment, predictions )
     add_criterion_assessment(interpretation, dmwg_assessment, strength)
     return vci_evaluation[VCI_CRITERIA_KEY], dmwg_assessment
 
-def transform_computational(source, entities):
-    predictions = []
-    vci_variant = source[VCI_VARIANT_KEY]
-    #the form of this call suggests that the transform* functions should be member functions of entitymap
-    dmwg_variant = transform_variant(vci_variant,entities)
-    compdata = source[VCI_COMPUTATIONAL_DATA_KEY]
-    if VCI_CONSERVATION_KEY in compdata:
-        predictions += transform_conservation_data( compdata[VCI_CONSERVATION_KEY] , dmwg_variant )
-    if VCI_CLINGEN_COMPUTATION_KEY in compdata:
-        predictions += transform_clingen_comp_data( compdata[VCI_CLINGEN_COMPUTATION_KEY], dmwg_variant )
-    if VCI_OTHER_COMPUTATION_KEY in compdata:
-        predictions += transform_other_comp_data( compdata[VCI_OTHER_COMPUTATION_KEY], dmwg_variant )
-    add_contributions_to_data( source , predictions, entities )
-    return predictions
-
-#The VCI insilico predictions have a score attribute as well as a prediction.
-# It looks like the prediction is always generic text that "higher score = higher pathogenicity"
-# So we will just keep thte score piece.
-#In the event that this changes, and the prediction becomes a qualitative prediction,
-# we'll make a prediction (with the qualitative score)->evidence line -> ISPScore(score)
-#See transform_other_comp_data for an example
-def transform_clingen_comp_data( source,variant):
-    predictions = []
-    for pred in source:
-        score = source[pred][VCI_SCORE_KEY]
-        if score is not None:
-            if source[pred]['prediction'] != "higher score = higher pathogenicity":
-                print '!',source[pred]['prediction']
-            #Have to sort out the scores....
-            dmwg_prediction = InSilicoPredictionScoreStatement()
-            #We really also want to set the transcript, but the VCI is not returning that informaiton
-            #dmwg_prediction.set_transcript()
-            dmwg_prediction.set_canonicalAllele(variant)
-            dmwg_prediction.set_algorithm(pred)
-            dmwg_prediction.set_prediction(score)
-            dmwg_prediction.set_predictionType( term_map[VCI_MISSENSE_EFFECT_PREDICTOR] )
-            predictions.append(dmwg_prediction)
-    return predictions
-
-def transform_other_comp_data( source, variant ):
-    predictions = []
-    for pred in source:
-        scores = source[pred][ VCI_SCORE_KEY ]
-        predsv  = source[pred][ VCI_PREDICTION_KEY ]
-        if (scores is not None) and (not isinstance(scores, list)):
-            scores = [ scores ]
-        if scores is not None and predsv is not None:
-            preds  = predsv.split(',')
-        elif scores is None and predsv is not None:
-            preds = predsv.split(',')
-            scores = [ None for p in preds ]
-        elif scores is not None and predsv is None:
-            preds = [None for s in scores]
-        else:
-            #both none, ignore
-            continue
-        for (s,p) in zip(scores,preds):
-            dmwg_prediction = dmwg_prediction_score = None
-            if s is not None:
-                dmwg_prediction_score = InSilicoPredictionScoreStatement()
-                dmwg_prediction_score.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
-                dmwg_prediction_score.set_canonicalAllele( variant )
-                dmwg_prediction_score.set_algorithm( pred )
-                dmwg_prediction_score.set_prediction(s)
-            if p is not None:
-                dmwg_prediction = InSilicoPredictionStatement()
-                dmwg_prediction.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
-                dmwg_prediction.set_canonicalAllele( variant )
-                dmwg_prediction.set_algorithm( pred )
-                dmwg_prediction.set_statementOutcome(p)
-            if dmwg_prediction is None:
-                predictions.append(dmwg_prediction_score)
-            else:
-                if dmwg_prediction_score is not None:
-                    evidence_line = EvidenceLine()
-                    evidence_line.add_evidenceItem( dmwg_prediction_score )
-                    dmwg_prediction.add_evidenceLine( evidence_line )
-                predictions.append(dmwg_prediction)
-    return predictions
-
-
-#The values from VCI are not including a true/false on whether the thing is conserved. But we'll want that.
-#When we get that, this will have to change.  What it will become is an AlleleConservation object
-# with an evidence line to an AlleleConservationScore, which will be defined as below
-def transform_conservation_data( source, variant ):
-    results = []
-    for constool in source:
-        dmwg_conservation = AlleleConservationScoreStatement()
-        dmwg_conservation.set_allele(variant)
-        dmwg_conservation.set_algorithm(constool)
-        dmwg_conservation.set_score(source[constool])
-        results.append(dmwg_conservation)
-    return results
-
-def transform_frequency( source, entities):
-    popdata    = source[VCI_POPULATION_DATA_KEY]
-    vci_variant = source[VCI_VARIANT_KEY]
-    #the form of this call suggests that the transform* functions should be member functions of entitymap
-    dmwg_variant = transform_variant(vci_variant,entities)
-    frequencies = []
-    if VCI_ESP_KEY in popdata:
-        esp_frequencies = transform_esp_data( popdata[VCI_ESP_KEY],  dmwg_variant )
-        frequencies += esp_frequencies
-    if VCI_EXAC_KEY in popdata:
-        exac_frequencies = transform_exac_data( popdata[VCI_EXAC_KEY], dmwg_variant )
-        frequencies += exac_frequencies
-    if VCI_1000_GENOMES_KEY in popdata:
-        tg_frequencies = transform_1000_genomes_data(popdata[VCI_1000_GENOMES_KEY], dmwg_variant)
-        frequencies += tg_frequencies
-    #Add contributors to data nodes
-    add_contributions_to_data( source , frequencies, entities )
-    return frequencies
-
-def add_contributions_to_data( data_source, data_targets, entities):
-    submitters = data_source[VCI_CONTRIBUTION_KEY]
-    modtime    = data_source[VCI_LAST_MODIFIED_KEY]
-    for data in data_targets:
-        add_contributions( submitters, data, entities, modtime, DMWG_CURATOR_ROLE)
-
-
-#Clean up the VCI keys and decide if they are per experiment or not.
-def convert_esp_pop(pop):
-    if pop == VCI_COMBINED_POP:
-        return 'combined'
-    return 'EVS:%s' % pop.upper()
-
-def convert_exac_pop(pop):
-    if pop == VCI_COMBINED_POP: return 'combined'
-    if pop == VCI_EXAC_OTHER_POP: return 'other'
-    return 'GNOMAD:%s' % pop
-
-def convert_1000_genomes_pop(pop):
-    if pop == VCI_COMBINED_POP: return 'combined'
-    if pop in [ VCI_1000_GENOMES_ESP_AA_POP, VCI_1000_GENOMES_ESP_EA_POP ]:
-        return 'EVS:%s' % pop[-2:].upper()
-    return 'IGSR:%s' % pop
-
-def transform_1000_genomes_data( source, dmwg_variant ):
-    alt_allele = dmwg_variant.get_allele('GRCh37') #right?
-    frequencies = []
-    for pop in source:
-        if pop != VCI_FREQUENCY_ALLELE_KEY:
-            if pop in [VCI_1000_GENOMES_ESP_EA_POP, VCI_1000_GENOMES_ESP_AA_POP]:
-                dmwg_af = PopulationAlleleFrequencyStatement()
-                dmwg_af.set_ascertainment(DMWG_1KGESP)
-            else:
-                dmwg_af = PopulationAlleleFrequencyStatement()
-                dmwg_af.set_ascertainment(DMWG_1KG)
-            frequencies.append(dmwg_af)
-            dmwg_af.set_allele( dmwg_variant )
-            dmwg_af.set_population(  convert_1000_genomes_pop(pop) )
-            if len( source[pop][VCI_ALLELE_COUNT_KEY] ) == 0:
-                dmwg_af.set_alleleNumber( 0 )
-            else:
-                dmwg_af.set_alleleNumber( sum( source[pop][VCI_ALLELE_COUNT_KEY].values() ) )
-            #TODO: Should the element be not here, or should it be 0 or should it be null?
-            if dmwg_af.get_alleleNumber() > 0:
-                if alt_allele in source[pop][VCI_ALLELE_FREQUENCY_KEY]:
-                    dmwg_af.set_alleleFrequency( source[pop][VCI_ALLELE_FREQUENCY_KEY][alt_allele] )
-                else:
-                    dmwg_af.set_alleleFrequency( 0.  )
-            if alt_allele in source[pop][VCI_ALLELE_COUNT_KEY]:
-                dmwg_af.set_alleleCount( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
-            else:
-                dmwg_af.set_alleleCount( 0 )
-            hkey = '%s|%s' % (alt_allele,alt_allele)
-            if hkey in source[pop][VCI_GENOTYPE_COUNT_KEY]:
-                dmwg_af.set_homozygousAlleleIndividualCount(  source[pop][VCI_GENOTYPE_COUNT_KEY][hkey] )
-            else:
-                dmwg_af.set_homozygousAlleleIndividualCount( 0 )
-    return frequencies
-
-
-def transform_exac_data( source, dmwg_variant ):
-    frequencies = []
-    for pop in source:
-        if pop != VCI_FREQUENCY_ALLELE_KEY:
-            dmwg_af = PopulationAlleleFrequencyStatement()
-            dmwg_af.set_ascertainment(DMWG_EXAC)
-            frequencies.append(dmwg_af)
-            dmwg_af.set_population( convert_exac_pop(pop) )
-            dmwg_af.set_allele( dmwg_variant )
-            if VCI_ALLELE_COUNT_KEY in source[pop]:
-                dmwg_af.set_alleleCount(  source[pop][VCI_ALLELE_COUNT_KEY] )
-            else:
-                dmwg_af.set_alleleCount( 0 )
-            if VCI_ALLELE_NUMBER_KEY in source[pop]:
-                dmwg_af.set_alleleNumber(source[pop][VCI_ALLELE_NUMBER_KEY])
-            else:
-                dmwg_af.set_alleleNumber(0)
-            if dmwg_af.get_alleleNumber() > 0:
-                dmwg_af.set_alleleFrequency(source[pop][VCI_ALLELE_FREQUENCY_KEY])
-            if VCI_HOMOZYGOUS_GENOTYPE_COUNT_KEY in source[pop]:
-                dmwg_af.set_homozygousAlleleIndividualCount( source[pop][VCI_HOMOZYGOUS_GENOTYPE_COUNT_KEY] )
-            else:
-                dmwg_af.set_homozygousAlleleIndividualCount( 0 )
-    return frequencies
-
-
-def transform_esp_data(source,dmwg_variant):
-    ref_allele = dmwg_variant.get_ref_allele('GRCh37')
-    alt_allele = dmwg_variant.get_allele('GRCh37')
-    frequencies = []
-    for pop in source:
-        if pop != VCI_FREQUENCY_ALLELE_KEY:
-            dmwg_af = PopulationAlleleFrequencyStatement( )
-            dmwg_af.set_ascertainment(DMWG_ESP)
-            frequencies.append(dmwg_af)
-            dmwg_af.set_population( convert_esp_pop(pop) )
-            dmwg_af.set_allele( dmwg_variant )
-            #Assumes ESP uses v37
-            if (len(source[pop][VCI_ALLELE_COUNT_KEY]) > 0) and (alt_allele in source[pop][VCI_ALLELE_COUNT_KEY]):
-                dmwg_af.set_alleleCount( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
-            else:
-                dmwg_af.set_alleleCount( 0 )
-            dmwg_af.set_alleleNumber( sum(source[pop][VCI_ALLELE_COUNT_KEY].values()) )
-            if dmwg_af.get_alleleNumber() > 0:
-                f = 1.*dmwg_af.get_alleleCount() / dmwg_af.get_alleleNumber()
-                dmwg_af.set_alleleFrequency(f)
-            if len(source[pop][VCI_GENOTYPE_COUNT_KEY]) > 0:
-                homkey = '%s%s' % (alt_allele,alt_allele)
-                dmwg_af.set_homozygousAlleleIndividualCount(source[pop][VCI_GENOTYPE_COUNT_KEY][homkey])
-                hetkey1 = '%s%s' % (ref_allele,alt_allele)
-                hetkey2 = '%s%s' % (alt_allele,ref_allele)
-                if hetkey1 in  source[pop][VCI_GENOTYPE_COUNT_KEY]:
-                    dmwg_af.set_heterozygousAlleleIndividualCount(source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey1])
-                elif hetkey2 in  source[pop][VCI_GENOTYPE_COUNT_KEY]:
-                    dmwg_af.set_heterozygousAlleleIndividualCount( source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey2] )
-    f = frequencies[0]
-    return frequencies
+# def transform_computational(source, entities):
+#     predictions = []
+#     vci_variant = source[VCI_VARIANT_KEY]
+#     #the form of this call suggests that the transform* functions should be member functions of entitymap
+#     dmwg_variant = transform_variant(vci_variant,entities)
+#     compdata = source[VCI_COMPUTATIONAL_DATA_KEY]
+#     if VCI_CONSERVATION_KEY in compdata:
+#         predictions += transform_conservation_data( compdata[VCI_CONSERVATION_KEY] , dmwg_variant )
+#     if VCI_CLINGEN_COMPUTATION_KEY in compdata:
+#         predictions += transform_clingen_comp_data( compdata[VCI_CLINGEN_COMPUTATION_KEY], dmwg_variant )
+#     if VCI_OTHER_COMPUTATION_KEY in compdata:
+#         predictions += transform_other_comp_data( compdata[VCI_OTHER_COMPUTATION_KEY], dmwg_variant )
+#     add_contributions_to_data( source , predictions, entities )
+#     return predictions
+#
+# #The VCI insilico predictions have a score attribute as well as a prediction.
+# # It looks like the prediction is always generic text that "higher score = higher pathogenicity"
+# # So we will just keep thte score piece.
+# #In the event that this changes, and the prediction becomes a qualitative prediction,
+# # we'll make a prediction (with the qualitative score)->evidence line -> ISPScore(score)
+# #See transform_other_comp_data for an example
+# def transform_clingen_comp_data( source,variant):
+#     predictions = []
+#     for pred in source:
+#         score = source[pred][VCI_SCORE_KEY]
+#         if score is not None:
+#             if source[pred]['prediction'] != "higher score = higher pathogenicity":
+#                 print '!',source[pred]['prediction']
+#             #Have to sort out the scores....
+#             dmwg_prediction = InSilicoPredictionScoreStatement()
+#             #We really also want to set the transcript, but the VCI is not returning that informaiton
+#             #dmwg_prediction.set_transcript()
+#             dmwg_prediction.set_canonicalAllele(variant)
+#             dmwg_prediction.set_algorithm(pred)
+#             dmwg_prediction.set_prediction(score)
+#             dmwg_prediction.set_predictionType( term_map[VCI_MISSENSE_EFFECT_PREDICTOR] )
+#             predictions.append(dmwg_prediction)
+#     return predictions
+#
+# def transform_other_comp_data( source, variant ):
+#     predictions = []
+#     for pred in source:
+#         scores = source[pred][ VCI_SCORE_KEY ]
+#         predsv  = source[pred][ VCI_PREDICTION_KEY ]
+#         if (scores is not None) and (not isinstance(scores, list)):
+#             scores = [ scores ]
+#         if scores is not None and predsv is not None:
+#             preds  = predsv.split(',')
+#         elif scores is None and predsv is not None:
+#             preds = predsv.split(',')
+#             scores = [ None for p in preds ]
+#         elif scores is not None and predsv is None:
+#             preds = [None for s in scores]
+#         else:
+#             #both none, ignore
+#             continue
+#         for (s,p) in zip(scores,preds):
+#             dmwg_prediction = dmwg_prediction_score = None
+#             if s is not None:
+#                 dmwg_prediction_score = InSilicoPredictionScoreStatement()
+#                 dmwg_prediction_score.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
+#                 dmwg_prediction_score.set_canonicalAllele( variant )
+#                 dmwg_prediction_score.set_algorithm( pred )
+#                 dmwg_prediction_score.set_prediction(s)
+#             if p is not None:
+#                 dmwg_prediction = InSilicoPredictionStatement()
+#                 dmwg_prediction.set_predictionType( term_map[ VCI_MISSENSE_EFFECT_PREDICTOR]  )
+#                 dmwg_prediction.set_canonicalAllele( variant )
+#                 dmwg_prediction.set_algorithm( pred )
+#                 dmwg_prediction.set_statementOutcome(p)
+#             if dmwg_prediction is None:
+#                 predictions.append(dmwg_prediction_score)
+#             else:
+#                 if dmwg_prediction_score is not None:
+#                     evidence_line = EvidenceLine()
+#                     evidence_line.add_evidenceItem( dmwg_prediction_score )
+#                     dmwg_prediction.add_evidenceLine( evidence_line )
+#                 predictions.append(dmwg_prediction)
+#     return predictions
+#
+#
+# #The values from VCI are not including a true/false on whether the thing is conserved. But we'll want that.
+# #When we get that, this will have to change.  What it will become is an AlleleConservation object
+# # with an evidence line to an AlleleConservationScore, which will be defined as below
+# def transform_conservation_data( source, variant ):
+#     results = []
+#     for constool in source:
+#         dmwg_conservation = AlleleConservationScoreStatement()
+#         dmwg_conservation.set_allele(variant)
+#         dmwg_conservation.set_algorithm(constool)
+#         dmwg_conservation.set_score(source[constool])
+#         results.append(dmwg_conservation)
+#     return results
+#
+# def transform_frequency( source, entities):
+#     popdata    = source[VCI_POPULATION_DATA_KEY]
+#     vci_variant = source[VCI_VARIANT_KEY]
+#     #the form of this call suggests that the transform* functions should be member functions of entitymap
+#     dmwg_variant = transform_variant(vci_variant,entities)
+#     frequencies = []
+#     if VCI_ESP_KEY in popdata:
+#         esp_frequencies = transform_esp_data( popdata[VCI_ESP_KEY],  dmwg_variant )
+#         frequencies += esp_frequencies
+#     if VCI_EXAC_KEY in popdata:
+#         exac_frequencies = transform_exac_data( popdata[VCI_EXAC_KEY], dmwg_variant )
+#         frequencies += exac_frequencies
+#     if VCI_1000_GENOMES_KEY in popdata:
+#         tg_frequencies = transform_1000_genomes_data(popdata[VCI_1000_GENOMES_KEY], dmwg_variant)
+#         frequencies += tg_frequencies
+#     #Add contributors to data nodes
+#     add_contributions_to_data( source , frequencies, entities )
+#     return frequencies
+#
+# def add_contributions_to_data( data_source, data_targets, entities):
+#     submitters = data_source[VCI_CONTRIBUTION_KEY]
+#     modtime    = data_source[VCI_LAST_MODIFIED_KEY]
+#     for data in data_targets:
+#         add_contributions( submitters, None, data, entities, modtime, DMWG_CURATOR_ROLE)
+#
+#
+# #Clean up the VCI keys and decide if they are per experiment or not.
+# def convert_esp_pop(pop):
+#     if pop == VCI_COMBINED_POP:
+#         return 'combined'
+#     return 'EVS:%s' % pop.upper()
+#
+# def convert_exac_pop(pop):
+#     if pop == VCI_COMBINED_POP: return 'combined'
+#     if pop == VCI_EXAC_OTHER_POP: return 'other'
+#     return 'GNOMAD:%s' % pop
+#
+# def convert_1000_genomes_pop(pop):
+#     if pop == VCI_COMBINED_POP: return 'combined'
+#     if pop in [ VCI_1000_GENOMES_ESP_AA_POP, VCI_1000_GENOMES_ESP_EA_POP ]:
+#         return 'EVS:%s' % pop[-2:].upper()
+#     return 'IGSR:%s' % pop
+#
+# def transform_1000_genomes_data( source, dmwg_variant ):
+#     alt_allele = dmwg_variant.get_allele('GRCh37') #right?
+#     frequencies = []
+#     for pop in source:
+#         if pop != VCI_FREQUENCY_ALLELE_KEY:
+#             if pop in [VCI_1000_GENOMES_ESP_EA_POP, VCI_1000_GENOMES_ESP_AA_POP]:
+#                 dmwg_af = PopulationAlleleFrequencyStatement()
+#                 dmwg_af.set_ascertainment(DMWG_1KGESP)
+#             else:
+#                 dmwg_af = PopulationAlleleFrequencyStatement()
+#                 dmwg_af.set_ascertainment(DMWG_1KG)
+#             frequencies.append(dmwg_af)
+#             dmwg_af.set_allele( dmwg_variant )
+#             dmwg_af.set_population(  convert_1000_genomes_pop(pop) )
+#             if len( source[pop][VCI_ALLELE_COUNT_KEY] ) == 0:
+#                 dmwg_af.set_alleleNumber( 0 )
+#             else:
+#                 dmwg_af.set_alleleNumber( sum( source[pop][VCI_ALLELE_COUNT_KEY].values() ) )
+#             #TODO: Should the element be not here, or should it be 0 or should it be null?
+#             if dmwg_af.get_alleleNumber() > 0:
+#                 if alt_allele in source[pop][VCI_ALLELE_FREQUENCY_KEY]:
+#                     dmwg_af.set_alleleFrequency( source[pop][VCI_ALLELE_FREQUENCY_KEY][alt_allele] )
+#                 else:
+#                     dmwg_af.set_alleleFrequency( 0.  )
+#             if alt_allele in source[pop][VCI_ALLELE_COUNT_KEY]:
+#                 dmwg_af.set_alleleCount( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
+#             else:
+#                 dmwg_af.set_alleleCount( 0 )
+#             hkey = '%s|%s' % (alt_allele,alt_allele)
+#             if hkey in source[pop][VCI_GENOTYPE_COUNT_KEY]:
+#                 dmwg_af.set_homozygousAlleleIndividualCount(  source[pop][VCI_GENOTYPE_COUNT_KEY][hkey] )
+#             else:
+#                 dmwg_af.set_homozygousAlleleIndividualCount( 0 )
+#     return frequencies
+#
+#
+# def transform_exac_data( source, dmwg_variant ):
+#     frequencies = []
+#     for pop in source:
+#         if pop != VCI_FREQUENCY_ALLELE_KEY:
+#             dmwg_af = PopulationAlleleFrequencyStatement()
+#             dmwg_af.set_ascertainment(DMWG_EXAC)
+#             frequencies.append(dmwg_af)
+#             dmwg_af.set_population( convert_exac_pop(pop) )
+#             dmwg_af.set_allele( dmwg_variant )
+#             if VCI_ALLELE_COUNT_KEY in source[pop]:
+#                 dmwg_af.set_alleleCount(  source[pop][VCI_ALLELE_COUNT_KEY] )
+#             else:
+#                 dmwg_af.set_alleleCount( 0 )
+#             if VCI_ALLELE_NUMBER_KEY in source[pop]:
+#                 dmwg_af.set_alleleNumber(source[pop][VCI_ALLELE_NUMBER_KEY])
+#             else:
+#                 dmwg_af.set_alleleNumber(0)
+#             if dmwg_af.get_alleleNumber() > 0:
+#                 dmwg_af.set_alleleFrequency(source[pop][VCI_ALLELE_FREQUENCY_KEY])
+#             if VCI_HOMOZYGOUS_GENOTYPE_COUNT_KEY in source[pop]:
+#                 dmwg_af.set_homozygousAlleleIndividualCount( source[pop][VCI_HOMOZYGOUS_GENOTYPE_COUNT_KEY] )
+#             else:
+#                 dmwg_af.set_homozygousAlleleIndividualCount( 0 )
+#     return frequencies
+#
+#
+# def transform_esp_data(source,dmwg_variant):
+#     ref_allele = dmwg_variant.get_ref_allele('GRCh37')
+#     alt_allele = dmwg_variant.get_allele('GRCh37')
+#     frequencies = []
+#     for pop in source:
+#         if pop != VCI_FREQUENCY_ALLELE_KEY:
+#             dmwg_af = PopulationAlleleFrequencyStatement( )
+#             dmwg_af.set_ascertainment(DMWG_ESP)
+#             frequencies.append(dmwg_af)
+#             dmwg_af.set_population( convert_esp_pop(pop) )
+#             dmwg_af.set_allele( dmwg_variant )
+#             #Assumes ESP uses v37
+#             if (len(source[pop][VCI_ALLELE_COUNT_KEY]) > 0) and (alt_allele in source[pop][VCI_ALLELE_COUNT_KEY]):
+#                 dmwg_af.set_alleleCount( source[pop][VCI_ALLELE_COUNT_KEY][alt_allele] )
+#             else:
+#                 dmwg_af.set_alleleCount( 0 )
+#             dmwg_af.set_alleleNumber( sum(source[pop][VCI_ALLELE_COUNT_KEY].values()) )
+#             if dmwg_af.get_alleleNumber() > 0:
+#                 f = 1.*dmwg_af.get_alleleCount() / dmwg_af.get_alleleNumber()
+#                 dmwg_af.set_alleleFrequency(f)
+#             if len(source[pop][VCI_GENOTYPE_COUNT_KEY]) > 0:
+#                 homkey = '%s%s' % (alt_allele,alt_allele)
+#                 dmwg_af.set_homozygousAlleleIndividualCount(source[pop][VCI_GENOTYPE_COUNT_KEY][homkey])
+#                 hetkey1 = '%s%s' % (ref_allele,alt_allele)
+#                 hetkey2 = '%s%s' % (alt_allele,ref_allele)
+#                 if hetkey1 in  source[pop][VCI_GENOTYPE_COUNT_KEY]:
+#                     dmwg_af.set_heterozygousAlleleIndividualCount(source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey1])
+#                 elif hetkey2 in  source[pop][VCI_GENOTYPE_COUNT_KEY]:
+#                     dmwg_af.set_heterozygousAlleleIndividualCount( source[pop][VCI_GENOTYPE_COUNT_KEY][hetkey2] )
+#     f = frequencies[0]
+#     return frequencies
 
 
 def transform_strength(modifier, defaultStrength):
@@ -755,14 +793,14 @@ def transform_articles( article_list, interpretation, entities ):
 def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
     for ee_node in extra_evidence_list:
         info = Statement()
-        add_contributions_to_data( ee_node, [info], entities )
+        # add_contributions_to_data( ee_node, [info], entities )
         info.set_description( ee_node[ VCI_EVIDENCE_DESCRIPTION_KEY] )
         sources = transform_articles(ee_node[ VCI_ARTICLES_KEY], interpretation, entities )
         for source in sources:
             info.add_source(source)
         key = ( ee_node[VCI_CATEGORY_KEY], ee_node[ VCI_SUBCATEGORY_KEY] )
         #possible_rules will be a list of tuples of rules.  Each tuple is a group that can
-        #only have one thing met.  
+        #only have one thing met.
         possible_rules = extra_evidence_map[key]
         #This is a map from possible_rule tuples to assessments (met/not met) to a list of rules
         # So if a given rule tuple has only met rules then it will be [tuple][met]=[met assessments] and [tuple][not met] = []
@@ -867,6 +905,7 @@ if __name__ == '__main__':
             help='Path to an input JSON file created by the VCI (defaults to stdin)')
     parser.add_argument('output', nargs='?', type=argparse.FileType('w'), default=sys.stdout,
             help='Output path for DMWG JSON file to be created (defaults to stdout)')
-    parser.add_argument("-s", "--output-style", type=str, choices=['full', 'first', 'flat'], help="full: expand all nodes, first: expand first node, flat: define entities outside the interpretation", default = 'first')
+    parser.add_argument("-s", "--output-style", type=str, choices=['full', 'first', 'flat'],
+            help="full: expand all nodes, first: expand first node, flat: define entities outside the interpretation", default = 'first')
     args = parser.parse_args()
     transform_json_file(args.input, args.output, args.output_style)
