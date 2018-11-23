@@ -8,7 +8,7 @@ import csv
 from clingen_interpretation.interpretation_generated import *
 from clingen_interpretation.interpretation_extras import *
 from clingen_interpretation.interpretation_constants import *
-from clingen_interpretation.Allele import Variant
+from clingen_interpretation.Allele import Variant, ClinVarVariant
 import argparse
 import logging
 import re
@@ -252,7 +252,10 @@ def canonicalizeVariant(rep):
     #We want to get the id/representation from the Baylor Allele Registry.
     hgvs38 = rep[VCI_HGVS_NAMES_KEY][VCI_GENOMIC_HGVS_38_KEY]
     baylor_car_rep = get_canonical_id(hgvs38)
-    baylor_carid = baylor_car_rep['@id']
+    try:
+        baylor_carid = baylor_car_rep['@id']
+    except:
+        return None
     #Make sure it's the same id
     if (orig_carid) != '':
         #If the original is de-curied, then we need to compare to that...
@@ -446,10 +449,14 @@ def transform_variant(variant,entities):
     if dmwg_variant is None:
         vci_variant = entities.get_entity(vci_variant_id)
         ar_variant = canonicalizeVariant( vci_variant )
-        preferred_transcript = None
-        if VCI_CLINVAR_VARIANT_TITLE in vci_variant:
-            preferred_transcript = vci_variant[VCI_CLINVAR_VARIANT_TITLE].split('(')[0]
-        dmwg_variant = Variant(ar_variant,preferred_transcript)
+        if ar_variant is None:
+            #This happens if the vci variant can't be transformed, i.e. it's a structural Variant
+            dmwg_variant = ClinVarVariant( vci_variant )
+        else:
+            preferred_transcript = None
+            if VCI_CLINVAR_VARIANT_TITLE in vci_variant:
+                preferred_transcript = vci_variant[VCI_CLINVAR_VARIANT_TITLE].split('(')[0]
+            dmwg_variant = Variant(ar_variant,preferred_transcript)
         entities.add_transformed(vci_variant_id, dmwg_variant)
     return dmwg_variant
 
