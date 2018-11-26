@@ -2380,7 +2380,7 @@
         ],
         "uuid": "4a279a8c-4762-478d-b1a2-92cedc6e6189",
         "phenotypes": [],
-        "diseaseId": "DOID_11984",
+        "diseaseId": "MONDO_0005045",
         "associatedIndividuals": [
             "/individuals/1970e95a-e64f-4917-a29f-1e2b4ae6500b/",
             "/individuals/16a3bb06-6da0-49d2-84ea-84657fe74b0a/",
@@ -2434,7 +2434,6 @@
         ],
         "date_created": "2017-06-16T01:03:41.907607+00:00",
         "submitted_by": "/users/2a1dcf80-beb1-4b1e-9478-cf7f4904911b/",
-        "ontology": "DOID",
         "associatedFamilies": [
             "/families/89a7c3c0-6f45-4ba9-b3c2-50b17c6986cb/",
             "/families/b4b788a0-485f-4727-8709-55490fef8f5b/",

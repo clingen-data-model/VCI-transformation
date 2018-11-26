@@ -32,6 +32,7 @@ VCI_APPROVAL_SUBMITTER_KEY = 'approvalSubmitter'
 VCI_AFFILIATION_KEY = 'affiliation'
 VCI_VARIANT_KEY = 'variant'
 VCI_VARIANT_TYPE = 'variant'
+VCI_VARIANT_SOURCE = 'source'
 VCI_DISEASE_TYPE = 'disease'
 VCI_AGENT_TYPE = 'user'
 VCI_CANONICAL_ID_KEY = 'carId'
@@ -149,19 +150,29 @@ extra_evidence_map = { ('population','population'): [('BA1','PM2','BS1')],\
                        ('case-segregation','specificity-of-phenotype'): [('PP4',)], \
                        ('case-segregation','reputable-source'): [('BP6','PP5')] }
 
-
+AFFILIATION_IRI_NAMESPACE = 'http://curation.clinicalgenome.org/affiliation/'
 def read_affiliations():
     affiliation_file = os.path.join(os.path.dirname(__file__),"Affiliation_id_name_lookup.js")
     with file(affiliation_file,'r') as inf:
         affs = json.load(inf)
-    prefix = 'http://vci.clingen.org/affiliation/'
-    adict = { a['affiliation_id']: {'id': prefix+a['affiliation_id'], 'label': a['affiliation_fullname']} for a in affs }
+
+    adict = {}
     adict[None] = None
+    for a in affs:
+        guideline = {}
+        if 'guideline_name' in a:
+            guideline['name'] = a['guideline_name']
+        if 'guideline_url' in a:
+            guideline['url'] = a['guideline_url']
+        adict[a['affiliation_id']] = { \
+            'id': AFFILIATION_IRI_NAMESPACE + a['affiliation_id'], \
+            'label': a['affiliation_fullname'], \
+            'guideline': guideline }
     return adict
 
 #Just going to read this thing at global scope.  It's bad practice, but
 # really this file should be read from a service somewhere anyway
-affiliations_id_to_name = read_affiliations()
+affiliations_id_lookup = read_affiliations()
 
 def get_chromosome_name(chromosome, version):
     v37chromosomes={'1':'NC_000001.10',\
@@ -227,7 +238,11 @@ class EntityMap:
             pass
     def register(self,node):
         if self.idtag in node:
-            if len(self.EMtypes.intersection(set(node[VCI_TYPE_KEY]))) != 0:
+            type_set = self.EMtypes.intersection(set(node[VCI_TYPE_KEY]))
+            if len(type_set) > 1:
+                raise Exception("ERROR: More than one unique type match found for a single node.")
+            if len(type_set) == 1:
+                etype = type_set.pop()
                 atid = fully_qualify(node[self.idtag])
                 entity = self.entities[atid]
                 for key in node:
@@ -237,7 +252,6 @@ class EntityMap:
                             raise Exception('Incoherent Nodes')
                     else:
                         entity[key] = node[key]
-                #print atid,entity
     def get_entity(self,eid):
         return self.entities[eid]
     def get_transformed(self,eid):
@@ -264,7 +278,7 @@ def canonicalizeVariant(rep):
         else:
             compare_id = baylor_carid
         if orig_carid != compare_id:
-            logging.error('Original ID: %s.    Final ID: %s' % (orig_carid, baylor_carid) )
+            logging.error('Original ID: %s.  Final ID: %s' % (orig_carid, baylor_carid) )
             raise Exception
     #compact CAR id:
     baylor_car_rep['@id'] = 'CAR:{}'.format(baylor_carid.split('/')[-1])
@@ -283,8 +297,15 @@ def get_id(source):
         sid = fully_qualify(source)
     return sid
 
+def get_affiliation(affiliation_id):
+    if affiliation_id not in affiliations_id_lookup:
+        raise Exception('Affiliation_id '+str(affiliation_id) + ' was not found in affiliation lookup file.')
+    return affiliations_id_lookup[affiliation_id]
 
-def add_contribution( user_input, affiliation_id, target, ondate, entities, role):
+def add_contribution( user_input, affiliation, target, ondate, entities, role):
+
+    if user_input is None and affiliation is None:
+        raise Exception('Required User or Affiliation not provided when adding contributions.')
 
     # We're going to make some assumptions:
     # 1. at least one of user_input or affiliation_id is required
@@ -296,35 +317,39 @@ def add_contribution( user_input, affiliation_id, target, ondate, entities, role
     #    will probably need to modify this down the road.
     # 6. That information about the affiliation will be found in a local data
     #    file (which needs to be made accessible in another way)
-    affiliation = affiliations_id_to_name[affiliation_id]
 
-    if user_input is None:
-        if affiliation is None:
-            raise Exception('Required User or Affiliation not provided when adding contribution.')
-        else:
-            agent = affiliation
-            affiliation = None
-    else:
+    if user_input:
+        # if there's also an affiliation then set it as the agent_for of the agent
+        # this does presume that any single 'user' will always have one and
+        # only one agent for the processing of the input file
+        agent_for = None
+        if affiliation is not None:
+            agent_for = entities.get_transformed(affiliation['id'])
+            if agent_for is None:
+                agent_for = create_agent(affiliation['id'], affiliation['label'])
+                entities.add_transformed(agent_for.get_id(), agent_for)
+
         userid = get_id(user_input)
         user = entities.get_entity(userid)
-        if user == {}:
-            agent = Agent()
-            agent.set_label( user_input )
+
+        if user  == {}:
+            agent = create_agent(None, user_input, agent_for)
+            entities.add_transformed(agent.get_id(), agent)
         else:
             agent = entities.get_transformed(userid)
             if agent is None:
-                agent = Agent(userid)
-                try:
-                    agent.set_label( user[VCI_AGENT_NAME_KEY] )
-                except KeyError:
-                    #sometimes we might not have the name.. oh well.
-                    pass
-                entities.add_transformed(userid, agent)
+                agent_name = None
+                if VCI_AGENT_NAME_KEY in user:
+                    agent_name = user[VCI_AGENT_NAME_KEY]
+                agent = create_agent(userid, agent_name, agent_for)
+                entities.add_transformed(agent.get_id(), agent)
+    else:
+        agent = entities.get_transformed(affiliation['id'])
+        if agent is None:
+            agent = create_agent(affiliation['id'], affiliation['label'])
+            entities.add_transformed(agent.get_id(), agent)
 
-    contribution = create_contribution(agent, ondate, role)
-
-    if affiliation is not None:
-        contribution.data['agent_for'] = affiliation
+    contribution = create_contribution( agent, ondate, role )
 
     target.add_contribution(contribution)
 
@@ -404,23 +429,34 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
     # approver can be either the affiliation or the user
     # if the affiliation exists then only use it for the approver
     # otherwise use the user associated by the following rules
-    #  1st if an 'affiliation' in the provisional variant section
+    #  1st if an 'affiliation_id' in the provisional variant section
     #  2nd if there is a 'classificationApprover' in the provisional variant section
     #  3rd if there is a 'approvalSubmitter' in the provisional variant section
     #  4th defaults to the 'submitted_by" in the provisional variant section
     #
     approving_user = None
-    affiliation = None
+    affiliation_id = None
     if VCI_AFFILIATION_KEY in vci_pv:
-        affiliation = vci_pv[VCI_AFFILIATION_KEY]
-    elif VCI_PROVISIONAL_VARIANT_KEY in vci_pv:
+        affiliation_id = vci_pv[VCI_AFFILIATION_KEY]
+    elif VCI_CLASSIFICATION_APPROVER_KEY in vci_pv:
         approving_user = vci_pv[VCI_CLASSIFICATION_APPROVER_KEY]
     elif VCI_APPROVAL_SUBMITTER_KEY in vci_pv:
         approving_user = vci_pv[VCI_APPROVAL_SUBMITTER_KEY]
     else:
         approving_user = vci_pv[VCI_CONTRIBUTION_KEY]
 
-    add_contributions( approving_user, affiliation, interpretation, entities, approval_date, DMWG_APPROVER_ROLE)
+    affiliation = None
+    if affiliation_id:
+        affiliation = get_affiliation(affiliation_id)
+        if affiliation:
+            guideline = affiliation['guideline']
+            url = None
+            if 'url' in guideline:
+                url = guideline['url']
+            assertion_method = create_assertion_method ( guideline['name'], url )
+            interpretation.set_assertionMethod(assertion_method)
+
+    add_contributions( approving_user, affiliation, interpretation, entities, approval_date, DMWG_APPROVER_ROLE )
 
     # publisher is same as approver but for current datetime.
     now = datetime.datetime.now()
@@ -431,6 +467,7 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
 
     interpretation.set_statementOutcome( convert_significance(vci_pv) )
 
+# TODO talk to Ronak about these specialized significance terms.
 def convert_significance(vci_provisional_variant):
     significance = ''
     if VCI_ALTEREDCLASSIFICATION_KEY in vci_provisional_variant:
@@ -443,20 +480,26 @@ def convert_significance(vci_provisional_variant):
         significance = 'LOINC:LA26333-7'
     return significance
 
+
+
 def transform_variant(variant,entities):
     vci_variant_id = get_id(variant)
     dmwg_variant = entities.get_transformed(vci_variant_id)
     if dmwg_variant is None:
         vci_variant = entities.get_entity(vci_variant_id)
-        ar_variant = canonicalizeVariant( vci_variant )
-        if ar_variant is None:
-            #This happens if the vci variant can't be transformed, i.e. it's a structural Variant
-            dmwg_variant = ClinVarVariant( vci_variant )
-        else:
-            preferred_transcript = None
-            if VCI_CLINVAR_VARIANT_TITLE in vci_variant:
-                preferred_transcript = vci_variant[VCI_CLINVAR_VARIANT_TITLE].split('(')[0]
-            dmwg_variant = Variant(ar_variant,preferred_transcript)
+        clinvar_variant_title = None
+        if VCI_CLINVAR_VARIANT_TITLE in vci_variant:
+            clinvar_variant_title = vci_variant[VCI_CLINVAR_VARIANT_TITLE]
+
+        #if source is clinvar then use clinvar approach, otherwise use car
+        if vci_variant[VCI_VARIANT_SOURCE] == 'ClinVar':
+            dmwg_variant = ClinVarVariant( vci_variant, clinvar_variant_title )
+        elif vci_variant[VCI_VARIANT_SOURCE] == 'ClinGen AR':
+            car_variant = canonicalizeVariant( vci_variant )
+            dmwg_variant = Variant( car_variant, clinvar_variant_title )
+        # else:
+        #     raise exception ...
+
         entities.add_transformed(vci_variant_id, dmwg_variant)
     return dmwg_variant
 

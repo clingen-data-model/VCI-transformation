@@ -1,0 +1,131 @@
+{
+    "modified_by": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+    "variant_identifier": "CA055546",
+    "@type": [
+        "variant",
+        "item"
+    ],
+    "clinVarSCVs": [],
+    "associatedInterpretations": [
+        {
+            "uuid": "527fbbc2-6a7e-469e-9599-be866d6a3c23",
+            "disease": "/diseases/2f410481-819f-4824-a9b7-aa9f784d63e8/",
+            "provisional_variant": [
+                "/provisional-variant/fd155327-b89f-4968-8123-fff7ac182950/"
+            ],
+            "schema_version": "6",
+            "modified_by": {
+                "affiliation": [
+                    "10001",
+                    "10006",
+                    "88888",
+                    "99999"
+                ],
+                "last_name": "Wulf",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "lab": "/labs/j-michael-cherry/",
+                "@id": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+                "email": "bwulf@stanford.edu",
+                "first_name": "Bryan",
+                "uuid": "8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0",
+                "title": "Bryan Wulf"
+            },
+            "variant": "/variants/e38a1609-3baa-4d96-b118-01c59585eb3c/",
+            "interpretation_status": "Provisional",
+            "date_created": "2018-11-13T20:05:38.506624+00:00",
+            "interpretation_genes": "",
+            "affiliation": "10006",
+            "evaluation_count": 4,
+            "@type": [
+                "interpretation",
+                "item"
+            ],
+            "@id": "/interpretations/527fbbc2-6a7e-469e-9599-be866d6a3c23/",
+            "last_modified": "2018-11-13T20:18:26.539394+00:00",
+            "evaluations": [
+                "/evaluations/727f65c0-1649-4b7c-9dce-a91864e66bc5/",
+                "/evaluations/d91c7193-d53a-4b8c-bcf9-d1ff02349655/",
+                "/evaluations/a81b1d59-9e73-4826-8b99-3e5033934c17/",
+                "/evaluations/bddee7d8-b88e-4d9c-9f85-86a6090d4147/"
+            ],
+            "submitted_by": {
+                "affiliation": [
+                    "10001",
+                    "10006",
+                    "88888",
+                    "99999"
+                ],
+                "last_name": "Wulf",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "lab": "/labs/j-michael-cherry/",
+                "@id": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+                "email": "bwulf@stanford.edu",
+                "first_name": "Bryan",
+                "uuid": "8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0",
+                "title": "Bryan Wulf"
+            },
+            "provisional_count": 1,
+            "modeInheritanceAdjective": "",
+            "interpretation_disease": "/diseases/2f410481-819f-4824-a9b7-aa9f784d63e8/",
+            "status": "in progress"
+        }
+    ],
+    "date_created": "2018-11-13T19:58:54.845388+00:00",
+    "source": "ClinGen AR",
+    "status": "in progress",
+    "@id": "/variants/e38a1609-3baa-4d96-b118-01c59585eb3c/",
+    "submitted_by": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+    "clinVarRCVs": [],
+    "dbSNPIds": [
+        "863223386"
+    ],
+    "hgvsNames": {
+        "GRCh38": "NC_000008.11:g.99467550del",
+        "NCBI36": "NC_000008.9:g.100548954del",
+        "others": [
+            "NG_007098.2:g.459285del",
+            "LRG_351:g.459285del",
+            "ENST00000357162.6:c.3582del",
+            "ENST00000358544.6:c.3582del",
+            "ENST00000496144.5:c.3582del",
+            "NM_017890.4:c.3582del",
+            "LRG_351t1:c.3582del",
+            "NM_152564.4:c.3582del",
+            "LRG_351t2:c.3582del",
+            "XM_005250800.2:c.3582del",
+            "XM_005250801.3:c.3582del",
+            "XM_006716510.2:c.3582del",
+            "XM_011516848.1:c.3579del",
+            "XM_011516849.1:c.3582del",
+            "XM_011516850.1:c.3204del",
+            "XM_011516851.1:c.468del",
+            "XM_011516852.1:c.468del",
+            "XM_011516853.1:c.3582del",
+            "XM_011516855.1:c.3582del",
+            "XM_011516856.1:c.3582del",
+            "XM_011516857.1:c.3582del",
+            "XM_011516858.1:c.3582del",
+            "XR_928301.1:n.3685del",
+            "XR_928302.1:n.3685del",
+            "XR_928303.1:n.3685del",
+            "XR_928304.1:n.3685del"
+        ],
+        "GRCh37": "NC_000008.10:g.100479778del"
+    },
+    "variation_type": "",
+    "clinvarVariantTitle": "",
+    "carId": "CA055546",
+    "uuid": "e38a1609-3baa-4d96-b118-01c59585eb3c",
+    "clinvarVariantId": "",
+    "schema_version": "4",
+    "last_modified": "2018-11-13T19:58:54.845370+00:00",
+    "otherDescription": "",
+    "molecular_consequence": "",
+    "associatedPathogenicities": []
+}

@@ -1,0 +1,31 @@
+{
+    "freetext": true,
+    "phenotypes": [
+        "HP:0000001",
+        "HP:0000002",
+        "HP:0000003"
+    ],
+    "diseaseId": "FREETEXT_a6945c5f-535d-4404-b922-7ad16c8cd742",
+    "status": "in progress",
+    "modified_by": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+    "associatedInterpretations": [
+        "/interpretations/527fbbc2-6a7e-469e-9599-be866d6a3c23/"
+    ],
+    "term": "Non-MONDO Disease",
+    "date_created": "2018-11-13T20:13:51.801439+00:00",
+    "associatedFamilies": [],
+    "last_modified": "2018-11-13T20:13:51.801426+00:00",
+    "description": "This is a definition of the non-MONDO Disease...",
+    "@type": [
+        "disease",
+        "item"
+    ],
+    "associatedGdm": [],
+    "schema_version": "2",
+    "@id": "/diseases/2f410481-819f-4824-a9b7-aa9f784d63e8/",
+    "associatedGroups": [],
+    "submitted_by": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+    "synonyms": [],
+    "uuid": "2f410481-819f-4824-a9b7-aa9f784d63e8",
+    "associatedIndividuals": []
+}

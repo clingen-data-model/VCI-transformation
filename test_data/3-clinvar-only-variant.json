@@ -1,0 +1,123 @@
+{
+    "modified_by": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+    "variant_identifier": "12000",
+    "@type": [
+        "variant",
+        "item"
+    ],
+    "clinVarSCVs": [],
+    "associatedInterpretations": [
+        {
+            "uuid": "82feeb62-e300-45f7-b9d0-ba70ae8ffaee",
+            "modified_by": {
+                "affiliation": [
+                    "10001",
+                    "10006",
+                    "88888",
+                    "99999"
+                ],
+                "last_name": "Wulf",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "lab": "/labs/j-michael-cherry/",
+                "@id": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+                "email": "bwulf@stanford.edu",
+                "first_name": "Bryan",
+                "uuid": "8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0",
+                "title": "Bryan Wulf"
+            },
+            "provisional_variant": [
+                "/provisional-variant/dbfd9f17-220e-4887-b6d7-65300ebbe88e/"
+            ],
+            "@type": [
+                "interpretation",
+                "item"
+            ],
+            "variant": "/variants/8a61a77a-cc79-484e-b459-81e785c5cb44/",
+            "interpretation_status": "Provisional",
+            "date_created": "2018-11-13T22:19:27.026344+00:00",
+            "interpretation_genes": "",
+            "affiliation": "10006",
+            "evaluation_count": 4,
+            "schema_version": "6",
+            "last_modified": "2018-11-13T22:22:11.935225+00:00",
+            "@id": "/interpretations/82feeb62-e300-45f7-b9d0-ba70ae8ffaee/",
+            "evaluations": [
+                "/evaluations/16d95066-a3f2-4e3d-ad46-7f7318cbd002/",
+                "/evaluations/76b8bf8c-f672-478d-ac06-d6d1ae50346c/",
+                "/evaluations/0e8f3f66-34ab-4e3d-ae8e-4e7bdcd07d8f/",
+                "/evaluations/663b8c82-f50f-4464-9134-0bd5e5d1286d/"
+            ],
+            "submitted_by": {
+                "affiliation": [
+                    "10001",
+                    "10006",
+                    "88888",
+                    "99999"
+                ],
+                "last_name": "Wulf",
+                "@type": [
+                    "user",
+                    "item"
+                ],
+                "lab": "/labs/j-michael-cherry/",
+                "@id": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+                "email": "bwulf@stanford.edu",
+                "first_name": "Bryan",
+                "uuid": "8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0",
+                "title": "Bryan Wulf"
+            },
+            "provisional_count": 1,
+            "modeInheritanceAdjective": "",
+            "interpretation_disease": "",
+            "status": "in progress"
+        }
+    ],
+    "date_created": "2018-11-13T22:19:09.498393+00:00",
+    "source": "ClinVar",
+    "molecularConsequenceList": [
+        {
+            "term": "nonsense",
+            "hgvsName": "NM_000151.3:c.1039C>T",
+            "soId": "SO:0001587"
+        },
+        {
+            "term": "3 prime UTR variant",
+            "hgvsName": "NM_001270397.1:c.*431C>T",
+            "soId": "SO:0001624"
+        }
+    ],
+    "last_modified": "2018-11-13T22:19:09.498357+00:00",
+    "variationType": "single nucleotide variant",
+    "submitted_by": "/users/8619a82f-f7aa-44fe-98b5-9c9dd5caf6e0/",
+    "clinVarRCVs": [],
+    "dbSNPIds": [
+        "80356487"
+    ],
+    "status": "in progress",
+    "hgvsNames": {
+        "GRCh38": "NC_000017.11:g.42911391C>T",
+        "others": [
+            "NG_011808.1:g.15594C>T",
+            "NM_000151.3:c.1039C>T",
+            "NM_001270397.1:c.*431C>T",
+            "NP_000142.2:p.Gln347Ter",
+            "NM_000151.2:c.1039C>T",
+            "NP_000142.1:p.Gln347Ter",
+            "LRG_147:g.15594C>T"
+        ],
+        "GRCh37": "NC_000017.10:g.41063408C>T"
+    },
+    "variation_type": "single nucleotide variant",
+    "clinvarVariantTitle": "NM_000151.3(G6PC):c.1039C>T (p.Gln347Ter)",
+    "carId": "",
+    "uuid": "8a61a77a-cc79-484e-b459-81e785c5cb44",
+    "clinvarVariantId": "12000",
+    "schema_version": "4",
+    "@id": "/variants/8a61a77a-cc79-484e-b459-81e785c5cb44/",
+    "otherDescription": "",
+    "molecular_consequence": "nonsense",
+    "associatedPathogenicities": []
+}

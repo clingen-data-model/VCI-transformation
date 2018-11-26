@@ -2054,9 +2054,8 @@
             "/gdm/afb2e6ca-f948-4850-be42-ed7d7d1842ed/",
             "/gdm/c7fd3299-5bd9-4ffb-b091-f967b97537fc/"
         ],
-        "diseaseId": "DOID_11984",
+        "diseaseId": "MONDO_0005045",
         "submitted_by": "/users/2a1dcf80-beb1-4b1e-9478-cf7f4904911b/",
-        "ontology": "DOID",
         "description": "An intrinsic cardiomyopathy that has_material_basis_in autosomal dominant inheritance and that is characterized by abnormal  thickening (hypertrophy) of the heart without any obvious cause.",
         "associatedInterpretations": [
             "/interpretations/d8c5da2a-ff92-4211-9d7a-75adfac5c013/",

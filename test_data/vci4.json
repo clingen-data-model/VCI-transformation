@@ -201,8 +201,7 @@
     "evaluation_count": 24,
     "audit": {},
     "disease": {
-        "ontology": "DOID",
-        "diseaseId": "DOID_11984",
+        "diseaseId": "MONDO_0005045",
         "uuid": "4a279a8c-4762-478d-b1a2-92cedc6e6189",
         "term": "hypertrophic cardiomyopathy",
         "associatedIndividuals": [
