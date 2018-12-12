@@ -48,7 +48,7 @@ do
   printf "%s\n" "Transforming $input to $output"
 
   # transform the vci json to dmwg using project's python script
-  python ../VCI2DMWG.py $input $output
+  python3 ../VCI2DMWG.py $input $output "${@:2}"
 
 done 
 

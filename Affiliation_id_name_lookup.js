@@ -117,7 +117,7 @@
     },
     {
         "affiliation_id": "10014",
-        "affiliation_fullname": "CDH1 EP",
+        "affiliation_fullname": "ClinGen CDH1 Variant Curation Expert Panel",
         "publish_approval": true,
         "approver": [
             "Intan Schrader",
@@ -125,7 +125,9 @@
             "Rachid Karam",
             "Tina Pesaran",
             "Xi Luo"
-        ]
+        ],
+        "guideline_name": "CDH1 ACMG Specifications Summary v1.0 2018",
+        "guideline_url": "ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/ClinGen/expert_panels/ClinGen_CDH1/CDH1_ACMG_Specifications_Summary_v1.0_2018.pdf"
     },
     {
         "affiliation_id": "10015",
@@ -135,8 +137,8 @@
             "Amanda Thomas",
             "Diane Zastrow"
         ],
-        "guideline_name": "ACMG variant classification (PAH)",
-        "guideline_url": "https://www.clinicalgenome.org/working-groups/clinical-domain/inborn-errors-of-metabolism-clinical-domain-working-group/pah-variant-curation-expert-panel/"
+        "guideline_name": "PAH ACMG Specifications v1.0 2018",
+        "guideline_url": "https://submit.ncbi.nlm.nih.gov/ft/byid/dgfvzxep/pah_acmg_specifications_v1.0_2018.pdf"
     },
     {
         "affiliation_id": "10016",

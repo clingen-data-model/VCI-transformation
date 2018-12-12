@@ -1,2 +1,3 @@
 requests~=2.17
+python-dateutil>=2.7.5
 git+https://github.com/clingen-data-model/interpretation_json.git

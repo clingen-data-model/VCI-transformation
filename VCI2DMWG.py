@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 from collections import defaultdict
@@ -13,6 +13,7 @@ import argparse
 import logging
 import re
 import datetime
+from dateutil.parser import parse
 
 IRI_BASE='https://vci.clinicalgenome.org'
 VCI_ID_KEY = '@id'
@@ -144,7 +145,7 @@ extra_evidence_map = { ('population','population'): [('BA1','PM2','BS1')],\
                        ('case-segregation','segregation-data'): [('BS4',),('PP1',)], \
                        #The following is a typo that occurs in the VCI data:
                        ('case-segregation','segreagtion-data'): [('BS4',),('PP1',)], \
-                       ('case-segregation','de-novo-occurrence'): [('PM6',),('PS2',)], \
+                       ('case-segregation','de-novo'): [('PM6',),('PS2',)], \
                        ('case-segregation','allele-data'): [('BP2',),('PM3',)], \
                        ('case-segregation','alternate-mechanism'): [('BP5',)], \
                        ('case-segregation','specificity-of-phenotype'): [('PP4',)], \
@@ -153,7 +154,7 @@ extra_evidence_map = { ('population','population'): [('BA1','PM2','BS1')],\
 AFFILIATION_IRI_NAMESPACE = 'http://curation.clinicalgenome.org/affiliation/'
 def read_affiliations():
     affiliation_file = os.path.join(os.path.dirname(__file__),"Affiliation_id_name_lookup.js")
-    with file(affiliation_file,'r') as inf:
+    with open(affiliation_file,'r') as inf:
         affs = json.load(inf)
 
     adict = {}
@@ -248,7 +249,7 @@ class EntityMap:
                 for key in node:
                     if key in entity:
                         if entity[key] != node[key]:
-                            print key, '\n--------\n',entity[key], '\n---------------\n',node[key]
+                            print(key, '\n--------\n',entity[key], '\n---------------\n',node[key])
                             raise Exception('Incoherent Nodes')
                     else:
                         entity[key] = node[key]
@@ -260,6 +261,11 @@ class EntityMap:
         return None
     def add_transformed(self,eid,entity):
         self.transformed[eid] = entity
+    def list_entities(self):
+        for e in self.entities:
+            if 'variants' in e:
+                print(e)
+        print(None)
 
 def canonicalizeVariant(rep):
     orig_carid = rep[VCI_CANONICAL_ID_KEY]
@@ -407,10 +413,10 @@ def transform_root(vci):
 #May need to handle
 # alteredClassification_present
 # reason_present
-def transform_provisional_variant(vci_pv , interpretation, entities ):
+def transform_provisional_variant(vci_pv , interpretation, entities, publish_datetime):
     if isinstance(vci_pv, list):
         if len(vci_pv) > 1:
-            print '???'
+            print('???')
             exit()
         vci_pv = vci_pv[0]
 
@@ -460,7 +466,7 @@ def transform_provisional_variant(vci_pv , interpretation, entities ):
 
     # publisher is same as approver but for current datetime.
     now = datetime.datetime.now()
-    add_contributions( approving_user, affiliation, interpretation, entities, now.isoformat(), DMWG_PUBLISHER_ROLE)
+    add_contributions( approving_user, affiliation, interpretation, entities, publish_datetime.isoformat(), DMWG_PUBLISHER_ROLE)
 
     if VCI_EVIDENCE_SUMMARY_KEY in vci_pv:
         interpretation.set_description( vci_pv[VCI_EVIDENCE_SUMMARY_KEY])
@@ -810,7 +816,7 @@ def transform_strength(modifier, defaultStrength):
     elif modifier == 'very-strong':
         mod = 'Very Strong'
     else:
-        print modifier
+        print(modifier)
         exit()
     strength = ' '.join( [path, mod] )
     return strength
@@ -865,7 +871,7 @@ def transform_evidence(extra_evidence_list, interpretation, entities, evalmap):
                     rule_groups[rule_set][dmwg_assessment.get_statementOutcome().get_label()].append(dmwg_assessment)
                     #add_evidenceItems( dmwg_assessment, [info])
         if not found:
-            print  "Did not find any evaluated criteria for this data: %s "% ee_node['uuid']
+            print("Did not find any evaluated criteria for this data: %s "% ee_node['uuid'])
         else:
             for rule_set in rule_groups:
                 if len(rule_groups[rule_set]['Met']) > 0:
@@ -903,14 +909,14 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     if mode!= '': dmwg_condition.set_inheritancePattern( mode )
     interpretation.add_condition(dmwg_condition)
 
-def transform(jsonf):
+def transform(jsonf, publish_datetime):
     vci = json.load(jsonf)
     if VCI_MODEINHERITANCE_KEY not in vci:
         vci[VCI_MODEINHERITANCE_KEY] = ''
     entities = EntityMap(vci)
     interpretation, inheritance = transform_root(vci)
     if VCI_PROVISIONAL_VARIANT_KEY in vci:
-        transform_provisional_variant(vci[VCI_PROVISIONAL_VARIANT_KEY],interpretation,entities)
+        transform_provisional_variant(vci[VCI_PROVISIONAL_VARIANT_KEY],interpretation,entities, publish_datetime)
     else:
         logging.warning('No provisional_variant element in the input.  Proceeding, but clinical significance will not be set.')
     try:
@@ -931,10 +937,12 @@ def transform(jsonf):
         transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
     except KeyError:
         logging.warning('No evidence found.  Proceeding')
+
     return interpretation,entities
 
-def transform_json_file(inf, outf, out_style):
-    interp,ents = transform(inf)
+def transform_json_file(inf, outf, out_style, publish_datetime):
+    interp, ents = transform(inf, publish_datetime)
+    print(ents.list_entities())
     #The idea of flatten would be that the root node would contain fully specified descriptions of all the entities, and then
     # the interpretation, which would be written using only IDs.
     # To implement this, just create a new dict, put the interpretation into it, and write the entites into it from the EntityMap
@@ -944,10 +952,17 @@ def transform_json_file(inf, outf, out_style):
     # TODO: Decide and implement (if required) or remove option (if not)
     if out_style == 'flat':
         raise Exception('flatten not implemented yet')
-    json.dump(interp,outf,sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder, out_style=out_style)
+    json.dump(interp, outf, sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder, out_style=out_style)
+
+def valid_date(s):
+    try:
+        return parse(s)
+    except ValueError:
+        msg = "Not a valid date: '{0}'.".format(s)
+        raise argparse.ArgumentTypeError(msg)
 
 def test():
-    transform_json_file(open('test_data/test_interp_1.vci.json'), open('test_data/test_interp_1.dmwg.json'), 'first')
+    transform_json_file(open('test_data/test_interp_1.vci.json'), open('test_data/test_interp_1.dmwg.json'), 'first', datetime.datetime.now())
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -957,5 +972,11 @@ if __name__ == '__main__':
             help='Output path for DMWG JSON file to be created (defaults to stdout)')
     parser.add_argument("-s", "--output-style", type=str, choices=['full', 'first', 'flat'],
             help="full: expand all nodes, first: expand first node, flat: define entities outside the interpretation", default = 'first')
+    parser.add_argument("-p",
+                    "--publish-datetime",
+                    help="The publish date of the records, defaults to now - format YYYY-MM-DD or YYYY-MM-DDThh:mm:ss.fffZ",
+                    required=False,
+                    type=valid_date,
+                    default=datetime.datetime.now())
     args = parser.parse_args()
-    transform_json_file(args.input, args.output, args.output_style)
+    transform_json_file(args.input, args.output, args.output_style, args.publish_datetime)
