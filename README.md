@@ -12,7 +12,7 @@ This project consists of
 7) A script for parsing and transforming a single multi-record input json file.
 
 ## Setup Python Environment
-VCI2DMWG has a dependency on the clingen_interpretation library, which is used to serialize CG-SEPIO-style
+VCI2cgsepio has a dependency on the clingen_interpretation library, which is used to serialize CG-SEPIO-style
 JSON files.  The github repository can be found [here](https://github.com/clingen-data-model/interpretation_json).
 Follow the instructions on that page to install the library, or just install this and all other dependencies using
 `pip install -r requirements.txt`.
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ## Execute Script
 ### Standard - Single One-Record Input File
-To convert a VCI json file (input.json) into a DMWG JSON file (output.json) use the script VCI2DMG.py:
+To convert a VCI json file (input.json) into a DMWG JSON file (output.json) use the script VCI2cgsepio.py:
 ```python3 VCI2cgsepio.py input.json output.json -p <publish date in yyyy-mm-dd format>```
 
 Sample input and output files are found in the `test_data` directory.
