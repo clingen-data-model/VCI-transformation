@@ -1,0 +1,573 @@
+This file contains info on transforming the following 
+1. VARIANT
+2. DISEASE
+3. CRITERION ASSESSMENTS
+4. EVIDENCE ITEMS FROM PUBMED INFO
+5. CONTRIBUTION / AGENT
+(each section below has the above heading as a title)
+
+
+1. VARIANT
+==========
+  The variant must contain the "preferred transcript" information if possible using the following rules
+  a. if the clinvarVariantTitle exists presume that it is the preferred transcript (use it to look up the transcript allele bits).
+  b. if no clinvar id exists then the canonicalTranscriptTitle might exist which is a manufactured description using the Ensembl VEP service lookup of the canonical transcript (ultimate plan)
+  c. otherwise use the b38 accession and hgvs notation.
+
+  Always provide the transcript aligned alleles and "mark" the preferred transcript.
+  Make sure that if transcripts exist they have a reference to the gene id and symbol for the transcript
+  Always pass the 37 and 38 genomic alleles.
+  if available pass the clinvar and dbsnp ids associated with the canonical allele
+
+  Given (VCI provided)
+      "variant": {
+          "schema_version": "4",
+          "@type": ["variant","item"],
+          "uuid": "3aae8164-ec43-4305-8125-fa39c9e85d70",
+          "@id": "/variants/3aae8164-ec43-4305-8125-fa39c9e85d70/",
+
+          "clinvarVariantTitle": "NM_004700.3(KCNQ4):c.825G>C (p.Trp275Cys)",
+          "clinvarVariantId": "505302",
+          "clinVarRCVs": [],
+          "clinVarSCVs": [],
+          "source": "ClinVar",
+
+   look for this.... canonicalTranscriptTitle -> built from the VEP ensembl service call (see Jimmy)
+
+          "variationType": "single nucleotide variant",
+          "variation_type": "single nucleotide variant",
+          "otherDescription": "",
+
+          "carId": "CA21112664",
+          "hgvsNames": {
+              "others": [
+                  "NG_008139.1:g.40452G>C",
+                  "NM_004700.3:c.825G>C",
+                  "NP_004691.2:p.Trp275Cys"
+              ],
+              "GRCh38": "NC_000001.11:g.40819463G>C",
+              "GRCh37": "NC_000001.10:g.41285135G>C"
+          },
+          "molecularConsequenceList": [
+              {
+                  "hgvsName": "NM_004700.3:c.825G>C",
+                  "term": "missense variant",
+                  "soId": "SO:0001583"
+              }
+          ],
+          "molecular_consequence": "missense variant",
+          "variant_identifier": "505302",
+          "dbSNPIds": ["956666801"],
+          "date_created": "2018-08-15T13:23:35.195400+00:00"
+      },
+  *****************************************
+   CG allele registry lookkup result used to create Variant below
+      {
+        "@context": "http://reg.genome.network/schema/allele.jsonld",
+        "@id": "http://reg.genome.network/allele/CA21112664",
+        "externalRecords": {
+          "ClinVarAlleles": [
+            {
+              "@id": "http://www.ncbi.nlm.nih.gov/clinvar/?term=496205[alleleid]",
+              "alleleId": 496205,
+              "preferredName": "NM_004700.3(KCNQ4):c.825G>C (p.Trp275Cys)"
+            }
+          ],
+          "ClinVarVariations": [
+            {
+              "@id": "http://www.ncbi.nlm.nih.gov/clinvar/variation/505302",
+              "RCV": [
+                "RCV000599794"
+              ],
+              "variationId": 505302
+            }
+          ],
+          "MyVariantInfo_hg19": [
+            {
+              "@id": "http://myvariant.info/v1/variant/chr1:g.41285135G>C?assembly=hg19",
+              "id": "chr1:g.41285135G>C"
+            }
+          ],
+          "MyVariantInfo_hg38": [
+            {
+              "@id": "http://myvariant.info/v1/variant/chr1:g.40819463G>C?assembly=hg38",
+              "id": "chr1:g.40819463G>C"
+            }
+          ],
+          "dbSNP": [
+            {
+              "@id": "http://www.ncbi.nlm.nih.gov/snp/956666801",
+              "rs": 956666801
+            }
+          ]
+        },
+        "genomicAlleles": [
+          {
+            "chromosome": "1",
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 40819463,
+                "referenceAllele": "G",
+                "start": 40819462
+              }
+            ],
+            "hgvs": [
+              "NC_000001.11:g.40819463G>C",
+              "CM000663.2:g.40819463G>C"
+            ],
+            "referenceGenome": "GRCh38",
+            "referenceSequence": "http://reg.genome.network/refseq/RS000049"
+          },
+          {
+            "chromosome": "1",
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 41057722,
+                "referenceAllele": "G",
+                "start": 41057721
+              }
+            ],
+            "hgvs": [
+              "NC_000001.9:g.41057722G>C"
+            ],
+            "referenceGenome": "NCBI36",
+            "referenceSequence": "http://reg.genome.network/refseq/RS000001"
+          },
+          {
+            "chromosome": "1",
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 41285135,
+                "referenceAllele": "G",
+                "start": 41285134
+              }
+            ],
+            "hgvs": [
+              "NC_000001.10:g.41285135G>C",
+              "CM000663.1:g.41285135G>C"
+            ],
+            "referenceGenome": "GRCh37",
+            "referenceSequence": "http://reg.genome.network/refseq/RS000025"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 40452,
+                "referenceAllele": "G",
+                "start": 40451
+              }
+            ],
+            "hgvs": [
+              "NG_008139.1:g.40452G>C"
+            ],
+            "referenceSequence": "http://reg.genome.network/refseq/RS000885"
+          }
+        ],
+        "transcriptAlleles": [
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 907,
+                "referenceAllele": "G",
+                "start": 906
+              }
+            ],
+            "hgvs": [
+              "ENST00000347132.9:c.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "ENSP00000262916.6:p.Trp275Cys",
+              "hgvsWellDefined": "ENSP00000262916.6:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS262332"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 511,
+                "referenceAllele": "G",
+                "start": 510
+              }
+            ],
+            "hgvs": [
+              "ENST00000443478.3:n.511G>C"
+            ],
+            "referenceSequence": "http://reg.genome.network/refseq/RS297357"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 144,
+                "referenceAllele": "G",
+                "start": 143
+              }
+            ],
+            "hgvs": [
+              "ENST00000506017.1:n.144G>C"
+            ],
+            "referenceSequence": "http://reg.genome.network/refseq/RS337656"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 825,
+                "referenceAllele": "G",
+                "start": 824
+              }
+            ],
+            "hgvs": [
+              "ENST00000509682.6:n.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "ENSP00000423756.2:p.Trp275Cys",
+              "hgvsWellDefined": "ENSP00000423756.2:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS340393"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 907,
+                "referenceAllele": "G",
+                "start": 906
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "NM_004700.3:c.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "NP_004691.2:p.Trp275Cys",
+              "hgvsWellDefined": "NP_004691.2:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS029850"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 907,
+                "referenceAllele": "G",
+                "start": 906
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "NM_172163.2:c.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "NP_751895.1:p.Trp275Cys",
+              "hgvsWellDefined": "NP_751895.1:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS042665"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 831,
+                "referenceAllele": "G",
+                "start": 830
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "XM_011542417.1:c.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "XP_011540719.1:p.Trp275Cys",
+              "hgvsWellDefined": "XP_011540719.1:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS109348"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 831,
+                "referenceAllele": "G",
+                "start": 830
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "XM_011542418.1:c.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "XP_011540720.1:p.Trp275Cys",
+              "hgvsWellDefined": "XP_011540720.1:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS109349"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 831,
+                "referenceAllele": "G",
+                "start": 830
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "XM_011542419.1:c.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "XP_011540721.1:p.Trp275Cys",
+              "hgvsWellDefined": "XP_011540721.1:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS109350"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 831,
+                "referenceAllele": "G",
+                "start": 830
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "XM_011542420.1:c.825G>C"
+            ],
+            "proteinEffect": {
+              "hgvs": "XP_011540722.1:p.Trp275Cys",
+              "hgvsWellDefined": "XP_011540722.1:p.Trp275Cys"
+            },
+            "referenceSequence": "http://reg.genome.network/refseq/RS109351"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 831,
+                "referenceAllele": "G",
+                "start": 830
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "XR_946798.1:n.831G>C"
+            ],
+            "referenceSequence": "http://reg.genome.network/refseq/RS140380"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 831,
+                "referenceAllele": "G",
+                "start": 830
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "XR_946799.1:n.831G>C"
+            ],
+            "referenceSequence": "http://reg.genome.network/refseq/RS140381"
+          },
+          {
+            "coordinates": [
+              {
+                "allele": "C",
+                "end": 831,
+                "referenceAllele": "G",
+                "start": 830
+              }
+            ],
+            "gene": "http://reg.genome.network/gene/GN006298",
+            "geneNCBI_id": 9132,
+            "geneSymbol": "KCNQ4",
+            "hgvs": [
+              "XR_946800.1:n.831G>C"
+            ],
+            "referenceSequence": "http://reg.genome.network/refseq/RS140382"
+          }
+        ],
+        "type": "nucleotide"
+      }
+  *****************************************
+     OUTPUT of VCI transform of Variant
+       "allele": {
+           "canonicalAlleleType": "nucleotide",
+           "complexity": "simple",
+           "id": "CAR:CA21112664",
+           "relatedContextualAllele": [
+               {
+                   "alleleName": [
+                       {
+                           "name": "NC_000001.11:g.40819463G>C",
+                           "nameType": "hgvs"
+                       },
+                       {
+                           "name": "CM000663.2:g.40819463G>C",
+                           "nameType": "hgvs"
+                       }
+                   ],
+                   "contextualAlleleType": "genomic",
+                   "preferred": true,
+                   "referenceCoordinate": {
+                       "end": {
+                           "index": 40819463
+                       },
+                       "refState": "G",
+                       "referenceSequence": {
+                           "label": "NC_000001.11",
+                           "reference": "http://reg.genome.network/refseq/RS000049"
+                       },
+                       "start": {
+                           "index": 40819462
+                       }
+                   },
+                   "relatedCanonicalAllele": "CAR:CA21112664",
+                   "state": "C",
+                   "type": "ContextualAllele"
+               },
+               {
+                   "alleleName": [
+                       {
+                           "name": "NC_000001.9:g.41057722G>C",
+                           "nameType": "hgvs"
+                       }
+                   ],
+                   "contextualAlleleType": "genomic",
+                   "referenceCoordinate": {
+                       "end": {
+                           "index": 41057722
+                       },
+                       "refState": "G",
+                       "referenceSequence": {
+                           "label": "NC_000001.9",
+                           "reference": "http://reg.genome.network/refseq/RS000001"
+                       },
+                       "start": {
+                           "index": 41057721
+                       }
+                   },
+                   "relatedCanonicalAllele": "CAR:CA21112664",
+                   "state": "C",
+                   "type": "ContextualAllele"
+               },
+               {
+                   "alleleName": [
+                       {
+                           "name": "NC_000001.10:g.41285135G>C",
+                           "nameType": "hgvs"
+                       },
+                       {
+                           "name": "CM000663.1:g.41285135G>C",
+                           "nameType": "hgvs"
+                       }
+                   ],
+                   "contextualAlleleType": "genomic",
+                   "referenceCoordinate": {
+                       "end": {
+                           "index": 41285135
+                       },
+                       "refState": "G",
+                       "referenceSequence": {
+                           "label": "NC_000001.10",
+                           "reference": "http://reg.genome.network/refseq/RS000025"
+                       },
+                       "start": {
+                           "index": 41285134
+                       }
+                   },
+                   "relatedCanonicalAllele": "CAR:CA21112664",
+                   "state": "C",
+                   "type": "ContextualAllele"
+               },
+               {
+                   "alleleName": [
+                       {
+                           "name": "NG_008139.1:g.40452G>C",
+                           "nameType": "hgvs"
+                       }
+                   ],
+                   "contextualAlleleType": "genomic",
+                   "referenceCoordinate": {
+                       "end": {
+                           "index": 40452
+                       },
+                       "refState": "G",
+                       "referenceSequence": {
+                           "label": "",
+                           "reference": "http://reg.genome.network/refseq/RS000885"
+                       },
+                       "start": {
+                           "index": 40451
+                       }
+                   },
+                   "relatedCanonicalAllele": "CAR:CA21112664",
+                   "state": "C",
+                   "type": "ContextualAllele"
+               }
+           ],
+           "relatedIdentifier": [
+               {
+                   "label": "NM_004700.3(KCNQ4):c.825G>C (p.Trp275Cys)"
+               },
+               {
+                   "id": "dbSNP:956666801"
+               }
+           ],
+           "type": "CanonicalAllele"
+       },
+
+2. DISEASE
+==========
+  Can be a string name with a list of hpo phenos and a definition
+  usually a mondo id
+  also include the moi which is a combo of the top-level moi and the 2nd-level adjective (essentially a hierarchy with unknown and other as choices)
+  see translation table in doc.
+
+3. CRITERION ASSESSMENTS
+========================
+  the "Met" assessments get the "explanation" and all the pmid evidence in the panel
+  the "Not Met" assessments all get passed, but
+   - they only get "explanations" if they have only one associated or they are in a mutually exclusive group and no other member of the group is "Met"
+   - they only get the pmids for the panel if their is no other "Met" assessment anywhere in the panel - then they get the pmids as evidence.
+  NOTE: we need to "MARK" the criterion assessments with PMID evidence that is not a 1:1 in a panel.
+        we need to "MARK" the criterion assessments with explanations that are not a 1:1 in a panel.
+
+4. EVIDENCE ITEMS FROM PUBMED INFO
+==================================
+  the text of the literature evidence acts as a generic evidence information item, the set of literature evidence items get bundled under an evidence line that supports the associated criterion assessment
+  The pmids themselves are sources for the evidence text associated to the pmid.
+
+5. CONTRIBUTION / AGENT
+=======================
+  If an affiliation exists for the approver then only the affiliation will be included in the contribution at the interpretation level (no indivudal user info)
+  If no affiliation exists for the interp then the approver (user) will be the contribution for the interpretation and listed
+
+  The role of the contribution at the interpretation level will be "Approver". (not interpreter). no contributions for now on criterion assessments.
+
+  Two contributions need to exist at the top level interp
+  1 - Approver, approved date, affiliation, if not then user
+  2 - Publisher, published date, affiliation, if not then user

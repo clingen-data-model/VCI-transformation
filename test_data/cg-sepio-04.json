@@ -8,7 +8,6 @@
                     "label": "hypertrophic cardiomyopathy"
                 }
             ],
-            "id": "_:b2",
             "inheritancePattern": {
                 "id": "HP:0000006",
                 "label": "Autosomal dominant inheritance"
@@ -23,22 +22,20 @@
                 "label": "Brandon Cushman",
                 "type": "Agent"
             },
-            "contributionDate": "2017-01-24T17:10:07.757826+00:00",
+            "contributionDate": "2017-01-24T18:54:36.574013+00:00",
             "contributionRole": {
                 "id": "SEPIO:0000155",
                 "label": "approver"
             },
-            "id": "_:b0",
             "type": "Contribution"
         },
         {
             "agent": "https://vci.clinicalgenome.org/users/7620a154-1bed-4184-89c1-298ade1cd536/",
-            "contributionDate": "2018-11-25T18:37:29.634888",
+            "contributionDate": "2019-01-03T00:00:00",
             "contributionRole": {
                 "id": "SEPIO-CG:97010",
                 "label": "publisher"
             },
-            "id": "_:b1",
             "type": "Contribution"
         }
     ],
@@ -56,132 +53,224 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/52ead401-2e08-45c8-a8ee-7dc91597d347/",
+                    "id": "/evaluations/4cfdd93d-598f-4639-bea2-6da6d643eab7/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
                     "variant": {
-                        "id": "ClinVar:43106",
-                        "label": "NM_000257.3(MYH7):c.788T>C (p.Ile263Thr)",
+                        "id": "ClinVar:177665",
+                        "label": "NM_000257.3(MYH7):c.2221G>T (p.Gly741Trp)",
                         "relatedContextualAllele": [
                             {
                                 "alleleName": [
                                     {
-                                        "name": "NC_000014.9:g.23431426A>G",
+                                        "name": "NC_000014.9:g.23425760C>A",
                                         "nameType": "hgvs"
                                     }
                                 ],
-                                "chromosome": "14",
                                 "contextualAlleleType": "genomic",
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 23425760
+                                    },
+                                    "refState": "C",
+                                    "referenceSequence": {
+                                        "label": "NC_000014.9"
+                                    },
+                                    "start": {
+                                        "index": 23425759
+                                    }
+                                },
+                                "referenceGenome": {
+                                    "id": "SEPIO-CG:98203",
+                                    "label": "GRCh38"
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
+                                "relatedChromosome": {
+                                    "id": "SEPIO-CG:98114",
+                                    "label": "14"
+                                },
+                                "state": "A",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "NC_000014.8:g.23900635A>G",
+                                        "name": "NC_000014.8:g.23894969C>A",
                                         "nameType": "hgvs"
                                     }
                                 ],
-                                "chromosome": "14",
                                 "contextualAlleleType": "genomic",
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 23894969
+                                    },
+                                    "refState": "C",
+                                    "referenceSequence": {
+                                        "label": "NC_000014.8"
+                                    },
+                                    "start": {
+                                        "index": 23894968
+                                    }
+                                },
+                                "referenceGenome": {
+                                    "id": "SEPIO-CG:98202",
+                                    "label": "GRCh37"
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
+                                "relatedChromosome": {
+                                    "id": "SEPIO-CG:98114",
+                                    "label": "14"
+                                },
+                                "state": "A",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "NG_007884.1:g.9236T>C",
+                                        "name": "NG_007884.1:g.14902G>T",
                                         "nameType": "hgvs"
                                     }
                                 ],
                                 "contextualAlleleType": "genomic",
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 14902
+                                    },
+                                    "refState": "G",
+                                    "referenceSequence": {
+                                        "label": "NG_007884.1"
+                                    },
+                                    "start": {
+                                        "index": 14901
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
+                                "state": "T",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "NM_000257.3:c.788T>C",
+                                        "name": "NM_000257.3:c.2221G>T",
                                         "nameType": "hgvs"
                                     }
                                 ],
                                 "contextualAlleleType": "transcript",
-                                "gene": {
+                                "preferred": true,
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 2352
+                                    },
+                                    "refState": "G",
+                                    "referenceSequence": {
+                                        "label": "NM_000257.3"
+                                    },
+                                    "start": {
+                                        "index": 2351
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
+                                "relatedGene": {
+                                    "id": "NCBIGene:4625",
                                     "label": "MYH7"
                                 },
-                                "preferred": true,
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "state": "T",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "NP_000248.2:p.Ile263Thr",
+                                        "name": "NP_000248.2:p.Gly741Trp",
                                         "nameType": "hgvs"
                                     }
                                 ],
                                 "contextualAlleleType": "protein",
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "referenceCoordinate": {
+                                    "referenceSequence": {
+                                        "label": "NP_000248.2"
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "NM_000257.2:c.788T>C",
+                                        "name": "NM_000257.2:c.2221G>T",
                                         "nameType": "hgvs"
                                     }
                                 ],
                                 "contextualAlleleType": "transcript",
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "referenceCoordinate": {
+                                    "referenceSequence": {
+                                        "label": "NM_000257.2"
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "P12883:p.Ile263Thr",
+                                        "name": "P12883:p.Gly741Trp",
                                         "nameType": "hgvs"
                                     }
                                 ],
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "referenceCoordinate": {},
+                                "relatedCanonicalAllele": "ClinVar:177665",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "LRG_384p1:p.Ile263Thr",
+                                        "name": "LRG_384p1:p.Gly741Trp",
                                         "nameType": "hgvs"
                                     }
                                 ],
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                "contextualAlleleType": "protein",
+                                "referenceCoordinate": {
+                                    "referenceSequence": {
+                                        "label": "LRG_384p1"
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
                                 "type": "ContextualAllele"
                             },
                             {
                                 "alleleName": [
                                     {
-                                        "name": "LRG_384:g.9236T>C",
+                                        "name": "LRG_384:g.14902G>T",
                                         "nameType": "hgvs"
                                     }
                                 ],
-                                "relatedCanonicalAllele": "ClinVar:43106",
-                                "type": "ContextualAllele"
-                            },
-                            {
-                                "alleleName": [
-                                    {
-                                        "name": "LRG_384t1:c.788T>C",
-                                        "nameType": "hgvs"
+                                "contextualAlleleType": "genomic",
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 14902
+                                    },
+                                    "refState": "G",
+                                    "referenceSequence": {
+                                        "label": "LRG_384"
+                                    },
+                                    "start": {
+                                        "index": 14901
                                     }
-                                ],
-                                "relatedCanonicalAllele": "ClinVar:43106",
+                                },
+                                "relatedCanonicalAllele": "ClinVar:177665",
+                                "state": "T",
                                 "type": "ContextualAllele"
                             }
                         ],
                         "relatedIdentifier": [
                             {
-                                "label": "NM_000257.3(MYH7):c.788T>C (p.Ile263Thr)"
+                                "id": "http://reg.genome.network/allele/CA012022",
+                                "label": "NM_000257.3(MYH7):c.2221G>T (p.Gly741Trp)"
+                            },
+                            {
+                                "id": "dbSNP:121913632"
                             }
                         ],
                         "type": "CanonicalAllele"
@@ -189,7 +278,6 @@
                 }
             ],
             "evidenceStrength": "SEPIO:0000325",
-            "id": "_:b3",
             "type": "EvidenceLine"
         },
         {
@@ -205,17 +293,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/5a82ea71-72b7-4961-a98a-17611d13bce2/",
+                    "id": "/evaluations/6e0c01d7-643b-438b-9ef5-6e51f005085a/",
                     "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
-            "id": "_:b4",
             "type": "EvidenceLine"
         },
         {
@@ -231,17 +318,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/96a2b862-5f95-43da-8779-28f01f1a1c80/",
+                    "id": "/evaluations/550b7b5b-ec47-4a2d-8990-9c4f2a727e52/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000328",
-            "id": "_:b5",
             "type": "EvidenceLine"
         },
         {
@@ -257,17 +343,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/3fda0f6f-2eed-4578-8ea7-60bcce58c863/",
+                    "id": "/evaluations/458cca5a-670a-4c8d-b762-2ed624494b78/",
                     "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000329",
-            "id": "_:b6",
             "type": "EvidenceLine"
         },
         {
@@ -283,17 +368,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/82e43205-9f7a-4e38-a69a-936c768ce7f5/",
+                    "id": "/evaluations/0fceb548-ebd0-4369-8dfe-baadf9d785b0/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
-            "id": "_:b7",
             "type": "EvidenceLine"
         },
         {
@@ -309,17 +393,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/d53cb81f-a34b-4546-89d3-51dc3b0d0d7a/",
+                    "id": "/evaluations/efea3903-93c8-44e8-8476-b7a152f88d14/",
                     "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000329",
-            "id": "_:b8",
             "type": "EvidenceLine"
         },
         {
@@ -334,18 +417,17 @@
                         "label": "PM5",
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
-                    "description": "",
-                    "id": "/evaluations/3efa735c-b018-40f5-a07c-6cf10470610a/",
+                    "description": "ClinVar ID's: 42890, 14098",
+                    "id": "/evaluations/5b9785f7-3cdb-49c7-83a2-73865f3828cb/",
                     "statementOutcome": {
-                        "id": "SEPIO:0000224",
-                        "label": "Not Met"
+                        "id": "SEPIO:0000223",
+                        "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
-            "id": "_:b9",
             "type": "EvidenceLine"
         },
         {
@@ -361,17 +443,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/aadc9d36-f9cc-44f0-baf7-e1cf09ec0270/",
+                    "id": "/evaluations/8ce2964f-995e-4e03-b8d4-599e6dca3975/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
-            "id": "_:b10",
             "type": "EvidenceLine"
         },
         {
@@ -387,17 +468,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/7b7ccf47-fffe-413a-abd0-7bf71d51e921/",
+                    "id": "/evaluations/478a84b8-fb18-4f8e-96c8-1a9524ab436a/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
-            "id": "_:b11",
             "type": "EvidenceLine"
         },
         {
@@ -413,17 +493,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/f3e430b5-505e-48b8-a9c6-cb00240f9dbf/",
+                    "id": "/evaluations/e6e86169-7f6f-433a-b5b2-117535e164b6/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
-            "id": "_:b12",
             "type": "EvidenceLine"
         },
         {
@@ -439,17 +518,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/bf960388-67c9-4072-9e22-eac99c99b8bf/",
+                    "id": "/evaluations/8a5a6885-217e-4af9-ab6e-3f7849a0147f/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000328",
-            "id": "_:b13",
             "type": "EvidenceLine"
         },
         {
@@ -465,17 +543,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/d0919d48-7949-46a3-883f-72a9f86295a8/",
+                    "id": "/evaluations/57aa1d89-8b64-40d8-9acc-762d3f6f2936/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
-            "id": "_:b14",
             "type": "EvidenceLine"
         },
         {
@@ -490,76 +567,43 @@
                         "label": "PS4",
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
-                    "description": "20 total probands\n7 literature\n13 unpublished cases (9 Share, 3 LMM, 1 Brompton)",
+                    "description": "19 total probands\n3 published probands \n16 unpublished probands",
                     "evidenceLine": [
                         {
                             "evidenceItem": [
                                 {
-                                    "description": "38 individuals from 2 unrelated Portugese families with HCM. 1 proband from each family was positive for I263T and the variant was absent from 200 control chromosomes (ethnicity unspecified). In family A, the variant segregated was seen with disease in 9 affected relatives (including 1 inferred carrier, I-2). 8 segregations - mak 3.10.16  In family B, 6 individuals were positive for the variant and 2 of these individuals were affected (including the proband and 1 homozygous sibling). Note that the pedigree also marks 2 deceased individuals (II-2, II-3) as both \"clinically and genetically affected\", however, the paper did NOT specify that these individuals carry the variant, only that they were clinically diagnosed with HCM upon autopsy. Being conservative and only counting 1 segregation for Family B - mak 3.10.16   The disease is fully penetrant in family A but results in a very mild form of disease, whereas in family B there is only 50% penetrance but a very severe form of disease including two cases of SCD. See pedigrees to the right.",
-                                    "id": "_:b23",
+                                    "description": "Case report of a family with variant and four three affected carrier family members with HCM. Individuals had clinical eval complete with physical and history, ECG, echo.  Genetic testing consisted only of MYH7 sequencing.  The healthy family member who was tested was not a carrier and had no signs of HCM on evaluation.  Article references a reference book by Kimura et al (1994) that also cites the variant in a Japanese family with HCM.",
                                     "source": [
-                                        "https://www.ncbi.nlm.nih.gov/pubmed/15008060"
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/8533830"
                                     ],
                                     "type": "Statement"
                                 }
                             ],
-                            "id": "_:b24",
                             "type": "EvidenceLine"
                         },
                         {
                             "evidenceItem": [
                                 {
-                                    "description": "18 families with HCM screened. I263T was identified in 1 proband and also found in 2 relatives, 1 affected and 1 unaffected. The variant was absent from at least 200 control chromosomes. Ethnicity of probands and controls not specified.",
-                                    "id": "_:b25",
+                                    "description": "MYH7 gene was tested in 147 HCM patients from three centers in Germany, Poland, and Kyrgyzstan.  Variant found in one family.  Proband's brother also found to carry variant and HCM and healthy relative was not a carrier and had no signs of HCM on evaluation.  Paper aimed to help characterize clinical findings in patients with MYH7 mutation and HCM in an effort to help establish genotype-phenotype correlation.",
                                     "source": [
-                                        "https://www.ncbi.nlm.nih.gov/pubmed/9829907"
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/15856146"
                                     ],
                                     "type": "Statement"
                                 }
                             ],
-                            "id": "_:b26",
-                            "type": "EvidenceLine"
-                        },
-                        {
-                            "evidenceItem": [
-                                {
-                                    "description": "197 probands with HCM were screened. I263T was identified in 1 index patient and classified as a \"mutation\", meaning it was absent from 200 healthy control chromosomes.",
-                                    "id": "_:b27",
-                                    "source": [
-                                        "https://www.ncbi.nlm.nih.gov/pubmed/12707239"
-                                    ],
-                                    "type": "Statement"
-                                }
-                            ],
-                            "id": "_:b28",
-                            "type": "EvidenceLine"
-                        },
-                        {
-                            "evidenceItem": [
-                                {
-                                    "description": "80 Portugese probands with HCM were screened for variants in 28 HCM associated genes. I263T was identified in 3 probands (2 with family history, 1 sporadic) and was considered a \"mutation\" meaning that it :co-segregates with the disease in the family, affects an amino acid conserved among species and isoforms; and it failed to be detected in at least 200 chromosomes of healthy adult controls. \nSeveral of the same authors as on the Brito 2003 paper, so being conservative and only counting the sporatic case.",
-                                    "id": "_:b29",
-                                    "source": [
-                                        "https://www.ncbi.nlm.nih.gov/pubmed/22429680"
-                                    ],
-                                    "type": "Statement"
-                                }
-                            ],
-                            "id": "_:b30",
                             "type": "EvidenceLine"
                         }
                     ],
-                    "id": "/evaluations/23098d06-6339-4d97-88da-53f78aa07cc0/",
+                    "id": "/evaluations/1fa04c81-1fe1-4cef-a333-2350a3dc1526/",
                     "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
-            "id": "_:b15",
             "type": "EvidenceLine"
         },
         {
@@ -579,43 +623,38 @@
                         {
                             "evidenceItem": [
                                 {
-                                    "description": "38 individuals from 2 unrelated Portugese families with HCM. 1 proband from each family was positive for I263T and the variant was absent from 200 control chromosomes (ethnicity unspecified). In family A, the variant segregated was seen with disease in 9 affected relatives (including 1 inferred carrier, I-2). 8 segregations - mak 3.10.16  In family B, 6 individuals were positive for the variant and 2 of these individuals were affected (including the proband and 1 homozygous sibling). Note that the pedigree also marks 2 deceased individuals (II-2, II-3) as both \"clinically and genetically affected\", however, the paper did NOT specify that these individuals carry the variant, only that they were clinically diagnosed with HCM upon autopsy. Being conservative and only counting 1 segregation for Family B - mak 3.10.16   The disease is fully penetrant in family A but results in a very mild form of disease, whereas in family B there is only 50% penetrance but a very severe form of disease including two cases of SCD. See pedigrees to the right.",
-                                    "id": "_:b31",
+                                    "description": "Case report of a family with variant and three affected carrier family members with HCM. Individuals had clinical eval complete with physical and history, ECG, echo.  Genetic testing consisted only of MYH7 sequencing.  The healthy family member who was tested was not a carrier and had no signs of HCM on evaluation.  Article references a reference book by Kimura et al (1994) that also cites the variant in a Japanese family with HCM",
                                     "source": [
-                                        "https://www.ncbi.nlm.nih.gov/pubmed/15008060"
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/8533830"
                                     ],
                                     "type": "Statement"
                                 }
                             ],
-                            "id": "_:b33",
                             "type": "EvidenceLine"
                         },
                         {
                             "evidenceItem": [
                                 {
-                                    "description": "18 families with HCM screened. I263T was identified in 1 proband and also found in 2 relatives, 1 affected and 1 unaffected. The variant was absent from at least 200 control chromosomes. Ethnicity of probands and controls not specified.",
-                                    "id": "_:b34",
+                                    "description": "MYH7 gene was tested in 147 HCM patients from three centers in Germany, Poland, and Kyrgyzstan.  Variant found in one family.  Proband's brother also found to carry variant and HCM and healthy relative was not a carrier and had no signs of HCM on evaluation.  Paper aimed to help characterize clinical findings in patients with MYH7 mutation and HCM in an effort to help establish genotype-phenotype correlation.",
                                     "source": [
-                                        "https://www.ncbi.nlm.nih.gov/pubmed/9829907"
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/15856146"
                                     ],
                                     "type": "Statement"
                                 }
                             ],
-                            "id": "_:b36",
                             "type": "EvidenceLine"
                         }
                     ],
-                    "id": "/evaluations/a0f233b6-631d-4e21-9e1a-324c3bef2242/",
+                    "id": "/evaluations/3c09cde9-fdeb-4678-9efd-ba4ffbdf82aa/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000328",
-            "id": "_:b16",
             "type": "EvidenceLine"
         },
         {
@@ -630,37 +669,46 @@
                         "label": "PP1",
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
-                    "description": "10 total segregations\n10 published segregations\n0 unpublished segregations",
+                    "description": "5 total segregations\n4 published segregations\n1 unpublished segregation",
                     "evidenceLine": [
                         {
                             "evidenceItem": [
-                                "_:b31"
+                                {
+                                    "description": "Case report of a family with variant and three affected carrier family members with HCM. Individuals had clinical eval complete with physical and history, ECG, echo.  Genetic testing consisted only of MYH7 sequencing.  The healthy family member who was tested was not a carrier and had no signs of HCM on evaluation.  Article references a reference book by Kimura et al (1994) that also cites the variant in a Japanese family with HCM",
+                                    "source": [
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/8533830"
+                                    ],
+                                    "type": "Statement"
+                                }
                             ],
-                            "id": "_:b32",
                             "type": "EvidenceLine"
                         },
                         {
                             "evidenceItem": [
-                                "_:b34"
+                                {
+                                    "description": "MYH7 gene was tested in 147 HCM patients from three centers in Germany, Poland, and Kyrgyzstan.  Variant found in one family.  Proband's brother also found to carry variant and HCM and healthy relative was not a carrier and had no signs of HCM on evaluation.  Paper aimed to help characterize clinical findings in patients with MYH7 mutation and HCM in an effort to help establish genotype-phenotype correlation.",
+                                    "source": [
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/15856146"
+                                    ],
+                                    "type": "Statement"
+                                }
                             ],
-                            "id": "_:b35",
                             "type": "EvidenceLine"
                         }
                     ],
-                    "id": "/evaluations/8565a28b-0fdf-4f1e-a58a-247b805d9607/",
+                    "id": "/evaluations/ba6e05ea-d807-4c90-b56f-d73a80277f1a/",
                     "statementOutcome": {
                         "id": "SEPIO:0000223",
                         "label": "Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": {
-                "id": "SEPIO:0000330",
-                "label": "Pathogenic Strong"
+                "id": "SEPIO:0000216",
+                "label": "Pathogenic Moderate"
             },
-            "id": "_:b17",
             "type": "EvidenceLine"
         },
         {
@@ -676,17 +724,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/b3ac7655-ca89-48ec-9bd9-10d48195b9af/",
+                    "id": "/evaluations/9e83039e-e822-4f2e-a5af-1aace250da02/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000216",
-            "id": "_:b18",
             "type": "EvidenceLine"
         },
         {
@@ -702,17 +749,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/6d6ca923-e5bf-4364-a1ec-650deb753eef/",
+                    "id": "/evaluations/0cd043ca-1f7e-49f1-affb-b0913a16b150/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000330",
-            "id": "_:b19",
             "type": "EvidenceLine"
         },
         {
@@ -728,17 +774,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/81081086-cc32-496d-acf7-deeba732dc2a/",
+                    "id": "/evaluations/8b5f8674-eb0e-4934-876e-96ddbea3efde/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
-            "id": "_:b20",
             "type": "EvidenceLine"
         },
         {
@@ -754,17 +799,16 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/8f992810-58f9-4732-b28f-20fd83c2d9f0/",
+                    "id": "/evaluations/a4d61d6d-89aa-4ae8-91f5-1768fb70273f/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
-            "id": "_:b21",
             "type": "EvidenceLine"
         },
         {
@@ -780,25 +824,24 @@
                         "type": "VariantPathogenicityInterpretationCriterion"
                     },
                     "description": "",
-                    "id": "/evaluations/76f7adcf-2a1e-4cb5-a1d0-25defc0a9495/",
+                    "id": "/evaluations/721c61c9-eb09-4480-83be-20e14c77c1f0/",
                     "statementOutcome": {
                         "id": "SEPIO:0000224",
                         "label": "Not Met"
                     },
                     "type": "CriterionAssessment",
-                    "variant": "ClinVar:43106"
+                    "variant": "ClinVar:177665"
                 }
             ],
             "evidenceStrength": "SEPIO:0000327",
-            "id": "_:b22",
             "type": "EvidenceLine"
         }
     ],
-    "id": "https://vci.clinicalgenome.org/interpretations/87fd0b18-d55d-4ae3-8e10-f71d547821d4/",
+    "id": "https://vci.clinicalgenome.org/interpretations/e35e54d4-af35-4267-9695-6f299c45765f/",
     "statementOutcome": {
         "id": "LOINC:LA6668-3",
         "label": "Pathogenic"
     },
     "type": "VariantPathogenicityInterpretation",
-    "variant": "ClinVar:43106"
+    "variant": "ClinVar:177665"
 }

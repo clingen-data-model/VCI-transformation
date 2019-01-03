@@ -1,0 +1,365 @@
+{
+    "@context": "http://dataexchange.clinicalgenome.org/interpretation/json/context",
+    "contribution": [
+        {
+            "agent": {
+                "id": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+                "label": "Amanda Thomas",
+                "type": "Agent"
+            },
+            "contributionDate": "2017-03-22T23:20:10.748822+00:00",
+            "contributionRole": {
+                "id": "SEPIO:0000155",
+                "label": "approver"
+            },
+            "type": "Contribution"
+        },
+        {
+            "agent": "https://vci.clinicalgenome.org/users/1db40a7e-e6dc-46dd-9e17-44efbf53d508/",
+            "contributionDate": "2019-01-03T00:00:00",
+            "contributionRole": {
+                "id": "SEPIO-CG:97010",
+                "label": "publisher"
+            },
+            "type": "Contribution"
+        }
+    ],
+    "evidenceLine": [
+        {
+            "evidenceItem": [
+                {
+                    "criterion": {
+                        "defaultStrength": {
+                            "id": "SEPIO:0000216",
+                            "label": "Pathogenic Moderate"
+                        },
+                        "id": "SEPIO-CG:99028",
+                        "label": "PM2",
+                        "type": "VariantPathogenicityInterpretationCriterion"
+                    },
+                    "description": "Not found in any population databases",
+                    "id": "/evaluations/6a640125-f6b5-43db-82ad-aa3e44aefdf2/",
+                    "statementOutcome": {
+                        "id": "SEPIO:0000223",
+                        "label": "Met"
+                    },
+                    "type": "CriterionAssessment",
+                    "variant": {
+                        "id": "ClinVar:102898",
+                        "label": "NM_000277.1(PAH):c.929C>A (p.Ser310Tyr)",
+                        "relatedContextualAllele": [
+                            {
+                                "alleleName": [
+                                    {
+                                        "name": "NC_000012.12:g.102846935G>T",
+                                        "nameType": "hgvs"
+                                    }
+                                ],
+                                "contextualAlleleType": "genomic",
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 102846935
+                                    },
+                                    "refState": "G",
+                                    "referenceSequence": {
+                                        "label": "NC_000012.12"
+                                    },
+                                    "start": {
+                                        "index": 102846934
+                                    }
+                                },
+                                "referenceGenome": {
+                                    "id": "SEPIO-CG:98203",
+                                    "label": "GRCh38"
+                                },
+                                "relatedCanonicalAllele": "ClinVar:102898",
+                                "relatedChromosome": {
+                                    "id": "SEPIO-CG:98112",
+                                    "label": "12"
+                                },
+                                "state": "T",
+                                "type": "ContextualAllele"
+                            },
+                            {
+                                "alleleName": [
+                                    {
+                                        "name": "NC_000012.11:g.103240713G>T",
+                                        "nameType": "hgvs"
+                                    }
+                                ],
+                                "contextualAlleleType": "genomic",
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 103240713
+                                    },
+                                    "refState": "G",
+                                    "referenceSequence": {
+                                        "label": "NC_000012.11"
+                                    },
+                                    "start": {
+                                        "index": 103240712
+                                    }
+                                },
+                                "referenceGenome": {
+                                    "id": "SEPIO-CG:98202",
+                                    "label": "GRCh37"
+                                },
+                                "relatedCanonicalAllele": "ClinVar:102898",
+                                "relatedChromosome": {
+                                    "id": "SEPIO-CG:98112",
+                                    "label": "12"
+                                },
+                                "state": "T",
+                                "type": "ContextualAllele"
+                            },
+                            {
+                                "alleleName": [
+                                    {
+                                        "name": "NG_008690.1:g.75668C>A",
+                                        "nameType": "hgvs"
+                                    }
+                                ],
+                                "contextualAlleleType": "genomic",
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 75668
+                                    },
+                                    "refState": "C",
+                                    "referenceSequence": {
+                                        "label": "NG_008690.1"
+                                    },
+                                    "start": {
+                                        "index": 75667
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:102898",
+                                "state": "A",
+                                "type": "ContextualAllele"
+                            },
+                            {
+                                "alleleName": [
+                                    {
+                                        "name": "NM_000277.1:c.929C>A",
+                                        "nameType": "hgvs"
+                                    }
+                                ],
+                                "contextualAlleleType": "transcript",
+                                "preferred": true,
+                                "referenceCoordinate": {
+                                    "end": {
+                                        "index": 1401
+                                    },
+                                    "refState": "C",
+                                    "referenceSequence": {
+                                        "label": "NM_000277.1"
+                                    },
+                                    "start": {
+                                        "index": 1400
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:102898",
+                                "relatedGene": {
+                                    "id": "NCBIGene:5053",
+                                    "label": "PAH"
+                                },
+                                "state": "A",
+                                "type": "ContextualAllele"
+                            },
+                            {
+                                "alleleName": [
+                                    {
+                                        "name": "NP_000268.1:p.Ser310Tyr",
+                                        "nameType": "hgvs"
+                                    }
+                                ],
+                                "contextualAlleleType": "protein",
+                                "referenceCoordinate": {
+                                    "referenceSequence": {
+                                        "label": "NP_000268.1"
+                                    }
+                                },
+                                "relatedCanonicalAllele": "ClinVar:102898",
+                                "type": "ContextualAllele"
+                            },
+                            {
+                                "alleleName": [
+                                    {
+                                        "name": "P00439:p.Ser310Tyr",
+                                        "nameType": "hgvs"
+                                    }
+                                ],
+                                "referenceCoordinate": {},
+                                "relatedCanonicalAllele": "ClinVar:102898",
+                                "type": "ContextualAllele"
+                            }
+                        ],
+                        "relatedIdentifier": [
+                            {
+                                "id": "http://reg.genome.network/allele/CA229854",
+                                "label": "NM_000277.1(PAH):c.929C>A (p.Ser310Tyr)"
+                            },
+                            {
+                                "id": "dbSNP:62642913"
+                            }
+                        ],
+                        "type": "CanonicalAllele"
+                    }
+                }
+            ],
+            "evidenceStrength": "SEPIO:0000216",
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
+                {
+                    "criterion": {
+                        "defaultStrength": {
+                            "id": "SEPIO:0000329",
+                            "label": "Pathogenic Supporting"
+                        },
+                        "id": "SEPIO-CG:99035",
+                        "label": "PP3",
+                        "type": "VariantPathogenicityInterpretationCriterion"
+                    },
+                    "description": "All predictive software agree on damaging effect \nREVEL = 0.991",
+                    "id": "/evaluations/9c16a1ca-01ce-4525-9215-f8887a23c78b/",
+                    "statementOutcome": {
+                        "id": "SEPIO:0000223",
+                        "label": "Met"
+                    },
+                    "type": "CriterionAssessment",
+                    "variant": "ClinVar:102898"
+                }
+            ],
+            "evidenceStrength": "SEPIO:0000329",
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
+                {
+                    "criterion": {
+                        "defaultStrength": {
+                            "id": "SEPIO:0000330",
+                            "label": "Pathogenic Strong"
+                        },
+                        "id": "SEPIO-CG:99025",
+                        "label": "PS3",
+                        "type": "VariantPathogenicityInterpretationCriterion"
+                    },
+                    "description": "Ho, 2008.  Both standard cDNA and intinic systems suggest this variant has <1% enzyme activity.",
+                    "evidenceLine": [
+                        {
+                            "evidenceItem": [
+                                {
+                                    "description": "PAH activity analysis. Site directed mutagenesis, transfected COS-1 cells. Enzyme activity measured as conversion of L-[14C]phe to L-[14C]tyr. Use both standard cDNA expression system and a new Intinic plasmid system which incorporates intronic sequences.   Both systems predict <1% enzyme activity for this variant.",
+                                    "source": [
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/18590700"
+                                    ],
+                                    "type": "Statement"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
+                    "id": "/evaluations/da8ea5a4-98cd-4966-8e24-9b26c15cb34e/",
+                    "statementOutcome": {
+                        "id": "SEPIO:0000223",
+                        "label": "Met"
+                    },
+                    "type": "CriterionAssessment",
+                    "variant": "ClinVar:102898"
+                }
+            ],
+            "evidenceStrength": "SEPIO:0000330",
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
+                {
+                    "criterion": {
+                        "defaultStrength": {
+                            "id": "SEPIO:0000216",
+                            "label": "Pathogenic Moderate"
+                        },
+                        "id": "SEPIO-CG:99029",
+                        "label": "PM3",
+                        "type": "VariantPathogenicityInterpretationCriterion"
+                    },
+                    "description": "Patient #7 S310Y/F55L (pathogenic per clinVar) – with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
+                    "evidenceLine": [
+                        {
+                            "evidenceItem": [
+                                {
+                                    "description": "Patient #7 S310Y/F55L (pathogenic per clinVar) – with BH4 responsive mild hyperphe (>600umol/L @dx)\nS310Y is novel in this paper",
+                                    "source": [
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/12501224"
+                                    ],
+                                    "type": "Statement"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
+                    "id": "/evaluations/59408ee6-8d94-4dce-a74a-988701896113/",
+                    "statementOutcome": {
+                        "id": "SEPIO:0000223",
+                        "label": "Met"
+                    },
+                    "type": "CriterionAssessment",
+                    "variant": "ClinVar:102898"
+                }
+            ],
+            "evidenceStrength": "SEPIO:0000216",
+            "type": "EvidenceLine"
+        },
+        {
+            "evidenceItem": [
+                {
+                    "criterion": {
+                        "defaultStrength": {
+                            "id": "SEPIO:0000329",
+                            "label": "Pathogenic Supporting"
+                        },
+                        "id": "SEPIO-CG:99036",
+                        "label": "PP4",
+                        "type": "VariantPathogenicityInterpretationCriterion"
+                    },
+                    "description": "PS5 evidence per ClinGen Metabolism workgroup -- BH4 defect excluded in all patients.",
+                    "evidenceLine": [
+                        {
+                            "evidenceItem": [
+                                {
+                                    "description": "BH4 defect excluded in all patients with urine pterins and DHPR activity.",
+                                    "source": [
+                                        "https://www.ncbi.nlm.nih.gov/pubmed/12501224"
+                                    ],
+                                    "type": "Statement"
+                                }
+                            ],
+                            "type": "EvidenceLine"
+                        }
+                    ],
+                    "id": "/evaluations/f6f418ef-b01a-4d5d-841d-f46ed80c3f1f/",
+                    "statementOutcome": {
+                        "id": "SEPIO:0000223",
+                        "label": "Met"
+                    },
+                    "type": "CriterionAssessment",
+                    "variant": "ClinVar:102898"
+                }
+            ],
+            "evidenceStrength": {
+                "id": "SEPIO:0000330",
+                "label": "Pathogenic Strong"
+            },
+            "type": "EvidenceLine"
+        }
+    ],
+    "id": "https://vci.clinicalgenome.org/interpretations/98fab9fa-47b3-47c6-9bd9-1d833f7e4ee4/",
+    "statementOutcome": {
+        "id": "LOINC:LA6668-3",
+        "label": "Pathogenic"
+    },
+    "type": "VariantPathogenicityInterpretation",
+    "variant": "ClinVar:102898"
+}
