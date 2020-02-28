@@ -247,7 +247,9 @@
         "affiliation_fullname": "Broad Institute Rare Disease Group",
         "approver": [
             "Samantha Baxter"
-        ]
+        ],
+        "guideline_name": "ACMG Guidelines, 2015",
+        "guideline_url": "https://www.nature.com/articles/gim201530"
     },
     {
         "affiliation_id": "10031",
