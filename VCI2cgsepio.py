@@ -872,7 +872,7 @@ def transform(jsonf, publish_datetime):
         logging.warning('No condition found. Proceeding')
     try:
         eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
-    except IndexError:
+    except KeyError:
         logging.warning('No criteria evaluations found.  Proceeding')
         eval_map = {}
     try:
