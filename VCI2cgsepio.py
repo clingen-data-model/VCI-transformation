@@ -15,8 +15,8 @@ import datetime
 from dateutil.parser import parse
 
 IRI_BASE = 'https://vci.clinicalgenome.org'
-VCI_ID_KEY = '@id'
-VCI_TYPE_KEY = '@type'
+VCI_PK_KEY = 'PK'
+VCI_ITEM_TYPE_KEY = 'item_type'
 VCI_CLINVAR_VARIANT_TITLE = 'clinvarVariantTitle'
 VCI_CONTRIBUTION_KEY = 'submitted_by'
 VCI_LAST_MODIFIED_KEY = 'last_modified'
@@ -32,9 +32,10 @@ VCI_APPROVAL_SUBMITTER_KEY = 'approvalSubmitter'
 VCI_AFFILIATION_KEY = 'affiliation'
 VCI_VARIANT_KEY = 'variant'
 VCI_VARIANT_TYPE = 'variant'
-VCI_VARIANT_SOURCE = 'source'
+# VCI_VARIANT_SOURCE = 'source'
 VCI_DISEASE_TYPE = 'disease'
 VCI_AGENT_TYPE = 'user'
+VCI_CLINVAR_ID_KEY = 'clinvarVariantId'
 VCI_CANONICAL_ID_KEY = 'carId'
 VCI_HGVS_NAMES_KEY = 'hgvsNames'
 VCI_GENOMIC_HGVS_38_KEY = 'GRCh38'
@@ -42,7 +43,7 @@ VCI_OTHERS_HGVS_KEY = 'others'
 VCI_CONDITION_KEY = 'disease'
 VCI_DISEASE_ONTOLOGY_KEY = 'ontology'
 VCI_DISEASE_TERM_KEY = 'term'
-VCI_DISEASE_ID_KEY = 'diseaseId'
+# VCI_DISEASE_ID_KEY = 'diseaseId'
 VCI_EVALUATION_KEY = 'evaluations'
 VCI_EVALUATION_VARIANT_KEY = 'variant'
 VCI_CRITERIA_KEY = 'criteria'
@@ -53,7 +54,7 @@ VCI_NOT_MET = 'not-met'
 VCI_EVALUATION_EXPLANATION_KEY = 'explanation'
 VCI_EVIDENCE_DESCRIPTION_KEY = 'evidenceDescription'
 VCI_CRITERIA_MODIFIER_KEY = 'criteriaModifier'
-VCI_MODIFIER_KEY = 'modifier'
+# VCI_MODIFIER_KEY = 'modifier'
 VCI_FREQUENCY_KEY = 'population'
 VCI_POPULATION_DATA_KEY = 'populationData'
 VCI_COMPUTATIONAL_KEY = 'computational'
@@ -75,14 +76,16 @@ VCI_1000_GENOMES_ESP_AA_POP = 'espaa'
 VCI_1000_GENOMES_ESP_EA_POP = 'espea'
 VCI_SCORE_KEY = 'score'
 VCI_PREDICTION_KEY = 'prediction'
-VCI_EXTRA_EVIDENCE_KEY = 'extra_evidence_list'
+VCI_V1_EXTRA_EVIDENCE_KEY = 'extra_evidence_list'
+VCI_CURATED_EVIDENCE_KEY = 'curated_evidence_list'
 VCI_ARTICLES_KEY = 'articles'
 VCI_PMID_KEY = 'pmid'
 VCI_CATEGORY_KEY = 'category'
 VCI_SUBCATEGORY_KEY = 'subcategory'
 VCI_MODEINHERITANCE_KEY = 'modeInheritance'
 VCI_MODEINHERITANCE_ADJECTIVE_KEY = 'modeInheritanceAdjective'
-VCI_PROVISIONAL_VARIANT_KEY = 'provisional_variant'
+VCI_PROVISIONAL_VARIANT_KEY = 'provisionalVariant'
+VCI_V1_PROVISIONAL_VARIANT_KEY = 'provisional_variant'
 
 VCI_MISSENSE_EFFECT_PREDICTOR = 'missense_predictor'
 VCI_SPLICE_EFFECT_PREDICTOR = 'splice'
@@ -133,13 +136,18 @@ def read_affiliations():
     adict = {}
     adict[None] = None
     for a in affs:
+        affiliation_public_id = ''
         guideline = {}
+        if 'affiliation_vcep_id' in a:
+            affiliation_public_id = a['affiliation_vcep_id']
+        elif 'affiliation_id' in a:
+            affiliation_public_id = a['affiliation_id']
         if 'guideline_name' in a:
             guideline['name'] = a['guideline_name']
         if 'guideline_url' in a:
             guideline['url'] = a['guideline_url']
         adict[a['affiliation_id']] = { \
-            'id': AFFILIATION_IRI_NAMESPACE + a['affiliation_id'], \
+            'id': AFFILIATION_IRI_NAMESPACE + affiliation_public_id, \
             'label': a['affiliation_fullname'], \
             'guideline': guideline }
     return adict
@@ -185,7 +193,7 @@ def get_chromosome_name(chromosome, version):
 # are represented differently.
 class EntityMap:
     EMtypes = set([VCI_VARIANT_TYPE, VCI_AGENT_TYPE, VCI_DISEASE_TYPE])
-    def __init__(self, source, idtag=VCI_ID_KEY):
+    def __init__(self, source, idtag=VCI_PK_KEY):
         self.entities = defaultdict(dict)
         self.transformed={}
         self.idtag = idtag
@@ -202,11 +210,13 @@ class EntityMap:
             pass
     def register(self,node):
         if self.idtag in node:
-            type_set = self.EMtypes.intersection(set(node[VCI_TYPE_KEY]))
-            if len(type_set) > 1:
-                raise Exception("ERROR: More than one unique type match found for a single node.")
-            if len(type_set) == 1:
-                etype = type_set.pop()
+            # type_set = self.EMtypes.intersection(set(node[VCI_TYPE_KEY]))
+            # if len(type_set) > 1:
+            #     raise Exception("ERROR: More than one unique type match found for a single node.")
+            # if len(type_set) == 1:
+            #     etype = type_set.pop()
+            if VCI_ITEM_TYPE_KEY in node and node[VCI_ITEM_TYPE_KEY] in self.EMtypes:
+                etype = node[VCI_ITEM_TYPE_KEY]
                 atid = fully_qualify(node[self.idtag])
                 entity = self.entities[atid]
                 for key in node:
@@ -227,13 +237,21 @@ class EntityMap:
 
 def fully_qualify(iri):
     fqiri = iri
+    # if fqiri.startswith('/'):
+    #     fqiri = IRI_BASE + fqiri
+
+    # Extract PK/UUID from string that's assumed to be in older "@id" format (/[data type]/[data UUID]/)
     if fqiri.startswith('/'):
-        fqiri = IRI_BASE + fqiri
+        fqiri_parts = fqiri.split('/')
+        if len(fqiri_parts) > 2:
+            if re.match(r'[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}', fqiri_parts[2], re.I):
+                fqiri = fqiri_parts[2]
+
     return fqiri
 
 def get_id(source):
     if isinstance(source, dict):
-        sid = fully_qualify(source[VCI_ID_KEY])
+        sid = fully_qualify(source[VCI_PK_KEY])
     else:
         sid = fully_qualify(source)
     return sid
@@ -331,7 +349,7 @@ def convert_moi(moi, moiadj):
 # date created: Not tracking user behavior
 # provisional_count: should be 1:1
 def transform_root(vci):
-    vi = VariantPathogenicityInterpretation( fully_qualify(vci[VCI_ID_KEY]) )
+    vi = VariantPathogenicityInterpretation( fully_qualify(vci[VCI_PK_KEY]) )
     modestring = vci[VCI_MODEINHERITANCE_KEY]
     modeadjstring = vci[VCI_MODEINHERITANCE_ADJECTIVE_KEY]
     mode = convert_moi(modestring, modeadjstring)
@@ -393,8 +411,9 @@ def transform_provisional_variant(vci_pv , interpretation, entities, publish_dat
             url = None
             if 'url' in guideline:
                 url = guideline['url']
-            assertion_method = create_assertion_method ( guideline['name'], url )
-            interpretation.set_assertionMethod(assertion_method)
+            if 'name' in guideline:
+                assertion_method = create_assertion_method ( guideline['name'], url )
+                interpretation.set_assertionMethod(assertion_method)
 
     add_contributions( approving_user, affiliation, interpretation, entities, approval_date, PROP_APPROVER_ROLE )
 
@@ -426,7 +445,7 @@ def transform_variant(variant,entities):
     if canonical_variant is None:
         vci_variant = entities.get_entity(vci_variant_id)
 
-        if vci_variant[VCI_CLINVAR_VARIANT_TITLE]:
+        if VCI_CLINVAR_VARIANT_TITLE in vci_variant and vci_variant[VCI_CLINVAR_VARIANT_TITLE]:
             preferred_name = vci_variant[VCI_CLINVAR_VARIANT_TITLE]
         else:
             # for now - assume the first "NM_" or "NR_" transcript in the "hgvsNames.others" list is preferred
@@ -438,8 +457,10 @@ def transform_variant(variant,entities):
                 # if no "NM_" or "NR_" is found in the transcripts then use 'GRCh38' as the default.
                 preferred_name = vci_variant[VCI_HGVS_NAMES_KEY][VCI_GENOMIC_HGVS_38_KEY]
 
-        if vci_variant[VCI_VARIANT_SOURCE] == 'ClinVar':
-            identifier = "%s:%s" % ('ClinVar', vci_variant['clinvarVariantId'])
+        # if vci_variant[VCI_VARIANT_SOURCE] == 'ClinVar':
+        #     identifier = "%s:%s" % ('ClinVar', vci_variant['clinvarVariantId'])
+        if VCI_CLINVAR_ID_KEY in vci_variant and vci_variant[VCI_CLINVAR_ID_KEY]:
+            identifier = "%s:%s" % ('ClinVar', vci_variant[VCI_CLINVAR_ID_KEY])
         else:
             identifier = "%s:%s" % ('CAR', vci_variant[VCI_CANONICAL_ID_KEY])
 
@@ -481,23 +502,26 @@ def transform_variant(variant,entities):
 # variant X
 # population: this is actually allele frequency data (in populations, not a population itself)
 def transform_evaluation(vci_evaluation, interpretation, entities, criteria):
-    assessment = CriterionAssessment( vci_evaluation[VCI_ID_KEY] )
+    assessment = CriterionAssessment( vci_evaluation[VCI_PK_KEY] )
     criterion = criteria[ vci_evaluation[ VCI_CRITERIA_KEY] ]
     assessment.set_criterion( criterion )
     assessment.set_statementOutcome( term_map[ vci_evaluation[ VCI_CRITERIA_STATUS_KEY ] ] )
-    assessment.set_description( vci_evaluation[ VCI_EVALUATION_EXPLANATION_KEY] )
+    if VCI_EVALUATION_EXPLANATION_KEY in vci_evaluation:
+        assessment.set_description( vci_evaluation[ VCI_EVALUATION_EXPLANATION_KEY] )
+    else:
+        assessment.set_description( '' )
     assessment.set_variant( transform_variant( vci_evaluation[VCI_EVALUATION_VARIANT_KEY ] , entities) )
     #Have to do a little work to figure out the strength
     #VCI has both a modifier and a criteria modifier.  If these both exist they should be the
     #same, but if one or the other does not exist, then we should use the other one.
     crit_mod = ''
-    mod = ''
+    # mod = ''
     if VCI_CRITERIA_MODIFIER_KEY in vci_evaluation:
         crit_mod = vci_evaluation[VCI_CRITERIA_MODIFIER_KEY]
-    if VCI_MODIFIER_KEY in vci_evaluation:
-        mod = vci_evaluation[VCI_MODIFIER_KEY]
-    if crit_mod != mod:
-        raise Exception
+    # if VCI_MODIFIER_KEY in vci_evaluation:
+    #     mod = vci_evaluation[VCI_MODIFIER_KEY]
+    # if crit_mod != mod:
+    #     raise Exception
     defaultStrength = criterion.get_defaultStrength()
     strength = transform_strength( crit_mod, defaultStrength )
 
@@ -763,6 +787,8 @@ def transform_strength(modifier, defaultStrength):
         mod = 'Moderate'
     elif modifier == 'very-strong':
         mod = 'Very Strong'
+    elif modifier == 'stand-alone':
+        mod = 'Stand Alone'
     else:
         exit()
     strength = ' '.join( [path, mod] )
@@ -776,7 +802,7 @@ def transform_evaluations(evaluation_list,interpretation,entities):
     if not isinstance(evaluation_list, list):
         raise Exception
     for vci_eval in evaluation_list:
-        if vci_eval[ VCI_CRITERIA_STATUS_KEY ] == VCI_CRITERIA_NOT_EVALUATED:
+        if VCI_CRITERIA_STATUS_KEY not in vci_eval or vci_eval[ VCI_CRITERIA_STATUS_KEY ] == VCI_CRITERIA_NOT_EVALUATED:
                 continue
         crit_id, evaluation = transform_evaluation(vci_eval,interpretation,entities,criteria)
         evaluation_map[crit_id] = evaluation
@@ -839,7 +865,7 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     disease = entities.get_transformed(vci_disease_id)
     if disease is None:
         disease_ontology = 'MONDO:'
-        disease_code = vci_disease[VCI_DISEASE_ID_KEY]
+        disease_code = vci_disease[VCI_PK_KEY]
         if not disease_code.startswith('MONDO'):
             raise Exception("Expected a MONDO disease identifier")
         disease_code = disease_code.split('_')[-1]
@@ -851,14 +877,26 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     if mode!= '': condition.set_inheritancePattern( mode )
     interpretation.add_condition(condition)
 
-def transform(jsonf, publish_datetime):
-    vci = json.load(jsonf)
+def transform(jsonf, payload, publish_datetime):
+    vci = None
+
+    if jsonf:
+        vci = json.load(jsonf)
+
+    if payload:
+        vci = json.loads(payload)
+        #vci = json.loads(payload)['interpretation']
+
     if VCI_MODEINHERITANCE_KEY not in vci:
         vci[VCI_MODEINHERITANCE_KEY] = ''
+    if VCI_MODEINHERITANCE_ADJECTIVE_KEY not in vci:
+        vci[VCI_MODEINHERITANCE_ADJECTIVE_KEY] = ''
     entities = EntityMap(vci)
     interpretation, inheritance = transform_root(vci)
     if VCI_PROVISIONAL_VARIANT_KEY in vci:
         transform_provisional_variant(vci[VCI_PROVISIONAL_VARIANT_KEY],interpretation,entities, publish_datetime)
+    elif VCI_V1_PROVISIONAL_VARIANT_KEY in vci:
+        transform_provisional_variant(vci[VCI_V1_PROVISIONAL_VARIANT_KEY],interpretation,entities, publish_datetime)
     else:
         logging.warning('No provisional_variant element in the input.  Proceeding, but clinical significance will not be set.')
     try:
@@ -872,18 +910,21 @@ def transform(jsonf, publish_datetime):
         logging.warning('No condition found. Proceeding')
     try:
         eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
-    except KeyError:
+    except (KeyError, IndexError):
         logging.warning('No criteria evaluations found.  Proceeding')
         eval_map = {}
     try:
-        transform_evidence(vci[VCI_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
+        if VCI_CURATED_EVIDENCE_KEY in vci:
+            transform_evidence(vci[VCI_CURATED_EVIDENCE_KEY], interpretation, entities, eval_map)
+        else:
+            transform_evidence(vci[VCI_V1_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
     except KeyError:
         logging.warning('No evidence found.  Proceeding')
 
     return interpretation,entities
 
 def transform_json_file(inf, outf, out_style, publish_datetime):
-    interp, ents = transform(inf, publish_datetime)
+    interp, ents = transform(inf, None, publish_datetime)
     #The idea of flatten would be that the root node would contain fully specified descriptions of all the entities, and then
     # the interpretation, which would be written using only IDs.
     # To implement this, just create a new dict, put the interpretation into it, and write the entites into it from the EntityMap
@@ -895,6 +936,13 @@ def transform_json_file(inf, outf, out_style, publish_datetime):
         raise Exception('flatten not implemented yet')
     json.dump(interp, outf, sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder, out_style=out_style, ensure_ascii=False)
 
+def transform_json_input(payload, out_style):
+    # Temporarily passing in "now" timestamp (probably should use/supply publication timestamp from VCI)
+    interp,ents = transform(None, payload, datetime.datetime.now())
+    if out_style == 'flat':
+        raise Exception('flatten not implemented yet')
+    return json.dumps(interp, sort_keys=True, indent=4, separators=(',', ': '), cls=InterpretationEncoder, out_style=out_style, ensure_ascii=False)
+
 def valid_date(s):
     try:
         return parse(s)
@@ -904,6 +952,7 @@ def valid_date(s):
 
 def test():
     transform_json_file(open('test_data/test_interp_1.vci.json'), open('test_data/test_interp_1.cg-sepio.json'), 'first', datetime.datetime.now())
+#    transform_json_file(open('test-vci.json'), open('test-cgsepio.json', 'w'), 'first', datetime.datetime.now())
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
