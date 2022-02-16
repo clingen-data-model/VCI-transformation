@@ -86,6 +86,14 @@ VCI_MODEINHERITANCE_KEY = 'modeInheritance'
 VCI_MODEINHERITANCE_ADJECTIVE_KEY = 'modeInheritanceAdjective'
 VCI_PROVISIONAL_VARIANT_KEY = 'provisionalVariant'
 VCI_V1_PROVISIONAL_VARIANT_KEY = 'provisional_variant'
+VCI_CSPEC_KEY = 'cspec'
+VCI_CSPEC_DOCUMENT_KEY = 'documentName'
+VCI_CSPEC_ID_KEY = 'cspecId'
+VCI_CSPEC_ID_BASE_URL = 'https://cspec.genome.network/cspec/SequenceVariantInterpretation/id/'
+VCI_CSPEC_RULESET_KEY = 'ruleSetIri'
+VCI_CSPEC_SUBJECT_OUTPUT_KEY = 'subject'
+VCI_CSPEC_VERSION_INPUT_KEY = 'version'
+VCI_CSPEC_VERSION_OUTPUT_KEY = 'documentVersion'
 
 VCI_MISSENSE_EFFECT_PREDICTOR = 'missense_predictor'
 VCI_SPLICE_EFFECT_PREDICTOR = 'splice'
@@ -877,6 +885,25 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     if mode!= '': condition.set_inheritancePattern( mode )
     interpretation.add_condition(condition)
 
+def transform_cspec(vci_cspec_data, interpretation):
+    cspec_transformed_data = {}
+
+    if VCI_CSPEC_DOCUMENT_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_DOCUMENT_KEY] = vci_cspec_data[VCI_CSPEC_DOCUMENT_KEY]
+
+    if VCI_CSPEC_ID_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_ID_KEY] = VCI_CSPEC_ID_BASE_URL + vci_cspec_data[VCI_CSPEC_ID_KEY]
+        cspec_transformed_data[VCI_CSPEC_SUBJECT_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_ID_KEY]
+
+    if VCI_CSPEC_RULESET_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_RULESET_KEY] = vci_cspec_data[VCI_CSPEC_RULESET_KEY]
+
+    if VCI_CSPEC_VERSION_INPUT_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_VERSION_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_VERSION_INPUT_KEY]
+
+    if cspec_transformed_data:
+        interpretation.set_cspec(VCI_CSPEC_KEY, cspec_transformed_data)
+
 def transform(jsonf, payload, publish_datetime):
     vci = None
 
@@ -920,6 +947,9 @@ def transform(jsonf, payload, publish_datetime):
             transform_evidence(vci[VCI_V1_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
     except KeyError:
         logging.warning('No evidence found.  Proceeding')
+
+    if VCI_CSPEC_KEY in vci:
+        transform_cspec(vci[VCI_CSPEC_KEY], interpretation)
 
     return interpretation,entities
 
