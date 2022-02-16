@@ -465,7 +465,7 @@ def transform_variant(variant,entities):
             identifier = "%s:%s" % ('CAR', vci_variant[VCI_CANONICAL_ID_KEY])
 
         hgvs_names = vci_variant[VCI_HGVS_NAMES_KEY]
-        dbsnp_ids = vci_variant['dbSNPIds']
+        dbsnp_ids = vci_variant['dbSNPIds'] if 'dbSNPIds' in vci_variant else None
 
         # build the following structure to initialize any VCI canonical allele
         # 1. 'identifier' 'CAR:CA999999' (CAid) or 'ClinVar:9999999' (variationId)
@@ -910,7 +910,7 @@ def transform(jsonf, payload, publish_datetime):
         logging.warning('No condition found. Proceeding')
     try:
         eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
-    except (KeyError, IndexError):
+    except IndexError:
         logging.warning('No criteria evaluations found.  Proceeding')
         eval_map = {}
     try:
