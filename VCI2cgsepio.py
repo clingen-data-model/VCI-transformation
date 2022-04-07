@@ -89,7 +89,8 @@ VCI_V1_PROVISIONAL_VARIANT_KEY = 'provisional_variant'
 VCI_CSPEC_KEY = 'cspec'
 VCI_CSPEC_DOCUMENT_KEY = 'documentName'
 VCI_CSPEC_ID_KEY = 'cspecId'
-VCI_CSPEC_ID_BASE_URL = 'https://cspec.genome.network/cspec/SequenceVariantInterpretation/id/'
+VCI_CSPEC_ID_OUTPUT_KEY = 'cspecId'
+VCI_CSPEC_URL_KEY = 'cspecUrl'
 VCI_CSPEC_RULESET_KEY = 'ruleSetIri'
 VCI_CSPEC_SUBJECT_OUTPUT_KEY = 'subject'
 VCI_CSPEC_VERSION_INPUT_KEY = 'version'
@@ -892,8 +893,10 @@ def transform_cspec(vci_cspec_data, interpretation):
         cspec_transformed_data[VCI_CSPEC_DOCUMENT_KEY] = vci_cspec_data[VCI_CSPEC_DOCUMENT_KEY]
 
     if VCI_CSPEC_ID_KEY in vci_cspec_data:
-        cspec_transformed_data[VCI_CSPEC_ID_KEY] = VCI_CSPEC_ID_BASE_URL + vci_cspec_data[VCI_CSPEC_ID_KEY]
         cspec_transformed_data[VCI_CSPEC_SUBJECT_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_ID_KEY]
+    
+    if VCI_CSPEC_URL_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_ID_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_URL_KEY]
 
     if VCI_CSPEC_RULESET_KEY in vci_cspec_data:
         cspec_transformed_data[VCI_CSPEC_RULESET_KEY] = vci_cspec_data[VCI_CSPEC_RULESET_KEY]
