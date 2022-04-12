@@ -242,7 +242,9 @@
     {
         "affiliation_id": "10046",
         "affiliation_vcep_id": "50046",
-        "affiliation_fullname": "FBN1 VCEP"
+        "affiliation_fullname": "FBN1 VCEP",
+        "guideline_name": "ClinGen FBN1 Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",
+        "guideline_url": "https://clinicalgenome.org/site/assets/files/7445/clingen_fbn1_acmg_specifications_v1.pdf"
     },
     {
         "affiliation_id": "10047",
@@ -534,6 +536,20 @@
     {
         "affiliation_id": "10112",
         "affiliation_fullname": "Ocular Genomics Institute"
+    },
+    {
+        "affiliation_id": "10113",
+        "affiliation_fullname": "Cerebral Palsy"
+    },
+    {
+        "affiliation_id": "10114",
+        "affiliation_vcep_id": "50114",
+        "affiliation_fullname": "Neurofibromatosis and Schwannomatosis VCEP"
+    },
+    {
+        "affiliation_id": "10115",
+        "affiliation_vcep_id": "50115",
+        "affiliation_fullname": "Histone H3 SC-VCEP"
     },
     {
         "affiliation_id": "77777",
