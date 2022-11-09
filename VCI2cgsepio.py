@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+sys.path.insert(0, '/var/task/clingen_interpretation')
 from collections import defaultdict
 import hashlib
 import csv
@@ -894,7 +895,7 @@ def transform_cspec(vci_cspec_data, interpretation):
 
     if VCI_CSPEC_ID_KEY in vci_cspec_data:
         cspec_transformed_data[VCI_CSPEC_SUBJECT_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_ID_KEY]
-    
+
     if VCI_CSPEC_URL_KEY in vci_cspec_data:
         cspec_transformed_data[VCI_CSPEC_ID_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_URL_KEY]
 
@@ -916,6 +917,8 @@ def transform(jsonf, payload, publish_datetime):
     if payload:
         vci = json.loads(payload)
         #vci = json.loads(payload)['interpretation']
+
+    # logic to process multiple data objects (either [{}, {}] or {'1': {}, '2': {}}) to go here?
 
     if VCI_MODEINHERITANCE_KEY not in vci:
         vci[VCI_MODEINHERITANCE_KEY] = ''
@@ -1003,3 +1006,32 @@ if __name__ == '__main__':
                     default=datetime.datetime.now())
     args = parser.parse_args()
     transform_json_file(args.input, args.output, args.output_style, args.publish_datetime)
+
+def handler(event, context):
+    result = None
+    result_type = 'application/json'
+
+    if event['path'] == '/sepio-transform/vci2cgsepio':
+        if event['httpMethod'] != 'OPTIONS':
+            result = transform_json_input(event['body'], 'first')
+
+    elif event['path'] == '/sepio-transform/html':
+        result = '<HTML><HEAD></HEAD><BODY>HTML Response</BODY></HTML>\n'
+        result_type = 'text/html'
+
+    else:
+        result = 'Hello World!'
+        result_type = 'text/plain'
+
+    return {
+        'statusCode': 200,
+        'body': result,
+        'headers': {
+            'Access-Control-Allow-Credentials': True,
+            'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-CSRF-Token',
+            'Access-Control-Allow-Methods': 'GET,HEAD,POST,PUT,OPTIONS',
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': result_type
+        }
+    }
+
