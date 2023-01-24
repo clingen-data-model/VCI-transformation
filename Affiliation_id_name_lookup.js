@@ -94,7 +94,9 @@
     {
         "affiliation_id": "10016",
         "affiliation_vcep_id": "50016",
-        "affiliation_fullname": "Monogenic Diabetes VCEP"
+        "affiliation_fullname": "Monogenic Diabetes VCEP",
+        "guideline_name": "ClinGen Monogenic Diabetes Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",
+        "guideline_url": "https://www.clinicalgenome.org/affiliation/50016/docs/assertion-criteria"
     },
     {
         "affiliation_id": "10017",
@@ -112,7 +114,9 @@
     {
         "affiliation_id": "10020",
         "affiliation_vcep_id": "50020",
-        "affiliation_fullname": "Brain Malformations VCEP"
+        "affiliation_fullname": "Brain Malformations VCEP",
+        "guideline_name": "ClinGen Brain Malformations Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",
+        "guideline_url": "https://www.clinicalgenome.org/affiliation/50020/docs/assertion-criteria"
     },
     {
         "affiliation_id": "10021",
@@ -203,7 +207,9 @@
     {
         "affiliation_id": "10039",
         "affiliation_vcep_id": "50039",
-        "affiliation_fullname": "Hereditary Breast, Ovarian and Pancreatic Cancer VCEP"
+        "affiliation_fullname": "Hereditary Breast, Ovarian and Pancreatic Cancer VCEP",
+        "guideline_name": "ClinGen Hereditary Breast, Ovarian and Pancreatic Cancer Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines for ATM Version 1",
+        "guideline_url": "https://clinicalgenome.org/site/assets/files/7392/clingen_hbop_acmg_specifications_atm_v1-1.pdf"
     },
     {
         "affiliation_id": "10040",
@@ -227,7 +233,7 @@
     },
     {
         "affiliation_id": "10044",
-        "affiliation_fullname": "Familial Thoracic Aortic Aneurysm and Dissection"
+        "affiliation_fullname": "Heritable Thoracic Aortic Aneurysm and Dissection"
     },
     {
         "affiliation_id": "10045",
@@ -236,17 +242,23 @@
     {
         "affiliation_id": "10046",
         "affiliation_vcep_id": "50046",
-        "affiliation_fullname": "FBN1 VCEP"
+        "affiliation_fullname": "FBN1 VCEP",
+        "guideline_name": "ClinGen FBN1 Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",
+        "guideline_url": "https://clinicalgenome.org/site/assets/files/7445/clingen_fbn1_acmg_specifications_v1.pdf"
     },
     {
         "affiliation_id": "10047",
         "affiliation_vcep_id": "50047",
-        "affiliation_fullname": "Cerebral Creatine Deficiency Syndromes VCEP"
+        "affiliation_fullname": "Cerebral Creatine Deficiency Syndromes VCEP",
+        "guideline_name": "ClinGen Cerebral Creatine Deficiency Syndromes Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",
+        "guideline_url": "https://www.clinicalgenome.org/site/assets/files/8258/clingen_ccds_acmg_specifications_v1-2.pdf"
     },
     {
         "affiliation_id": "10048",
         "affiliation_vcep_id": "50048",
-        "affiliation_fullname": "ACADVL VCEP"
+        "affiliation_fullname": "ACADVL VCEP",
+        "guideline_name": "ClinGen ACADVL Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",
+        "guideline_url": "https://clinicalgenome.org/site/assets/files/7380/clingen_acadvl_acmg_specifications_v1.pdf"
     },
     {
         "affiliation_id": "10049",
@@ -256,7 +268,9 @@
     {
         "affiliation_id": "10050",
         "affiliation_vcep_id": "50050",
-        "affiliation_fullname": "DICER1 and miRNA-Processing Gene VCEP"
+        "affiliation_fullname": "DICER1 and miRNA-Processing Gene VCEP",
+        "guideline_name": "ClinGen DICER1 and miRNA-Processing Gene Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines for DICER1 Version 1",
+        "guideline_url": "https://www.clinicalgenome.org/site/assets/files/8147/clingen_dicer1_acmg_specifications_dicer1_v1.pdf"
     },
     {
         "affiliation_id": "10051",
@@ -271,7 +285,9 @@
     {
         "affiliation_id": "10053",
         "affiliation_vcep_id": "50053",
-        "affiliation_fullname": "Glaucoma VCEP"
+        "affiliation_fullname": "Glaucoma VCEP",
+        "guideline_name": "ClinGen Glaucoma Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",
+        "guideline_url": "https://www.clinicalgenome.org/affiliation/50053/docs/assertion-criteria"
     },
     {
         "affiliation_id": "10054",
@@ -328,23 +344,24 @@
     },
     {
         "affiliation_id": "10067",
-        "affiliation_fullname": "Kidney Tubulopathies"
+        "affiliation_fullname": "Tubulopathy"
     },
     {
         "affiliation_id": "10068",
-        "affiliation_fullname": "Kidney Glomerular"
+        "affiliation_fullname": "Glomerulopathy"
     },
     {
         "affiliation_id": "10069",
-        "affiliation_fullname": "Kidney Complement"
+        "affiliation_fullname": "Complement-Mediated Kidney Diseases"
     },
     {
         "affiliation_id": "10070",
-        "affiliation_fullname": "CAKUT/Obstructive Uropathy"
+        "affiliation_fullname": "Congenital Anomalies of the Kidney and Urinary Tract"
     },
     {
         "affiliation_id": "10071",
-        "affiliation_fullname": "Pulmonary Hypertension"
+        "affiliation_vcep_id": "50071",
+        "affiliation_fullname": "Pulmonary Hypertension VCEP"
     },
     {
         "affiliation_id": "10072",
@@ -368,7 +385,7 @@
     },
     {
         "affiliation_id": "10077",
-        "affiliation_fullname": "Glaucoma/Neuro"
+        "affiliation_fullname": "Glaucoma and Neuro-Ophthalmology"
     },
     {
         "affiliation_id": "10078",
@@ -381,7 +398,7 @@
     },
     {
         "affiliation_id": "10080",
-        "affiliation_fullname": "Antibody Immunodeficiencies GCEP"
+        "affiliation_fullname": "Antibody Deficiencies GCEP"
     },
     {
         "affiliation_id": "10081",
@@ -425,7 +442,7 @@
     {
         "affiliation_id": "10090",
         "affiliation_vcep_id": "50090",
-        "affiliation_fullname": "Optic Atrophy VCEP"
+        "affiliation_fullname": "Optic Nerve Atrophy VCEP"
     },
     {
         "affiliation_id": "10091",
@@ -434,7 +451,7 @@
     },
     {
         "affiliation_id": "10092",
-        "affiliation_fullname": "H3Africa"
+        "affiliation_fullname": "H3Africa Rare Disease Working Group"
     },
     {
         "affiliation_id": "10093",
@@ -447,7 +464,196 @@
     {
         "affiliation_id": "10095",
         "affiliation_vcep_id": "50095",
-        "affiliation_fullname": "Antibody Immunodeficiencies VCEP"
+        "affiliation_fullname": "Antibody Deficiencies VCEP"
+    },
+    {
+        "affiliation_id": "10096",
+        "affiliation_fullname": "Amyotrophic Lateral Sclerosis Spectrum Disorders"
+    },
+    {
+        "affiliation_id": "10097",
+        "affiliation_fullname": "General Inborn Errors of Metabolism"
+    },
+    {
+        "affiliation_id": "10098",
+        "affiliation_fullname": "Fibroblast Growth Factor Receptor Mutations"
+    },
+    {
+        "affiliation_id": "10099",
+        "affiliation_vcep_id": "50099",
+        "affiliation_fullname": "InSiGHT Hereditary Colorectal Cancer/Polyposis VCEP"
+    },
+    {
+        "affiliation_id": "10100",
+        "affiliation_vcep_id": "50100",
+        "affiliation_fullname": "Urea Cycle Disorders VCEP"
+    },
+    {
+        "affiliation_id": "10101",
+        "affiliation_vcep_id": "50101",
+        "affiliation_fullname": "KCNQ Channel Brain Disorders VCEP"
+    },
+    {
+        "affiliation_id": "10102",
+        "affiliation_fullname": "Motile Ciliopathy"
+    },
+    {
+        "affiliation_id": "10103",
+        "affiliation_fullname": "UCT Neurology Research Group"
+    },
+    {
+        "affiliation_id": "10104",
+        "affiliation_fullname": "Hereditary Cardiovascular Disease"
+    },
+    {
+        "affiliation_id": "10105",
+        "affiliation_vcep_id": "50105",
+        "affiliation_fullname": "Epilepsy Sodium Channel VCEP"
+    },
+    {
+        "affiliation_id": "10106",
+        "affiliation_fullname": "Prenatal"
+    },
+    {
+        "affiliation_id": "10107",
+        "affiliation_vcep_id": "50107",
+        "affiliation_fullname": "Leukodystrophy and Leukoencephalopathy VCEP"
+    },
+    {
+        "affiliation_id": "10108",
+        "affiliation_vcep_id": "50108",
+        "affiliation_fullname": "Potassium Channel Arrhythmia VCEP"
+    },
+    {
+        "affiliation_id": "10109",
+        "affiliation_fullname": "Pharmacogenomics"
+    },
+    {
+        "affiliation_id": "10110",
+        "affiliation_fullname": "Lysosomal Diseases"
+    },
+    {
+        "affiliation_id": "10111",
+        "affiliation_vcep_id": "50111",
+        "affiliation_fullname": "FLT3 (Fms Related Receptor Tyrosine Kinase 3) SC-VCEP"
+    },
+    {
+        "affiliation_id": "10112",
+        "affiliation_fullname": "Ocular Genomics Institute"
+    },
+    {
+        "affiliation_id": "10113",
+        "affiliation_fullname": "Cerebral Palsy"
+    },
+    {
+        "affiliation_id": "10114",
+        "affiliation_vcep_id": "50114",
+        "affiliation_fullname": "Neurofibromatosis and Schwannomatosis VCEP"
+    },
+    {
+        "affiliation_id": "10115",
+        "affiliation_vcep_id": "50115",
+        "affiliation_fullname": "Histone H3 SC-VCEP"
+    },
+    {
+        "affiliation_id": "10116",
+        "affiliation_vcep_id": "50116",
+        "affiliation_fullname": "Stanford Gecko Variant Curation"
+    },
+    {
+        "affiliation_id": "10117",
+        "affiliation_vcep_id": "50117",
+        "affiliation_fullname": "Sample Affiliation Variant Curation"
+    },
+    {
+        "affiliation_id": "10118",
+        "affiliation_vcep_id": "50118",
+        "affiliation_fullname": "DDC (Dopa Decarboxylase) VCEP"
+    },
+    {
+        "affiliation_id": "10119",
+        "affiliation_fullname": "HLA"
+    },
+    {
+        "affiliation_id": "10120",
+        "affiliation_fullname": "Rady's Children's Institute for Genomic Medicine"
+    },
+    {
+        "affiliation_id": "10121",
+        "affiliation_fullname": "Centre for Population Genomics"
+    },
+    {
+        "affiliation_id": "10122",
+        "affiliation_fullname": "Rheumatoid Arthritis"
+    },
+    {
+        "affiliation_id": "10123",
+        "affiliation_fullname": "Systemic Lupus Erythematosus"
+    },
+    {
+        "affiliation_id": "10124",
+        "affiliation_fullname": "Scleroderma"
+    },
+    {
+        "affiliation_id": "10125",
+        "affiliation_fullname": "Gout"
+    },
+    {
+        "affiliation_id": "10126",
+        "affiliation_fullname": "Ankylosing Spondylitis"
+    },
+    {
+        "affiliation_id": "10127",
+        "affiliation_fullname": "Clalit Genomics Center"
+    },
+    {
+        "affiliation_id": "10128",
+        "affiliation_vcep_id": "50128",
+        "affiliation_fullname": "Hereditary Angioedema VCEP"
+    },
+    {
+        "affiliation_id": "10129",
+        "affiliation_vcep_id": "50129",
+        "affiliation_fullname": "BCR::ABL1-like B-lymphoblastic Leukemia/Lymphoma SC-VCEP"
+    },
+    {
+        "affiliation_id": "10130",
+        "affiliation_fullname": "Congenital Heart Disease"
+    },
+    {
+        "affiliation_id": "10131",
+        "affiliation_fullname": "Ingles Lab - Garvan Institute Sydney"
+    },
+    {
+        "affiliation_id": "10132",
+        "affiliation_vcep_id": "50132",
+        "affiliation_fullname": "Anterior Segment Dysgenesis VCEP"
+    },
+    {
+        "affiliation_id": "10133",
+        "affiliation_vcep_id": "50133",
+        "affiliation_fullname": "Severe Combined Immunodeficiency Disease VCEP"
+    },
+    {
+        "affiliation_id": "10134",
+        "affiliation_fullname": "Molecular Pathology & Genetics - Mater Dei Hospital"
+    },
+    {
+        "affiliation_id": "10135",
+        "affiliation_fullname": "Congenital Disorders of Glycosylation"
+    },
+    {
+        "affiliation_id": "10136",
+        "affiliation_vcep_id": "50136",
+        "affiliation_fullname": "Galactosemia VCEP"
+    },
+    {
+        "affiliation_id": "10137",
+        "affiliation_fullname": "ALSAfrica-NET biocurators"
+    },
+    {
+        "affiliation_id": "10138",
+        "affiliation_fullname": "Interstitial Lung Disease"
     },
     {
         "affiliation_id": "77777",

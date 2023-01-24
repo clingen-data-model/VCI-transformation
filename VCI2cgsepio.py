@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+sys.path.insert(0, '/var/task/clingen_interpretation')
 from collections import defaultdict
 import hashlib
 import csv
@@ -86,6 +87,15 @@ VCI_MODEINHERITANCE_KEY = 'modeInheritance'
 VCI_MODEINHERITANCE_ADJECTIVE_KEY = 'modeInheritanceAdjective'
 VCI_PROVISIONAL_VARIANT_KEY = 'provisionalVariant'
 VCI_V1_PROVISIONAL_VARIANT_KEY = 'provisional_variant'
+VCI_CSPEC_KEY = 'cspec'
+VCI_CSPEC_DOCUMENT_KEY = 'documentName'
+VCI_CSPEC_ID_KEY = 'cspecId'
+VCI_CSPEC_ID_OUTPUT_KEY = 'cspecId'
+VCI_CSPEC_URL_KEY = 'cspecUrl'
+VCI_CSPEC_RULESET_KEY = 'ruleSetIri'
+VCI_CSPEC_SUBJECT_OUTPUT_KEY = 'subject'
+VCI_CSPEC_VERSION_INPUT_KEY = 'version'
+VCI_CSPEC_VERSION_OUTPUT_KEY = 'documentVersion'
 
 VCI_MISSENSE_EFFECT_PREDICTOR = 'missense_predictor'
 VCI_SPLICE_EFFECT_PREDICTOR = 'splice'
@@ -465,7 +475,7 @@ def transform_variant(variant,entities):
             identifier = "%s:%s" % ('CAR', vci_variant[VCI_CANONICAL_ID_KEY])
 
         hgvs_names = vci_variant[VCI_HGVS_NAMES_KEY]
-        dbsnp_ids = vci_variant['dbSNPIds']
+        dbsnp_ids = vci_variant['dbSNPIds'] if 'dbSNPIds' in vci_variant else None
 
         # build the following structure to initialize any VCI canonical allele
         # 1. 'identifier' 'CAR:CA999999' (CAid) or 'ClinVar:9999999' (variationId)
@@ -877,6 +887,27 @@ def transform_condition(vci_local_disease,interpretation,entities,mode):
     if mode!= '': condition.set_inheritancePattern( mode )
     interpretation.add_condition(condition)
 
+def transform_cspec(vci_cspec_data, interpretation):
+    cspec_transformed_data = {}
+
+    if VCI_CSPEC_DOCUMENT_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_DOCUMENT_KEY] = vci_cspec_data[VCI_CSPEC_DOCUMENT_KEY]
+
+    if VCI_CSPEC_ID_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_SUBJECT_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_ID_KEY]
+
+    if VCI_CSPEC_URL_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_ID_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_URL_KEY]
+
+    if VCI_CSPEC_RULESET_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_RULESET_KEY] = vci_cspec_data[VCI_CSPEC_RULESET_KEY]
+
+    if VCI_CSPEC_VERSION_INPUT_KEY in vci_cspec_data:
+        cspec_transformed_data[VCI_CSPEC_VERSION_OUTPUT_KEY] = vci_cspec_data[VCI_CSPEC_VERSION_INPUT_KEY]
+
+    if cspec_transformed_data:
+        interpretation.set_cspec(VCI_CSPEC_KEY, cspec_transformed_data)
+
 def transform(jsonf, payload, publish_datetime):
     vci = None
 
@@ -886,6 +917,8 @@ def transform(jsonf, payload, publish_datetime):
     if payload:
         vci = json.loads(payload)
         #vci = json.loads(payload)['interpretation']
+
+    # logic to process multiple data objects (either [{}, {}] or {'1': {}, '2': {}}) to go here?
 
     if VCI_MODEINHERITANCE_KEY not in vci:
         vci[VCI_MODEINHERITANCE_KEY] = ''
@@ -910,7 +943,7 @@ def transform(jsonf, payload, publish_datetime):
         logging.warning('No condition found. Proceeding')
     try:
         eval_map = transform_evaluations(vci[VCI_EVALUATION_KEY], interpretation, entities)
-    except (KeyError, IndexError):
+    except IndexError:
         logging.warning('No criteria evaluations found.  Proceeding')
         eval_map = {}
     try:
@@ -920,6 +953,9 @@ def transform(jsonf, payload, publish_datetime):
             transform_evidence(vci[VCI_V1_EXTRA_EVIDENCE_KEY], interpretation, entities, eval_map)
     except KeyError:
         logging.warning('No evidence found.  Proceeding')
+
+    if VCI_CSPEC_KEY in vci:
+        transform_cspec(vci[VCI_CSPEC_KEY], interpretation)
 
     return interpretation,entities
 
@@ -970,3 +1006,32 @@ if __name__ == '__main__':
                     default=datetime.datetime.now())
     args = parser.parse_args()
     transform_json_file(args.input, args.output, args.output_style, args.publish_datetime)
+
+def handler(event, context):
+    result = None
+    result_type = 'application/json'
+
+    if event['path'] == '/sepio-transform/vci2cgsepio':
+        if event['httpMethod'] != 'OPTIONS':
+            result = transform_json_input(event['body'], 'first')
+
+    elif event['path'] == '/sepio-transform/html':
+        result = '<HTML><HEAD></HEAD><BODY>HTML Response</BODY></HTML>\n'
+        result_type = 'text/html'
+
+    else:
+        result = 'Hello World!'
+        result_type = 'text/plain'
+
+    return {
+        'statusCode': 200,
+        'body': result,
+        'headers': {
+            'Access-Control-Allow-Credentials': True,
+            'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-CSRF-Token',
+            'Access-Control-Allow-Methods': 'GET,HEAD,POST,PUT,OPTIONS',
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': result_type
+        }
+    }
+

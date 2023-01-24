@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: SEPIO transformation service
+
+Globals:
+
+  Api:
+    Cors:
+      AllowMethods: "'*'"
+      AllowHeaders: "'*'"
+      AllowOrigin: "'*'"
+
+Resources:
+
+  Products:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: VCI2cgsepio.handler
+      Runtime: python3.9
+      Environment:
+        Variables:
+          DOCKER_LAMBDA_USE_STDIN: 1
+      Timeout: 10
+      Events:
+        VCI2CGSEPIO:
+          Type: Api
+          Properties:
+            Path: /sepio-transform/vci2cgsepio
+            Method: any
+            Cors: "*"
+        ResponseHTML:
+          Type: Api
+          Properties:
+            Path: /sepio-transform/html
+            Method: get
+        Response:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
